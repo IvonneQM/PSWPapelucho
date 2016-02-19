@@ -1,0 +1,194 @@
+/**Verde claro: 60BB46
+   Verde oscuro: 00A04A
+   Rojo Claro: EC2224
+   Rojo medio: C32026
+   Rojo oscuro: B72025
+   Azul: 3952A3
+   Celeste: 0099CC
+   Azul marino (letras): 2F2E7E
+   Amarillo: F7EC3F
+   Plomo: 939597
+**/
+a{
+    color: white;
+    text-decoration:none;
+}
+
+article{
+
+    background: orange; /* Despues borrar*/
+    margin-top: 565px;
+}
+
+aside{
+    background: grey;   /* Despues borrar*/
+}
+
+body{
+    color: #2F2E7E;
+    font-family: Arial;
+    font-size: 16px;
+}
+footer{
+    background: #3952A3;
+    padding: 20px 0;
+}
+
+
+
+footer, header{
+    min-height:165px;
+    width:100%;
+}
+
+h3{
+    font-size: 17px;
+    font-weight:bold;
+    margin: 5px 0 0 0;
+
+}
+
+header{
+    background: #60BB46;
+    height: 165px;
+}
+
+li{
+    background: #C32026;
+    border: 3px solid #B72025;
+    border-radius: 0 0 1em 1em;
+    color: #fff;
+    display: inline-block;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size:20px;
+    height: 50px;
+    line-height: 2.5em;
+    list-style:none;
+    margin-left: -10px;
+    text-align: center;
+    vertical-align: middle;
+    width:180px;
+}
+
+nav{
+    display:block;
+    background: black;
+    height: auto;
+    margin:0 auto;
+    overflow: hidden;
+    position:relative;
+    top:400px;
+    width:717.5px;
+}
+
+p{
+    margin:0;
+}
+
+section{
+    background: brown; /* Despues borrar*/
+
+}
+
+ul{
+    margin:0;
+    padding:0;
+}
+
+.footer-box{
+    align:center;
+    background:white;
+    border: 3px solid #00A04A;
+    border-radius: 1em;
+    margin: 0 auto 10px;
+    padding:10px;
+    width:84%;
+}
+
+.li-two-lines{
+    line-height: 1.3em;
+}
+
+#copyright{
+    color: white;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#img-arco-azul{
+    margin-bottom: -5px;
+    width:100%;
+}
+
+#img-arco-verde{
+    display:block;
+    margin-top:44px;
+    position:absolute;
+    width:100%;
+}
+
+#img-isologo{
+
+    float:left;
+    height:90px;
+    margin: 10px 0 0 10px;
+    width:120px;
+}
+
+.logo{
+    display:block;
+    height:120px;
+}
+
+.menu_bar{
+    display: none;
+}
+
+#img-menu{
+    display:block;
+    float:right;
+    height:30px;
+    margin:35px 20px 0 0;
+    padding:5px;
+    width:40px;
+
+}
+
+#li-zona-apoderados{
+    float:right;
+    height:70px;
+    line-height:5em;
+    margin-top:45px ;
+    z-index: -1;
+}
+
+@media screen and (max-width:800px ) {
+    header nav {
+        background: #60BB46;
+        height: 100%;
+        left: -70%;
+        margin: 0;
+        margin-top:-400px;
+        position: fixed;
+        width: 70%;
+    }
+
+
+    header nav ul li {
+        background: #60BB46;
+        border: 3px solid #60BB46;
+        border-bottom:3px solid rgba(255,255,255, .3);
+        margin:0;
+        text-align:left;
+        width:100%;
+        display: block;
+        float: none;
+    }
+
+    .menu_bar {
+        background: black;
+        display: block;
+        width: 100%;
+    }
+
+}
