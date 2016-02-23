@@ -13,37 +13,46 @@ a{
     color: white;
     text-decoration:none;
 }
+
 article{
     margin-top: 565px;
 }
+
 aside{
     background: grey;   /* Despues borrar*/
 }
+
 body{
     color: #2F2E7E;
     font-family: Arial;
     font-size: 16px;
 }
+
 footer{
     background: #3952A3;
     padding: 20px 0;
 }
+
 footer, header{
     min-height:165px;
     width:100%;
 }
+
 h3{
     font-size: 17px;
     font-weight:bold;
     margin: 5px 0 0 0;
 }
+
 header{
     background: #60BB46;
     height: 165px;
 }
+
 li{
     list-style:none;
 }
+
 nav{
     display:block;
     background: black;
@@ -54,6 +63,7 @@ nav{
     top:400px;
     width:717.5px;
 }
+
 nav li, #li-zona-apoderados{
     background: #C32026;
     border: 3px solid #B72025;
@@ -69,17 +79,21 @@ nav li, #li-zona-apoderados{
     vertical-align: middle;
     width:180px;
 }
+
 p{
     margin:0;
 }
+
 section{
     background: brown; /* Despues borrar*/
 
 }
+
 ul{
     margin:0;
     padding:0;
 }
+
 .footer-box{
     align:center;
     background:white;
@@ -89,6 +103,7 @@ ul{
     padding:10px;
     width:84%;
 }
+
 .li-two-lines{
     line-height: 1.3em;
 }
@@ -120,6 +135,7 @@ ul{
 }
 
 @media screen and (max-width:800px ) {
+
     article{
         margin-top: 200px;
     }
@@ -163,10 +179,25 @@ ul{
         width: 90%;
     }
 
-
-    .content, .news-box{
+    .content, .news-box, .dir-box{
         margin:25px;
         text-align: justify;
+    }
+
+    .dir-box li{
+         border-top: 2px solid #F7EC3F;
+         border-bottom: 2px solid #F7EC3F;
+         display:inline-block;
+         width:45%;
+     }
+
+    .dir-box li:last-child{
+        float:right;
+    }
+
+    .dir-name{
+        display:block;
+
     }
 
     .logo{
@@ -174,6 +205,15 @@ ul{
         height:120px;
         padding-top:20px;
     }
+
+    .news-box li {
+        border-top: 1px solid #939597;
+    }
+
+    .news-box li:first-child {
+        border-top: 0;
+    }
+
     .news-date{
         float:right;
         font-size:14px;
@@ -183,6 +223,7 @@ ul{
     .news-first-line, .news-second-line{
         margin: 20px 0;
     }
+
     .news-first-line, .news-second-line, .news-date {
         color: #3952A3;
     }
@@ -205,14 +246,6 @@ ul{
         margin: 35px 20px 0 0;
         padding: 5px;
         width: 40px;
-    }
-
-    .news-box li {
-        border-top: 1px solid #939597;
-    }
-
-    .news-box li:first-child {
-        border-top: 0;
     }
 
     #news-section-title{
@@ -239,5 +272,10 @@ ul{
         padding-left:5px;
         width: 200px;
     }
+
+    #news-section-title{
+        font-family: "Fredericka the Great" ;
+    }
+
 
 }

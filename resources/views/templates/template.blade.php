@@ -13,16 +13,16 @@
     <p class="content">
         Con especial afecto, les saludan.
     </p>
-    <ul id="dir-box">
+    <ul class="dir-box">
         <li>
             <span class="dir-name">Claudia Concha Gamboa</span>
             Educadora de Párvulos
             Directora Sede Las Colonias
         </li>
         <li>
-            <span class="dir-name">Claudia Concha Gamboa</span>
+            <span class="dir-name">Carla Aguayo Picón</span>
             Educadora de Párvulos
-            Directora Sede Las Colonias
+            Directora Sede Blumell
         </li>
     </ul>
 
