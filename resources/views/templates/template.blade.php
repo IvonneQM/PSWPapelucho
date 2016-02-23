@@ -15,12 +15,12 @@
     </p>
     <ul id="dir-box">
         <li>
-            <span">Claudia Concha Gamboa</span>
+            <span class="dir-name">Claudia Concha Gamboa</span>
             Educadora de Párvulos
             Directora Sede Las Colonias
         </li>
         <li>
-            <span>Claudia Concha Gamboa</span>
+            <span class="dir-name">Claudia Concha Gamboa</span>
             Educadora de Párvulos
             Directora Sede Las Colonias
         </li>

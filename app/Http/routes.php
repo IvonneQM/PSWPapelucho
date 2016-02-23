@@ -20,6 +20,6 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('example', function (){
+Route::get('papelucho', function (){
 	return view('templates.template');
 });
