@@ -9,6 +9,12 @@
    Amarillo: F7EC3F
    Plomo: 939597
 **/
+
+@font-face {
+    font-family: ZapfinoExtraLTPro;
+    src: url(../fonts/ZapfinoExtraLTPro.otf);
+}
+
 a{
     color: white;
     text-decoration:none;
@@ -239,5 +245,6 @@ ul{
         padding-left:5px;
         width: 200px;
     }
+
 
 }
