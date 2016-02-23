@@ -185,15 +185,13 @@ ul{
     }
 
     .dir-box li{
-         border-top: 2px solid #F7EC3F;
-         border-bottom: 2px solid #F7EC3F;
-         display:inline-block;
-         width:45%;
+        border-top: 2px solid #F7EC3F;
+        border-bottom: 2px solid #F7EC3F;
+        margin: 0 auto 20px;
+        padding: 5px 0;
+        width:80%;
      }
 
-    .dir-box li:last-child{
-        float:right;
-    }
 
     .dir-name{
         display:block;
