@@ -7,62 +7,37 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link href='https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    <script src="js/jquery-2.2.0.js"> </script>
+    <script src="js/menu.js"></script>
 
 </head>
 <body>
 <header>
-    <div class="logo">
-        <a href="#" ><img id="img-isologo" src="images/isologo.png" alt="Isologo"></a>
-        <a href="#" id="menu"><img id="img-menu" src="images/menu-icon.png" alt="Icono Menu"></a>
-    </div>
     <ul>
         <li id="li-zona-apoderados"><a href="#">Zona Apoderados</a></li>
     </ul>
-    <img id="img-arco-verde" src="images/fondo-arco-verde.png" alt="Arco Verde">
-<nav>
+    <!-- <img id="img-arco-verde" src="images/fondo-arco-verde.png" alt="Arco Verde">-->
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Mi Jardín</a></li>
+            <li><a href="#">Papelucho las Colonias</a></li>
+            <li><a href="#">Papelucho Blumell</a></li>
+        </ul>
 
-    <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Mi Jardín</a></li>
-        <li class="li-two-lines"><a href="#">Papelucho </br> Las Colonias</a></li>
-        <li class="li-two-lines"><a href="#">Papelucho </br> Blumell</a></li>
-    </ul>
-</nav>
+        <div id="div-header">
+            <a href="#" ><img id="img-isologo" src="images/isologo.png" alt="Isologo"></a>
+        </div>
+        <div id="sidebar-btn">
+            <a href="#"><img id="img-menu" src="images/menu-icon.png" alt="Icono Menu"></a>
+        </div>
+
+    </nav>
+
+
+
 </header>
-<article>
-    Article
-    <section>
-        @yield('section')
-    </section>
-    Article
-</article>
 
-<aside>
-    @yield('aside')
-</aside>
-<img id="img-arco-azul" src="images/fondo-arco-azul.png" alt="Arco Azul">
-<footer>
-    <div class="footer-box">
-    <h3>Blumell</h3>
-    <p>
-        </br>Blumell 049 Playa Blanca
-        </br>55 245 4645
-        </br>infoblumell@jardinpapelucho.cl.
-    </p>
-    </div>
-    <div class="footer-box">
-    <h3>Las Colonias</h3>
-    <p>
-        </br>Las Colonias 557
-        </br>55 245 4647 -  55 245 4648
-        </br>info@jardinpapelucho.cl.
-    </p>
-    </div>
-    <p id="copyright">
-        &copy; 2016 Jardín Papelucho, Todos los derechos reservados.
-    </p>
 
-</footer>
-<script scr="menu.js"></script>
 </body>
 </html>
