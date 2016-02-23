@@ -30,7 +30,7 @@
 
 @section('aside')
     <h3 id="news-section-title">Noticias</h3>
-    <ul id="news-box">
+    <ul class="news-box">
         <li >
     <p class="news-first-line">
         <span class="news-title">Titulo 1</span>
