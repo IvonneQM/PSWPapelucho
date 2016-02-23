@@ -207,11 +207,11 @@ ul{
         width: 40px;
     }
 
-    #news-box li {
+    .news-box li {
         border-top: 1px solid #939597;
     }
 
-    #news-box li:first-child {
+    .news-box li:first-child {
         border-top: 0;
     }
 
