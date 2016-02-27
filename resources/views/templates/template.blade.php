@@ -1,6 +1,27 @@
 @extends('templates.layout')
-@section('section')
-    <h1 id="title">Bienvenidos</h1>
+@section('page-title')
+    Inicio
+@stop
+
+@section('slider')
+<div class="cycle-slideshow">
+
+    <span class="cycle-prev">&#9001;</span>
+    <span class="cycle-next">&#9002;</span>
+    <span class="cycle-pager"></span>
+
+
+    <img class="img-slide" src="images/img1.jpg">
+    <img class="img-slide" src="images/img2.jpg">
+    <img class="img-slide" src="images/img3.jpg">
+    <img class="img-slide" src="images/img4.jpg">
+</div>
+@stop
+
+@section('article')
+
+
+    <h2 id="title">Bienvenidos</h2>
     <p class="content">
         Estimados Padres y Apoderados:
     </p>
@@ -16,12 +37,12 @@
     <ul class="dir-box">
         <li>
             <span class="dir-name">Claudia Concha Gamboa</span>
-            Educadora de Párvulos
+            Educadora de Párvulos</br>
             Directora Sede Las Colonias
         </li>
         <li>
             <span class="dir-name">Carla Aguayo Picón</span>
-            Educadora de Párvulos
+            Educadora de Párvulos</br>
             Directora Sede Blumell
         </li>
     </ul>
@@ -29,6 +50,9 @@
 @stop
 
 @section('aside')
+    <div id="cuerdas">
+        <img src="images/cuerdas.png">
+    </div>
     <h3 id="news-section-title">Noticias</h3>
     <ul class="news-box">
         <li >
