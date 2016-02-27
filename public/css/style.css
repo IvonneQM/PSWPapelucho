@@ -10,10 +10,7 @@
    Plomo: 939597
 **/
 
-@font-face {
-    font-family: ZapfinoExtraLTPro;
-    src: url(/fonts/ZapfinoExtraLTPro.otf);
-}
+
 
 a{
     color: white;
@@ -186,8 +183,9 @@ ul{
 
 .dir-name{
     display:block;
-    font-family: 'Zapfino';
+    font-family: 'LinotypeZapfino One';
     text-align: center;
+    font-size: 32px;
 }
 
 .footer-box{

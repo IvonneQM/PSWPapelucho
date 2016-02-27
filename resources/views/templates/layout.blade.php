@@ -8,6 +8,7 @@
     {!!Html::style('css/normalize.css')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
+    {!! Html::style('//allfont.es/allfont.css?fonts=linotypezapfino-one') !!}}
 
     {!!Html::script('js/jquery-2.2.0.js')!!}
     {!!Html::script('js/jquery.cycle2.min.js')!!}
