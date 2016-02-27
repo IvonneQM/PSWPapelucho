@@ -11,7 +11,7 @@
     <span class="cycle-pager"></span>
 
 
-    <img class="img-slide" src="images/img1.jpg">
+    <img class="img-slide"  src="images/img1.jpg">
     <img class="img-slide" src="images/img2.jpg">
     <img class="img-slide" src="images/img3.jpg">
     <img class="img-slide" src="images/img4.jpg">
