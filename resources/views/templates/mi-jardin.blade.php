@@ -39,6 +39,21 @@
         {!!Html::image('images/cuerdas.png')!!}
     </div>
     <h3 id="news-section-title">Objetivos Papelucho</h3>
+
+    <ol class="objetives-box">
+        <li><span class="objetives-item">Impartir una enseñanza de calidad basada en la idoneidad de los profesionales, fundamentada en los
+                Principios y Bases Curriculares de la Educación Parvularia desde el Nivel Sala Cuna hasta el Nivel
+                Transición Menor, propiciando una labor pedagógica en constante innovación y acorde con lo que acontece en el mundo actual.</span> </li>
+        <li><span class="objetives-item">Favorecer el desarrollo afectivo del Párvulo, como punto de partida para su crecimiento como persona
+                integrada en un ambiente que facilita el descubrimiento e internalización de valores y conocimientos. </span> </li>
+        <li><span class="objetives-item">Desarrollar progresivamente una valoración positiva de sí mismo y de los demás, mediante la integración
+                y aceptación de niños y niñas con Necesidades Educativas Especiales, Etnias y diversas culturas, basada
+                en el reconocimiento de sus derechos y aceptación de su género. </span> </li>
+        <li><span class="objetives-item">Favorecer la integración y participación activa de la familia como agentes colaboradores de la labor educativa.</span> </li>
+
+
+    </ol>
+
     <!-- <ul class="news-box">
          <li >
              <p class="news-first-line">
