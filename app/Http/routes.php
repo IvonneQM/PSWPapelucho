@@ -11,15 +11,22 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+//Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
+
 ]);
 
-Route::get('papelucho', function (){
+/*Route::get('papelucho', function (){
 	return view('templates.template');
-});
+});*/
+
+Route::get('/', 'PagesControllers\HomeControllers@index');
+Route::get('mi-jardin', 'PagesControllers\MiJardinController@index');
+Route::get('papelucho-las-colonias', 'PagesControllers\LasColoniasController@index');
+Route::get('papelucho-blumell', 'PagesControllers\BlumellController@index');
+

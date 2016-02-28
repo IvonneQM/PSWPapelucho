@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "25885ef110bdd5bf5f8c210dc3a211dd",
-    "content-hash": "ccaf69d2283b658cf077bed4fa0ff47c",
+    "hash": "64554af8d944c229add9b977a2e715be",
+    "content-hash": "eebbb30ce6288f0c45f98f4870bf01b0",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -222,6 +222,111 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "filp/whoops",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "a327942c50cbd62b25c6fbe08f173031ce25fbff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/a327942c50cbd62b25c6fbe08f173031ce25fbff",
+                "reference": "a327942c50cbd62b25c6fbe08f173031ce25fbff",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "suggest": {
+                "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
+                "whoops/soap": "Formats errors as SOAP responses"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Whoops\\": "src/Whoops/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filipe Dobreira",
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php error handling for cool kids",
+            "homepage": "https://github.com/filp/whoops",
+            "keywords": [
+                "error",
+                "exception",
+                "handling",
+                "library",
+                "whoops",
+                "zf2"
+            ],
+            "time": "2016-01-06 17:51:21"
+        },
+        {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "time": "2015-01-01 16:31:18"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -535,6 +640,56 @@
                 "laravel"
             ],
             "time": "2016-02-02 14:55:52"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
+                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/routing": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "time": "2015-05-06 14:23:37"
         },
         {
             "name": "league/flysystem",
@@ -988,6 +1143,47 @@
                 "shell"
             ],
             "time": "2015-03-26 18:43:54"
+        },
+        {
+            "name": "styde/html",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/StydeNet/html.git",
+                "reference": "30430afeb315f515824903c58cd2c971df061fb7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/StydeNet/html/zipball/30430afeb315f515824903c58cd2c971df061fb7",
+                "reference": "30430afeb315f515824903c58cd2c971df061fb7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "laravelcollective/html": "5.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Styde\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Duilio Palacios",
+                    "email": "admin@styde.net"
+                }
+            ],
+            "description": "Build form fields, menus, alert messages and other view components quickly",
+            "time": "2015-11-06 12:17:39"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1964,56 +2160,6 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
-        },
-        {
-            "name": "laravelcollective/html",
-            "version": "v5.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
-                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/http": "~5.0",
-                "illuminate/routing": "~5.0",
-                "illuminate/session": "~5.0",
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Collective\\Html\\": "src/"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
-                },
-                {
-                    "name": "Adam Engebretson",
-                    "email": "adam@laravelcollective.com"
-                }
-            ],
-            "time": "2015-05-06 14:23:37"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
