@@ -33,8 +33,8 @@
     <ul>
         <li>{!!HTML::linkAction('PagesControllers\HomeControllers@index', 'Home')!!}</li>
         <li>{!!HTML::linkAction('PagesControllers\MiJardinController@index', 'Mi jardín')!!}</li>
-        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\LasColoniasController@index', '    Papelucho Las Colonias',array(), array('class' => 'url-menu'))!!}</li>
-        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\BlumellController@index', '    Papelucho     Blumell',array(), array('class' => 'url-menu'))!!}</li>
+        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\LasColoniasController@index', 'Papelucho Las Colonias',array(), array('class' => 'url-menu'))!!}</li>
+        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\BlumellController@index', 'Papelucho Blumell',array(), array('class' => 'url-menu'))!!}</li>
     </ul>
 </nav>
 
