@@ -12,7 +12,7 @@ Papelucho Las Colonias
 <h2 id="title-las-colonias">Papelucho Las Colonias</h2>
 
     <div class="accordion" id="accordion">
-        <div class="open">
+        <div>
         <div class="accordion-item-title">
           <a> Síntesis metodológica</a><i class="fa fa-chevron-up"></i>
         </div>
@@ -23,7 +23,7 @@ Papelucho Las Colonias
             </p>
         </div>
             </div>
-        <div class="open">
+        <div>
         <div class="accordion-item-title">
               <a>Sala cuna lactante menor</a><i class="fa fa-chevron-up"></i>
          </div>
@@ -33,7 +33,7 @@ Papelucho Las Colonias
             </p>
          </div>
             </div>
-        <div class="open">
+        <div>
         <div class="accordion-item-title">
             <a>Sala cuna lactante mayor</a><i class="fa fa-chevron-up"></i>
         </div>
@@ -43,7 +43,7 @@ Papelucho Las Colonias
             </p>
         </div>
             </div>
-        <div class="open">
+        <div>
         <div class="accordion-item-title">
             <a>Medio menor</a><i class="fa fa-chevron-up"></i>
         </div>
@@ -53,7 +53,7 @@ Papelucho Las Colonias
             </p>
         </div>
             </div>
-        <div class="open">
+        <div>
         <div class="accordion-item-title">
             <a>Medio mayor</a><i class="fa fa-chevron-up"></i>
         </div>
@@ -63,7 +63,7 @@ Papelucho Las Colonias
             </p>
         </div>
         </div>
-        <div class="open">
+        <div>
         <div class="accordion-item-title">
             <a>Transición menor</a><i class="fa fa-chevron-up"></i>
         </div>
@@ -72,7 +72,7 @@ Papelucho Las Colonias
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
             </p>
         </div>
-        </div>
+    </div>
     </div>
 
 
