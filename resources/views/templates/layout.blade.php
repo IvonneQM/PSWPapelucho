@@ -10,8 +10,7 @@
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
     {!!Html::style('//allfont.es/allfont.css?fonts=linotypezapfino-one')!!}
     {!!Html::style('css/font-awesome.min.css')!!}
-    {!!Html::style('css/font-awesome.css')!!}
-    {!!Html::script('js/jquery.min.js')!!}
+    {!!Html::script('js/jquery-2.2.0.js')!!}
     {!!Html::script('js/jquery.cycle2.min.js')!!}
     {!!Html::script('js/menu.js')!!}
 
