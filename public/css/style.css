@@ -11,17 +11,12 @@
 **/
 
 
-
 a{
     color: white;
     text-decoration:none;
 }
 
 article{
-    background: white;
-    border: 1px solid #EC2224;
-    border-radius: 0 2em 2em 2em;
-    margin-left:80px;
     width: 100%;
 }
 
@@ -100,8 +95,11 @@ nav li, #li-zona-apoderados{
 p{ margin:0; }
 
 section{
+    background: white;
+    border: 1px solid #EC2224;
+    border-radius: 0 2em 2em 2em;
     float:left;
-    margin-left:20px;
+    margin-left:100px;
     width:65%;
     
 }
@@ -111,7 +109,42 @@ ul{
     padding:0;
 }
 
-.content, .news-box{
+.accordion i.open i.fa-chevron-down{
+    transform: rotate(180deg);
+
+}
+
+.accordion-item-title{
+    border-top: 3px solid #F7EC3F !important;
+    display: block;
+    font-family: 'Love Ya Like A Sister', sans-serif;
+    text-align: center;
+}
+
+.accordion-item-title, .accordion-item-content {
+    border: 1px solid #cccccc;
+    margin: 0 auto;
+    padding: 10px;
+    width:90%;
+}
+
+.accordion-item-title a{
+    color: #2F2E7E;
+    font-weight: bold;
+    width:100%;
+}
+
+.accordion-item-title i{
+    font-size: 30px;
+}
+
+.accordion-item-content{
+    display: none;
+    text-align: justify;
+}
+
+
+.content, .news-box, .accordion{
     margin:25px;
     text-align: justify;
 }
@@ -200,6 +233,10 @@ ul{
 
 .img-slide{
     width:100%;
+}
+
+.items{
+    color:black;
 }
 
 .li-two-lines { line-height: 1.3em;}
@@ -337,7 +374,7 @@ ul{
 #puzzle{
     display: block;
     position: absolute;
-    margin: 50px 0 0 -10px;
+    margin: 50px 0 0 -90px;
     z-index: -1;
 }
 
@@ -345,7 +382,7 @@ ul{
     width:100px;
 }
 
-#title{
+#title, #title-las-colonias{
     border-radius: 0.3em 0.3em 0.3em 0;
     font-size: 40px;
     font-weight:inherit;
@@ -354,10 +391,14 @@ ul{
     width: 220px;
 }
 
-#title, #news-section-title{
+#title, #news-section-title, #title-las-colonias{
     background: #00A04A;
     color: white;
     padding-left:5px;
+}
+
+#title-las-colonias{
+    width: 425px !important;
 }
 
 #zona-apoderados {
@@ -374,11 +415,7 @@ ul{
 @media screen and (max-width:960px ) {
 
     article{
-        background: white;
-        border: 1px solid #EC2224;
-        border-radius: 0 2em 2em 2em;
-        margin: 0 auto;
-        width: 90%;
+        width:100%;
     }
 
     aside{
@@ -391,9 +428,14 @@ ul{
     }
 
     section{
+        background: white;
+        border: 1px solid #EC2224;
+        border-radius: 0 2em 2em 2em;
         float: none;
-        margin-left: auto;
-        width:100%;
+        margin-left: 5%;
+        width: 90%;
+
+
     }
 
     .content, .news-box{
@@ -468,7 +510,6 @@ ul{
 
 @media screen and (max-width:737px) {
 
-    article{ margin: 10px auto; }
 
     header nav {
         background: #00A04A;
@@ -569,5 +610,9 @@ ul{
     #sidebar.visible{
         left:0;
         transition:left 0.3s linear ;
+    }
+
+    #title, #news-section-title{
+        margin: -25px 0 0 -1px;
     }
 }

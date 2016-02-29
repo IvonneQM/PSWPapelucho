@@ -9,9 +9,14 @@
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
     {!!Html::style('//allfont.es/allfont.css?fonts=linotypezapfino-one')!!}
+    {!!Html::style('css/font-awesome.min.css')!!}
+    {!!Html::style('css/font-awesome.css')!!}
     {!!Html::script('js/jquery-2.2.0.js')!!}
     {!!Html::script('js/jquery.cycle2.min.js')!!}
     {!!Html::script('js/menu.js')!!}
+
+
+    @yield('meta')
 </head>
 <body>
 <header>
@@ -57,10 +62,12 @@
         {!!Html::image('images/puzzle.png', 'Puzzle')!!}
     </div>
     <h1 id="page-title">@yield('page-title')</h1>
+
     <article>
         @yield('article')
     </article>
 </section>
+
 <aside>
     @yield('aside')
 </aside>
