@@ -109,16 +109,24 @@ ul{
     padding:0;
 }
 
-.accordion i.open i.fa-chevron-down{
+.accordion div.open i.fa-chevron-up{
     transform: rotate(180deg);
 
+}
+
+.accordion div i{
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .accordion-item-title{
     border-top: 3px solid #F7EC3F !important;
     display: block;
     font-family: 'Love Ya Like A Sister', sans-serif;
-    text-align: center;
+    text-align:left;
 }
 
 .accordion-item-title, .accordion-item-content {
@@ -130,14 +138,18 @@ ul{
 
 .accordion-item-title a{
     color: #2F2E7E;
-    font-weight: bold;
+    font-size:20px;
     width:100%;
 }
 
 .accordion-item-title i{
-    font-size: 30px;
+    font-size: 20px;
+    float: right;
 }
 
+.accordion-item-title a, .accordion-item-title i{
+    cursor:pointer;
+}
 .accordion-item-content{
     display: none;
     text-align: justify;

@@ -14,7 +14,7 @@ Papelucho Las Colonias
     <div class="accordion" id="accordion">
         <div class="open">
         <div class="accordion-item-title">
-          <a> Síntesis metodológica</a><i class="fa fa-chevron-down"></i>
+          <a> Síntesis metodológica</a><i class="fa fa-chevron-up"></i>
         </div>
         <div class="accordion-item-content">
             <p>
@@ -22,46 +22,56 @@ Papelucho Las Colonias
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
             </p>
         </div>
+            </div>
+        <div class="open">
         <div class="accordion-item-title">
-              <a>Sala cuna lactante menor</a>
+              <a>Sala cuna lactante menor</a><i class="fa fa-chevron-up"></i>
          </div>
          <div class="accordion-item-content">
            <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
             </p>
-
+         </div>
+            </div>
+        <div class="open">
         <div class="accordion-item-title">
-            <a>Sala cuna lactante mayor</a>
+            <a>Sala cuna lactante mayor</a><i class="fa fa-chevron-up"></i>
         </div>
         <div class="accordion-item-content">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
             </p>
-
+        </div>
+            </div>
+        <div class="open">
         <div class="accordion-item-title">
-            <a>Medio menor</a>
+            <a>Medio menor</a><i class="fa fa-chevron-up"></i>
         </div>
         <div class="accordion-item-content">
             <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
             </p>
-
+        </div>
+            </div>
+        <div class="open">
         <div class="accordion-item-title">
-            <a>Medio mayor</a>
+            <a>Medio mayor</a><i class="fa fa-chevron-up"></i>
         </div>
         <div class="accordion-item-content">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
             </p>
-
-<div class="open">
+        </div>
+        </div>
+        <div class="open">
         <div class="accordion-item-title">
-            <a>Transición menor</a>
+            <a>Transición menor</a><i class="fa fa-chevron-up"></i>
         </div>
         <div class="accordion-item-content">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
             </p>
+        </div>
         </div>
     </div>
 
