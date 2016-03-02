@@ -82,7 +82,7 @@ nav li:first-child{
     margin-left: 0;
 }
 
-nav li, #li-zona-apoderados{
+nav li, #li-zona-apoderados, #login-form{
     background: #C32026;
     border: 3px solid #B72025;
     border-radius: 0 0 1em 1em;
@@ -158,6 +158,13 @@ ul{
 .accordion-item-content{
     display: none;
     text-align: justify;
+}
+
+.button-apoderados{
+    background: #F7EC3F;
+    border-radius: 0.5em;
+    color:#3952A3;
+    width:70px;
 }
 
 .content, .news-box, .accordion{
@@ -242,11 +249,6 @@ ul{
 
 .li-two-lines { line-height: 1.3em;}
 
-.login-form{
-    z-index: 4;
-    display: block;
-    float: right;
-}
 
 .logo{
     display:block;
@@ -278,17 +280,27 @@ ul{
 .objetives-box li{
     list-style-type: inherit;
     font-size: 25px;
-    margin: 20px 10px 0 -5px;
+    margin: 20px 10px 0 0px;
     padding-top: 10px;
     text-align: justify;
+    word-spacing: 23px;
 }
 
-.objetives-box li:first-child{ margin-top: 40px;}
+.objetives-box li:first-child{
+    margin-top: 40px;
+    word-spacing:11px;
+}
 
 .objetives-item{
     display: block;
     font-size: 16px;
     font-weight: lighter;
+    word-spacing: 0.1em;
+}
+
+.objetives-item:first-of-type::first-letter{
+    font-size: 36px;
+    float:left;
 }
 
 .span-ico-footer img{
@@ -297,6 +309,30 @@ ul{
     max-height:15px;
     max-width:15px;
     vertical-align: middle;
+}
+.text-field-apoderados {
+    color: black;
+    margin: 0 auto;
+    width: 140px;
+}
+
+.text-field-apoderados, .button-apoderados{
+    font-size: 16px;
+}
+
+.title{
+    border-radius: 0.3em 0.3em 0.3em 0;
+    font-size: 40px;
+    font-weight:inherit;
+    font-family: 'Love Ya Like A Sister', cursive;
+    margin: -45px 0 0 -1px;
+    max-width: 220px;
+}
+
+.title, #news-section-title{
+    background: #00A04A;
+    color: white;
+    padding-left:5px;
 }
 
 .two-borders-box li{
@@ -345,7 +381,7 @@ ul{
     display:block;
     margin-top:24px;
     position:absolute;
-    z-index: 3;
+    z-index: 4;
 }
 
 #img-arco-azul, #img-arco-verde{
@@ -381,8 +417,20 @@ ul{
     float:right;
     height:140px;
     line-height:12.5em;
-    z-index:2;
+    z-index:4;
 }
+
+#login-form{
+    display: none;
+    height:140px;
+    padding: 20px 7px;
+    position: absolute;
+    top:290px;
+    right:10px;
+    width:155px;
+    z-index: 2;
+}
+
 #news-section-title{
     border-radius: 0.3em;
     font-size:19px;
@@ -406,35 +454,25 @@ ul{
     width:100px;
 }
 
-#title, #title-las-colonias, #title-mi-jardin{
-    border-radius: 0.3em 0.3em 0.3em 0;
-    font-size: 40px;
-    font-weight:inherit;
-    font-family: 'Love Ya Like A Sister', cursive;
-    margin: -45px 0 0 -1px;
-    max-width: 220px;
-}
-
-#title, #news-section-title, #title-las-colonias, #title-mi-jardin{
-    background: #00A04A;
-    color: white;
-    padding-left:5px;
-}
-
 #title-mi-jardin{
     max-width:160px;
 }
 #title-las-colonias{
-    max-width: 425px !important;
+    max-width: 425px;
+}
+
+#title-blumell{
+    max-width: 330px;
 }
 
 #zona-apoderados {
     display: block;
     height: 127px;
     margin-top:25px;
+    right: 10px;
     position: absolute;
     width: 100%;
-    z-index:2;
+    z-index:3;
 }
 
 /*BOOTSTRAP*/
@@ -610,8 +648,12 @@ ul{
     #img-logotipo{ display: none; }
 
     #li-zona-apoderados{
-        height:90px;
-        line-height:7.5em;
+        height:100px;
+        line-height:8.5em;
+    }
+
+    #login-form{
+        top:255px;
     }
 
     #news-section-title{
@@ -642,7 +684,8 @@ ul{
         transition:left 0.3s linear ;
     }
 
-    #title, #news-section-title{
+    #title, #news-section-title {
         margin: -25px 0 0 -1px;
     }
+
 }

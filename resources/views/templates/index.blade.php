@@ -6,7 +6,7 @@
 @section('article')
 
 
-    <h1 id="title">Bienvenidos</h1>
+    <h1 class= "title" id="title">Bienvenidos</h1>
     <p class="content">
         Estimados Padres y Apoderados:
     </p>

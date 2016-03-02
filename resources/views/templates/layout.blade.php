@@ -4,7 +4,7 @@
     <title>@yield('title', 'Jardin infantil Papelucho')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!--{!!Html::style('css/bootstrap.min.css')!!}-->
+{{--{!!Html::style('css/bootstrap.min.css')!!}-->--}}
     {!!Html::style('css/style.css')!!}
     {!!Html::style('css/normalize.css')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
@@ -14,6 +14,7 @@
     {!!Html::script('js/jquery-2.2.0.js')!!}
     {!!Html::script('js/jquery.cycle2.min.js')!!}
     {!!Html::script('js/menu.js')!!}
+    {!!Html::script('js/login.js')!!}
 
 
     @yield('meta')
@@ -31,17 +32,15 @@
     {!!Html::image('images/fondo-arco-verde.png', 'Arco Verde', array('id' => 'img-arco-verde'))!!}
     <div id="zona-apoderados">
         <ul >
-            <li id="li-zona-apoderados"><a href="#">Zona Apoderados</a></li>
+            <li id="li-zona-apoderados"><a href="#" id="show-login">Zona Apoderados</a></li>
         </ul>
     </div>
 
-    <div class="login-form">
+    <div id="login-form">
         {!! Form::open() !!}
-        {!! Form::label('name', 'Nombre:') !!}
-        {!! Form::text('name', null , array('placeholder' => 'Nombre', 'class' => 'f')) !!}
-
-        {!! Form::label('password', 'Contraseña') !!}
-        {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => '')) !!}
+        {!! Form::text('name', null , array('placeholder' => 'Nombre', 'class' => 'text-field-apoderados')) !!}
+        {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
+        {!! Form::submit('Entrar', ['class' => 'button-apoderados'])!!}
         {!! Form::close() !!}
     </div>
 <nav id="sidebar">

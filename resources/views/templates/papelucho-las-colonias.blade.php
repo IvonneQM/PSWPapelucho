@@ -8,7 +8,7 @@
 
 @section('article')
 
-    <h1 id="title-las-colonias">Papelucho Las Colonias</h1>
+    <h1 class= "title" id="title-las-colonias">Papelucho Las Colonias</h1>
 
     <div class="accordion" id="accordion">
         <div>

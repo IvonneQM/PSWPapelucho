@@ -2,7 +2,7 @@
 @section('article')
 
 
-     <h1 id="title-mi-jardin">Mi jardín</h1>
+     <h1 class= "title" id="title-mi-jardin">Mi jardín</h1>
      <h2>Reseña histórica del jardín</h2>
      <p class="content">
          La Sala Cuna y Escuela de Párvulos “Papelucho”, se gestó el año 1988 basado en el interés de dos profesionales Educadoras de Párvulos que formaron sociedad y se instalaron en forma independiente con una Sala Cuna y Escuela de Párvulos, con la especial motivación de otorgar una educación integral a lactantes y párvulos, y proporcionar además un servicio a madres trabajadoras.     </p>

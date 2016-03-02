@@ -6,7 +6,7 @@
 @section('article')
 s
 
-    <h1 id="title">Papelucho Blumell</h1>
+    <h1 class= "title" id="title-blumell">Papelucho Blumell</h1>
     <!--<p class="content">
         Estimados Padres y Apoderados:
     </p>
