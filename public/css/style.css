@@ -242,6 +242,11 @@ ul{
 
 .li-two-lines { line-height: 1.3em;}
 
+.login-form{
+    z-index: 4;
+    display: block;
+    float: right;
+}
 
 .logo{
     display:block;
@@ -334,13 +339,6 @@ ul{
     width:150px;
 }
 
-#li-zona-apoderados{
-    float:right;
-    height:120px;
-    line-height:10.5em;
-    z-index:2;
-}
-
 #img-arco-azul{ margin-bottom: -5px; }
 
 #img-arco-verde{
@@ -379,6 +377,12 @@ ul{
 
 #img-menu { display: none; }
 
+#li-zona-apoderados{
+    float:right;
+    height:140px;
+    line-height:12.5em;
+    z-index:2;
+}
 #news-section-title{
     border-radius: 0.3em;
     font-size:19px;

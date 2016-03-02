@@ -34,6 +34,16 @@
             <li id="li-zona-apoderados"><a href="#">Zona Apoderados</a></li>
         </ul>
     </div>
+
+    <div class="login-form">
+        {!! Form::open() !!}
+        {!! Form::label('name', 'Nombre:') !!}
+        {!! Form::text('name', null , array('placeholder' => 'Nombre', 'class' => 'f')) !!}
+
+        {!! Form::label('password', 'Contraseña') !!}
+        {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => '')) !!}
+        {!! Form::close() !!}
+    </div>
 <nav id="sidebar">
     <ul>
         <li>{!!HTML::linkAction('PagesControllers\HomeControllers@index', 'Home')!!}</li>
@@ -56,7 +66,9 @@
         {!!Html::image('images/img3.jpg','img3', array('class' => 'img-slide'))!!}
         {!!Html::image('images/img4.jpg','img4', array('class' => 'img-slide'))!!}
     </div>
+
 </header>
+
 <section>
     <div id="puzzle">
         {!!Html::image('images/puzzle.png', 'Puzzle')!!}
