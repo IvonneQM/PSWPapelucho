@@ -4,9 +4,9 @@
 @stop
 
 @section('article')
+s
 
-
-    <h2 id="title">Papelucho Blumell</h2>
+    <h1 id="title">Papelucho Blumell</h1>
     <!--<p class="content">
         Estimados Padres y Apoderados:
     </p>

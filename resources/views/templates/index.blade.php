@@ -6,7 +6,7 @@
 @section('article')
 
 
-    <h2 id="title">Bienvenidos</h2>
+    <h1 id="title">Bienvenidos</h1>
     <p class="content">
         Estimados Padres y Apoderados:
     </p>
@@ -19,14 +19,14 @@
     <p class="content">
         Con especial afecto, les saludan.
     </p>
-    <ul class="dir-box">
+    <ul class="two-borders-box">
         <li>
-            <span class="dir-name">Claudia Concha Gamboa</span>
+            <span class="cursive-title">Claudia Concha Gamboa</span>
             Educadora de Párvulos<br>
             Directora Sede Las Colonias
         </li>
         <li>
-            <span class="dir-name">Carla Aguayo Picón</span>
+            <span class="cursive-title">Carla Aguayo Picón</span>
             Educadora de Párvulos<br>
             Directora Sede Blumell
         </li>

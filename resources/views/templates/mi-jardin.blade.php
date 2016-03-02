@@ -1,43 +1,41 @@
 @extends('templates.layout')
-@section('page-title')
-    Mi Jardin
-@stop
-
 @section('article')
 
 
-     <h2 id="title">Mi jardín</h2>
-     <!--<p class="content">
-         Estimados Padres y Apoderados:
-     </p>
+     <h1 id="title-mi-jardin">Mi jardín</h1>
+     <h2>Reseña histórica del jardín</h2>
      <p class="content">
-         Les damos la más cordial bienvenida a cada uno de ustedes, invitándoles a conocer el proyecto educativo de la Sala Cuna y Escuela de Párvulos “PAPELUCHO”, e instándoles a participar en la labor pedagógica que desarrollamos con mucho cariño y vocación con sus hijos(as).
-     </p>
+         La Sala Cuna y Escuela de Párvulos “Papelucho”, se gestó el año 1988 basado en el interés de dos profesionales Educadoras de Párvulos que formaron sociedad y se instalaron en forma independiente con una Sala Cuna y Escuela de Párvulos, con la especial motivación de otorgar una educación integral a lactantes y párvulos, y proporcionar además un servicio a madres trabajadoras.     </p>
      <p class="content">
-         Agradecemos en forma especial la confianza de aquellos apoderados que nos han acompañado estos últimos años, como también aquellos Padres que actualmente se han integrado a esta gran familia educativa.
+         Esta Institución cuenta con más de dos décadas de experiencia en la educación de párvulos la que es reconocida por el Ministerio de Educación como Colaboradora de la Función Educacional del Estado y empadronada por la Junta Nacional de Jardines Infantiles. A partir del año 2009 se expande y cuenta con 2 establecimientos educacionales, alcanzando en la actualidad una matrícula aproximada de 175 párvulos, los que están distribuidos en ambas sedes, dos jornadas y en los niveles: Sala Cuna, Medio Menor, Medio Mayor y Transición Menor.
      </p>
-     <p class="content">
-         Con especial afecto, les saludan.
-     </p>
-     <ul class="dir-box">
+
+
+     <ul class="two-borders-box">
          <li>
-             <span class="dir-name">Claudia Concha Gamboa</span>
-             Educadora de Párvulos<br>
-             Directora Sede Las Colonias
+             <h2><span class="cursive-title">Misión</span></h2>
+             <p class="content">
+                 La misión de Sala Cuna y Escuela de Párvulos “Papelucho”, es ser una institución particular pagada de la ciudad de Antofagasta, que imparte educación parvularia de calidad a niños y niñas desde los 3 meses a los 4 años 11 meses de edad, en un ambiente cálido, familiar, participativo y de respeto, con una base sólida de valores universales, que los prepara para enfrentar con éxito los desafíos que el futuro les depare bajo nuestro lema “Educar para ser feliz”.
+
+             </p>
+             <p class="content">
+                 Teniendo fe y creyendo en el ser humano como una persona en constante crecimiento espiritual, afectivo, cognitivo y social. Nuestro compromiso es estimular a los niños y niñas a crecer íntegros y felices, enseñándoles a ellos(as) el valor trascendente que tiene la afectividad sobre el ser humano, siendo esta la base donde se cimentarán sus relaciones interpersonales, aprendizajes, intereses, atención y motivación intrínseca hacia el querer aprender y querer ser mejor de lo que somos. Visión
+
+             </p>
          </li>
          <li>
-             <span class="dir-name">Carla Aguayo Picón</span>
-             Educadora de Párvulos<br>
-             Directora Sede Blumell
+             <h2><span class="cursive-title">Visión</span></h2>
+             <p class="content">
+                 Ser la Sala Cuna y Escuela de Párvulos de Antofagasta que desarrolle principios pedagógicos y humanistas en niños y niñas menores de 5 años.
+
+             </p>
          </li>
      </ul>
-     -->
+
 @stop
 
 @section('aside')
-    <div id="cuerdas">
-        {!!Html::image('images/cuerdas.png')!!}
-    </div>
+    <div id="cuerdas">{!!Html::image('images/cuerdas.png')!!}</div>
     <h3 id="news-section-title">Objetivos Papelucho</h3>
 
     <ol class="objetives-box">
@@ -50,8 +48,6 @@
                 y aceptación de niños y niñas con Necesidades Educativas Especiales, Etnias y diversas culturas, basada
                 en el reconocimiento de sus derechos y aceptación de su género. </span> </li>
         <li><span class="objetives-item">Favorecer la integración y participación activa de la familia como agentes colaboradores de la labor educativa.</span> </li>
-
-
     </ol>
 
     <!-- <ul class="news-box">

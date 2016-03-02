@@ -4,6 +4,7 @@
     <title>@yield('title', 'Jardin infantil Papelucho')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--{!!Html::style('css/bootstrap.min.css')!!}-->
     {!!Html::style('css/style.css')!!}
     {!!Html::style('css/normalize.css')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
@@ -60,8 +61,6 @@
     <div id="puzzle">
         {!!Html::image('images/puzzle.png', 'Puzzle')!!}
     </div>
-    <h1 id="page-title">@yield('page-title')</h1>
-
     <article>
         @yield('article')
     </article>

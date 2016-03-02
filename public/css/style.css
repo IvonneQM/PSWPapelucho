@@ -45,6 +45,11 @@ footer, header{
     width:100%;
 }
 
+h2{
+    font-weight: lighter;
+    margin-left: 20px;
+}
+
 h3{
     font-size: 17px;
     font-weight:bold;
@@ -109,10 +114,10 @@ ul{
     padding:0;
 }
 
-.accordion div.open i.fa-chevron-up{
+.accordion div.open i.fa-chevron-down{
     transform: rotate(180deg);
-
 }
+
 
 .accordion div i{
     -webkit-transition: all 0.4s ease;
@@ -154,7 +159,6 @@ ul{
     display: none;
     text-align: justify;
 }
-
 
 .content, .news-box, .accordion{
     margin:25px;
@@ -211,26 +215,11 @@ ul{
     z-index: 1;
 }
 
-.dir-box li{
-    border-top: 2px solid #F7EC3F;
-    border-bottom: 2px solid #F7EC3F;
-    display: inline-block;
-    margin: 20px 20px 20px 50px;
-    padding: 5px 0;
-    text-align: left;
-    width:40%;
-}
-
-.dir-box li:last-child{
-    float:right;
-    margin: 20px 50px 20px 0;
-}
-
-.dir-name{
+.cursive-title{
     display:block;
     font-family: 'LinotypeZapfino One', serif;
     text-align: center;
-    font-size: 32px;
+    font-size: 42px;
 }
 
 .footer-box{
@@ -303,6 +292,25 @@ ul{
     max-height:15px;
     max-width:15px;
     vertical-align: middle;
+}
+
+.two-borders-box li{
+    border-top: 2px solid #F7EC3F;
+    border-bottom: 2px solid #F7EC3F;
+    display: inline-block;
+    margin: 20px 20px 20px 50px;
+    padding: 5px 0;
+    text-align: left;
+    width:40%;
+}
+
+.two-borders-box li:last-child{
+    float:right;
+    margin: 20px 50px 20px 0;
+}
+
+.two-borders-box li p{
+    margin: 0 0 20px 0;
 }
 
 #copyright{
@@ -394,23 +402,26 @@ ul{
     width:100px;
 }
 
-#title, #title-las-colonias{
+#title, #title-las-colonias, #title-mi-jardin{
     border-radius: 0.3em 0.3em 0.3em 0;
     font-size: 40px;
     font-weight:inherit;
     font-family: 'Love Ya Like A Sister', cursive;
     margin: -45px 0 0 -1px;
-    width: 220px;
+    max-width: 220px;
 }
 
-#title, #news-section-title, #title-las-colonias{
+#title, #news-section-title, #title-las-colonias, #title-mi-jardin{
     background: #00A04A;
     color: white;
     padding-left:5px;
 }
 
+#title-mi-jardin{
+    max-width:160px;
+}
 #title-las-colonias{
-    width: 425px !important;
+    max-width: 425px !important;
 }
 
 #zona-apoderados {
@@ -422,7 +433,10 @@ ul{
     z-index:2;
 }
 
-
+/*BOOTSTRAP*/
+.form-control{
+    font-size:40px;
+}
 
 @media screen and (max-width:960px ) {
 
@@ -455,22 +469,7 @@ ul{
         text-align: justify;
     }
 
-    .dir-box li{
-        border-top: 2px solid #F7EC3F;
-        border-bottom: 2px solid #F7EC3F;
-        display: inline-block;
-        margin: 20px 20px 20px 50px;
-        padding: 5px 0;
-        text-align: left;
-        width:40%;
-    }
-
-    .dir-box li:last-child{
-        float:right;
-        margin: 20px 50px 20px 0;
-    }
-
-    .dir-name{
+    .cursive-title{
         display:block;
         font-family: 'LinotypeZapfino One', sans-serif;
         text-align: center;
@@ -491,6 +490,21 @@ ul{
     .news-first-line, .news-second-line, .news-date { color: #3952A3; }
 
     .news-title{font-weight:bold;}
+
+    .two-borders-box li{
+        border-top: 2px solid #F7EC3F;
+        border-bottom: 2px solid #F7EC3F;
+        display: inline-block;
+        margin: 20px 20px 20px 50px;
+        padding: 5px 0;
+        text-align: left;
+        width:40%;
+    }
+
+    .two-borders-box li:last-child{
+        float:right;
+        margin: 20px 50px 20px 0;
+    }
 
     #cuerdas{ display: none; }
 
@@ -550,19 +564,6 @@ ul{
 
     .cycle-slideshow{ display: none; }
 
-    .dir-box li{
-        display: block;
-        margin: 0 auto 20px;
-        padding: 5px 0;
-        text-align: center;
-        width:80%;
-    }
-
-    .dir-box li:last-child{
-        float:none;
-        margin: 0 auto 20px;
-    }
-
     .footer-box{
         background:white;
         border: 3px solid #00A04A;
@@ -571,6 +572,19 @@ ul{
         margin: 0 auto 10px;
         padding:10px;
         width:84%;
+    }
+
+    .two-borders-box li{
+        display: block;
+        margin: 0 auto 20px;
+        padding: 5px 0;
+        text-align: center;
+        width:80%;
+    }
+
+    .two-borders-box li:last-child{
+        float:none;
+        margin: 0 auto 20px;
     }
 
     #img-isologo{
