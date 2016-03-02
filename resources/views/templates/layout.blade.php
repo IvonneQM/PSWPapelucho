@@ -38,7 +38,7 @@
 
     <div id="login-form">
         {!! Form::open() !!}
-        {!! Form::text('name', null , array('placeholder' => 'Nombre', 'class' => 'text-field-apoderados')) !!}
+        {!! Form::text('rut', null , array('placeholder' => 'Rut', 'class' => 'text-field-apoderados')) !!}
         {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
         {!! Form::submit('Entrar', ['class' => 'button-apoderados'])!!}
         {!! Form::close() !!}
