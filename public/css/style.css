@@ -233,11 +233,15 @@ ul{
     background:white;
     border: 3px solid #00A04A;
     border-radius: 1em;
-    display:inline-block;
-    margin: 2%;
+    display:block;
+    margin:2%;
     padding:10px;
     width:41%;
 }
+
+.footer-box:first-of-type{float:left;}
+.footer-box:nth-of-type(2){float:right;}
+
 
 .img-slide{
     width:100%;
@@ -354,9 +358,16 @@ ul{
     margin: 0 0 20px 0;
 }
 
+#bottom-footer-box{
+    width:100%;
+    height:123px;
+}
+
 #copyright{
+    word-break: keep-all;
     color: white;
-    margin-top: 30px;
+    display: block;
+    margin-top:30px;
     text-align: center;
 }
 
@@ -548,6 +559,10 @@ ul{
         margin: 20px 50px 20px 0;
     }
 
+    #bottom-footer-box{
+        height:100px;
+    }
+
     #cuerdas{ display: none; }
 
     #puzzle{ display: none; }
@@ -611,10 +626,16 @@ ul{
         border: 3px solid #00A04A;
         border-radius: 1em;
         display: block;
-        margin: 0 auto 10px;
+        margin: 10px auto;
         padding:10px;
         width:84%;
     }
+
+    .footer-box:first-of-type,  .footer-box:nth-of-type(2){
+        display: block;
+        float:none;
+    }
+
 
     .two-borders-box li{
         display: block;
@@ -627,6 +648,11 @@ ul{
     .two-borders-box li:last-child{
         float:none;
         margin: 0 auto 20px;
+    }
+
+    #bottom-footer-box{
+        width: 100%;
+        height:auto;
     }
 
     #img-isologo{

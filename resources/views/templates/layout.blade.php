@@ -82,6 +82,7 @@
 </aside>
 {!!Html::image('images/fondo-arco-azul.png', 'Arco Azul', array('id' => 'img-arco-azul'))!!}
 <footer>
+    <div id="bottom-footer-box">
     <div class="footer-box">
     <h3>Blumell</h3>
     <p>
@@ -98,8 +99,10 @@
         <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!} info@jardinpapelucho.cl</span>
     </p>
     </div>
+    </div>
+
     <p id="copyright">
-        &copy; 2016 <a href="https://www.jardinpapelucho.cl">Jardín Papelucho</a>, Todos los derechos reservados.
+        &copy;2016 <a href="https://www.jardinpapelucho.cl">Jardín Papelucho</a>, Todos los derechos reservados.
         <a href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a>
     </p>
 
