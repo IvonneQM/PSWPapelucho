@@ -6,7 +6,8 @@
         </ul>
     </div>
  <div id="login-form">
-        {!! Form::open() !!}
+     <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         {!! Form::text('username', null , array('placeholder' => 'Rut', 'class' => 'text-field-apoderados')) !!}
         {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
         {!! Form::submit('Entrar', ['class' => 'button'])!!}
