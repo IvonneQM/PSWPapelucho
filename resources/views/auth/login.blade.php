@@ -1,6 +1,15 @@
-@extends('app')
+@extends('templates.layout')
+@section('login')
+ <div id="login-form">
+        {!! Form::open() !!}
+        {!! Form::text('username', null , array('placeholder' => 'Rut', 'class' => 'text-field-apoderados')) !!}
+        {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
+        {!! Form::submit('Entrar', ['class' => 'button-apoderados'])!!}
+        {!! Form::close() !!}
+ </div>
+@endsection
 
-@section('content')
+{{--@section('content')
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -24,7 +33,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">E-Mail Address</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								<input type="text" class="form-control" name="username" value="{{ old('email') }}">
 							</div>
 						</div>
 
@@ -59,3 +68,4 @@
 	</div>
 </div>
 @endsection
+--}}

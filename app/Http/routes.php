@@ -11,9 +11,9 @@
 |
 */
 
-//Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index');
 
-//Route::get('home', 'HomeController@index');
+Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -29,4 +29,5 @@ Route::get('/', 'PagesControllers\HomeControllers@index');
 Route::get('mi-jardin', 'PagesControllers\MiJardinController@index');
 Route::get('papelucho-las-colonias', 'PagesControllers\LasColoniasController@index');
 Route::get('papelucho-blumell', 'PagesControllers\BlumellController@index');
+
 
