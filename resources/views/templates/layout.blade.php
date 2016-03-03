@@ -4,7 +4,7 @@
     <title>@yield('title', 'Jardin infantil Papelucho')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-{{--{!!Html::style('css/bootstrap.min.css')!!}-->--}}
+    {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/style.css')!!}
     {!!Html::style('css/normalize.css')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
@@ -40,17 +40,18 @@
         {!! Form::open() !!}
         {!! Form::text('rut', null , array('placeholder' => 'Rut', 'class' => 'text-field-apoderados')) !!}
         {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
-        {!! Form::submit('Entrar', ['class' => 'button-apoderados'])!!}
+        {!! Form::submit('Entrar', ['class' => 'button'])!!}
         {!! Form::close() !!}
     </div>
 <nav id="sidebar">
     <ul>
-        <li>{!!HTML::linkAction('PagesControllers\HomeControllers@index', 'Home')!!}</li>
-        <li>{!!HTML::linkAction('PagesControllers\MiJardinController@index', 'Mi jardín')!!}</li>
-        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\LasColoniasController@index', 'Papelucho',array(), array('class' => 'url-menu'))!!}<br>
-        {!!HTML::linkAction('PagesControllers\LasColoniasController@index', 'Las Colonias',array(), array('class' => 'url-menu'))!!}</li>
-        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\BlumellController@index', 'Papelucho',array(), array('class' => 'url-menu'))!!}<br>
-        {!!HTML::linkAction('PagesControllers\BlumellController@index', 'Blumell',array(), array('class' => 'url-menu'))!!}</li>
+        <li>{!!HTML::linkAction('PagesControllers\HomeControllers@index', 'Home',array(), array('class' => 'url-menu'))!!}</li>
+        <li>{!!HTML::linkAction('PagesControllers\MiJardinController@index', 'Mi jardín',array(), array('class' => 'url-menu'))!!}</li>
+
+
+        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\LasColoniasController@index', 'Papelucho Las Colonias',array(), array('class' => 'url-menu'))!!}</li>
+
+        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\BlumellController@index', 'Papelucho Blumell',array(), array('class' => 'url-menu'))!!}</li>
     </ul>
 </nav>
 
@@ -103,7 +104,7 @@
 
     <p id="copyright">
         &copy;2016 <a href="https://www.jardinpapelucho.cl">Jardín Papelucho</a>, Todos los derechos reservados.
-        <a href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a>
+        <span id="computec-logo"><a href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a></span>
     </p>
 
 </footer>

@@ -4,7 +4,7 @@
 @stop
 
 @section('article')
-s
+
 
     <h1 class= "title" id="title-blumell">Papelucho Blumell</h1>
     <!--<p class="content">
@@ -38,7 +38,7 @@ s
     <div id="cuerdas">
         {!!Html::image('images/cuerdas.png')!!}
     </div>
-    <h3 id="news-section-title"></h3>
+    <h3 class="side-section-title"></h3>
 
 
 

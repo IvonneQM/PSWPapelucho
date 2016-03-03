@@ -36,7 +36,7 @@
 
 @section('aside')
     <div id="cuerdas">{!!Html::image('images/cuerdas.png')!!}</div>
-    <h3 id="news-section-title">Objetivos Papelucho</h3>
+    <h3 class="side-section-title">Objetivos Papelucho</h3>
 
     <ol class="objetives-box">
         <li><span class="objetives-item">Impartir una enseñanza de calidad basada en la idoneidad de los profesionales, fundamentada en los

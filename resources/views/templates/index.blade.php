@@ -38,7 +38,7 @@
     <div id="cuerdas">
         {!!Html::image('images/cuerdas.png')!!}
     </div>
-    <h3 id="news-section-title">Noticias</h3>
+    <h3 id="news-section-title" class="side-section-title">Noticias</h3>
     <ul class="news-box">
         <li >
     <p class="news-first-line">

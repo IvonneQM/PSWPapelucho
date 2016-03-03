@@ -133,31 +133,31 @@
     <div id="cuerdas">
         {!!Html::image('images/cuerdas.png')!!}
     </div>
-    <h3 id="news-section-title">Contáctenos</h3>
+    <h3 class="side-section-title">Contáctenos</h3>
 
-    {!! Form::open() !!}
+    {!! Form::open(array('url' => url('foo/bar'), 'class'=>'contact-form')) !!}
     <div class="form-group col-md-4">
-        {!! Form::label('name', 'Nombre:') !!}
+    {{--{!! Form::label('name', 'Nombre:') !!}--}}
         {!! Form::text('name', null , array('placeholder' => 'Nombre', 'class' => 'form-control')) !!}
     </div>
 
     <div class="form-group col-md-4">
-        {!! Form::label('email', 'Email:') !!}
+    {{--{!! Form::label('email', 'Email:') !!}--}}
         {!! Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control')) !!}
     </div>
 
     <div class="form-group col-md-4">
-        {!! Form::label('phone', 'Teléfono:') !!}
+    {{--}{!! Form::label('phone', 'Teléfono:') !!}--}}
         {!! Form::text('phone', null, array('placeholder' => 'Teléfono', 'class' => 'form-control')) !!}
     </div>
 
     <div class="form-group col-md-4">
-        {!! Form::label('message', 'Mensaje:') !!}
+       {{-- {!! Form::label('message', 'Mensaje:') !!}--}}
         {!! Form::textarea('message', null, array('placeholder' => 'Mensaje', 'class' => 'form-control')) !!}
     </div>
 
     <div class="form-group col-md-4">
-        {!! Form::submit('Enviar', ['class' => 'form-control'])!!}
+        {!! Form::submit('Enviar', ['class' => 'button', 'id'=>'contact-button'])!!}
     </div>
 
     {!! Form::close() !!}
