@@ -36,18 +36,9 @@
         </ul>
     </div>
 
-<<<<<<< HEAD
     @yield('login')
+    
 
-=======
-    <div id="login-form">
-        {!! Form::open() !!}
-        {!! Form::text('rut', null , array('placeholder' => 'Rut', 'class' => 'text-field-apoderados')) !!}
-        {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
-        {!! Form::submit('Entrar', ['class' => 'button'])!!}
-        {!! Form::close() !!}
-    </div>
->>>>>>> origin/master
 <nav id="sidebar">
     <ul>
         <li>{!!HTML::linkAction('PagesControllers\HomeControllers@index', 'Home',array(), array('class' => 'url-menu'))!!}</li>
