@@ -1,13 +1,18 @@
-@extends('templates.layout')
-@section('login')
+
+
+  <div id="zona-apoderados">
+        <ul >
+            <li id="li-zona-apoderados"><a href="#" id="show-login">Zona Apoderados</a></li>
+        </ul>
+    </div>
  <div id="login-form">
         {!! Form::open() !!}
         {!! Form::text('username', null , array('placeholder' => 'Rut', 'class' => 'text-field-apoderados')) !!}
         {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
-        {!! Form::submit('Entrar', ['class' => 'button-apoderados'])!!}
+        {!! Form::submit('Entrar', ['class' => 'button'])!!}
         {!! Form::close() !!}
  </div>
-@endsection
+
 
 {{--@section('content')
 <div class="container-fluid">

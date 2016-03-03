@@ -4,6 +4,7 @@
     <title>@yield('title', 'Jardin infantil Papelucho')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/style.css')!!}
     {!!Html::style('css/normalize.css')!!}
@@ -30,14 +31,10 @@
     </div>
 
     {!!Html::image('images/fondo-arco-verde.png', 'Arco Verde', array('id' => 'img-arco-verde'))!!}
-    <div id="zona-apoderados">
-        <ul >
-            <li id="li-zona-apoderados"><a href="#" id="show-login">Zona Apoderados</a></li>
-        </ul>
-    </div>
 
-    @yield('login')
-    
+
+    @include('auth.login')
+
 
 <nav id="sidebar">
     <ul>
