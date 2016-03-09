@@ -25,7 +25,7 @@ Route::controllers([
 });*/
 
 Route::get('/', 'HomeController@index');
-Route::get('index', 'HomeController@index');
+//Route::get('index', 'HomeController@index');
 Route::get('mi-jardin', 'MiJardinController@index');
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
 Route::get('papelucho-blumell', 'BlumellController@index');
