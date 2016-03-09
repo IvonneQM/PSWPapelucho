@@ -24,9 +24,10 @@ Route::controllers([
 	return view('templates.template');
 });*/
 
-Route::get('/', 'PagesControllers\HomeControllers@index');
-Route::get('mi-jardin', 'PagesControllers\MiJardinController@index');
-Route::get('papelucho-las-colonias', 'PagesControllers\LasColoniasController@index');
-Route::get('papelucho-blumell', 'PagesControllers\BlumellController@index');
+Route::get('/', 'HomeController@index');
+Route::get('index', 'HomeController@index');
+Route::get('mi-jardin', 'MiJardinController@index');
+Route::get('papelucho-las-colonias', 'LasColoniasController@index');
+Route::get('papelucho-blumell', 'BlumellController@index');
 
 

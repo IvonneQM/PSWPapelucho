@@ -1,4 +1,4 @@
-@extends('templates.layout')
+@extends('layout')
 @section('meta')
     {!!Html::script('js/collapse.js')!!}
 @stop

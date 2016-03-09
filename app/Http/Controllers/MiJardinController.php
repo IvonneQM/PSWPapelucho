@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers\PagesControllers;
+<?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class BlumellController extends Controller {
+class MiJardinController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +14,7 @@ class BlumellController extends Controller {
 	 */
 	public function index()
 	{
-		return view('templates.papelucho-blumell');
+		return view('mi-jardin');
 	}
 
 	/**

@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\PagesControllers;
+<?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -14,7 +14,7 @@ class LasColoniasController extends Controller {
 	 */
 	public function index()
 	{
-		return view('templates.papelucho-las-colonias');
+		return view('papelucho-las-colonias');
 	}
 
 	/**

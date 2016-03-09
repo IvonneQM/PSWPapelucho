@@ -1,4 +1,4 @@
-@extends('templates.layout')
+@extends('layout')
 @section('page-title')
     Inicio
 @stop

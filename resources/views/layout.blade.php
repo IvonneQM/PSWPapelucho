@@ -38,13 +38,13 @@
 
 <nav id="sidebar">
     <ul>
-        <li>{!!HTML::linkAction('PagesControllers\HomeControllers@index', 'Inicio',array(), array('class' => 'url-menu'))!!}</li>
-        <li>{!!HTML::linkAction('PagesControllers\MiJardinController@index', 'Mi jardín',array(), array('class' => 'url-menu'))!!}</li>
+        <li>{!!HTML::linkAction('HomeController@index', 'Inicio',array(), array('class' => 'url-menu'))!!}</li>
+        <li>{!!HTML::linkAction('MiJardinController@index', 'Mi jardín',array(), array('class' => 'url-menu'))!!}</li>
 
 
-        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\LasColoniasController@index', 'Papelucho Las Colonias',array(), array('class' => 'url-menu'))!!}</li>
+        <li class="li-two-lines">{!!HTML::linkAction('LasColoniasController@index', 'Papelucho Las Colonias',array(), array('class' => 'url-menu'))!!}</li>
 
-        <li class="li-two-lines">{!!HTML::linkAction('PagesControllers\BlumellController@index', 'Papelucho Blumell',array(), array('class' => 'url-menu'))!!}</li>
+        <li class="li-two-lines">{!!HTML::linkAction('BlumellController@index', 'Papelucho Blumell',array(), array('class' => 'url-menu'))!!}</li>
     </ul>
 </nav>
 
