@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\CmsControllers;
+namespace App\Http\Controllers\Cms\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CmsInicioController extends Controller
+class InicioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class CmsInicioController extends Controller
      */
     public function index()
     {
-        return view('cms.cms-inicio');
+        return view('cms.admin.inicio');
     }
 
     /**

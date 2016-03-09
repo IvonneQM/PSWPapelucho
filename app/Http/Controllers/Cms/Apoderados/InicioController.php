@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\CmsAdminControllers;
+namespace App\Http\Controllers\Cms\Apoderados;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CmsAdminInicioController extends Controller
+class InicioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class CmsAdminInicioController extends Controller
      */
     public function index()
     {
-        return view('cms-admin.cms-admin-inicio');
+        return view('cms.apoderados.inicio');
     }
 
     /**

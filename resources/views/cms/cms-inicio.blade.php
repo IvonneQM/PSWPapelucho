@@ -1,1 +1,0 @@
-@extends('cms.cms-layout')

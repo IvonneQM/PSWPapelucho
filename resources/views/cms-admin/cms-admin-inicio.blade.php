@@ -1,1 +1,0 @@
-@extends('cms-admin.cms-admin-layout')
