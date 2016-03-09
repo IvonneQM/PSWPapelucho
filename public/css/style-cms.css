@@ -1,0 +1,98 @@
+a, a:hover, a:active, a:link, a:visited{
+    color: white;
+    text-decoration:none;
+}
+
+aside{
+    background: lightblue;
+    height:800px;
+    vertical-align: top;
+}
+
+aside, section{
+    display: inline-block;
+    margin: 0;
+    padding:0;
+}
+
+
+body{
+    color: #2F2E7E;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+footer{
+    background: #3952A3;
+}
+
+footer, header{
+    height:80px;
+}
+
+header{
+    background: #60BB46;
+}
+
+i{
+    color:white;
+    padding: 5px;
+}
+
+nav {
+    background: rgba(96,187,70,0.8);
+    color: #3952A3;
+    position: fixed;
+    width: 100%;
+}
+
+nav ul{
+    float:right;
+    margin: 26px 20px;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+
+
+section{
+    background: lightgoldenrodyellow;
+    height:800px;
+    width:65%;
+    margin: 0;
+    vertical-align: top;
+}
+#aside-pdf{
+    background: lightgrey;
+    width: 14%;
+}
+
+#icon-font{
+    font-size: 18px;
+}
+
+
+#img-isologo, #img-logotipo {
+    display: inline-block;
+    height:60px;
+    margin: 10px 0 10px 20px;
+}
+
+#img-isologo-computecsos{
+    margin-left: 20px;
+    vertical-align: middle;
+    width:40px;
+}
+
+#img-menu{
+    display:none;
+    float:right;
+    margin: 25px 20px;
+    height:30px;
+}
+
+#parvulos{
+    width: 20%;
+}

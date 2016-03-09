@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
     {!!Html::style('css/bootstrap.min.css')!!}
-    {!!Html::style('css/style.css')!!}
     {!!Html::style('css/normalize.css')!!}
+    {!!Html::style('css/style.css')!!}
+
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
     {!!Html::style('//allfont.es/allfont.css?fonts=linotypezapfino-one')!!}

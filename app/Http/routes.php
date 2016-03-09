@@ -31,3 +31,6 @@ Route::get('papelucho-las-colonias', 'LasColoniasController@index');
 Route::get('papelucho-blumell', 'BlumellController@index');
 
 
+Route::get('inicio', 'CmsControllers\CmsInicioController@index');
+
+
