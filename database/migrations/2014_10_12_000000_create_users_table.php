@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration {
 			$table->string('rut')->unique();
 			$table->string('full_name');
 			$table->string('password', 60);
-            $table->integer('type');
+            $table->enum('role',['apoderado','admin']);
 			$table->rememberToken();
 			$table->timestamps();
 		});
