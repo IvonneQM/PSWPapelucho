@@ -32,5 +32,5 @@ Route::get('papelucho-blumell', 'BlumellController@index');
 
 
 Route::get('inicio', 'CmsControllers\CmsInicioController@index');
-
+Route::get('admin-inicio', 'CmsAdminControllers\CmsAdminInicioController@index');
 

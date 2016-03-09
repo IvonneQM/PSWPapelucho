@@ -23,27 +23,25 @@
         <a href="#" >{!!Html::image('images/isologo.png', 'Isologo', array('id' => 'img-isologo'))!!}</a>
         <a href="#" >{!!Html::image('images/logotipo.png', 'Logotipo', array('id' => 'img-logotipo'))!!}</a>
         <a href="#">{!!Html::image('images/menu-icon.png', 'Icono Menu', array('id' => 'img-menu'))!!}</a>
-      <ul>
-          <li> Inger Garrido</li>
-          <li>| {!!HTML::linkAction('HomeController@index', 'Cerrar Sesión',array(), array('class' => 'url-menu'))!!}<i id='icon-font' class="fa fa-sign-out"></i></li>
-      </ul>
+        <ul>
+            <li> Inger Garrido</li>
+            <li>| {!!HTML::linkAction('HomeController@index', 'Cerrar Sesión',array(), array('class' => 'url-menu'))!!}<i id='icon-font' class="fa fa-sign-out"></i></li>
+        </ul>
     </nav>
 
 </header>
 <main>
 
-<aside id="aside1">
-    <h2>Parvulos</h2>
-    <p>Catalina Quinteros</p>
-    <p>Cristian Garrido</p>
-    @yield('aside')
-</aside><section>
-<article>
-    <h2>Informe al hogar</h2>
-        @yield('article')
-</article>
-</section><aside id="aside2">
-    <h2>Boletines semanales</h2>
+    <aside id="aside1">
+
+        @yield('aside')
+    </aside><section>
+        <article>
+
+            @yield('article')
+        </article>
+    </section><aside id="aside2">
+
         @yield('aside')
     </aside>
 </main>

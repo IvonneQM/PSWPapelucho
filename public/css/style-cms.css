@@ -4,15 +4,13 @@ a, a:hover, a:active, a:link, a:visited{
 }
 
 aside{
-    background: lightblue;
     height:800px;
     vertical-align: top;
 }
 
 aside, section{
     display: inline-block;
-    margin: 0;
-    padding:0;
+
 }
 
 
@@ -28,6 +26,13 @@ footer{
 
 footer, header{
     height:80px;
+}
+
+h2{
+    color:#00A04A;
+    font-size: 26px;
+    margin-left: 20px;
+    text-decoration:underline;
 }
 
 header{
@@ -61,13 +66,21 @@ section{
     background: lightgoldenrodyellow;
     height:800px;
     width:65%;
-    margin: 0;
     vertical-align: top;
 }
-#aside-pdf{
-    background: lightgrey;
-    width: 14%;
+
+
+#aside1{
+    border-right: 1px solid #939597 ;
+    width: 20%;
 }
+
+#aside2{
+    background: lightgrey;
+    width: 15%;
+}
+
+#copyright{}
 
 #icon-font{
     font-size: 18px;
@@ -93,6 +106,3 @@ section{
     height:30px;
 }
 
-#parvulos{
-    width: 20%;
-}
