@@ -33,12 +33,12 @@
     {!!Html::image('images/fondo-arco-verde.png', 'Arco Verde', array('id' => 'img-arco-verde'))!!}
 
 
-    @include('auth.login')
+   @include('auth.login')
 
 
 <nav id="sidebar">
     <ul>
-        <li>{!!HTML::linkAction('PagesControllers\HomeControllers@index', 'Home',array(), array('class' => 'url-menu'))!!}</li>
+        <li>{!!HTML::linkAction('PagesControllers\HomeControllers@index', 'Inicio',array(), array('class' => 'url-menu'))!!}</li>
         <li>{!!HTML::linkAction('PagesControllers\MiJardinController@index', 'Mi jardín',array(), array('class' => 'url-menu'))!!}</li>
 
 
