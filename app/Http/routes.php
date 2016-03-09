@@ -34,3 +34,7 @@ Route::get('papelucho-blumell', 'BlumellController@index');
 Route::get('inicio', 'Apoderados\InicioController@index');
 Route::get('admin-inicio', 'Cms\Admin\InicioController@index');
 
+Route::group(['middleware' => 'verified'], function(){
+    
+})
+
