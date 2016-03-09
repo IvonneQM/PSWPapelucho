@@ -6,6 +6,11 @@ use Closure;
 
 class Role
 {
+    protected $hierarchy = [
+        'admin' => 1,
+        'apoderado' => 0,
+    ];
+
     /**
      * Handle an incoming request.
      *
@@ -15,6 +20,11 @@ class Role
      */
     public function handle($request, Closure $next, $role)
     {
+
+        $user = auth()->user();
+        if($this->hierarchy[$user->role] < $this->hierarchy[$role]){
+            abort(404);
+        }
         return $next($request);
     }
 }

@@ -31,10 +31,15 @@ Route::get('papelucho-las-colonias', 'LasColoniasController@index');
 Route::get('papelucho-blumell', 'BlumellController@index');
 
 
-Route::get('inicio', 'Apoderados\InicioController@index');
-Route::get('admin-inicio', 'Cms\Admin\InicioController@index');
+Route::group(['middleware' => 'role:admin'], function(){
+    Route::get('admin-inicio', function (){
+        return view('Cms/Admin/InicioController@index');
+    });
+});
 
-Route::group(['middleware' => 'verified'], function(){
-    
-})
+Route::group(['middleware' => 'role:apoderado'], function(){
+    Route::get('inicio', function (){
+        return view('Cms/Apoderados/InicioController@index');
+    });
+});
 

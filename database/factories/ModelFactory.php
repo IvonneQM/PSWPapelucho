@@ -2,9 +2,9 @@
 
 $factory->define(App\User::class, function ($faker){
     return[
-        'rut' => $faker->randomNumber,
+        'rut' => $faker->unique->randomNumber,
         'full_name' => $faker->name,
-        'password' => bcrypt(srt_random(10)),
-        'role' => $faker->randomElement(['apoderados','admin']),
+        'password' => bcrypt(str_random(10)),
+        'role' => $faker->randomElement(['apoderado','admin']),
     ];
 });

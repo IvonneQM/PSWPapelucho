@@ -1,12 +1,12 @@
 <?php
 use Illuminate\Database\Seeder;
 
-class ApoderadosTableSeeder extends Seeder{
+class UserTableSeeder extends Seeder{
 
     public function run()
     {
         \DB::table('users')->insert(array(
-            'rut' => '17092769-9',
+            'rut' => '1709',
             'full_name' => 'Inger Garrido',
             'password' => bcrypt('inger'),
             'role' => 'admin',
