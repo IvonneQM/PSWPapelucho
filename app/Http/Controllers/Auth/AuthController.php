@@ -1,10 +1,10 @@
 <?php namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\Registrar;
 use App\Http\Controllers\Auth\AuthenticatesAndRegisterUsers;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Validator;
+use App\User;
 
 ;
 
