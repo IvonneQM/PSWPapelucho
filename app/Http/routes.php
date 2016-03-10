@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 
 Route::controllers([
@@ -28,16 +28,14 @@ Route::get('mi-jardin', 'MiJardinController@index');
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
 Route::get('papelucho-blumell', 'BlumellController@index');
 //Route::get('admin-inicio', 'Cms\Admin\InicioController@index');
+//Route::get('apoderados', 'Cms\Apoderados\InicioController@index');
+
+Route::get('admin-inicio',['middleware'=>'role:admin', function(){
+    return view('Cms\Admin\InicioController@index');
+}]);
 
 
-Route::group(['middleware' => 'role:admin'], function(){
-    Route::get('admin-inicio', function (){
-        return view('cms/admin/inicio');
-    });
-});
 
-Route::group(['middleware' => 'role:apoderado'], function(){
-    Route::get('inicio', function (){
-        return view('Cms/Apoderados/InicioController@index');
-    });
-});
+
+
+

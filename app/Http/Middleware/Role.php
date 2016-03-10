@@ -20,11 +20,12 @@ class Role
      */
     public function handle($request, Closure $next, $role)
     {
+        if($role=="Admin")
 
-        $user = auth()->user();
-        if($this->hierarchy[$user->role] < $this->hierarchy[$role]){
-            abort(404);
-        }
-        return $next($request);
+            return $next($request);
+
+        else
+
+            return redirect()->guest(route('mi-jardin'));
     }
 }

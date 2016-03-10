@@ -10,6 +10,9 @@ use App\Http\Controllers\Controller;
 class InicioController extends Controller
 {
 
+    public function redirectPath(){
+        return ('www.google.cl');
+    }
     /**
      * Display a listing of the resource.
      *
