@@ -11,18 +11,16 @@
 |
 */
 
-//Route::get('/', 'WelcomeController@index');
-//Route::get('inicio', 'PagesControllers\HomeControllers@index');
+Route::get('/', function () {
+    return view('welcome');
+});
+
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
 
 ]);
-
-/*Route::get('papelucho', function (){
-	return view('templates.template');
-});*/
 
 Route::get('/', 'HomeController@index');
 //Route::get('index', 'HomeController@index');
@@ -43,4 +41,3 @@ Route::group(['middleware' => 'role:apoderado'], function(){
         return view('Cms/Apoderados/InicioController@index');
     });
 });
-
