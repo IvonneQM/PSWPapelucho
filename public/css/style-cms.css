@@ -44,23 +44,21 @@ i{
     padding: 5px;
 }
 
-nav {
+#sidebar {
     background: rgba(96,187,70,0.8);
     color: #3952A3;
     position: fixed;
     width: 100%;
 }
 
-nav ul{
+#sidebar ul{
     float:right;
     margin: 26px 20px;
 }
 
-nav ul li{
+#sidebar ul li{
     display: inline-block;
 }
-
-
 
 section{
     background: lightgoldenrodyellow;

@@ -11,7 +11,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 class AuthController extends Controller
 {
     protected $rut = 'rut';
-    //protected $username = 'rut';
+    protected $username = 'rut';
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller

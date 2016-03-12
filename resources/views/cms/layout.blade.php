@@ -28,12 +28,10 @@
             <li> <a href="{{ route('logout') }}">Cerrar Sesión <i id='icon-font' class="fa fa-sign-out"></i></a></li>
         </ul>
     </nav>
-
 </header>
 <main>
 
     <aside id="aside1">
-
         @yield('aside')
     </aside><section>
         <article>
