@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 class AuthController extends Controller
 {
     protected $rut = 'rut';
+    //protected $username = 'rut';
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -77,13 +78,13 @@ class AuthController extends Controller
 
     public function redirectPath()
     {
-        if(\Auth::user()->role === 'admin')
+        if(\Auth::user()->role == 'admin')
         {
-            return redirect('cms.admin.administrador');
+            return 'administrador';
         }
         else
         {
-            return redirect('cms.apoderados.apoderado');
+            return 'apoderado';
         }
     }
 
