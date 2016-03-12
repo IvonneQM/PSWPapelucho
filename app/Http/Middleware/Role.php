@@ -7,8 +7,8 @@ use Closure;
 class Role
 {
     protected $hierarchy = [
-        'admin' => 1,
-        'apoderado' => 0
+        'admin' => 2,
+        'apoderado' => 1
     ];
 
     /**
@@ -20,12 +20,10 @@ class Role
      */
     public function handle($request, Closure $next, $role)
     {
-        if($role=="Admin")
-
+        $user = auth()->user();
+            if ($this->hierarchy[$user->role] < $this->hierarchy[$role]) {
+                abort(404);
+            }
             return $next($request);
-
-        else
-
-            return redirect()->guest(route('mi-jardin'));
     }
 }

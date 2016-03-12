@@ -24,8 +24,8 @@
         <a href="#" >{!!Html::image('images/logotipo.png', 'Logotipo', array('id' => 'img-logotipo'))!!}</a>
         <a href="#">{!!Html::image('images/menu-icon.png', 'Icono Menu', array('id' => 'img-menu'))!!}</a>
         <ul>
-            <li> Inger Garrido</li>
-            <li>| {!!HTML::linkAction('HomeController@index', 'Cerrar Sesión',array(), array('class' => 'url-menu'))!!}<i id='icon-font' class="fa fa-sign-out"></i></li>
+            <li> Inger Garrido | </li>
+            <li> <a href="{{ route('logout') }}">Cerrar Sesión <i id='icon-font' class="fa fa-sign-out"></i></a></li>
         </ul>
     </nav>
 

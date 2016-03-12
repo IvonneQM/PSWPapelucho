@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'info@jardinpapelucho.cl', 'name' => 'Jardín Papelucho'],
 
     /*
     |--------------------------------------------------------------------------

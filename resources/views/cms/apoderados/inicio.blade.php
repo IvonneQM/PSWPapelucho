@@ -1,1 +1,0 @@
-@extends('cms.apoderados.layout')

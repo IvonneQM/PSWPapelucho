@@ -11,28 +11,69 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-
+Route::get('/',  [
+    'uses' => 'HomeController@index',
+    'as' => 'home'
 ]);
 
-Route::get('/', 'HomeController@index');
-//Route::get('index', 'HomeController@index');
+/*-------------------------------------------------------------------*/
+/*                       AUTENTICACIÓN LOGIN                         */
+/*-------------------------------------------------------------------*/
+
+Route::get('login',[
+   'uses'=>'Auth\AuthController@getLogin',
+    'as'=>'login'
+]);
+
+Route::post('login', 'Auth\AuthController@postLogin');
+
+Route::get('logout',[
+    'uses'=> 'Auth\AuthController@getLogout',
+    'as'=> 'logout'
+]);
+
+Route::get('register',[
+    'uses'=>'Auth\AuthController@getRegister',
+    'as'=>'register'
+]);
+
+Route::post('register', 'Auth\AuthController@postRegister');
+
+Route::get('confirmation/{token}',[
+    'uses'=>'Auth\AuthController@getConfirmation',
+    'as'=>'confirmation'
+]);
+
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+/*-------------------------------------------------------------------*/
+/*                              ROUTES                               */
+/*-------------------------------------------------------------------*/
+
 Route::get('mi-jardin', 'MiJardinController@index');
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
 Route::get('papelucho-blumell', 'BlumellController@index');
-//Route::get('admin-inicio', 'Cms\Admin\InicioController@index');
-//Route::get('apoderados', 'Cms\Apoderados\InicioController@index');
 
-Route::get('admin-inicio',['middleware'=>'role:admin', function(){
-    return view('Cms\Admin\InicioController@index');
-}]);
+/*-------------------------------------------------------------------*/
+/*                            MIDDLEWARES                            */
+/*-------------------------------------------------------------------*/
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::group(['middleware' => 'role:admin'], function(){
+        Route::get('administrador', function (){
+            return view('cms/admin/administrador');
+        });
+    });
+    Route::group(['middleware' => 'role:apoderado'], function(){
+        Route::get('apoderado', function (){
+            return view('cms/apoderados/apoderado');
+        });
+    });
+});
 
 
 
