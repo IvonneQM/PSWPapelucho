@@ -64,9 +64,7 @@ Route::get('galeria', function (){
 
 
 
-Route::get('file', 'FileController@index');
-Route::post('CreateFile','FileController@store');
-Route::resource('files','FileController');
+
 
 /*-------------------------------------------------------------------*/
 /*                            MIDDLEWARES                            */
@@ -79,12 +77,25 @@ Route::group(['middleware' => 'auth'], function(){
         });
 
         Route::get('administrador/apoderados',[
-            'uses'=>'Cms\Admin\ApoderadosController@index',
+            'uses'=>'Cms\Admin\ApoderadoController@index',
             'as'=>'apoderados'
         ]);
 
-        //Route::post('login', 'Auth\AuthController@postLogin');
+        Route::resource('creacion-apoderado','Cms\Admin\ApoderadoController');
 
+
+        /*Route::model('users','App\User');
+
+        Route::bind('users', function($value, $route){
+            return App\User::WhereSLug($value)->first();
+        });
+
+        Route::post('users/{users}/edit', 'UserController@edit');
+*/
+       /* Route::get('file', 'FileController@index');
+        Route::post('CreateFile','FileController@store');
+        Route::resource('files','FileController');
+*/
     });
     Route::group(['middleware' => 'role:apoderado'], function(){
         Route::get('apoderado', function (){

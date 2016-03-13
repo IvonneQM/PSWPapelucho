@@ -45,12 +45,10 @@
 </main>
 
 <footer>
-
     <p id="copyright">
         &copy;2016 <a href="https://www.jardinpapelucho.cl">Jardín Papelucho</a>, Todos los derechos reservados.
         <span id="computec-logo"><a href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a></span>
     </p>
-
 </footer>
 <script src="{{asset('js/functions.js')}}"></script>
 </body>

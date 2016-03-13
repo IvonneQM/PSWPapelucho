@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ApoderadosController extends Controller
+class ApoderadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,9 @@ class ApoderadosController extends Controller
      */
     public function index()
     {
-        return view('cms.admin.apoderados');
+
+        $apoderados = \App\User::paginate();
+        return view('cms.admin.apoderados.apoderados',compact('apoderados'));
     }
 
     /**
@@ -26,7 +28,7 @@ class ApoderadosController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -37,7 +39,14 @@ class ApoderadosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \App\User::create([
+
+                'rut' => $request['rut'],
+                'full_name' => $request['full_name'],
+                'email' => $request['email'],
+                'password' => bcrypt($request['password']),
+                'role' => $request['role']
+        ]);
     }
 
     /**

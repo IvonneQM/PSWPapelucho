@@ -16,7 +16,6 @@ a, a:hover, a:active, a:link, a:visited{
 }
 
 aside{
-    height:800px;
     vertical-align: top;
 }
 
@@ -30,9 +29,11 @@ body{
     color: #2F2E7E;
     font-family: 'Arial', sans-serif;
     font-size: 16px;
+    height:auto;
 }
 
 footer{
+    display: none;
     background: #3952A3;
 }
 
@@ -62,9 +63,10 @@ li{
 
 section{
     background: #FAF9F9;
-    height:800px;
-    width:65%;
+    border-left: 1px solid #939597 ;
+    border-right: 1px solid #939597 ;
     vertical-align: top;
+    width:65%;
 }
 .div-btn{
     padding-bottom: 10px;
@@ -124,6 +126,15 @@ section{
     box-shadow: inset 0 0 0 3px #C32026;
 }
 
+.pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: #0099CC;
+}
+
+.t-actions{
+    display:block;
+    min-width:99px !important;
+}
+
 .title{
     border-bottom: 1px solid #00A04A;
     border-radius: 0.3em;
@@ -135,12 +146,10 @@ section{
 }
 
 #aside1{
-    border-right: 1px solid #939597 ;
     width: 20%;
 }
 
 #aside2{
-    border-left: 1px solid #939597 ;
     width: 15%;
 }
 
@@ -212,10 +221,6 @@ section{
     background: rgba(0,0,0,0);
     color: #C32026;
     box-shadow: inset 0 0 0 3px #C32026;
-}
-
-#actions{
-    margin: auto;
 }
 
 #t-header-apoderados{

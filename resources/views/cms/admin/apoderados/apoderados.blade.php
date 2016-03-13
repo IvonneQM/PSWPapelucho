@@ -1,12 +1,18 @@
 @extends('cms.layout')
 
+@section('meta')
+    {!!Html::script('js/script2.js')!!}
+@endsection
+
 @section('aside1')
 
     @include('cms.admin.menu-lateral')
 
 @stop
 @section('general-content-1')
-    <div class="col-md-12 col-md-offset-0">
+    @include('cms.admin.apoderados.form')
+    @include('cms.admin.apoderados.modal')
+    <div class="col-md-8 col-md-offset-0">
 
         <div class="panel-heading"><h1 class="title">Apoderados</h1></div>
         <div class="col-md-12 div-btn">
@@ -14,29 +20,28 @@
         </div>
         <div class="panel-body">
             <table class="table table-striped">
+                <tbody>
                 <tr id="t-header-apoderados">
-                    <th>#</th>
                     <th>Rut</th>
                     <th>Nombre Completo</th>
-                    <th>Email</th>
-                    <th id="t-actions">Acciones</th>
+                    <th>Acciones</th>
                 </tr>
+                @foreach($apoderados as $apoderado)
                 <tr>
-                    <td>1</td>
-                    <td>17434170-2</td>
-                    <td>Yvonne Quinteros Molina</td>
-                    <td>ivonneqm@gmail.com</td>
+                    <td>{!! $apoderado->rut !!}</td>
+                    <td>{!! $apoderado->full_name !!}</td>
                     <td>
+                        <div class="t-actions">
                         <a href="#"><i class="fa fa-child"></i></a>
                         <a href="#"><i class="fa fa-pencil"></i></a>
                         <a href="#"><i class="fa fa-trash-o"></i></a>
-
-
-
-
+                            </div>
                     </td>
                 </tr>
+                    @endforeach
+                </tbody>
             </table>
+          {!! $apoderados -> render() !!}
         </div>
 
     </div>
