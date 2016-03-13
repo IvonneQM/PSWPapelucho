@@ -71,6 +71,21 @@ class AuthController extends Controller
         return $user;
     }
 
+    public function postRegister(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $this->create($request->all());
+
+        return response()->json();
+    }
+
     public function loginPath()
     {
         return route('home');

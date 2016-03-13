@@ -14,4 +14,6 @@ class ApoderadoController extends Controller
         return view('cms.apoderados.apoderado');
     }
 
+
+
 }

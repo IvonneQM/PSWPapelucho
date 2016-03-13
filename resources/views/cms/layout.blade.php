@@ -14,6 +14,10 @@
     {!!Html::style('//allfont.es/allfont.css?fonts=linotypezapfino-one')!!}
     {!!Html::style('css/font-awesome.min.css')!!}
     {!!Html::script('js/jquery-2.2.0.js')!!}
+    {!!Html::script('js/bootstrap.min.js')!!}
+    {!!Html::script('js/modal.js')!!}
+
+
     @yield('meta')
 </head>
 <body>

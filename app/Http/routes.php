@@ -81,6 +81,7 @@ Route::group(['middleware' => 'auth'], function(){
             'as'=>'apoderados'
         ]);
 
+
         Route::resource('creacion-apoderado','Cms\Admin\ApoderadoController');
 
 

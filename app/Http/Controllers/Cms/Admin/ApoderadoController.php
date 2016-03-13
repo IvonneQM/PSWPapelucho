@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Cms\Admin;
-
+use Validator;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -26,6 +27,14 @@ class ApoderadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|confirmed|min:6',
+        ]);
+    }
     public function create()
     {
 
@@ -39,7 +48,8 @@ class ApoderadoController extends Controller
      */
     public function store(Request $request)
     {
-        \App\User::create([
+
+       \App\User::create([
 
                 'rut' => $request['rut'],
                 'full_name' => $request['full_name'],
@@ -48,6 +58,8 @@ class ApoderadoController extends Controller
                 'role' => $request['role']
         ]);
     }
+
+
 
     /**
      * Display the specified resource.
