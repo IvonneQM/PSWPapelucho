@@ -16,7 +16,7 @@ class FilesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('url');
-            $table->string('size');
+            $table->integer('size');
             $table->timestamps();
         });
     }

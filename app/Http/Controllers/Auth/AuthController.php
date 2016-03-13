@@ -73,7 +73,7 @@ class AuthController extends Controller
 
     public function loginPath()
     {
-        return route('login');
+        return route('home');
     }
 
     public function redirectPath()
@@ -88,6 +88,23 @@ class AuthController extends Controller
         }
     }
 
+    /* Tiempo de bloqueo*/
+
+    protected function getLockoutErrorMessage($seconds)
+    {
+
+        $minutes = round($seconds/60);
+
+        return \Lang::has('auth.throttle')
+            ? \Lang::get('auth.throttle', ['minutes' => $minutes])
+            : 'Too many login attempts. Please try again in '.$minutes.' minutes.';
+    }
+
+    /* BLOQUEADO POR 5 MIN*/
+    protected function lockoutTime()
+    {
+        return property_exists($this, 'lockoutTime') ? $this->lockoutTime : 300;
+    }
 /*POR MEDIO DEL AUTHENTICATED CALL BACK PARA REGISTRAR LA
 ULTIMA HORA EN LA QUE SE CONECTO UN USUARIO
     protected function handleUserWasAuthenticated(Request $request, $throttles)

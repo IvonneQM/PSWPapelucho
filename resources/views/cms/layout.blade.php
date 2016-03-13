@@ -18,29 +18,29 @@
 </head>
 <body>
 <header>
-    <nav id="sidebar">
+    <div id="header-bar">
 
         <a href="#" >{!!Html::image('images/isologo.png', 'Isologo', array('id' => 'img-isologo'))!!}</a>
         <a href="#" >{!!Html::image('images/logotipo.png', 'Logotipo', array('id' => 'img-logotipo'))!!}</a>
         <a href="#">{!!Html::image('images/menu-icon.png', 'Icono Menu', array('id' => 'img-menu'))!!}</a>
         <ul>
-            <li> Inger Garrido | </li>
+            <li> {{(Auth::user()->full_name)}} | </li>
             <li> <a href="{{ route('logout') }}">Cerrar Sesión <i id='icon-font' class="fa fa-sign-out"></i></a></li>
         </ul>
-    </nav>
+    </div>
 </header>
 <main>
 
     <aside id="aside1">
-        @yield('aside')
+        @yield('aside1')
     </aside><section>
         <article>
 
-            @yield('article')
+            @yield('general-content-1')
         </article>
     </section><aside id="aside2">
 
-        @yield('aside')
+        @yield('aside2')
     </aside>
 </main>
 
@@ -52,6 +52,6 @@
     </p>
 
 </footer>
-
+<script src="{{asset('js/functions.js')}}"></script>
 </body>
 </html>

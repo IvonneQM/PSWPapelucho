@@ -51,12 +51,22 @@ Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 /*-------------------------------------------------------------------*/
-/*                              ROUTES                               */
+/*                           GRAL ROUTES                             */
 /*-------------------------------------------------------------------*/
 
 Route::get('mi-jardin', 'MiJardinController@index');
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
 Route::get('papelucho-blumell', 'BlumellController@index');
+
+Route::get('galeria', function (){
+    return view('cms/admin/galeria');
+});
+
+
+
+Route::get('file', 'FileController@index');
+Route::post('CreateFile','FileController@store');
+Route::resource('files','FileController');
 
 /*-------------------------------------------------------------------*/
 /*                            MIDDLEWARES                            */
@@ -67,6 +77,14 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('administrador', function (){
             return view('cms/admin/administrador');
         });
+
+        Route::get('administrador/apoderados',[
+            'uses'=>'Cms\Admin\ApoderadosController@index',
+            'as'=>'apoderados'
+        ]);
+
+        //Route::post('login', 'Auth\AuthController@postLogin');
+
     });
     Route::group(['middleware' => 'role:apoderado'], function(){
         Route::get('apoderado', function (){
@@ -74,6 +92,7 @@ Route::group(['middleware' => 'auth'], function(){
         });
     });
 });
+
 
 
 
