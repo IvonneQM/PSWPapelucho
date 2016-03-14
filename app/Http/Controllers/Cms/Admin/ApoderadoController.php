@@ -5,11 +5,14 @@ use Validator;
 use App\User;
 use Illuminate\Http\Request;
 
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ApoderadoController extends Controller
 {
+    /**
+
     /**
      * Display a listing of the resource.
      *
@@ -35,15 +38,25 @@ class ApoderadoController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
     }
-    public function create(Request $request)
+    public function create()
     {
-        return \View::make('cms.admin.apoderados.apoderados');
+        return view('cms.admin.apoderados.apoderados');
     }
 
     public function store(Request $request){
-        $user = new User;
-        $user->create($request->all());
-        return redirect('apoderados');
+        $apoderado = new User($request->all());
+        $apoderado->role = 'apoderado';
+        $apoderado->save();
+
+       /* $validator = $this->validator($request->all());
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        return response()->json();
+       */
     }
 
     public function postRegister(Request $request)

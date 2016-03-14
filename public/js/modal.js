@@ -1,10 +1,12 @@
 $(document).ready(function(){
 
+
     $('#register').click(function() {
         $('#myModal').modal();
     });
 
-    $(document).on('submit', '#formRegister', function(e) {
+
+   /* $(document).on('submit', '#formRegister', function(e) {
         e.preventDefault();
 
        $('input+small').text('');
@@ -36,5 +38,6 @@ $(document).ready(function(){
                 });
             });
     });
+    */
 
 })

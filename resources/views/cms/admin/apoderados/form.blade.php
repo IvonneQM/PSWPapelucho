@@ -9,8 +9,9 @@
                 </div>
                 <div class="modal-body">
 
-                    {!!Form::open(['id'=>'formRegister'],['class'=>'form-horizontal'],['route'=>'Cms/Admin/ApoderadoController.store', 'method' => 'POST'])!!}
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    {!!Form::open(['id'=>'formRegister'],['class'=>'form-horizontal'],['route'=>'registroapoderados', 'method' => 'POST'])!!}
+                    <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+
                     <div class="form-group">
                         {!!Form::label('rut','Rut: ')!!}
                         {!!Form::text('rut',null, ['id'=>'user','class'=>'form-control', 'placeholder' => 'Ingresa el RUT del usuario'])!!}
