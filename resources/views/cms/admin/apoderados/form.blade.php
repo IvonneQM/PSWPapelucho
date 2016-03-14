@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
 
-                    {!!Form::open(['id'=>'formRegister'],['class'=>'form-horizontal'],['route'=>'creacion-apoderado.store', 'method' => 'POST'])!!}
+                    {!!Form::open(['id'=>'formRegister'],['class'=>'form-horizontal'],['route'=>'apoderados', 'method' => 'POST'])!!}
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
                         {!!Form::label('rut','Rut: ')!!}

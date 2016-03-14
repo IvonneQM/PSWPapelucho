@@ -81,8 +81,13 @@ Route::group(['middleware' => 'auth'], function(){
             'as'=>'apoderados'
         ]);
 
+        Route::post( 'administrador/apoderados', array(
+            'uses' => 'Cms\Admin\Auth\AuthController@postRegister',
+            'as' => 'apoderados',
+        ) );
 
-        Route::resource('creacion-apoderado','Cms\Admin\ApoderadoController');
+
+        //Route::resource('creacion-apoderado','Cms\Admin\ApoderadoController');
 
 
         /*Route::model('users','App\User');
