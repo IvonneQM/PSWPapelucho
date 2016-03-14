@@ -26,7 +26,17 @@ class AdministradoresController extends Controller
      */
     public function create()
     {
-        //
+        $user = new User([
+            'rut' => $data['rut'],
+            'full_name' => $data['full_name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
+
+        $user -> role = 'user';
+        $user -> save();
+
+        return $user;
     }
 
     /**

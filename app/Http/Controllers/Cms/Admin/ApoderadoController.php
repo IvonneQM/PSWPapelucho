@@ -35,9 +35,30 @@ class ApoderadoController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
     }
-    public function create()
+    public function create(Request $request)
     {
+        return \View::make('cms.admin.apoderados.apoderados');
+    }
 
+    public function store(Request $request){
+        $user = new User;
+        $user->create($request->all());
+        return redirect('apoderados');
+    }
+
+    public function postRegister(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $this->create($request->all());
+
+        return response()->json();
     }
 
     /**
@@ -46,11 +67,9 @@ class ApoderadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
-
        \App\User::create([
-
                 'rut' => $request['rut'],
                 'full_name' => $request['full_name'],
                 'email' => $request['email'],
