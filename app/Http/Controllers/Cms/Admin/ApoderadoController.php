@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Cms\Admin;
+use GuzzleHttp\Subscriber\Redirect;
 use Validator;
 use App\User;
 use Illuminate\Http\Request;
@@ -44,22 +45,15 @@ class ApoderadoController extends Controller
     }
 
     public function store(Request $request){
+
         $apoderado = new User($request->all());
         $apoderado->role = 'apoderado';
         $apoderado->save();
 
-       /* $validator = $this->validator($request->all());
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
-
-        return response()->json();
-       */
+        return redirect()->back();
     }
 
-    public function postRegister(Request $request)
+   /* public function postRegister(Request $request)
     {
         $validator = $this->validator($request->all());
 
@@ -73,6 +67,7 @@ class ApoderadoController extends Controller
 
         return response()->json();
     }
+   */
 
     /**
      * Store a newly created resource in storage.

@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
     $('#register').click(function() {
         $('#myModal').modal();
     });
@@ -38,6 +37,5 @@ $(document).ready(function(){
                 });
             });
     });
-    */
-
+*/
 })

@@ -1,6 +1,5 @@
 <div id="zona-apoderados">
     <ul >
-
         @if(Auth::check())
 
             @if(Auth::user()->role == 'admin')
