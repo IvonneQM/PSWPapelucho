@@ -44,13 +44,15 @@ class ApoderadoController extends Controller
         return view('cms.admin.apoderados.apoderados');
     }
 
-    public function store(Request $request){
+    public function store($full_name, Request $request){
 
-        $apoderado = new User($request->all());
+        return $full_name;
+       /* $apoderado = new User($request->all());
         $apoderado->role = 'apoderado';
         $apoderado->save();
 
         return redirect()->back();
+       */
     }
 
    /* public function postRegister(Request $request)

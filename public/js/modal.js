@@ -4,23 +4,36 @@ $(document).ready(function(){
         $('#myModal').modal();
     });
 
+    $.ajaxSetup({
+        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+    });
 
-   /* $(document).on('submit', '#formRegister', function(e) {
+
+    $(document).on('submit', '#formRegister', function(e) {
         e.preventDefault();
 
-       $('input+small').text('');
+        var form = $('#formRegister');
+        var url =  form.attr('action');
+        var data = form.serialize();
+        //alert (data)
+
+        $.post(url, data, function(result){
+            alert (result);
+        } );
+
+        /*$('input+small').text('');
         $('input').parent().removeClass('has-error');
 
         $.ajax({
-                method: $(this).attr('method'),
+                type: $(this).attr('method'),
                 url: $(this).attr('action'),
                 data: $(this).serialize(),
-                dataType: "json",
-                success : function( data ) {
-                    alert('Submitted')
+                dataType: 'json',
+                success : function(  ) {
+                    alert('Submitted' )
                 },
-                error   : function( xhr, err ) {
-                    alert('Error');
+                error   : function( data , url, type ) {
+                    alert('Error DATA: '+data+' URL: '+url+' TYPE: '+type+'');
                 }
             })
 
@@ -35,7 +48,6 @@ $(document).ready(function(){
                     $(input + '+small').text(value);
                     $(input).parent().addClass('has-error');
                 });
-            });
+            });*/
     });
-*/
 })
