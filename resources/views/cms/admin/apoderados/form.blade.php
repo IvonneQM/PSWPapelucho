@@ -12,7 +12,7 @@
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                     <div class="form-group">
                         {!!Form::label('rut','Rut: ')!!}
-                        {!!Form::text('rut',null, ['id'=>'user','class'=>'form-control', 'placeholder' => 'Ingresa el RUT del usuario', 'required' => 'required'])!!}
+                        {!!Form::text('rut',null, ['rut'=>'user','class'=>'form-control', 'placeholder' => 'Ingresa el RUT del usuario', 'required' => 'required'])!!}
                     </div>
                     <div class="form-group">
                         {!!Form::label('full_name','Nombre: ')!!}
