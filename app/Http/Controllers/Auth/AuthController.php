@@ -44,9 +44,10 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'rut' => 'required|max:255',
+            'full_name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'password' => 'required|min:6',
         ]);
     }
 
@@ -58,6 +59,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        Session::flash('success', 'Creado.');
         $user = new User([
             'rut' => $data['rut'],
             'full_name' => $data['full_name'],
@@ -76,6 +78,8 @@ class AuthController extends Controller
     {
         return route('home');
     }
+
+
 
     public function redirectPath()
     {

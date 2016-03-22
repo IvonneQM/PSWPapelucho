@@ -20,6 +20,8 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+        'ignore/this/url',
+        'this/one/too',
+        'and/this',
     ];
 }

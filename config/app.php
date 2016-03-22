@@ -149,6 +149,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Styde\Html\HtmlServiceProvider::class,
+        HieuLe\Alert\AlertServiceProvider::class,
 
 
     ],
@@ -201,6 +202,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form' 		=> Collective\Html\FormFacade::class,
         'Html' 		=> Collective\Html\HtmlFacade::class,
+        'Alert'     => HieuLe\Alert\Facades\Alert::class,
 
     ],
 

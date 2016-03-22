@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Cms\Admin;
 use GuzzleHttp\Subscriber\Redirect;
+
 use Validator;
 use App\User;
 use Illuminate\Http\Request;
-
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 
 class ApoderadoController extends Controller
 {
@@ -34,19 +34,51 @@ class ApoderadoController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'rut' => 'required|max:12',
+            'full_name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'password' => 'required|min:10',
+            'role' => 'max:12',
         ]);
     }
-    public function create()
+    public function create(Request $request)
     {
-        return view('cms.admin.apoderados.apoderados');
+        $apoderado = new User($request->all());
+        $apoderado->role = 'apoderado';
+        $apoderado->save();
+        \Session::flash('flash_message','Office successfully added.');
+      // return view('cms.admin.apoderados.apoderados');
     }
 
-    public function store($full_name, Request $request){
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store(Request $request){
 
-        return $full_name;
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        if($request->ajax()){
+            $apoderado = new User($request->all());
+            $apoderado->role = 'apoderado';
+            $apoderado->save();
+
+            return response()->json([]);
+
+        }
+
+      /*  $apoderado = new User($request->all());
+        $apoderado->role = 'apoderado';
+        $apoderado->save();
+        //$this->create($request->all());*/
+
+
        /* $apoderado = new User($request->all());
         $apoderado->role = 'apoderado';
         $apoderado->save();
@@ -54,6 +86,7 @@ class ApoderadoController extends Controller
         return redirect()->back();
        */
     }
+
 
    /* public function postRegister(Request $request)
     {
@@ -71,7 +104,7 @@ class ApoderadoController extends Controller
     }
    */
 
-    /**
+    /*
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
