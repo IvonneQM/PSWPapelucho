@@ -10,6 +10,14 @@
     @include('cms.admin.apoderados.modal')
     <div class="col-md-8 col-md-offset-0">
 
+        @if(Session::has('flash_message'))
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-ok"></span>
+                 <em>{!! session('flas_message') !!}}</em>
+            </div>
+        @endif
+
+
         <div class="panel-heading"><h1 class="title">Apoderados</h1></div>
 
         <div class="col-md-12 div-btn">
@@ -19,19 +27,21 @@
             <table class="table table-striped">
                 <tbody>
                 <tr id="t-header-apoderados">
+                    <th>Id</th>
                     <th>Rut</th>
                     <th>Nombre Completo</th>
                     <th>Acciones</th>
                 </tr>
                 @foreach($apoderados as $apoderado)
-                <tr>
+                <tr data-id="{{ $apoderado->id }}">
+                    <td>{!! $apoderado->id !!}</td>
                     <td>{!! $apoderado->rut !!}</td>
                     <td>{!! $apoderado->full_name !!}</td>
                     <td>
                         <div class="t-actions">
                         <a href="#"><i class="fa fa-child"></i></a>
                         <a href="#"><i class="fa fa-pencil"></i></a>
-                        <a href="#"><i class="fa fa-trash-o"></i></a>
+                        <a href="#" class="btn-delete"><i class="fa fa-trash-o"></i></a>
                             </div>
                     </td>
                 </tr>
@@ -43,4 +53,7 @@
 
     </div>
 
-@stop
+     {!! Form::open(['route' => ['eliminar-apoderados', ':APODERADO_ID'],'method' => 'DELETE', 'id' => 'form-delete', 'action' => 'eliminar-apoderados']) !!}
+     {!! Form::close() !!}
+
+ @stop

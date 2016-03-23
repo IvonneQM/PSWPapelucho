@@ -8,10 +8,20 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Session;
 
 class ApoderadoController extends Controller
 {
+
+  /*  public function __construct()
+    {
+        $this->beforeFilters('@finUser', ['only' => ['show', 'edit', 'update', 'destroy']]);
+    }
+
+    public function findUser(Route $route){
+        $this->user = User::findOrFail($route->getParameter('users'));
+    }
+*/
     /**
 
     /**
@@ -45,8 +55,10 @@ class ApoderadoController extends Controller
     {
         $apoderado = new User($request->all());
         $apoderado->role = 'apoderado';
+
         $apoderado->save();
-        \Session::flash('flash_message','Office successfully added.');
+        Session::flash('message', 'El usuario se creo exitosamente.');
+
       // return view('cms.admin.apoderados.apoderados');
     }
 
@@ -65,19 +77,15 @@ class ApoderadoController extends Controller
         }
 
         if($request->ajax()){
-            $apoderado = new User($request->all());
-            $apoderado->role = 'apoderado';
-            $apoderado->save();
-
+            User::create($request->all());
+            Session::flash('message', 'El usuario se creo exitosamente.');
             return response()->json([]);
-
         }
 
-      /*  $apoderado = new User($request->all());
+       /* $apoderado = new User($request->all());
         $apoderado->role = 'apoderado';
         $apoderado->save();
         //$this->create($request->all());*/
-
 
        /* $apoderado = new User($request->all());
         $apoderado->role = 'apoderado';
@@ -160,11 +168,46 @@ class ApoderadoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        //
+        $apoderado = User::find($id);
+        $apoderado->delete();
+    //    $user = User::find($id);
+
+     //   $user ->delete();
+
+        $message = $apoderado->full_name. 'Fue eliminado';
+
+        if($request->ajax()){
+            if (!empty($message)) {
+                return response()->json([
+                    'id' => $apoderado->id,
+                    'message' => $message
+                ]);
+            }
+        }
+            \Session::flash('message', $message);
+        return redirect()->route('cms.admin.apoderados.apoderados');
+
+
+       // return redirect()->route('cms.admin.apoderados.apoderados');
+
+       // $this->apoderado->delete();
+     //   $message = $this->apoderado->full_name. 'Fue eliminado';
+
+     /*   if($request->ajax()){
+            return response()->json([
+                'id' => $this->apoderado->id,
+                'message' => $message
+            ]);
+        }
+
+        Session::flash('message',$message);
+        return redirect()->route('cms.admin.apoderados.apoderados');
+       */
     }
 }

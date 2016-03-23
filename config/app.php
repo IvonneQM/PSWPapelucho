@@ -138,6 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Illuminate\Html\HtmlServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -149,8 +150,6 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Styde\Html\HtmlServiceProvider::class,
-        HieuLe\Alert\AlertServiceProvider::class,
-
 
     ],
 
@@ -202,8 +201,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form' 		=> Collective\Html\FormFacade::class,
         'Html' 		=> Collective\Html\HtmlFacade::class,
-        'Alert'     => HieuLe\Alert\Facades\Alert::class,
-
+        'Flash'     => Laracasts\Flash\Flash::class,
     ],
 
 ];
