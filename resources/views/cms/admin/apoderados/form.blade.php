@@ -9,15 +9,6 @@
                 </div>
                 <div class="modal-body">
 
-                    <div class="alert alert-success alert-dismissible hidden">
-                        Apoderado ingresado  correctamente
-                    </div>
-                    <div class="alert alert-danger alert-dismissible hidden">
-                        Usuario no registrado
-                    </div>
-
-
-
                     {!!Form::open(['id'=>'formRegister'],['class'=>'form-horizontal'],['route'=>'registroapoderados', 'method' => 'POST', 'role' => 'form', 'action' => 'registroapoderados'])!!}
                     {!! csrf_field() !!}
 

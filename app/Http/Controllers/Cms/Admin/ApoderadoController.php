@@ -176,22 +176,14 @@ class ApoderadoController extends Controller
     {
         $apoderado = User::find($id);
         $apoderado->delete();
-    //    $user = User::find($id);
-
-     //   $user ->delete();
-
-        $message = $apoderado->full_name. 'Fue eliminado';
-
-        if($request->ajax()){
-            if (!empty($message)) {
+       if($request->ajax()){
                 return response()->json([
-                    'id' => $apoderado->id,
-                    'message' => $message
+                    'id' => User::find($id),
                 ]);
             }
         }
-            \Session::flash('message', $message);
-        return redirect()->route('cms.admin.apoderados.apoderados');
+         //   \Session::flash('message', $message);*/
+        //return redirect()->route('cms.admin.apoderados.apoderados');
 
 
        // return redirect()->route('cms.admin.apoderados.apoderados');
@@ -209,5 +201,5 @@ class ApoderadoController extends Controller
         Session::flash('message',$message);
         return redirect()->route('cms.admin.apoderados.apoderados');
        */
-    }
+
 }
