@@ -83,30 +83,29 @@ Route::group(['middleware' => 'auth'], function(){
 
         Route::post( 'administrador/apoderados', array(
             'uses' => 'Cms\Admin\ApoderadoController@store',
-            'as' => 'registroapoderados',
+            'as' => 'registroApoderado',
         ) );
 
-       Route::delete('administrador/apoderados/{id}', array(
+        Route::delete('administrador/apoderados/{id}', array(
             'uses' => 'Cms\Admin\ApoderadoController@destroy',
-            'as' => 'eliminar-apoderados',
+            'as' => 'eliminarApoderado',
         ) );
 
+        Route::get('administrador/noticias',[
+            'uses'=>'Cms\Admin\NoticiaController@index',
+            'as'=>'noticias'
+        ]);
 
-        //Route::resource('creacion-apoderado','Cms\Admin\ApoderadoController');
+        Route::post( 'administrador/noticias', array(
+            'uses' => 'Cms\Admin\NoticiaController@store',
+            'as' => 'registroNoticia',
+        ) );
 
+        Route::delete('administrador/noticias/{id}', array(
+            'uses' => 'Cms\Admin\NoticiaController@destroy',
+            'as' => 'eliminarNoticia',
+        ) );
 
-        /*Route::model('users','App\User');
-
-        Route::bind('users', function($value, $route){
-            return App\User::WhereSLug($value)->first();
-        });
-
-        Route::post('users/{users}/edit', 'UserController@edit');
-*/
-       /* Route::get('file', 'FileController@index');
-        Route::post('CreateFile','FileController@store');
-        Route::resource('files','FileController');
-*/
     });
     Route::group(['middleware' => 'role:apoderado'], function(){
         Route::get('apoderado', function (){

@@ -7,23 +7,7 @@
 @stop
 @section('general-content-1')
     @include('cms.admin.apoderados.form')
-    @include('cms.admin.apoderados.modal')
-    @include('cms.admin.apoderados.modal-eliminar')
     <div class="col-md-8 col-md-offset-0">
-
-            <div class="alert alert-success alert-dismissible hidden">
-                Apoderado ingresado  correctamente
-            </div>
-            <div class="alert alert-danger alert-dismissible hidden">
-                Apoderado no ingresado
-            </div>
-
-            <div class="alert alert-success alert-dismissible hidden" id="succes">
-                Apoderado Eliminado exitosamente
-            </div>
-            <div class="alert alert-danger alert-dismissible hidden" id="error">
-                Apoderado no eliminado
-            </div>
 
         <div class="panel-heading"><h1 class="title">Apoderados</h1></div>
 
@@ -33,7 +17,7 @@
         <div class="panel-body">
             <table class="table table-striped">
                 <tbody>
-                <tr id="t-header-apoderados">
+                <tr id="t-header-content-principal">
                     <th>Id</th>
                     <th>Rut</th>
                     <th>Nombre Completo</th>
@@ -48,7 +32,7 @@
                         <div class="t-actions">
                         <a href="#"><i class="fa fa-child"></i></a>
                         <a href="#"><i class="fa fa-pencil"></i></a>
-                        <a href="#" type="submit" class="btn-delete" data-toggle="modal" data-target="#confirmDelete" data-btncalel="btn-default" data-btnaction="btn-danger"><i class="fa fa-trash-o"></i></a>
+                        <a href="#" type="submit" class="btn-delete"><i class="fa fa-trash-o"></i></a>
                         </div>
                     </td>
                 </tr>
@@ -60,7 +44,7 @@
 
     </div>
 
-     {!! Form::open(['route' => ['eliminar-apoderados', ':APODERADO_ID'],'method' => 'DELETE', 'id' => 'form-delete', 'action' => 'eliminar-apoderados']) !!}
+     {!! Form::open(['route' => ['eliminarApoderado', ':APODERADO_ID'],'method' => 'DELETE', 'id' => 'form-delete', 'action' => 'eliminarApoderado']) !!}
      {!! Form::close() !!}
 
  @stop

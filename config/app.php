@@ -150,6 +150,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Styde\Html\HtmlServiceProvider::class,
+        Infinety\Alerts\AlertServiceProvider::class,
 
     ],
 

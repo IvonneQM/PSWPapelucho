@@ -6,6 +6,6 @@
         <li><a href="{{ route('login') }}">Galería de imágenes</a></li>
         <li><a href="{{ route('login') }}">Informes al hogar</a></li>
         <li><a href="{{ route('login') }}">Información de interés</a></li>
-        <li><a href="{{ route('login') }}">Noticias</a></li>
+        <li><a href="{{ route('noticias') }}">Noticias</a></li>
     </ul>
 </nav>

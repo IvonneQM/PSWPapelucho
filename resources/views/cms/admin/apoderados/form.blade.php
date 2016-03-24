@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
 
-                    {!!Form::open(['id'=>'formRegister'],['class'=>'form-horizontal'],['route'=>'registroapoderados', 'method' => 'POST', 'role' => 'form', 'action' => 'registroapoderados'])!!}
+                    {!!Form::open(['id'=>'formRegister'],['class'=>'form-horizontal'],['route'=>'registroApoderado', 'method' => 'POST', 'role' => 'form', 'action' => 'registroapoderados'])!!}
                     {!! csrf_field() !!}
 
                      <div class="form-group">

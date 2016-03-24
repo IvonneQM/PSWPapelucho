@@ -8,6 +8,7 @@
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/normalize.css')!!}
     {!!Html::style('css/style-cms.css')!!}
+    {!!Html::style('css/sweetalert.css')!!}
 
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
@@ -16,9 +17,11 @@
     {!!Html::script('js/jquery-2.2.0.js')!!}
     {!!Html::script('js/bootstrap.min.js')!!}
     {!!Html::script('js/modal.js')!!}
+    {!!Html::script('js/sweetalert.js')!!}
 
 
     @yield('meta')
+    @include('Alerts::alerts')
 </head>
 <body>
 <header>

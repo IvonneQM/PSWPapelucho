@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2db973d8c8168fdb843cab8ebc31951e",
-    "content-hash": "6582bae77680312809e0d1de0d8e7c48",
+    "hash": "2cb633c1d15368faf2bb306c143d9f98",
+    "content-hash": "6c0a4084d9facb20545dc1acfd6d8c1a",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -216,6 +216,45 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "infinety/alerts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Infinety/alerts.git",
+                "reference": "c975d7dab575d9f4b4c2a0046606e1301d6cacf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Infinety/alerts/zipball/c975d7dab575d9f4b4c2a0046606e1301d6cacf1",
+                "reference": "c975d7dab575d9f4b4c2a0046606e1301d6cacf1",
+                "shasum": ""
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Infinety\\Alerts\\": "/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Infinety",
+                    "email": "create@infinety.co.uk"
+                }
+            ],
+            "description": "A Sweet Alert package for Laravel 5>",
+            "keywords": [
+                "alert",
+                "laravel",
+                "laravel sweet alert",
+                "sweet-alert"
+            ],
+            "time": "2016-03-09 20:40:48"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -2298,56 +2337,6 @@
             "time": "2015-05-11 14:41:42"
         },
         {
-            "name": "hieu-le/laravel-alert",
-            "version": "2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/letrunghieu/laravel-alert.git",
-                "reference": "bf1bb0af796401011cd676030b16f0a0699f9bd8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/letrunghieu/laravel-alert/zipball/bf1bb0af796401011cd676030b16f0a0699f9bd8",
-                "reference": "bf1bb0af796401011cd676030b16f0a0699f9bd8",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/config": "~5.0",
-                "illuminate/session": "~5.0",
-                "illuminate/support": "~5.0",
-                "illuminate/view": "~5.0",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "HieuLe\\Alert\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Hieu Le",
-                    "email": "letrunghieu.cse09@gmail.com"
-                }
-            ],
-            "description": "Laravel global site message system",
-            "keywords": [
-                "alert",
-                "bootstrap",
-                "global",
-                "laravel",
-                "message"
-            ],
-            "time": "2015-08-13 10:12:03"
-        },
-        {
             "name": "illuminate/html",
             "version": "v5.0.0",
             "source": {
@@ -3513,7 +3502,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "infinety/alerts": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
