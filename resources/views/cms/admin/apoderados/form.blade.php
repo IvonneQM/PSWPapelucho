@@ -1,6 +1,6 @@
     {{-- Modal --}}
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-apoderados" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
 
-                    {!!Form::open(['id'=>'formRegister'],['class'=>'form-horizontal'],['route'=>'registroApoderado', 'method' => 'POST', 'role' => 'form', 'action' => 'registroapoderados'])!!}
+                    {!!Form::open(['id'=>'form-register-apoderado'],['class'=>'form-horizontal'],['route'=>'registroApoderado', 'method' => 'POST', 'role' => 'form', 'action' => 'registroApoderado'])!!}
                     {!! csrf_field() !!}
 
                      <div class="form-group">

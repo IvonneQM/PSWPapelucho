@@ -1,6 +1,6 @@
     {{-- Modal --}}
 
-    <div class="modal fade" id="modalNoticias" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-noticias" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
 
-                    {!!Form::open(['id'=>'formRegisterNoticia'],['class'=>'form-horizontal'],['route'=>'registroNoticia', 'method' => 'POST', 'role' => 'form', 'action' => 'registroNoticia'])!!}
+                    {!!Form::open(['id'=>'form-register-noticia'],['class'=>'form-horizontal'],['route'=>'registroNoticia', 'method' => 'POST', 'role' => 'form', 'action' => 'registroNoticia'])!!}
                     {!! csrf_field() !!}
 
                      <div class="form-group">
@@ -21,7 +21,7 @@
                         {!!Form::text('content',null, ['id'=>'content','class'=>'form-control', 'placeholder' => 'Ingresa el contenido de la noticia'])!!}
                     </div>
                     <div class="form-group">
-                        {!!Form::label('publish','Publish: ')!!}
+                        {!!Form::label('publish','Publicar: ')!!}
                         {!!Form::text('publish',null, ['id'=>'publish','class'=>'form-control', 'placeholder' => 'Ingresa si se publica de la noticia'])!!}
                     </div>
 

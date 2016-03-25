@@ -28,7 +28,6 @@ class NoticiaController extends Controller
     public function create(Request $request)
     {
         $noticia = new Noticia($request->all());
-
         $noticia->save();
     }
 

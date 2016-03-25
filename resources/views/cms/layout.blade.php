@@ -16,7 +16,6 @@
     {!!Html::style('css/font-awesome.min.css')!!}
     {!!Html::script('js/jquery-2.2.0.js')!!}
     {!!Html::script('js/bootstrap.min.js')!!}
-    {!!Html::script('js/modal.js')!!}
     {!!Html::script('js/sweetalert.js')!!}
 
 

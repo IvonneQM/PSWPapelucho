@@ -84,12 +84,12 @@ Route::group(['middleware' => 'auth'], function(){
         Route::post( 'administrador/apoderados', array(
             'uses' => 'Cms\Admin\ApoderadoController@store',
             'as' => 'registroApoderado',
-        ) );
+        ));
 
         Route::delete('administrador/apoderados/{id}', array(
             'uses' => 'Cms\Admin\ApoderadoController@destroy',
             'as' => 'eliminarApoderado',
-        ) );
+        ));
 
         Route::get('administrador/noticias',[
             'uses'=>'Cms\Admin\NoticiaController@index',
@@ -99,12 +99,12 @@ Route::group(['middleware' => 'auth'], function(){
         Route::post( 'administrador/noticias', array(
             'uses' => 'Cms\Admin\NoticiaController@store',
             'as' => 'registroNoticia',
-        ) );
+        ));
 
         Route::delete('administrador/noticias/{id}', array(
             'uses' => 'Cms\Admin\NoticiaController@destroy',
             'as' => 'eliminarNoticia',
-        ) );
+        ));
 
     });
     Route::group(['middleware' => 'role:apoderado'], function(){

@@ -1,5 +1,9 @@
 @extends('cms.layout')
 
+@section('meta')
+    {!!Html::script('js/modals/noticias.js')!!}
+@stop
+
 @section('aside1')
 
     @include('cms.admin.menu-lateral')
@@ -16,7 +20,7 @@
         </div>
         <div class="panel-body">
             <table class="table table-striped">
-                <tbody>
+                <tbody id="tb-noticias">
                 <tr id="t-header-content-principal">
                     <th>Id</th>
                     <th>Titulo</th>
