@@ -14,4 +14,6 @@ class Noticia extends Model
      * @var array
      */
     protected $fillable = ['title','content','publish'];
+
+    protected $hidden = ['remember_token'];
 }
