@@ -8,3 +8,11 @@ $factory->define(App\User::class, function ($faker){
         'role' => $faker->randomElement(['apoderado','admin']),
     ];
 });
+
+$factory->define(App\Noticia::class, function ($faker){
+    return[
+        'title' => $faker->text($maxNbChars = 20)  ,
+        'content' => $faker->text($maxNbChars = 200) ,
+        'publish' => $faker->ttext($maxNbChars = 10) ,
+    ];
+});

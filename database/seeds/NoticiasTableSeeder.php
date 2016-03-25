@@ -11,7 +11,6 @@ class NoticiasTableSeeder extends Seeder
      */
     public function run()
     {
-
                 \DB::table('noticias')->insert(array(
                     'title' => 'Noticia1',
                     'content' => 'LAFNAKS aksjdaks asdaksdjaksdo',
@@ -19,8 +18,6 @@ class NoticiasTableSeeder extends Seeder
 
                 ));
 
-
-
-
+        factory(App\User::class,10)->create();
     }
 }
