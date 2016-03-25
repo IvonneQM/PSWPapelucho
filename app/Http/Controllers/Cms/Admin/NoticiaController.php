@@ -28,7 +28,6 @@ class NoticiaController extends Controller
     public function create(Request $request)
     {
         $noticia = new Noticia($request->all());
-        $noticia->role = 'noticia';
 
         $noticia->save();
     }
@@ -41,13 +40,13 @@ class NoticiaController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = $this->validator($request->all());
+       /* $validator = $this->validator($request->all());
 
         if ($validator->fails()) {
             $this->throwValidationException(
                 $request, $validator
             );
-        }
+        }*/
 
         if($request->ajax()){
             Noticia::create($request->all());

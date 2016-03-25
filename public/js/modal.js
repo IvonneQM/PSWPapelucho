@@ -41,12 +41,12 @@ $(document).ready(function(){
 
 
 //ELIMINAR APODERADOS//
-    $('.btn-delete').click(function(e) {
+    $('.btn-delete-noticia').click(function(e) {
         e.preventDefault();
         var row = $(this).parents('tr');
         var id = row.data('id');
-        var form = $('#form-delete');
-        var url = form.attr('action').replace(':APODERADO_ID', id);
+        var form = $('#form-delete-noticia');
+        var url = form.attr('action').replace(':NOTICIA_ID', id);
         var data = form.serialize();
 
         swal({      title:  "¿Confirma eliminación?",
@@ -103,7 +103,6 @@ $(document).ready(function(){
                 method: $(this).attr('method'),
                 type: "POST",
                 token: $('input[name="_token"]').val(),
-
                 cache: false,
                 url: $(this).attr('action'),
                 data: $(this).serialize(),

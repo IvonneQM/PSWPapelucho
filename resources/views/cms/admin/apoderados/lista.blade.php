@@ -7,12 +7,13 @@
 @stop
 @section('general-content-1')
     @include('cms.admin.apoderados.form')
+    @include('partials.errors')
     <div class="col-md-8 col-md-offset-0">
 
         <div class="panel-heading"><h1 class="title">Apoderados</h1></div>
 
         <div class="col-md-12 div-btn">
-            <a class="btn btn-primary pull-right btn-crear-apod" id="register" href="#" role="button"> <i class="fa fa-user-plus"> Crear Apoderado</i></a>
+            <a class="btn btn-primary pull-right btn-crear-nuevo" id="register" href="#" role="button"> <i class="fa fa-user-plus"> Crear Apoderado</i></a>
         </div>
         <div class="panel-body">
             <table class="table table-striped">

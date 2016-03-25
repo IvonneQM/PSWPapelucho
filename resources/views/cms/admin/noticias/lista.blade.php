@@ -12,7 +12,7 @@
         <div class="panel-heading"><h1 class="title">Noticias</h1></div>
 
         <div class="col-md-12 div-btn">
-            <a class="btn btn-primary pull-right btn-crear-apod" id="register-noticia" href="#" role="button"> <i class="fa fa-user-plus"> Crear Noticia</i></a>
+            <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-noticia" href="#" role="button"> <i class="fa fa-user-plus"> Crear Noticia</i></a>
         </div>
         <div class="panel-body">
             <table class="table table-striped">

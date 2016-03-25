@@ -71,14 +71,14 @@ section{
 .div-btn{
     padding-bottom: 10px;
 }
-.btn-crear-apod{
+.btn-crear-nuevo{
     background: #0099CC;
     border:none;
     display: block;
     padding: 0;
 }
 
-.btn-crear-apod:hover, .fa-user-plus:hover{
+.btn-crear-nuevo:hover, .fa-user-plus:hover{
      background: rgba(0,0,0,0);
      box-shadow: inset 0 0 0 3px #0099CC;
      color: #0099CC;

@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
 
-                    {!!Form::open(['id'=>'formRegisterNoticia'],['class'=>'form-horizontal'],['route'=>'registroNoticia', 'method' => 'POST', 'role' => 'form', 'action' => 'registroapoderados'])!!}
+                    {!!Form::open(['id'=>'formRegisterNoticia'],['class'=>'form-horizontal'],['route'=>'registroNoticia', 'method' => 'POST', 'role' => 'form', 'action' => 'registroNoticia'])!!}
                     {!! csrf_field() !!}
 
                      <div class="form-group">
@@ -27,6 +27,7 @@
 
                     {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
                     {!!Form::close()!!}
+
                 </div>
             </div>
         </div>
