@@ -11,7 +11,7 @@
 @stop
 @section('general-content-1')
     @include('cms.admin.noticias.form')
-    <div class="col-md-8 col-md-offset-0">
+    <div class="col-md-12 col-md-offset-0">
 
         <div class="panel-heading"><h1 class="title">Noticias</h1></div>
 
@@ -36,7 +36,6 @@
                     <td>{!! $noticia->publish !!}</td>
                     <td>
                         <div class="t-actions">
-                        <a href="#"><i class="fa fa-child"></i></a>
                         <a href="#"><i class="fa fa-pencil"></i></a>
                         <a href="#" type="submit" class="btn-delete-noticia"><i class="fa fa-trash-o"></i></a>
                         </div>

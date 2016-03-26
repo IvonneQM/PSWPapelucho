@@ -18,6 +18,6 @@ class NoticiasTableSeeder extends Seeder
 
                 ));
 
-        factory(App\User::class,10)->create();
+        factory(App\Noticia::class,10)->create();
     }
 }

@@ -15,7 +15,6 @@ $(document).ready(function() {
 
         $(document).on('submit', '#form-register-noticia', function(e) {
             e.preventDefault();
-            var row = $(this).parents('tr');
 
             $('input+small').text('');
             $('input').parent().removeClass('has-error');
@@ -27,9 +26,6 @@ $(document).ready(function() {
                 url: $(this).attr('action'),
                 data: $(this).serialize(),
                 dataType: "json",
-
-
-
                 success: function (data) {
                     swal(   "Registro creado!",
                             "El registro se ha generado con exito",
@@ -53,6 +49,8 @@ $(document).ready(function() {
         var form = $('#form-delete-noticia');
         var url = form.attr('action').replace(':NOTICIA_ID', id);
         var data = form.serialize();
+
+
 
         swal({  title:  "¿Confirma eliminación?",
                 text:   "El registro se eliminará permanentementer",
@@ -81,7 +79,6 @@ $(document).ready(function() {
                         swal(   "Oops",
                                 "Se ha generado un problema de conexión con el servidor",
                                 "error");
-                        row.show()
                     }
 
                 });

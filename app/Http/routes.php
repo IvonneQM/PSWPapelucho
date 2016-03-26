@@ -106,6 +106,11 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'eliminarNoticia',
         ));
 
+        Route::get('administrador/parvulos',[
+            'uses'=>'Cms\Admin\ParvuloController@index',
+            'as'=>'parvulos'
+        ]);
+
     });
     Route::group(['middleware' => 'role:apoderado'], function(){
         Route::get('apoderado', function (){
