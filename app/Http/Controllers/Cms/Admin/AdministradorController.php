@@ -1,29 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Cms\Admin;
-use GuzzleHttp\Subscriber\Redirect;
 
-use Validator;
-use App\User;
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
 
-class ApoderadoController extends Controller
+class AdministradorController extends Controller
 {
-
-  /*  public function __construct()
-    {
-        $this->beforeFilters('@finUser', ['only' => ['show', 'edit', 'update', 'destroy']]);
-    }
-
-    public function findUser(Route $route){
-        $this->user = User::findOrFail($route->getParameter('users'));
-    }
-*/
-    /**
-
     /**
      * Display a listing of the resource.
      *
@@ -32,9 +17,10 @@ class ApoderadoController extends Controller
     public function index()
     {
 
-        $apoderados = User::where('role','=','apoderado')->orderBy('id', 'DESC')->paginate();
-        return view('cms.admin.apoderados.lista',compact('apoderados'));
+        $administradores = \App\User::where('role','=','admin')->orderBy('id', 'DESC')->paginate();
+        return view('cms.admin.administradores.lista',compact('administradores'));
     }
+
 
 
     /*public function findApoderado(Route $route)
@@ -59,10 +45,10 @@ class ApoderadoController extends Controller
     }
     public function create(Request $request)
     {
-        $apoderado = new User($request->all());
-        $apoderado->role = 'apoderado';
+        $administrador = new \App\User($request->all());
+        $administrador->role = 'admin';
 
-        $apoderado->save();
+        $administrador->save();
     }
 
     /**
@@ -80,7 +66,7 @@ class ApoderadoController extends Controller
         }
 
         if($request->ajax()){
-            User::create($request->all());
+            \App\User::create($request->all());
             return response()->json([]);
         }
 
@@ -130,13 +116,12 @@ class ApoderadoController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        $apoderado = User::find($id);
-        $apoderado->delete();
-       if($request->ajax()){
-                return response()->json([
-                    'id' => User::find($id),
-                ]);
-            }
+        $administrador = \App\User::find($id);
+        $administrador->delete();
+        if($request->ajax()){
+            return response()->json([
+                'id' => \App\User::find($id),
+            ]);
         }
-
+    }
 }

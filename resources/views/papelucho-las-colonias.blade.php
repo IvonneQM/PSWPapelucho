@@ -14,15 +14,16 @@
         <div>
             <div class="accordion-item-title"><a>Síntesis metodológica</a><i class="fa fa-chevron-down"></i></div>
             <div class="accordion-item-content">
-                <p>El trabajo pedagógico, tanto en la Escuela de Párvulos como en la Sala Cuna, se desarrolla de acuerdo a las nuevas bases curriculares de la Educación Parvularia, complementadas con la utilización de los Mapas de Progresos sugeridos por MINEDUC.</p>
+                <p>El trabajo pedagógico, tanto en la Escuela de Párvulos como en la Sala Cuna, se desarrolla de acuerdo a las nuevas bases curriculares de la Educación Parvularia, complementadas con la utilización de los Mapas de Progresos sugeridos por MINEDUC. </p>
                 <p>Con el fin de favorecer una educación integral de los niños(as) se realizan actividades como:</p>
-                <ol>
-                    <li> Juego de Rincones puertas abiertas </li>
+                <ul>
+                    <li>Juego de Rincones puertas abiertas </li>
                     <li>Visitas pedagógicas en la comunidad</li>
-                    <li>Iniciación a un segundo idioma (Inglés) Nivel Medio Superior y Transición</li>
-                    <li>Informática Educativa Nivel Transición</li>
-                    <li>Música en colores Nivel Transición</li>
-                </ol>
+                    <li>Iniciación a un segundo idioma (Inglés) Nivel Medio Superior</li>
+                    <li>Música en colores. Nivel Medio Superior</li>
+                    <li>Talleres pedagógicos. Niveles Medios (Jornada Tarde)</li>
+                </ul>
+
                 <h3>Horario de Funcionamiento</h3>
                 <p>La Sala Cuna funciona durante todo el año (según calendarización)</p>
                 <p>La Escuela de Párvulos se rige por calendario escolar, considerando 40 semanas de clases, distribuidas desde Marzo a Diciembre, en la cual hay dos periodos de vacaciones, Julio y Septiembre (una semana cada mes).</p>
@@ -46,14 +47,12 @@
                 <a>Sala cuna lactante menor</a><i class="fa fa-chevron-down"></i>
             </div>
             <div class="accordion-item-content">
-                <p>
-                    Descripción
+                    <h4>Descripción</h4>
 
-                    Este nivel atiende a lactantes desde 84 días a 12 meses, los cuales son atendidos por una Educadora y dos Asistentes de Párvulos quienes velan por el bienestar de los pequeños y propician su desarrollo integral a través de variadas situaciones de aprendizaje.
+                    <p>Este nivel atiende a lactantes desde 84 días a 12 meses, los cuales son atendidos por una Educadora y dos Asistentes de Párvulos quienes velan por el bienestar de los pequeños y propician su desarrollo integral a través de variadas situaciones de aprendizaje.Este nivel atiende a lactantes desde 84 días a 12 meses, los cuales son atendidos por una Educadora y dos Asistentes de Párvulos quienes velan por el bienestar de los pequeños y propician su desarrollo integral a través de variadas situaciones de aprendizaje.</p>
+                    <h4>Objetivos</h4>
 
-                    Objetivos
-
-                    Generar un ambiente cálido, adecuado y de entrega pedagógica, para lograr en los lactantes un desarrollo óptimo en todos los ámbitos de aprendizajes, siendo a la vez un aporte a las madres que trabajan.             </p>
+                    <p>Generar un ambiente cálido, adecuado y de entrega pedagógica, para lograr en los lactantes un desarrollo óptimo en todos los ámbitos de aprendizajes, siendo a la vez un aporte a las madres que trabajan.</p>
             </div>
         </div>
         <div>
@@ -61,9 +60,10 @@
                 <a>Sala cuna lactante mayor</a><i class="fa fa-chevron-down"></i>
             </div>
             <div class="accordion-item-content">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
-                </p>
+                <h4>Descripción</h4>
+                    <p>El grupo está formado por lactantes de 12 a 24 meses de edad y es atendido por una Educadora y dos Asistentes de Párvulos. Este grupo se caracteriza por adquirir progresivamente mayor seguridad y autonomía en lo que realizan, mostrándose más sociables y con confianza en sí mismos.</p>
+                <h4>Objetivos</h4>
+                <p>Potenciar y desarrollar en el niño(a) progresiva y gradualmente todos los ámbitos del aprendizaje.</p>
             </div>
         </div>
         <div>
@@ -71,9 +71,10 @@
                 <a>Medio menor</a><i class="fa fa-chevron-down"></i>
             </div>
             <div class="accordion-item-content">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
-                </p>
+                <h4>Descripción</h4>
+                <p>Este Nivel atiende a párvulos entre los 2 años y 2 años 11 meses, los cuales son atendidos por una Educadora y dos Asistentes de Párvulos. </p>
+                <h4>Objetivos</h4>
+                <p>Propiciar un desarrollo integral a través de diversos aprendizajes significativos que se plantean en forma equilibrada según intereses y necesidades de los párvulos, dando especial énfasis a los ámbitos de comunicación y formación personal y social.</p>
             </div>
         </div>
         <div>
@@ -81,52 +82,18 @@
                 <a>Medio mayor</a><i class="fa fa-chevron-down"></i>
             </div>
             <div class="accordion-item-content">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
-                </p>
+                <h4>Descripción</h4>
+                <p>Atiende a niños(as), cuyas edades fluctúan entre los 3 y 3 años 11 meses. Está a cargo de una Educadora y una Asistente de Párvulos. </p>
+                <h4>Objetivos</h4>
+                <p>Adquirir gradualmente una autonomía que le permita un desarrollo integral en los ámbitos de: Formación Personal y Social, Relación con el medio natural y cultural y Comunicación, propiciando un clima de confianza seguridad y afectividad.</p>
             </div>
         </div>
-        <div>
-            <div class="accordion-item-title">
-                <a>Transición menor</a><i class="fa fa-chevron-down"></i>
-            </div>
-            <div class="accordion-item-content">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, explicabo illum ipsa iure magnam minus molestiae voluptates! Animi, assumenda beatae dolor expedita magnam molestiae molestias quisquam rem similique suscipit unde?
-                </p>
-            </div>
-        </div>
+
     </div>
 
 
 
 
-
-    <!--<p class="content">
-        Estimados Padres y Apoderados:
-    </p>
-    <p class="content">
-        Les damos la más cordial bienvenida a cada uno de ustedes, invitándoles a conocer el proyecto educativo de la Sala Cuna y Escuela de Párvulos “PAPELUCHO”, e instándoles a participar en la labor pedagógica que desarrollamos con mucho cariño y vocación con sus hijos(as).
-    </p>
-    <p class="content">
-        Agradecemos en forma especial la confianza de aquellos apoderados que nos han acompañado estos últimos años, como también aquellos Padres que actualmente se han integrado a esta gran familia educativa.
-    </p>
-    <p class="content">
-        Con especial afecto, les saludan.
-    </p>
-    <ul class="dir-box">
-        <li>
-            <span class="dir-name">Claudia Concha Gamboa</span>
-            Educadora de Párvulos<br>
-            Directora Sede Las Colonias
-        </li>
-        <li>
-            <span class="dir-name">Carla Aguayo Picón</span>
-            Educadora de Párvulos<br>
-            Directora Sede Blumell
-        </li>
-    </ul>
-    -->
 @stop
 
 @section('aside')
@@ -163,25 +130,4 @@
     {!! Form::close() !!}
 
 
-            <!-- <ul class="news-box">
-         <li >
-             <p class="news-first-line">
-                 <span class="news-title">Titulo 1</span>
-                 <span class="news-date">02-03-16</span>
-             </p>
-             <p class="news-second-line">
-                 Aqui va el contenido de las noticias y bla bla bla
-             </p>
-         </li>
-         <li >
-             <p class="news-first-line">
-                 <span class="news-title">Titulo 2</span>
-                 <span class="news-date">05-04-16</span>
-             </p>
-             <p class="news-second-line">
-                 Aqui va el contenido de las noticias y bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-             </p>
-         </li>
-     </ul>
-     -->
 @stop

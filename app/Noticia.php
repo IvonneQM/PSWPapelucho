@@ -13,6 +13,17 @@ class Noticia extends Model
      *
      * @var array
      */
+
+    public function getCreatedAtAttribute($date)
+    {
+        return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
+    }
+
+    public function getUpdatedAtAttribute($date)
+    {
+        return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
+    }
+
     protected $fillable = ['title','content','publish'];
 
     protected $hidden = ['remember_token'];

@@ -16,6 +16,16 @@ Route::get('/',  [
     'as' => 'home'
 ]);
 
+Route::get('/',  [
+    'uses' => 'Cms\Admin\NoticiaController@mostrarNoticias',
+    'as' => 'home'
+]);
+
+Route::get('/gmaps', [
+    'uses' => 'GmapsController@index',
+    'as ' => 'gmaps/gmaps'
+]);
+
 /*-------------------------------------------------------------------*/
 /*                       AUTENTICACIÓN LOGIN                         */
 /*-------------------------------------------------------------------*/
@@ -75,6 +85,21 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('administrador', function (){
             return view('cms/admin/administrador');
         });
+
+        Route::get('administrador/administradores',[
+            'uses'=>'Cms\Admin\AdministradorController@index',
+            'as'=>'administradores'
+        ]);
+
+        Route::post( 'administrador/administradores', array(
+            'uses' => 'Cms\Admin\AdministradorController@store',
+            'as' => 'registroAdministrador',
+        ));
+
+        Route::delete('administrador/administradores/{id}', array(
+            'uses' => 'Cms\Admin\AdministradorController@destroy',
+            'as' => 'eliminarAdministrador',
+        ));
 
         Route::get('administrador/apoderados',[
             'uses'=>'Cms\Admin\ApoderadoController@index',

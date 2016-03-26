@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Cms\Admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdministradoresController extends Controller
+class GmapsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,33 @@ class AdministradoresController extends Controller
      */
     public function index()
     {
-       // return view('cms.admin.administradores.administradores');
+        //configuaración
+        $config = array();
+        $config['center'] = 'auto';
+        $config['map_width'] = 400;
+        $config['map_height'] = 400;
+        $config['zoom'] = 15;
+        $config['onboundschanged'] = 'if (!centreGot) {
+            var mapCentre = map.getCenter();
+            marker_0.setOptions({
+                position: new google.maps.LatLng(-23.6743775, -70.411624,17)
+
+            });
+        }
+        centreGot = true;';
+
+        \Gmaps::initialize($config);
+
+        // Colocar el marcador
+        // Una vez se conozca la posición del usuario
+        $marker = array();
+        \Gmaps::add_marker($marker);
+
+        $map = \Gmaps::create_map();
+
+        //Devolver vista con datos del mapa
+        return view('gmaps/gmaps', compact('map'));
+
     }
 
     /**
@@ -26,17 +52,7 @@ class AdministradoresController extends Controller
      */
     public function create()
     {
-        $user = new User([
-            'rut' => $data['rut'],
-            'full_name' => $data['full_name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-
-        $user -> role = 'user';
-        $user -> save();
-
-        return $user;
+        //
     }
 
     /**

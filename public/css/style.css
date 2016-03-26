@@ -327,6 +327,17 @@ ul{
 
 .li-two-lines { line-height: 1.3em;}
 
+.li-completa ul li{
+    list-style-type: circle !important;
+    display:block;
+    border: none;
+    width:100%;
+    margin:0;
+    text-align: justify;
+}
+.li-completa ul li:nth-child(2){
+    float:none;
+}
 
 .logo{
     display:block;
@@ -434,10 +445,16 @@ ul{
     margin: 20px 20px 20px 50px;
     padding: 5px 0;
     text-align: left;
+    vertical-align: top;
     width:40%;
 }
 
-.two-borders-box li:last-child{
+.two-borders-box .li-completa {
+
+    width:89%;
+}
+
+.two-borders-box li:nth-child(2){
     float:right;
     margin: 20px 50px 20px 0;
 }
@@ -677,7 +694,7 @@ ul{
         width:40%;
     }
 
-    .two-borders-box li:last-child{
+    .two-borders-box li:nth-child(2){
         float:right;
         margin: 20px 50px 20px 0;
     }
@@ -772,7 +789,7 @@ ul{
         width:80%;
     }
 
-    .two-borders-box li:last-child{
+    .two-borders-box li:nth-child(2){
         float:none;
         margin: 0 auto 20px;
     }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Cms\Admin;
 
 use Illuminate\Http\Request;
-
+use App\Noticia;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -20,6 +20,11 @@ class NoticiaController extends Controller
         return view('cms.admin.noticias.lista',compact('noticias'));
     }
 
+    public function mostrarNoticias()
+    {
+        $noticias = \App\Noticia::paginate(2);
+        return view('home',compact('noticias'));
+    }
 
     protected function validator(array $data)
     {
