@@ -61,7 +61,7 @@ class NoticiaController extends Controller
 
         if($request->ajax()){
             alert("llegue aqui");
-            Noticia::create($request->all());
+            \App\Noticia::create($request->all());
             return response()->json([]);
         }
     }
@@ -108,11 +108,11 @@ class NoticiaController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        $noticia = Noticia::find($id);
+        $noticia = \App\Noticia::find($id);
         $noticia->delete();
         if($request->ajax()){
             return response()->json([
-                'id' => Noticia::find($id),
+                'id' => \App\Noticia::find($id),
             ]);
         }
     }
