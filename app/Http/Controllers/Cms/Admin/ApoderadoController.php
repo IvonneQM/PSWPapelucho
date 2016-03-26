@@ -32,7 +32,7 @@ class ApoderadoController extends Controller
     public function index()
     {
 
-        $apoderados = DB::table('users')->where('users.role','apoderado')->orderBy('id', 'DESC')->paginate();
+        $apoderados = User::orderBy('id', 'DESC')->paginate();
         return view('cms.admin.apoderados.lista',compact('apoderados'));
     }
 

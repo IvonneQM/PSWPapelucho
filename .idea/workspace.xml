@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c83f810-9372-4ac7-a5b6-0d657adbcf01" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cms/admin/parvulos/lista.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/ApoderadoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/ApoderadoController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/NoticiaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/NoticiaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/factories/ModelFactory.php" afterPath="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/NoticiasTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/NoticiasTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style-cms.css" afterPath="$PROJECT_DIR$/public/css/style-cms.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/modals/apoderados.js" afterPath="$PROJECT_DIR$/public/js/modals/apoderados.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/modals/noticias.js" afterPath="$PROJECT_DIR$/public/js/modals/noticias.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cms/admin/apoderados/lista.blade.php" afterPath="$PROJECT_DIR$/resources/views/cms/admin/apoderados/lista.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cms/admin/noticias/lista.blade.php" afterPath="$PROJECT_DIR$/resources/views/cms/admin/noticias/lista.blade.php" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,8 +63,8 @@
       <file leaf-file-name="NoticiaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/NoticiaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.625">
-              <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+            <state vertical-scroll-proportion="-19.375">
+              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -106,8 +95,8 @@
       <file leaf-file-name="ApoderadoController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/ApoderadoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46153846">
-              <caret line="34" column="109" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="109" />
+            <state vertical-scroll-proportion="0.53846157">
+              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
               <folding>
                 <element signature="e#49#84#0#PHP" expanded="true" />
               </folding>
@@ -195,12 +184,12 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/cms/admin/parvulos/lista.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cms/admin/noticias/lista.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/NoticiaController.php" />
         <option value="$PROJECT_DIR$/public/js/modals/noticias.js" />
         <option value="$PROJECT_DIR$/public/js/modals/apoderados.js" />
         <option value="$PROJECT_DIR$/public/css/style-cms.css" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/ApoderadoController.php" />
         <option value="$PROJECT_DIR$/resources/views/cms/admin/apoderados/lista.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/NoticiaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/ApoderadoController.php" />
       </list>
     </option>
   </component>
@@ -1220,14 +1209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/NoticiaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625">
-          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/cms/admin/noticias/lista.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61538464">
@@ -1244,10 +1225,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/NoticiaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.375">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cms/Admin/ApoderadoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46153846">
-          <caret line="34" column="109" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="109" />
+        <state vertical-scroll-proportion="0.53846157">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
           <folding>
             <element signature="e#49#84#0#PHP" expanded="true" />
           </folding>
