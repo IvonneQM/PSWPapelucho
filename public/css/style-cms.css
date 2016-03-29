@@ -78,25 +78,46 @@ th:last-child {
     text-align: center;
 }
 
-.div-btn{
-    padding-bottom: 10px;
+.btn-buscar{
+    background: #F7EC3F;
+    border:none;
+    border-radius:0.5em;
+    display: inline-block;
+    padding: 0;
+    vertical-align: middle;
 }
+
 .btn-crear-nuevo{
     background: #0099CC;
     border:none;
-    display: block;
+    display: inline-block;
     padding: 0;
 }
 
-.btn-crear-nuevo:hover, .fa-user-plus:hover,  .fa-newspaper-o:hover{
-     background: rgba(0,0,0,0);
+.btn-crear-nuevo:hover,.btn-crear-nuevo:active , .fa-user-plus:hover,  .fa-newspaper-o:hover{
+     background: rgba(0,0,0,0) !important;
      box-shadow: inset 0 0 0 3px #0099CC;
      color: #0099CC;
  }
 
-.col-lg-5{
-    margin-top:182.5px;
+.btn-buscar:hover, .fa-search:hover{
+     background: white;
+    box-shadow: inset 0 0 0 3px #F7EC3F;
+    color: #F7EC3F;
+ }
+
+.btn-nuevo-parvulo{
+    margin-bottom: 15px;
 }
+
+.contenedor-parvulos{
+    margin-top:132.5px;
+}
+
+.div-btn{
+    padding-bottom: 10px;
+}
+
 .fa{
     border-radius: 0.3em;
     padding: 5px;
@@ -128,6 +149,11 @@ th:last-child {
     width:170px !important;
 }
 
+.fa-search{
+    background: #F7EC3F;
+    font-weight: bolder;
+}
+
 .fa-trash-o{
     background: #C32026;
     font-weight: bolder;
@@ -137,6 +163,10 @@ th:last-child {
     background: rgba(0,0,0,0);
     color: #C32026;
     box-shadow: inset 0 0 0 3px #C32026;
+}
+
+.form-group-buscar{
+    display: inline-block;
 }
 
 .panel-body , .container{

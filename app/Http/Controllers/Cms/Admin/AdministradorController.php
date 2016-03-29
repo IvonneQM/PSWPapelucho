@@ -14,10 +14,10 @@ class AdministradorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        $administradores = \App\User::where('role','=','admin')->orderBy('id', 'DESC')->paginate();
+        $administradores = \App\User::fullName($request->get('full_name'))->where('role','=','admin')->orderBy('id', 'DESC')->paginate();
         return view('cms.admin.administradores.lista',compact('administradores'));
     }
 

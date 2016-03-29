@@ -37,7 +37,16 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
-    public function setPasswordAttribute($value){
+    public function setPasswordAttribute($value)
+    {
         $this->attributes['password']=bcrypt($value);
+    }
+
+    public function scopeFullName($query, $full_name)
+    {
+        if(trim($full_name) != "")
+        {
+            $query->where('full_name', "LIKE" ,"%$full_name%");
+        }
     }
 }

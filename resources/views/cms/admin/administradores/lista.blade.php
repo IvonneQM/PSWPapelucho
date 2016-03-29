@@ -17,20 +17,19 @@
                {{-- col-md-4 col-xs-4 col-xs-4" --}}
                 <div class="panel-heading"><h1 class="title">Administradores</h1></div>
 
-                <div class="panel-body">
-
-                    {{--{!! Form::open(['route' => cms.admin.apoderados.lista', 'method' => 'GET', 'class' =>'nav-form nav-left', 'role' => 'search']) !!}
-
-                        <div class="form-group">
-                            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre de Usuario']) !!}}
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Buscar</button>
-                    {!! Form::close()  !!}
-                    --}}
-                </div>
 
                 <div class="col-lg-12 div-btn">
+
+                  {!! Form::open(['route' => 'administradores', 'method' => 'GET', 'class' =>'nav-form nav-left pull-left', 'role' => 'search']) !!}
+
+                  <div class="form-group form-group-buscar">
+                      {!! Form::text('full_name', null, ['class' => 'form-control ', 'placeholder' => 'Nombre de Usuario']) !!}
+                  </div>
+                  <button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>
+
+                  {!! Form::close()  !!}
+
+
                     <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-administrador" href="#" role="button"> <i class="fa fa-user-plus"> Crear Administrador</i></a>
                 </div>
                 <div class="panel-body">

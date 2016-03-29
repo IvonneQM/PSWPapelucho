@@ -13,34 +13,17 @@ use Illuminate\Support\Facades\Session;
 class ApoderadoController extends Controller
 {
 
-  /*  public function __construct()
-    {
-        $this->beforeFilters('@finUser', ['only' => ['show', 'edit', 'update', 'destroy']]);
-    }
-
-    public function findUser(Route $route){
-        $this->user = User::findOrFail($route->getParameter('users'));
-    }
-*/
-    /**
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
-        $apoderados = User::where('role','=','apoderado')->orderBy('id', 'DESC')->paginate();
-        return view('cms.admin.apoderados.lista',compact('apoderados'));
+        $apoderados = \App\User::fullName($request->get('full_name'))->where('role','=','apoderado')->orderBy('id', 'DESC')->paginate();
+        return view('cms.admin.apoderados.lista', compact('apoderados'));
     }
 
-
-    /*public function findApoderado(Route $route)
-    {
-        this->user= User::findOrFail($route>getParameter('users'))
-    }*/
 
     /**
      * Show the form for creating a new resource.
@@ -106,7 +89,13 @@ class ApoderadoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $apoderado = User::find($id);
+        if (is_null ($apoderado))
+        {
+            \App::abort(404);
+        }
+
+        return view('cms.admin.apoderados.form')->with('user', $apoderado);
     }
 
     /**

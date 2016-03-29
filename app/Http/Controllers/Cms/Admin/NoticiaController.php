@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Cms\Admin;
 
 use Illuminate\Http\Request;
 use App\Noticia;
+use Validator;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,13 +17,13 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = \App\Noticia::paginate();
+        $noticias = \App\Noticia::orderBy('id','DESC')->paginate();
         return view('cms.admin.noticias.lista',compact('noticias'));
     }
 
     public function mostrarNoticias()
     {
-        $noticias = \App\Noticia::paginate(2);
+        $noticias = \App\Noticia::orderBy('id','DESC')->paginate(2);
         return view('home',compact('noticias'));
     }
 

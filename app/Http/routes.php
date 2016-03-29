@@ -111,10 +111,20 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'registroApoderado',
         ));
 
+        Route::edit('administrador/apoderados/{id}', array(
+            'uses' => 'Cms\Admin\ApoderadoController@edit',
+            'as' => 'editarApoderado',
+        ));
+
         Route::delete('administrador/apoderados/{id}', array(
             'uses' => 'Cms\Admin\ApoderadoController@destroy',
             'as' => 'eliminarApoderado',
         ));
+
+        Route::get('administrador/apoderados/parvulo',[
+            'uses'=>'Cms\Admin\ParvuloController@index',
+            'as'=>'parvulos'
+        ]);
 
         Route::get('administrador/noticias',[
             'uses'=>'Cms\Admin\NoticiaController@index',
@@ -131,10 +141,7 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'eliminarNoticia',
         ));
 
-        Route::get('administrador/parvulos',[
-            'uses'=>'Cms\Admin\ParvuloController@index',
-            'as'=>'parvulos'
-        ]);
+
 
     });
     Route::group(['middleware' => 'role:apoderado'], function(){
