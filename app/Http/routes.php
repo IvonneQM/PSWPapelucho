@@ -111,10 +111,7 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'registroApoderado',
         ));
 
-        Route::edit('administrador/apoderados/{id}', array(
-            'uses' => 'Cms\Admin\ApoderadoController@edit',
-            'as' => 'editarApoderado',
-        ));
+
 
         Route::delete('administrador/apoderados/{id}', array(
             'uses' => 'Cms\Admin\ApoderadoController@destroy',
@@ -125,6 +122,11 @@ Route::group(['middleware' => 'auth'], function(){
             'uses'=>'Cms\Admin\ParvuloController@index',
             'as'=>'parvulos'
         ]);
+
+
+
+        Route::resource('file', 'Cms\Admin\FileController');
+
 
         Route::get('administrador/noticias',[
             'uses'=>'Cms\Admin\NoticiaController@index',

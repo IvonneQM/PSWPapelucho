@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cms\Admin;
 
 use Illuminate\Http\Request;
 
@@ -17,12 +17,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        $file = File::all();
-        $view = View::make('renderSections')->with('files',$file);
-        if($request->ajax()){
-            $sections = $view->renderSections();
-            return Response::json($sections['contentPanel']);
-        }else return $view;
+        return view('cms.admin.archivos.form');
 
     }
 
@@ -42,16 +37,14 @@ class FileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        $faker = Faker::create();
-        $file = new File;
-        $file -> name = $faker->name;
-        $file -> url = $faker->imageUrl($width=170, $height=170,'nature');
-        $file -> size = $faker->randomDigit;
-
-        if($file->save())return Response::json('ok',200);
-        else return Response::json('error',500);
+        $path = public_path().'/uploads/';
+        $files = $request->file('file');
+        foreach($files as $file){
+            $fileName = $file->getClientOriginalName();
+            $file->move($path, $fileName);
+        }
     }
 
     /**
