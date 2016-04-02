@@ -20,7 +20,7 @@ class ApoderadoController extends Controller
      */
     public function index(Request $request)
     {
-        $apoderados = \App\User::fullName($request->get('full_name'))->where('role','=','apoderado')->orderBy('id', 'DESC')->paginate();
+        $apoderados = \App\User::with('parvulos')fullName($request->get('full_name'))->where('role','=','apoderado')->orderBy('id', 'DESC')->paginate();
         return view('cms.admin.apoderados.lista', compact('apoderados'));
     }
 
