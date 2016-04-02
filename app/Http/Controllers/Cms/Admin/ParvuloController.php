@@ -16,7 +16,7 @@ class ParvuloController extends Controller
      */
     public function index(Request $request)
     {
-        $parvulos = \App\Parvulo::UserID($request->user)->paginate();
+        $parvulos = \App\Parvulo::UserID($request->get('user_id'))->paginate();
         return view('cms.admin.parvulos.lista',compact('parvulos'));
 
     }

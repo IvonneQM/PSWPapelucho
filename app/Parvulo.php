@@ -13,9 +13,9 @@ class Parvulo extends Model
 
     public function scopeUserID($query, $users_id )
     {
-        if(trim(users_id) != "")
+        if(trim($users_id) != "")
         {
-            $query->where('users_id', "=" ,"$users_id");
+            $query->where('users_id', "=" ,$users_id);
         }
     }
 }
