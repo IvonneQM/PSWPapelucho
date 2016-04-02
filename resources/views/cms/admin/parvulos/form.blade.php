@@ -34,7 +34,7 @@
                             {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
                             {!!Form::close()!!}
                         </div>
-                        <div class="col-md-6" class="list-parvulos">
+                        <div class="col-md-6 list-parvulos">
 
 
 

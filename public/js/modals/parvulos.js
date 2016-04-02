@@ -15,7 +15,7 @@ $(document).ready(function() {
 
         var row = $(this).parents('tr');
         var id = row.data('id');
-        $(".list-parvulos").load("http://localhost:8888/PSWPapelucho/public/administrador/parvulos?user="+id)
+        $(".list-parvulos").load("http://localhost:8888/PSWPapelucho/public/administrador/parvulos?user="+id);
 
 
         $(document).on('submit', '#form-register-parvulo', function(e) {
