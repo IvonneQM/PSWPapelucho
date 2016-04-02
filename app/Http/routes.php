@@ -131,7 +131,7 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'eliminarParvulo',
         ));
 
-        Route::get('administrador/parvulos/?users_id={users_id}',[
+        Route::get('administrador/parvulos?users_id={users_id}',[
             'uses'=>'Cms\Admin\ParvuloController@index',
             'as'=>'parvulos-'
         ]);
