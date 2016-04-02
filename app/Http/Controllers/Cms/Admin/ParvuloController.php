@@ -15,10 +15,13 @@ class ParvuloController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
-        $parvulos = \App\Parvulo::user($request->get('user'))->paginate();
-        return view('cms.admin.parvulos.lista',compact('parvulos'));
 
+
+    {
+        if($request->ajax()) {
+            $parvulos = \App\Parvulo::user($request->get('user'))->get();
+            return view('cms.admin.parvulos.lista', compact('parvulos'));
+        }
     }
 
     protected function validator(array $data)

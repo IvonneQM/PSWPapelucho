@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function() {
+
     //INGRESAR NOTICIAS//
     $.ajaxSetup({
         headers: {
@@ -11,6 +12,10 @@ $(document).ready(function() {
     })
     $('.parvulos-del-apoderado').click(function() {
         $('#modal-parvulos').modal();
+
+        var row = $(this).parents('tr');
+        var id = row.data('id');
+        $(".list-parvulos").load("http://localhost:8888/PSWPapelucho/public/administrador/parvulos?user="+id)
 
 
         $(document).on('submit', '#form-register-parvulo', function(e) {
