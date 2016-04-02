@@ -111,18 +111,25 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'registroApoderado',
         ));
 
-
-
         Route::delete('administrador/apoderados/{id}', array(
             'uses' => 'Cms\Admin\ApoderadoController@destroy',
             'as' => 'eliminarApoderado',
         ));
 
-        Route::get('administrador/apoderados/parvulo',[
+        Route::get('administrador/parvulos',[
             'uses'=>'Cms\Admin\ParvuloController@index',
             'as'=>'parvulos'
         ]);
 
+        Route::post( 'administrador/parvulos', array(
+            'uses' => 'Cms\Admin\ParvuloController@store',
+            'as' => 'registroParvulo',
+        ));
+
+        Route::delete('administrador/parvulos/{id}', array(
+            'uses' => 'Cms\Admin\ParvuloController@destroy',
+            'as' => 'eliminarParvulo',
+        ));
 
 
         Route::resource('file', 'Cms\Admin\FileController');
