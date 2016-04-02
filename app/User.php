@@ -22,6 +22,11 @@ class User extends Model implements AuthenticatableContract,
      * @var string
      */
     protected $table = 'users';
+    
+    
+    public function parvulos(){
+      return $this->hasMany('App\Parvulo', 'rut', 'rut');
+    }
 
     /**
      * The attributes that are mass assignable.
