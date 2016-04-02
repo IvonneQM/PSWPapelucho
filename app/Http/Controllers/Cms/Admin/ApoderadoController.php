@@ -78,7 +78,8 @@ class ApoderadoController extends Controller
      */
     public function show($id)
     {
-        //
+        $apoderado = User::findOrFail($id);
+        return view('cms.admin.apoderados.form', compact('apoderado'));
     }
 
     /**

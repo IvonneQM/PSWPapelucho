@@ -12,10 +12,7 @@ class GaleriaTable extends Migration
      */
     public function up()
     {
-        Schema::create('galeria', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        //
     }
 
     /**
@@ -25,6 +22,6 @@ class GaleriaTable extends Migration
      */
     public function down()
     {
-        Schema::drop('galeria');
+        //
     }
 }

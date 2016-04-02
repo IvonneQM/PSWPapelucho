@@ -12,7 +12,7 @@ class JornadasTable extends Migration
      */
     public function up()
     {
-        Schema::create('jornada', function (Blueprint $table) {
+        Schema::create('jornadas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('jornada');
             $table->timestamps();

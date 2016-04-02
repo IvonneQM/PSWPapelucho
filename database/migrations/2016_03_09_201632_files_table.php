@@ -17,6 +17,7 @@ class FilesTable extends Migration
             $table->string('name');
             $table->string('url');
             $table->integer('size');
+            $table->enum('type',['imagen','informe-hogar','boletin','informacion-general']);
             $table->timestamps();
         });
     }

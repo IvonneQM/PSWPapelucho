@@ -17,7 +17,7 @@ class ParvuloController extends Controller
     public function index(Request $request)
     {
 
-            $parvulos = \App\Parvulo::user($request->get('user'));
+            $parvulos = \App\Parvulo::user($request->get('user'))->paginate();
             return view('cms.admin.parvulos.lista', compact('parvulos'));
 
     }
@@ -82,7 +82,7 @@ class ParvuloController extends Controller
      */
     public function edit($id)
     {
-        //
+        $parvulo = User::findOrFail($id);
     }
 
     /**

@@ -19,12 +19,11 @@ class ParvulosTable extends Migration
             $table->string('level');
             $table->string('jornada');
             $table->string('kindergarten');
-            $table->string('users_id');
+            $table->integer('users_id')->unsigned();
             $table->timestamps();
 
-            /*$table->foreign(referen)
-            soft delete
-            */
+            $table->foreign('users_id')->references('id')->on('users')
+                ->onDelete('cascade');
         });
     }
 
