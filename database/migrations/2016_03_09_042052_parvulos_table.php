@@ -19,7 +19,12 @@ class ParvulosTable extends Migration
             $table->string('level');
             $table->string('jornada');
             $table->string('kindergarten');
+            $table->string('users_id');
             $table->timestamps();
+
+            /*$table->foreign(referen)
+            soft delete
+            */
         });
     }
 

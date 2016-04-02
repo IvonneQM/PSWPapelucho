@@ -25,7 +25,7 @@ class User extends Model implements AuthenticatableContract,
     
     
     public function parvulos(){
-      return $this->hasMany('App\Parvulo', 'rut', 'rut');
+      return $this->hasMany('App\Parvulo', 'users_id');
     }
 
     /**
