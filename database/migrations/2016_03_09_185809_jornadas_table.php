@@ -26,6 +26,6 @@ class JornadasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('jornada');
+        Schema::drop('jornadas');
     }
 }

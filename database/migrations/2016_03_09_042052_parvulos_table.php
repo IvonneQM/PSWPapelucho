@@ -17,12 +17,15 @@ class ParvulosTable extends Migration
             $table->string('rut')->unique();
             $table->string('full_name');
             $table->string('level');
-            $table->string('jornada');
+
             $table->string('kindergarten');
-            $table->integer('users_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('jornada_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('users_id')->references('id')->on('users')
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('cascade');
+            $table->foreign('jornada_id')->references('id')->on('jornadas')
                 ->onDelete('cascade');
         });
     }

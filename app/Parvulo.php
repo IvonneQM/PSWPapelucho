@@ -11,9 +11,9 @@ class Parvulo extends Model
 
     protected $fillable = ['rut','full_name'];
 
-    public function scopeUser($query, $value){
-        if( !empty($value)) {
-            return $query->where("users_id", $value);
+    public function scopeUser($query, $user_id){
+        if( !empty($user_id)) {
+            return $query->where("user_id", $user_id);
         }
     }
 }
