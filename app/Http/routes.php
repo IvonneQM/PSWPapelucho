@@ -111,7 +111,7 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'registroApoderado',
         ));
 
-        Route::put( 'administrador/apoderado?users_id={user}', array(
+        Route::put( 'administrador/apoderado/{id}/edit', array(
             'uses' => 'Cms\Admin\ApoderadoController@edit',
             'as' => 'editarApoderado',
         ));
