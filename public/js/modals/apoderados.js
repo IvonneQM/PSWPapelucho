@@ -45,7 +45,7 @@ $(document).ready(function() {
 
         var row = $(this).parents('tr');
         var id = row.data('id');
-        $(".update-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado/"+id+"/edit");
+        $(".form-edit-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado/"+id+"/edit");
 
         $('#modal-editar-apoderado').modal();
 
@@ -62,13 +62,13 @@ $(document).ready(function() {
                 dataType: "json",
                 success: function (data) {
                     swal(   "Registro creado!",
-                        "El registro se ha generado con exito",
-                        "success");
+                            "El registro se ha generado con exito",
+                            "success");
                 },
                 error: function (data) {
                     swal(   "Oops",
-                        "Se ha generado un problema de conexión con el servidor",
-                        "error");
+                            "Se ha generado un problema de conexión con el servidor",
+                            "error");
                 }
             });
         })
