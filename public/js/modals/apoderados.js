@@ -13,7 +13,6 @@ $(document).ready(function() {
 
     $('#register-apoderado').click(function () {
         $('#modal-crear-apoderados').modal();
-        $(".create-upadate-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderados");
 
         $(document).on('submit', '#form-register-apoderado', function (e) {
             e.preventDefault();
@@ -47,7 +46,7 @@ $(document).ready(function() {
 
         var row = $(this).parents('tr');
         var id = row.data('id');
-        $(".create-upadate-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado?user="+id);
+        $(".update-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado?user="+id);
 
 
         $(document).on('submit', '#form-editar-apoderado', function (e) {
