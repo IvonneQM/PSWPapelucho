@@ -46,7 +46,7 @@ $(document).ready(function() {
 
         var row = $(this).parents('tr');
         var id = row.data('id');
-        $(".update-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado?user="+id);
+        $(".update-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado/"+id+"/edit");
 
 
         $(document).on('submit', '#form-editar-apoderado', function (e) {
