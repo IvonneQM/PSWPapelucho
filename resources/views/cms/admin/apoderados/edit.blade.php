@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
 
-                    {!!Form::model($user, ['id'=>'form-editar-apoderado'],['class'=>'form-horizontal'],['route'=>'editarApoderado', 'method' => 'PUT', 'role' => 'form', 'action' => 'editarApoderado'])!!}
+                    {!!Form::model($user,['route'=>['editarApoderado',$user->id],['class'=>'form-horizontal','id'=>'form-editar-apoderado','method' => 'PUT', 'role' => 'form'])!!}
                     @include('cms.admin.apoderados.partials.fields')
 
                     {!!Form::close()!!}
