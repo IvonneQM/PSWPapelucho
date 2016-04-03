@@ -78,6 +78,10 @@ th:last-child {
     text-align: center;
 }
 
+a.dz-remove {
+    color: #3952A3;
+}
+
 .btn-buscar{
     background: #F7EC3F;
     border:none;

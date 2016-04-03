@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Cms\Admin;
 
+use App\Jornada;
+use App\Parvulo;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,7 +20,7 @@ class ParvuloController extends Controller
     public function index(Request $request)
     {
 
-            $parvulos = \App\Parvulo::user($request->get('user'))->paginate();
+            $parvulos = Parvulo::user($request->get('user'))->paginate();
             return view('cms.admin.parvulos.lista', compact('parvulos'));
 
     }
@@ -30,6 +33,17 @@ class ParvuloController extends Controller
         ]);
     }
 
+    public function listJornadas(Request $request){
+        $jornadas= Jornada::jornadas($request->get('jornada'))->paginate();
+        return $jornadas;
+    }
+
+    public function getJornadas(Request $request, $id){
+        if($request->ajax()){
+            $jornadas= Jornada::jornadas();
+            return response()->json($jornadas);
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

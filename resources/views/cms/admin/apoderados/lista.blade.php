@@ -3,6 +3,7 @@
 @section('meta')
     {!!Html::script('js/modals/apoderados.js')!!}
     {!!Html::script('js/modals/parvulos.js')!!}
+    {!!Html::script('js/relaciones/relacion.js')!!}
     @stop
 
 @section('aside1')
@@ -23,7 +24,7 @@
 
                 <div class="col-lg-12 div-btn">
 
-                    {!! Form::open(['route' => 'apoderados', 'method' => 'GET', 'class' =>'nav-form nav-left pull-left', 'role' => 'search']) !!}
+                    {!! Form::open(['route' => 'apoderados', 'method' => 'GET', 'class' =>'nav-form nav-left', 'role' => 'search']) !!}
 
                     <div class="form-group form-group-buscar">
                         {!! Form::text('full_name', null, ['class' => 'form-control ', 'placeholder' => 'Nombre de Usuario']) !!}

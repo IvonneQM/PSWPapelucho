@@ -16,4 +16,10 @@ class Parvulo extends Model
             return $query->where("user_id", $user_id);
         }
     }
+
+    public function scopeJornada($query, $jornada_id){
+        if( !empty($jornada_id)) {
+            return $query->where("jornada_id", $jornada_id);
+        }
+    }
 }

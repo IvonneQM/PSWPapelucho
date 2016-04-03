@@ -56,6 +56,5 @@
         <span id="computec-logo"><a href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a></span>
     </p>
 </footer>
-<script src="{{asset('js/functions.js')}}"></script>
 </body>
 </html>

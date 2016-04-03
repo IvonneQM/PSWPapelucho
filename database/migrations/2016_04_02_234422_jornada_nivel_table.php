@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ParvulosTable extends Migration
+class JornadaNivelTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,22 +12,17 @@ class ParvulosTable extends Migration
      */
     public function up()
     {
-        Schema::create('parvulos', function (Blueprint $table) {
-
+        Schema::create('jornada_nivel', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('rut')->unique();
-            $table->string('full_name');
-            $table->string('nivel');
-            $table->string('jardin');
-            $table->integer('user_id')->unsigned()->nullable();
             $table->integer('jornada_id')->unsigned()->nullable();
-            $table->timestamps();
-
+            $table->integer('nivel_id')->unsigned()->nullable();
 
             $table->foreign('jornada_id')->references('id')->on('jornadas')
                 ->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')
+            $table->foreign('nivel_id')->references('id')->on('niveles')
                 ->onDelete('cascade');
+
+
         });
     }
 
@@ -38,6 +33,6 @@ class ParvulosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('parvulos');
+        Schema::drop('jornada_nivel');
     }
 }

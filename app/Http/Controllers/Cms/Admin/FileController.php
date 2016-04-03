@@ -17,7 +17,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        return view('cms.admin.archivos.form');
+        return view('cms.admin.archivos.dropzone');
 
     }
 
@@ -39,11 +39,12 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        $path = public_path().'/uploads/';
+        $dir = public_path().'/uploads/';
         $files = $request->file('file');
+
         foreach($files as $file){
             $fileName = $file->getClientOriginalName();
-            $file->move($path, $fileName);
+            $file->move($dir, $fileName);
         }
     }
 

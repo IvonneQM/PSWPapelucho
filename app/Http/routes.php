@@ -136,7 +136,12 @@ Route::group(['middleware' => 'auth'], function(){
             'as'=>'parvulos-'
         ]);
 
-        Route::resource('file', 'Cms\Admin\FileController');
+        /*Route::get('administrador/jornadas',[
+            'uses'=>'Cms\Admin\ParvuloController@listJornadas',
+            'as'=>'jornadas'
+        ]);*/
+
+        Route::resource('administrador/files', 'Cms\Admin\FileController');
 
 
         Route::get('administrador/noticias',[

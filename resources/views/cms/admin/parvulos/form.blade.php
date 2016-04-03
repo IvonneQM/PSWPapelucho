@@ -24,23 +24,24 @@
                                 {!!Form::text('full_name',null, ['id'=>'full_name','class'=>'form-control', 'placeholder' => 'Ingresa el nombre del usuario'])!!}
                             </div>
                             <div class="form-group">
-                                {!!Form::label('email','Correo: ')!!}
-                                {!!Form::Email('email',null, ['id'=>'email','class'=>'form-control', 'placeholder' => 'Ingresa el correo del usuario'])!!}
+                                {!!Form::label('jornada','Jornada: ')!!}
+                                {!!Form::select('jornada')!!}
                             </div>
                             <div class="form-group">
-                                {!!Form::label('password','Contraseña: ')!!}
-                                {!!Form::text('password',null, ['id'=>'password','class'=>'form-control', 'placeholder' => 'Ingresa la contraseña del usuario'])!!}
+                                {!!Form::label('nivel','Nivel: ')!!}
+                                {!!Form::select('nivel')!!}
                             </div>
+                            <div class="form-group">
+                                {!!Form::label('jardin','Jardin: ')!!}
+                                {!!Form::select('jardin')!!}
+                            </div>
+
                             {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
                             {!!Form::close()!!}
                         </div>
                         <div class="col-md-6 list-parvulos">
 
-
-
-
-
-
+                          
 
                         </div>
                     </div>

@@ -14,7 +14,7 @@ class FilesTable extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('fileName');
             $table->string('url');
             $table->integer('size');
             $table->enum('type',['imagen','informe-hogar','boletin','informacion-general']);
