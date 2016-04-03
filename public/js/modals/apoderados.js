@@ -1,6 +1,3 @@
-/**
- * Created by YvonneQM on 25-03-16.
- */
 
 $(document).ready(function() {
 
@@ -26,14 +23,14 @@ $(document).ready(function() {
                 data: $(this).serialize(),
                 dataType: "json",
                 success: function (data) {
-                    swal(   "Registro creado!",
-                            "El registro se ha generado con exito",
-                            "success");
+                    swal("Registro creado!",
+                        "El registro se ha generado con exito",
+                        "success");
                 },
                 error: function (data) {
-                    swal(   "Oops",
-                            "Se ha generado un problema de conexión con el servidor",
-                            "error");
+                    swal("Oops",
+                        "Se ha generado un problema de conexión con el servidor",
+                        "error");
                 }
             });
         })
@@ -45,7 +42,8 @@ $(document).ready(function() {
 
         var row = $(this).parents('tr');
         var id = row.data('id');
-        $(".form-edit-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado/"+id+"/edit");
+
+        $(".update-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado/" + id + "/edit");
 
         $('#modal-editar-apoderado').modal();
 
@@ -61,14 +59,14 @@ $(document).ready(function() {
                 data: $(this).serialize(),
                 dataType: "json",
                 success: function (data) {
-                    swal(   "Registro creado!",
-                            "El registro se ha generado con exito",
-                            "success");
+                    swal("Registro creado!",
+                        "El registro se ha generado con exito",
+                        "success");
                 },
                 error: function (data) {
-                    swal(   "Oops",
-                            "Se ha generado un problema de conexión con el servidor",
-                            "error");
+                    swal("Oops",
+                        "Se ha generado un problema de conexión con el servidor",
+                        "error");
                 }
             });
         })
@@ -105,19 +103,21 @@ $(document).ready(function() {
                     data: data,
                     dataType: "json",
                     success: function (data) {
-                        swal(   "Registro eliminado!",
-                                "El registro ha sido eliminada",
-                                "success");
+                        swal("Registro eliminado!",
+                            "El registro ha sido eliminada",
+                            "success");
                     },
                     error: function (data) {
-                        swal(   "Oops",
-                                "Se ha generado un problema de conexión con el servidor",
-                                "error");
+                        swal("Oops",
+                            "Se ha generado un problema de conexión con el servidor",
+                            "error");
                         row.fadeIn();
                     }
 
                 });
 
             });
+
     })
 })
+
