@@ -42,12 +42,12 @@ $(document).ready(function() {
     //ACTUALIZAR APODERADOS//
 
     $('.editar-apoderado').click(function () {
-        $('#modal-editar-apoderado').modal();
 
         var row = $(this).parents('tr');
         var id = row.data('id');
         $(".update-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado/"+id+"/edit");
 
+        $('#modal-editar-apoderado').modal();
 
         $(document).on('submit', '#form-editar-apoderado', function (e) {
             e.preventDefault();
