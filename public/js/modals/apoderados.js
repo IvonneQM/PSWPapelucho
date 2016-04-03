@@ -10,8 +10,9 @@ $(document).ready(function() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     })
+
     $('#register-apoderado').click(function () {
-        $('#modal-apoderados').modal();
+        $('#modal-crear-apoderados').modal();
 
 
         $(document).on('submit', '#form-register-apoderado', function (e) {
@@ -34,6 +35,37 @@ $(document).ready(function() {
                     swal(   "Oops",
                             "Se ha generado un problema de conexión con el servidor",
                             "error");
+                }
+            });
+        })
+    });
+
+    //ACTUALIZAR APODERADOS//
+
+    $('.editar-apoderado').click(function () {
+        $('#modal-editar-apoderado').modal();
+
+
+        $(document).on('submit', '#form-editar-apoderado', function (e) {
+            e.preventDefault();
+            $('input').parent().removeClass('has-error');
+            $.ajax({
+                method: $(this).attr('method'),
+                type: "PUT",
+                token: $('input[name="_token"]').val(),
+                cache: false,
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                dataType: "json",
+                success: function (data) {
+                    swal(   "Registro creado!",
+                        "El registro se ha generado con exito",
+                        "success");
+                },
+                error: function (data) {
+                    swal(   "Oops",
+                        "Se ha generado un problema de conexión con el servidor",
+                        "error");
                 }
             });
         })

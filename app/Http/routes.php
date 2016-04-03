@@ -111,6 +111,11 @@ Route::group(['middleware' => 'auth'], function(){
             'as' => 'registroApoderado',
         ));
 
+        Route::post( 'administrador/apoderados', array(
+            'uses' => 'Cms\Admin\ApoderadoController@edit',
+            'as' => 'editarApoderado',
+        ));
+
         Route::delete('administrador/apoderados/{id}', array(
             'uses' => 'Cms\Admin\ApoderadoController@destroy',
             'as' => 'eliminarApoderado',

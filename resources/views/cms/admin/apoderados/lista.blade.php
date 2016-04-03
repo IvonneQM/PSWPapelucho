@@ -13,7 +13,8 @@
 @stop
 @section('general-content-1')
 
-    @include('cms.admin.apoderados.form')
+    @include('cms.admin.apoderados.create')
+    @include('cms.admin.apoderados.edit')
     @include('cms.admin.parvulos.form')
 
     <div class="container" style="width: 100%">
@@ -38,29 +39,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <table class="table table-striped">
-                        <tbody>
-                        <tr id="t-header-content-principal">
-                            <th>Rut</th>
-                            <th>Nombre Completo</th>
-                            <th>Acciones</th>
-                        </tr>
-                        @foreach($apoderados as $apoderado)
-                            <tr data-id="{{ $apoderado->id }}">
-                                <td>{!! $apoderado->rut !!}</td>
-                                <td>{!! $apoderado->full_name !!}</td>
-                                <td>
-                                    <div class="t-actions">
-                                        <a class="parvulos-del-apoderado" href="#"  role="button" data-toggle="modal" data-target="bs-example-modal-lg"><i class="fa fa-child"></i></a>
-                                        <a href="#"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" type="submit" class="btn-delete-apoderado"><i class="fa fa-trash-o"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                    {!! $apoderados -> render() !!}
+                    @include('cms.admin.apoderados.partials.table')
                 </div>
             </div>
         </div>

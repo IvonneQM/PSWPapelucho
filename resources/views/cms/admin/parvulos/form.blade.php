@@ -9,45 +9,14 @@
                 </div>
                   <div class="modal-body">
                     <div class="row">
-
-
-
                         <div class="col-md-6">{!!Form::open(['id'=>'form-register-parvulo'],['class'=>'form-horizontal'],['route'=>'registroParvulo', 'method' => 'POST', 'role' => 'form', 'action' => 'registroParvulo'])!!}
-                            {!! csrf_field() !!}
-
-                            <div class="form-group">
-                                {!!Form::label('rut','Rut: ')!!}
-                                {!!Form::text('rut',null, ['id'=>'rut','class'=>'form-control', 'placeholder' => 'Ingresa el RUT del usuario'])!!}
-                            </div>
-                            <div class="form-group">
-                                {!!Form::label('full_name','Nombre: ')!!}
-                                {!!Form::text('full_name',null, ['id'=>'full_name','class'=>'form-control', 'placeholder' => 'Ingresa el nombre del usuario'])!!}
-                            </div>
-                            <div class="form-group">
-                                {!!Form::label('jornada','Jornada: ')!!}
-                                {!!Form::select('jornada')!!}
-                            </div>
-                            <div class="form-group">
-                                {!!Form::label('nivel','Nivel: ')!!}
-                                {!!Form::select('nivel')!!}
-                            </div>
-                            <div class="form-group">
-                                {!!Form::label('jardin','Jardin: ')!!}
-                                {!!Form::select('jardin')!!}
-                            </div>
-
-                            {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
+                            @include('cms.admin.parvulos.partials.fields')
                             {!!Form::close()!!}
                         </div>
                         <div class="col-md-6 list-parvulos">
-
-                          
-
+                            {{-- Contenedor de la vista lista --}}
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
