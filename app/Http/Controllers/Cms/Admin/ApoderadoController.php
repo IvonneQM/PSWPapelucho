@@ -90,8 +90,6 @@ class ApoderadoController extends Controller
     public function edit($id)
     {
         $apoderado = User::findOrFail($id);
-
-
         return view('cms.admin.apoderados.edit',compact('apoderado'));
     }
 
@@ -104,7 +102,15 @@ class ApoderadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $apoderado = User::findOrFail($id);
+        $apoderado->fill($request->all());
+        $apoderado->save();
+
+        if($request->ajax()){
+            return response()->json([
+                "mensaje"=>"listo"
+            ]);
+        }
     }
 
     /**

@@ -14,7 +14,6 @@
 @section('general-content-1')
 
     @include('cms.admin.apoderados.create')
-    @include('cms.admin.apoderados.edit')
     @include('cms.admin.parvulos.form')
 
     <div class="container" style="width: 100%">
@@ -49,4 +48,19 @@
      {!! Form::open(['route' => ['eliminarApoderado', ':APODERADO_ID'],'method' => 'DELETE', 'id' => 'form-delete-apoderado', 'action' => 'eliminarApoderado']) !!}
      {!! Form::close() !!}
 
- @stop
+
+    {{-- Modal --}}
+    <div class="modal fade" id="modal-editar-apoderado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <div class="modal-body">
+                        <div class="update-apoderado">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@stop

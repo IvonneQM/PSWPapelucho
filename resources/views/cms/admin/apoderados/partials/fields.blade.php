@@ -10,10 +10,10 @@
 </div>
 <div class="form-group">
     {!!Form::label('email','Correo: ')!!}
-    {!!Form::Email('email',null, ['id'=>'email','class'=>'form-control', 'placeholder' => 'Ingresa el correo del usuario'])!!}
+    {!!Form::email('email',null, ['id'=>'email','class'=>'form-control', 'placeholder' => 'Ingresa el correo del usuario'])!!}
 </div>
 <div class="form-group">
     {!!Form::label('password','Contraseña: ')!!}
-    {!!Form::text('password',null, ['id'=>'password','class'=>'form-control', 'placeholder' => 'Ingresa la contraseña del usuario'])!!}
+    {!!Form::password('password', ['id'=>'password','class'=>'form-control', 'placeholder' => 'Ingresa la contraseña del usuario'])!!}
 </div>
 {!!Form::submit('Guardar',['class'=>'btn btn-primary'])!!}
