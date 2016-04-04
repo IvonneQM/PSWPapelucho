@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
 
-    //INGRESAR NOTICIAS//
+    //Listar parvulos de un apoderado//
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
