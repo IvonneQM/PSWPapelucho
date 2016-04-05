@@ -53,11 +53,11 @@
     <div class="modal fade" id="modal-editar-apoderado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+
                     <div class="modal-body">
-                        <div class="update-apoderado">
-                </div>
+                        <div class="update-apoderado"></div>
+                    </div>
+
             </div>
         </div>
     </div>
