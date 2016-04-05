@@ -1,7 +1,7 @@
 <nav id="sidebar">
     <ul>
-        <li><a href="{{ route('administradores') }}">Administradores</a></li>
-        <li><a href="{{ route('apoderados') }}">Apoderados</a></li>
+        <li><a href="{{ route('administrador.administradores.index') }}">Administradores</a></li>
+        <li><a href="{{ route('administrador.apoderados.index') }}">Apoderados</a></li>
         <li><a href="{{ route('login') }}">Boletines semanales</a></li>
         <li><a href="{{ route('login') }}">Galería de imágenes</a></li>
         <li><a href="{{ route('login') }}">Informes al hogar</a></li>

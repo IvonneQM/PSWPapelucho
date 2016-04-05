@@ -49,7 +49,7 @@
 
     </div>
 
-     {!! Form::open(['route' => ['eliminarNoticia', ':NOTICIA_ID'],'method' => 'DELETE', 'id' => 'form-delete-noticia', 'action' => 'eliminarNoticia']) !!}
+     {!! Form::open(['route' => ['administrador.noticias.destroy', ':NOTICIA_ID'],'method' => 'DELETE', 'id' => 'form-delete-noticia', 'action' => 'eliminarNoticia']) !!}
      {!! Form::close() !!}
 
  @stop

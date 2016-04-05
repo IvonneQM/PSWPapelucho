@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
 
-                    {!!Form::open(['id'=>'form-register-apoderado'],['class'=>'form-horizontal'],['route'=>'registroApoderado', 'method' => 'POST', 'role' => 'form', 'action' => 'registroApoderado'])!!}
+                    {!!Form::open(['id'=>'form-register-apoderado'],['class'=>'form-horizontal'],['route'=>'administrador.apoderados.create', 'method' => 'POST', 'role' => 'form', 'action' => 'registroApoderado'])!!}
                     @include('cms.admin.apoderados.partials.fields')
 
                     {!!Form::close()!!}

@@ -24,7 +24,7 @@
 
                 <div class="col-lg-12 div-btn">
 
-                    {!! Form::open(['route' => 'apoderados', 'method' => 'GET', 'class' =>'nav-form nav-left', 'role' => 'search']) !!}
+                    {!! Form::open(['route' => 'administrador.apoderados.index', 'method' => 'GET', 'class' =>'nav-form nav-left', 'role' => 'search']) !!}
 
                     <div class="form-group form-group-buscar">
                         {!! Form::text('full_name', null, ['class' => 'form-control ', 'placeholder' => 'Nombre de Usuario']) !!}
@@ -45,7 +45,7 @@
     </div>
 
 
-     {!! Form::open(['route' => ['eliminarApoderado', ':APODERADO_ID'],'method' => 'DELETE', 'id' => 'form-delete-apoderado', 'action' => 'eliminarApoderado']) !!}
+     {!! Form::open(['route' => ['administrador.apoderados.destroy', ':APODERADO_ID'],'method' => 'DELETE', 'id' => 'form-delete-apoderado', 'action' => 'eliminarApoderado']) !!}
      {!! Form::close() !!}
 
 

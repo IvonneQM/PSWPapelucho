@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
 
-                    {!!Form::open(['id'=>'form-register-administrador'],['class'=>'form-horizontal'],['route'=>'registroAdministrador', 'method' => 'POST', 'role' => 'form', 'action' => 'registroAdministrador'])!!}
+                    {!!Form::open(['id'=>'form-register-administrador'],['class'=>'form-horizontal'],['route'=>'administrador.administradores.store', 'role' => 'form'])!!}
                     @include('cms.admin.administradores.partials.fields')
 
                     {!!Form::close()!!}

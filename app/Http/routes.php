@@ -86,21 +86,13 @@ Route::group(['middleware' => 'auth'], function(){
             return view('cms/admin/administrador');
         });
 
-        Route::get('administrador/administradores',[
-            'uses'=>'Cms\Admin\AdministradorController@index',
-            'as'=>'administradores'
-        ]);
+        Route::group(['prefix' => 'administrador'], function () {
 
-        Route::post( 'administrador/administradores', array(
-            'uses' => 'Cms\Admin\AdministradorController@store',
-            'as' => 'registroAdministrador',
-        ));
+            Route::resource('administradores', 'Cms\Admin\AdministradorController');
 
-        Route::delete('administrador/administradores/{id}', array(
-            'uses' => 'Cms\Admin\AdministradorController@destroy',
-            'as' => 'eliminarAdministrador',
-        ));
+            Route::resource('apoderados', 'Cms\Admin\ApoderadoController');
 
+/*
         Route::get('administrador/apoderados',[
             'uses'=>'Cms\Admin\ApoderadoController@index',
             'as'=>'apoderados'
@@ -124,9 +116,10 @@ Route::group(['middleware' => 'auth'], function(){
         Route::delete('administrador/apoderados/{id}', array(
             'uses' => 'Cms\Admin\ApoderadoController@destroy',
             'as' => 'eliminarApoderado',
-        ));
+        ));*/
 
-        Route::get('administrador/parvulos',[
+            Route::resource('parvulos', 'Cms\Admin\ParvuloController');
+        /*Route::get('administrador/parvulos',[
             'uses'=>'Cms\Admin\ParvuloController@index',
             'as'=>'parvulos'
         ]);
@@ -145,6 +138,7 @@ Route::group(['middleware' => 'auth'], function(){
             'uses'=>'Cms\Admin\ParvuloController@index',
             'as'=>'parvulos-'
         ]);
+        */
 
         /*Route::get('administrador/jornadas',[
             'uses'=>'Cms\Admin\ParvuloController@listJornadas',
@@ -154,6 +148,9 @@ Route::group(['middleware' => 'auth'], function(){
         Route::resource('administrador/files', 'Cms\Admin\FileController');
 
 
+            Route::resource('noticias', 'Cms\Admin\NoticiaController');
+
+            /*
         Route::get('administrador/noticias',[
             'uses'=>'Cms\Admin\NoticiaController@index',
             'as'=>'noticias'
@@ -168,8 +165,9 @@ Route::group(['middleware' => 'auth'], function(){
             'uses' => 'Cms\Admin\NoticiaController@destroy',
             'as' => 'eliminarNoticia',
         ));
+*/
 
-
+        });
 
     });
     Route::group(['middleware' => 'role:apoderado'], function(){

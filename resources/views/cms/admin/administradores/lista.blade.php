@@ -20,7 +20,7 @@
 
                 <div class="col-lg-12 div-btn">
 
-                  {!! Form::open(['route' => 'administradores', 'method' => 'GET', 'class' =>'nav-form nav-left pull-left', 'role' => 'search']) !!}
+                  {!! Form::open(['route' => 'administrador.administradores.index', 'method' => 'GET', 'class' =>'nav-form nav-left pull-left', 'role' => 'search']) !!}
 
                   <div class="form-group form-group-buscar">
                       {!! Form::text('full_name', null, ['class' => 'form-control ', 'placeholder' => 'Nombre de Usuario']) !!}
@@ -62,7 +62,7 @@
     </div>
 
 
-     {!! Form::open(['route' => ['eliminarAdministrador', ':ADMINISTRADOR_ID'],'method' => 'DELETE', 'id' => 'form-delete-administrador', 'action' => 'eliminarAdministrador']) !!}
+     {!! Form::open(['route' => ['administrador.administradores.destroy', ':ADMINISTRADOR_ID'],'method' => 'DELETE', 'id' => 'form-delete-administrador', 'action' => 'eliminarAdministrador']) !!}
      {!! Form::close() !!}
 
  @stop
