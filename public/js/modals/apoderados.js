@@ -45,22 +45,23 @@ $(document).ready(function() {
 
         $(".update-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderados/" + id + "/edit",function(){
             $('#modal-editar-apoderado').modal();
+
         });
 
         $('#form-editar-apoderado').on('submit', function (e) {
-            alert($this.serialize());
+
             e.preventDefault();
+            alert("HOLA");
             $('input').parent().removeClass('has-error');
 
 
-            $.ajax({
-                method: $(this).attr('method'),
+            $.POST({
+
                 type: "POST",
-                token: $('input[name="_token"]').val(),
-                cache: false,
+
                 url: $(this).attr('action'),
                 data: $(this).serialize(),
-                dataType: "json",
+
                 success: function (data) {
                     swal("Registro creado!",
                         "El registro se ha generado con exito",

@@ -102,13 +102,14 @@ class ApoderadoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        alert("HOLA");
         $apoderado = User::findOrFail($id);
+
         $apoderado->fill($request->all());
         $apoderado->save();
-
         if($request->ajax()){
             return response()->json([
-                "mensaje"=>"listo"
+
             ]);
         }
     }
