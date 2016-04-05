@@ -26,4 +26,7 @@
         </tbody>
     </table>
 {{--{!! $parvulos -> render() !!}--}}
+
+    {!! Form::open(['route' => ['administrador.parvulos.destroy', ':PARVULO_ID'],'method' => 'DELETE', 'id' => 'form-delete-parvulo', 'action' => 'eliminarParvulo']) !!}
+    {!! Form::close() !!}
 </div>
