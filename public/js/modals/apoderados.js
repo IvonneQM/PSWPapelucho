@@ -43,7 +43,7 @@ $(document).ready(function() {
         var row = $(this).parents('tr');
         var id = row.data('id');
 
-        $(".update-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderado/" + id + "/edit",function(){
+        $(".update-apoderado").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderados/" + id + "/edit",function(){
             $('#modal-editar-apoderado').modal();
         });
 
