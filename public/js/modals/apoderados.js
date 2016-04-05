@@ -47,12 +47,15 @@ $(document).ready(function() {
             $('#modal-editar-apoderado').modal();
         });
 
-        $(document).on('submit', '#form-editar-apoderado', function (e) {
+        $('#form-editar-apoderado').on('submit', function (e) {
+            alert($this.serialize());
             e.preventDefault();
             $('input').parent().removeClass('has-error');
+
+
             $.ajax({
                 method: $(this).attr('method'),
-                type: "PUT",
+                type: "POST",
                 token: $('input[name="_token"]').val(),
                 cache: false,
                 url: $(this).attr('action'),
