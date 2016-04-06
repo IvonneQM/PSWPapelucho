@@ -48,7 +48,6 @@ class AdministradorController extends Controller
     {
         $administrador = new \App\User($request->all());
         $administrador->role = 'admin';
-
         $administrador->save();
     }
 
@@ -60,10 +59,12 @@ class AdministradorController extends Controller
 
         $validator = $this->validator($request->all());
 
+
         if ($validator->fails()) {
             $this->throwValidationException(
                 $request, $validator
             );
+            dd($validator);
         }
 
         if($request->ajax()){

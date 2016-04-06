@@ -1,14 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Cms\Admin;
-use GuzzleHttp\Subscriber\Redirect;
-
-use Validator;
+use App\Http\Requests\CreateUserRequest;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
 
 class ApoderadoController extends Controller
 {
@@ -28,41 +25,22 @@ class ApoderadoController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param CreateUserRequest $request
      * @return \Illuminate\Http\Response
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'rut' => 'required|max:12',
-            'full_name' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'password' => 'required|min:6',
-            'role' => 'max:12',
-        ]);
-    }
-    public function create(Request $request)
-    {
-        $apoderado = new User($request->all());
-        $apoderado->role = 'apoderado';
 
-        $apoderado->save();
+    public function create(CreateUserRequest $request)
+    {
     }
 
     /**
-     * @param Request $request
+     * @param CreateUserRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request){
-
-        $validator = $this->validator($request->all());
-
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
-
+    public function store(CreateUserRequest $request){
         if($request->ajax()){
+            $apoderado = new User($request->all());
+            $apoderado->role = 'apoderado';
             User::create($request->all());
             return response()->json([]);
         }

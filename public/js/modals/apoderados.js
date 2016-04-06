@@ -45,23 +45,16 @@ $(document).ready(function() {
 
         $(".update-apoderado").load("http://papelucho.com/administrador/apoderados/" + id + "/edit",function(){
             $('#modal-editar-apoderado').modal();
-
         });
-
         $('#form-editar-apoderado').on('submit', function (e) {
-
             e.preventDefault();
             alert("HOLA");
             $('input').parent().removeClass('has-error');
-
-
             $.ajax({
-
-                type: "POST",
-
-                url: $(this).attr('action'),
+                type: "PUT",
+                url: 'http://papelucho.com/administrador/apoderados/" + id +"',
+                dataType: "json",
                 data: $(this).serialize(),
-
                 success: function (data) {
                     swal("Registro creado!",
                         "El registro se ha generado con exito",

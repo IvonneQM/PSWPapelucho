@@ -20,7 +20,9 @@
         <div class="row-fluid" >
             <div class="col-lg-12">
                {{-- col-md-4 col-xs-4 col-xs-4" --}}
+                @include('partials.errors')
                 <div class="panel-heading"><h1 class="title">Apoderados</h1></div>
+
 
                 <div class="col-lg-12 div-btn">
 
@@ -49,7 +51,7 @@
      {!! Form::close() !!}
 
 
-    {{-- Modal --}}
+    {{-- Modal Editar --}}
     <div class="modal fade" id="modal-editar-apoderado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

@@ -41,15 +41,6 @@ class AuthController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'rut' => 'required|max:255',
-            'full_name' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'password' => 'required|min:6',
-        ]);
-    }
 
     /**
      * Create a new user instance after a valid registration.
@@ -59,18 +50,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        Session::flash('success', 'Creado.');
-        $user = new User([
-            'rut' => $data['rut'],
-            'full_name' => $data['full_name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
 
-        $user -> role = 'user';
-        $user -> save();
-
-        return $user;
     }
 
 

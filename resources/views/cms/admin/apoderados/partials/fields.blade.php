@@ -1,5 +1,4 @@
 {!! csrf_field() !!}
-
 <div class="form-group">
     {!!Form::label('rut','Rut: ')!!}
     {!!Form::text('rut',null, ['id'=>'rut','class'=>'form-control', 'placeholder' => 'Ingresa el RUT del usuario'])!!}

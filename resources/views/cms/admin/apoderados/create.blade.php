@@ -8,6 +8,7 @@
                     <h4 class="modal-title" id="myModalLabel">Crear Apoderado</h4>
                 </div>
                 <div class="modal-body">
+                    @include('partials.errors')
 
                     {!!Form::open(['id'=>'form-register-apoderado'],['class'=>'form-horizontal'],['route'=>'administrador.apoderados.create', 'method' => 'POST', 'role' => 'form', 'action' => 'registroApoderado'])!!}
                     @include('cms.admin.apoderados.partials.fields')
