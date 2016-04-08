@@ -40,7 +40,6 @@ class ApoderadoController extends Controller
     public function store(CreateUserRequest $request){
         if($request->ajax()){
             $apoderado = new User($request->all());
-            $apoderado->role = 'apoderado';
             User::create($request->all());
             return response()->json([]);
         }

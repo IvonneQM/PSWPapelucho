@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Cms\Admin;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\CreateUserRequest;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Validator;
@@ -34,40 +36,22 @@ class AdministradorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    protected function validator(array $data)
+
+
+    public function create(CreateUserRequest $request)
     {
-        return Validator::make($data, [
-            'rut' => 'required|max:12',
-            'full_name' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'password' => 'required|min:6',
-            'role' => 'max:12',
-        ]);
-    }
-    public function create(Request $request)
-    {
-        $administrador = new \App\User($request->all());
-        $administrador->role = 'admin';
-        $administrador->save();
+
     }
 
     /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request){
-
-        $validator = $this->validator($request->all());
-
-
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-            dd($validator);
-        }
+    public function store(CreateUserRequest $request){
 
         if($request->ajax()){
+
+            $administrador = new \App\User($request->all());
             \App\User::create($request->all());
             return response()->json([]);
         }

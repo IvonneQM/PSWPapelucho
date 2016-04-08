@@ -15,4 +15,7 @@
     {!!Form::label('password','Contraseña: ')!!}
     {!!Form::password('password', ['id'=>'password','class'=>'form-control', 'placeholder' => 'Ingresa la contraseña del usuario'])!!}
 </div>
+
+{{ Form::hidden('role', 'apoderado', array('id' => 'role')) }}
+
 {!!Form::submit('Guardar',['class'=>'btn btn-primary'])!!}

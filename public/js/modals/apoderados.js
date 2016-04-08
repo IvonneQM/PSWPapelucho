@@ -52,7 +52,7 @@ $(document).ready(function() {
             $('input').parent().removeClass('has-error');
             $.ajax({
                 type: "PUT",
-                url: 'http://papelucho.com/administrador/apoderados/" + id +"',
+                url: 'administrador.apoderados.update',
                 dataType: "json",
                 data: $(this).serialize(),
                 success: function (data) {

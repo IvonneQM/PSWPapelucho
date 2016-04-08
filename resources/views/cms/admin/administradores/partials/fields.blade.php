@@ -14,6 +14,9 @@
 </div>
 <div class="form-group">
     {!!Form::label('password','Contraseña: ')!!}
-    {!!Form::text('password',null, ['id'=>'password','class'=>'form-control', 'placeholder' => 'Ingresa la contraseña del usuario'])!!}
+    {!!Form::password('password', ['id'=>'password','class'=>'form-control', 'placeholder' => 'Ingresa la contraseña del usuario'])!!}
 </div>
-{!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
+
+{!! Form::hidden('role', 'admin', array('id' => 'role')) !!}
+
+{!!Form::submit('Guardar',['class'=>'btn btn-primary'])!!}

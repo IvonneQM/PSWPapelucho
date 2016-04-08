@@ -10,7 +10,7 @@
 
 @stop
 @section('general-content-1')
-    @include('cms.admin.administradores.form')
+    @include('cms.admin.administradores.create')
     <div class="container" style="width: 100%">
         <div class="row-fluid" >
             <div class="col-lg-12">
@@ -33,28 +33,7 @@
                     <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-administrador" href="#" role="button"> <i class="fa fa-user-plus"> Crear Administrador</i></a>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped">
-                        <tbody>
-                        <tr id="t-header-content-principal">
-                            <th>Rut</th>
-                            <th>Nombre Completo</th>
-                            <th>Acciones</th>
-                        </tr>
-                        @foreach($administradores as $administrador)
-                            <tr data-id="{{ $administrador->id }}">
-                                <td>{!! $administrador->rut !!}</td>
-                                <td>{!! $administrador->full_name !!}</td>
-                                <td>
-                                    <div class="t-actions">
-                                        <a href="#"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" type="submit" class="btn-delete-administrador"><i class="fa fa-trash-o"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                    {!! $administradores -> render() !!}
+                    @include('cms.admin.administradores.partials.table')
                 </div>
 
             </div>
