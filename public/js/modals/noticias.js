@@ -40,6 +40,50 @@ $(document).ready(function() {
         })
     });
 
+    //ACTUALIZAR NOTICIA
+
+    $('.editar_noticia').click(function(e){
+        e.preventDefault();
+        var row = $(this).parents('tr');
+        var id = row.data('id');
+        var link = $('#id_href_noticia').attr('href');
+        var route = link.split('%7Bnoticias%7D').join(id);
+
+
+        $.get(route, function(resp){
+            $('#idNoticia').val(resp.id);
+            $('#titleNoticia').val(resp.title);
+            $('#contentNoticia').val(resp.content);
+            $('#publishNoticia').val(resp.publish);
+        })
+    });
+
+    $('#btnActualizarNoticia').click(function(e){
+        e.preventDefault();
+
+        var id = $('#idNoticia').val();
+        var form = $('#id_form_noticia');
+        var link = $('#id_update_noticia').attr('href');
+        var metodo = form.attr('method');
+        var route = link.split('%7Bnoticias%7D').join(id);
+
+        $.ajax({
+            url: route,
+            type: metodo,
+            data: form.serialize(),
+
+            success: function (data) {
+                swal("Registro actualizado!",
+                    "El registro se ha actualizado con exito",
+                    "success");
+            },
+            error: function (data) {
+                swal("Oops",
+                    "Se ha generado un problema de conexión con el servidor",
+                    "error");
+            }
+        })
+    })
 
     //ELIMINAR NOTICIAS//
     $('.btn-delete-noticia').click(function(e) {
