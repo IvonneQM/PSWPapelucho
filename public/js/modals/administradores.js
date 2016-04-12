@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
 
-    //INGRESAR APODERADOS//
+    //INGRESAR ADMINISTRADOR//
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -26,21 +26,77 @@ $(document).ready(function() {
                 data: $(this).serialize(),
                 dataType: "json",
                 success: function (data) {
-                    swal(   "Registro creado!",
-                            "El registro se ha generado con exito",
-                            "success");
+                    swal("Registro creado!",
+                        "El registro se ha generado con exito",
+                        "success");
                 },
                 error: function (data) {
-                    swal(   "Oops",
-                            "Se ha generado un problema de conexión con el servidor",
-                            "error");
+                    swal({
+                        title: "!Error¡",
+                        text: msj.responseJSON.rut +
+                        msj.responseJSON.full_name +
+                        msj.responseJSON.email +
+                        msj.responseJSON.password,
+                        type: "warning",
+                        confirmButtonColor: "#C32026",
+                        confirmButtonText: "Ok",
+                        closeOnConfirm: false
+                    })
                 }
-            });
+            })
         })
     });
 
+//ACTUALIZAR ADMINISTRADOR
 
-//ELIMINAR APODERADOS//
+    $('.editar_admin').click(function(e){
+        e.preventDefault();
+        var row = $(this).parents('tr')
+        var id = row.data('id');
+        var link = $('#id_href_admin').attr('href');
+        var route = link.split('%7Badministradores%7D').join(id);
+
+        $.get(route, function(resp){
+            $('#Admin').html("Editar Administrador: " + resp.full_name);
+            $('#idAdmin').val(resp.id);
+            $('#rutAdmin').val(resp.rut);
+            $('#nameAdmin').val(resp.full_name);
+            $('#emailAdmin').val(resp.email);
+            $('#passAdmin').val("");
+        })
+    });
+
+    $('#btnSaveAdmin').click(function(e){
+        e.preventDefault();
+
+        var id = $('#idAdmin').val();
+        var form = $('#id_form_admin');
+        var link = $('#id_update_admin').attr('href');
+        var metodo = form.attr('method');
+        var route = link.split('%7Badministradores%7D').join(id);
+
+        $.ajax({
+            url: route,
+            type: metodo,
+            data: form.serialize(),
+
+            success: function (data) {
+                swal("Registro actualizado!",
+                    "El registro se ha actualizado con exito",
+                    "success");
+            },
+            error: function (data) {
+                swal("Oops",
+                    "Se ha generado un problema de conexión con el servidor",
+                    "error");
+            }
+
+        })
+    })
+
+
+
+//ELIMINAR ADMINISTRADOR//
     $('.btn-delete-administrador').click(function (e) {
         e.preventDefault();
         var row = $(this).parents('tr');

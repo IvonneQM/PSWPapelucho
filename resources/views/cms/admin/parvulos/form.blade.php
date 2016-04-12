@@ -9,9 +9,12 @@
                 </div>
                   <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">{!!Form::open(['id'=>'form-register-parvulo'],['class'=>'form-horizontal'],['route'=>'administrador.parvulos.create', 'method' => 'POST', 'role' => 'form', 'action' => 'registroParvulo'])!!}
+                        <div class="col-md-6">
+
+                            {!!Form::open(['id'=>'form-register-parvulo'],['class'=>'form-horizontal'],['route'=>'administrador.parvulos.create', 'method' => 'POST', 'role' => 'form', 'action' => 'registroParvulo'])!!}
                             @include('cms.admin.parvulos.partials.fields')
                             {!!Form::close()!!}
+
                         </div>
                         <div class="col-md-6 list-parvulos">
                             {{-- Contenedor de la vista lista --}}

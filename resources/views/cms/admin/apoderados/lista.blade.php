@@ -15,6 +15,7 @@
 
     @include('cms.admin.apoderados.create')
     @include('cms.admin.parvulos.form')
+    @include('cms.admin.apoderados.edit')
 
     <div class="container" style="width: 100%">
         <div class="row-fluid" >
@@ -41,6 +42,7 @@
 
                 <div class="panel-body">
                     @include('cms.admin.apoderados.partials.table')
+
                 </div>
             </div>
         </div>
@@ -52,17 +54,7 @@
 
 
     {{-- Modal Editar --}}
-    <div class="modal fade" id="modal-editar-apoderado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
 
-                    <div class="modal-body">
-                        <div class="update-apoderado"></div>
-                    </div>
-
-            </div>
-        </div>
-    </div>
 
 
 @stop

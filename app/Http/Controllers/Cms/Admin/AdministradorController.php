@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\Cms\Admin;
 
-use Illuminate\Http\Request;
-
 use App\Http\Requests\CreateUserRequest;
-
-use App\Http\Requests;
+use App\User;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Validator;
 
 class AdministradorController extends Controller
 {
@@ -50,8 +47,7 @@ class AdministradorController extends Controller
     public function store(CreateUserRequest $request){
 
         if($request->ajax()){
-
-            $administrador = new \App\User($request->all());
+            $administrador = new User($request->all());
             \App\User::create($request->all());
             return response()->json([]);
         }
@@ -76,9 +72,13 @@ class AdministradorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $administrador = User::find($id);
+
+        if($request->ajax()) {
+            return response()->json($administrador);
+        }
     }
 
     /**
@@ -90,7 +90,11 @@ class AdministradorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $administrador = User::find($id);
+        $administrador->update($request->all());
+        if($request->ajax()){
+            return response()->json($administrador);
+        }
     }
 
     /**
@@ -102,11 +106,11 @@ class AdministradorController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        $administrador = \App\User::find($id);
+        $administrador = User::find($id);
         $administrador->delete();
         if($request->ajax()){
             return response()->json([
-                'id' => \App\User::find($id),
+                'id' => User::find($id),
             ]);
         }
     }

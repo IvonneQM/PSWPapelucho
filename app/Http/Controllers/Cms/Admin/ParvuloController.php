@@ -51,8 +51,7 @@ class ParvuloController extends Controller
      */
     public function create(Request $request)
     {
-        $parvulos = new Parvulo($request->all());
-        $parvulos->save();
+
     }
 
     /**
@@ -63,18 +62,13 @@ class ParvuloController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = $this->validator($request->all());
-
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
 
         if($request->ajax()){
             Parvulo::create($request->all());
             return response()->json([]);
         }
+
+
     }
 
     /**

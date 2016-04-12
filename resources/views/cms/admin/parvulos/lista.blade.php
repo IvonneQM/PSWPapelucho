@@ -8,8 +8,6 @@
             <th>Acciones</th>
         </tr>
         @if(! $parvulos -> isEmpty())
-
-
             @foreach($parvulos as $parvulo)
                 <tr data-id="{{ $parvulo->id }}">
                     <td>{!! $parvulo->rut !!}</td>

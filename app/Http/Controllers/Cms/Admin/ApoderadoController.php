@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Cms\Admin;
+
 use App\Http\Requests\CreateUserRequest;
 use App\User;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ApoderadoController extends Controller
@@ -17,7 +17,7 @@ class ApoderadoController extends Controller
      */
     public function index(Request $request)
     {
-        $apoderados = \App\User::fullName($request->get('full_name'))->where('role','=','apoderado')->orderBy('id', 'DESC')->paginate();
+        $apoderados = User::fullName($request->get('full_name'))->where('role','=','apoderado')->orderBy('id', 'DESC')->paginate();
         return view('cms.admin.apoderados.lista', compact('apoderados'));
     }
 
@@ -38,6 +38,7 @@ class ApoderadoController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(CreateUserRequest $request){
+
         if($request->ajax()){
             $apoderado = new User($request->all());
             User::create($request->all());
@@ -64,10 +65,13 @@ class ApoderadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        $apoderado = User::findOrFail($id);
-        return view('cms.admin.apoderados.edit',compact('apoderado'));
+        $apoderado = User::find($id);
+
+        if($request->ajax()) {
+            return response()->json($apoderado);
+        }
     }
 
     /**
@@ -79,15 +83,10 @@ class ApoderadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        alert("HOLA");
-        $apoderado = User::findOrFail($id);
-
-        $apoderado->fill($request->all());
-        $apoderado->save();
+        $apoderado = User::find($id);
+        $apoderado->update($request->all());
         if($request->ajax()){
-            return response()->json([
-
-            ]);
+            return response()->json($apoderado);
         }
     }
 

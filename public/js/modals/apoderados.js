@@ -27,46 +27,93 @@ $(document).ready(function() {
                         "El registro se ha generado con exito",
                         "success");
                 },
-                error: function (data) {
-                    swal("Oops",
+                error: function (msj) {
+                    swal({
+                        title: "!Error¡",
+                        text: msj.responseJSON.rut +
+                        msj.responseJSON.full_name +
+                        msj.responseJSON.email +
+                        msj.responseJSON.password,
+                        type: "warning",
+                        confirmButtonColor: "#C32026",
+                        confirmButtonText: "Ok",
+                        closeOnConfirm: false
+                    })
+
+                }
+
+                /*     var errors = data.responseJSON;
+
+            console.log(errors);
+            $.each(errors, function(index, value) {
+                alert(value);
+            });
+
+        }
+             swal("Oops",
+             "Se ha generado un problema de conexión con el servidor",
+             "error");
+             }*/
+                  /*  swal("Oops",
                         "Se ha generado un problema de conexión con el servidor",
                         "error");
-                }
+                }*/
             });
         })
     });
 
     //ACTUALIZAR APODERADOS//
 
-    $('.editar-apoderado').click(function () {
-
+    $('.editar_apo').click(function (e) {
+        e.preventDefault();
         var row = $(this).parents('tr');
         var id = row.data('id');
+        var link = $('#id_href').attr('href');
+        var route = link.split('%7Bapoderados%7D').join(id);
 
-        $(".update-apoderado").load("http://papelucho.com/administrador/apoderados/" + id + "/edit",function(){
-            $('#modal-editar-apoderado').modal();
-        });
-        $('#form-editar-apoderado').on('submit', function (e) {
-            e.preventDefault();
-            alert("HOLA");
-            $('input').parent().removeClass('has-error');
-            $.ajax({
-                type: "PUT",
-                url: 'administrador.apoderados.update',
-                dataType: "json",
-                data: $(this).serialize(),
-                success: function (data) {
-                    swal("Registro creado!",
-                        "El registro se ha generado con exito",
-                        "success");
-                },
-                error: function (data) {
-                    swal("Oops",
-                        "Se ha generado un problema de conexión con el servidor",
-                        "error");
-                }
-            });
+        $.get(route, function(resp){
+
+            $('#yo').html("Editar apoderado: "+resp.full_name);
+            $('#idUser').val(resp.id);
+            $('#rutApo').val(resp.rut);
+            $('#nameApo').val(resp.full_name);
+            $('#emailApo').val(resp.email);
+            $('#passApo').val("");
         })
+    });
+
+
+    $('#btnSave').on('click', function(e){
+
+        e.preventDefault();
+
+        var id = $('#idUser').val();
+        var form = $('#id_prueba');
+        var link = $('#id_update').attr('href');
+        var metodo = form.attr('method');
+        var route = link.split('%7Bapoderados%7D').join(id);
+
+        $.ajax({
+
+            url: route,
+            type: metodo,
+            data: form.serialize(),
+
+            success: function (data) {
+                swal("Registro actualizado!",
+                    "El registro se ha actualizado con exito",
+                    "success");
+            },
+            error: function (data) {
+                swal("Oops",
+                    "Se ha generado un problema de conexión con el servidor",
+                    "error");
+            }
+
+
+        })
+
+
     });
 
 

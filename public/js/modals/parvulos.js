@@ -10,19 +10,13 @@ $(document).ready(function() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     })
-    $('.parvulos-del-apoderado').click(function() {
-        $('#modal-parvulos').modal();
 
+    $('.parvulos-del-apoderado').click(function(e) {
         var row = $(this).parents('tr');
         var id = row.data('id');
-        $(".list-parvulos").load("http://papelucho.com/administrador/apoderados/parvulos?user="+id);
+        $(".list-parvulos").load("http://localhost:8888/PSWPapelucho/public/administrador/apoderados/parvulos?user="+id);
 
-
-        $(document).on('submit', '#form-register-parvulo', function(e) {
             e.preventDefault();
-
-            $('input+small').text('');
-            $('input').parent().removeClass('has-error');
             $.ajax({
                 method: $(this).attr('method'),
                 type: "POST",
@@ -31,7 +25,17 @@ $(document).ready(function() {
                 url: $(this).attr('action'),
                 data: $(this).serialize(),
                 dataType: "json",
+
                 success: function (data) {
+
+                 },
+                 error: function (data) {
+
+                 }
+
+
+
+              /*  success: function (data) {
                     swal(   "Registro creado!",
                             "El registro se ha generado con exito",
                             "success");
@@ -41,8 +45,8 @@ $(document).ready(function() {
                             "Se ha generado un problema de conexión con el servidor",
                             "error");
                 }
+                */
             });
-        })
     });
 
 

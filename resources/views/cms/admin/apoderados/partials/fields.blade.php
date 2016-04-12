@@ -5,7 +5,7 @@
 </div>
 <div class="form-group">
     {!!Form::label('full_name','Nombre: ')!!}
-    {!!Form::text('full_name',null, ['id'=>'full_name','class'=>'form-control', 'placeholder' => 'Ingresa el nombre del usuario'])!!}
+    {!!Form::text('full_name',null, ['id'=>'userName','class'=>'form-control', 'placeholder' => 'Ingresa el nombre del usuario'])!!}
 </div>
 <div class="form-group">
     {!!Form::label('email','Correo: ')!!}
@@ -16,6 +16,5 @@
     {!!Form::password('password', ['id'=>'password','class'=>'form-control', 'placeholder' => 'Ingresa la contraseña del usuario'])!!}
 </div>
 
-{{ Form::hidden('role', 'apoderado', array('id' => 'role')) }}
+{!! Form::hidden('role', 'apoderado', array('id' => 'role')) !!}
 
-{!!Form::submit('Guardar',['class'=>'btn btn-primary'])!!}

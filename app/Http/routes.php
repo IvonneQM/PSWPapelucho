@@ -119,6 +119,15 @@ Route::group(['middleware' => 'auth'], function(){
         ));*/
 
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
+            Route::get('administrador/parvulos?users_id={user}',[
+                'uses'=>'Cms\Admin\ParvuloController@index',
+                'as'=>'parvulos-'
+            ]);
+
+            Route::get('administrador/parvulos',[
+                'uses'=>'Cms\Admin\ParvuloController@index',
+                'as'=>'parvulos'
+            ]);
         /*Route::get('administrador/parvulos',[
             'uses'=>'Cms\Admin\ParvuloController@index',
             'as'=>'parvulos'
@@ -146,9 +155,7 @@ Route::group(['middleware' => 'auth'], function(){
         ]);*/
 
         Route::resource('administrador/files', 'Cms\Admin\FileController');
-
-
-            Route::resource('noticias', 'Cms\Admin\NoticiaController');
+        Route::resource('noticias', 'Cms\Admin\NoticiaController');
 
             /*
         Route::get('administrador/noticias',[
