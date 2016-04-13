@@ -39,12 +39,28 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
+        $tipo = 'img';
         $dir = public_path().'/uploads/';
+        if($tipo == 'img'){
+            $dir = public_path().'/uploads/imagenes/';
+        }
+
         $files = $request->file('file');
 
         foreach($files as $file){
             $fileName = $file->getClientOriginalName();
-            $file->move($dir, $fileName);
+            $fileSize = $file->getClientSize();
+
+
+            $archivo = new File();
+            $archivo->fileName = $fileName;
+            $archivo->url = $dir;
+            $archivo->size = $fileSize;
+            $archivo->type = imagen;
+
+            if ($file->move($dir, $fileName)){
+                $archivo->save();
+            }
         }
     }
 

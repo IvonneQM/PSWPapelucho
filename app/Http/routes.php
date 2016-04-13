@@ -92,34 +92,10 @@ Route::group(['middleware' => 'auth'], function(){
 
             Route::resource('apoderados', 'Cms\Admin\ApoderadoController');
 
-/*
-        Route::get('administrador/apoderados',[
-            'uses'=>'Cms\Admin\ApoderadoController@index',
-            'as'=>'apoderados'
-        ]);
 
-        Route::post( 'administrador/apoderados', array(
-            'uses' => 'Cms\Admin\ApoderadoController@store',
-            'as' => 'registroApoderado',
-        ));
-
-        Route::get( 'administrador/apoderado/{id}/edit', array(
-            'uses' => 'Cms\Admin\ApoderadoController@edit',
-            'as' => 'editarApoderado',
-        ));
-
-        Route::put( 'administrador/apoderado/{id}/update', array(
-            'uses' => 'Cms\Admin\ApoderadoController@update',
-            'as' => 'updateApoderado',
-        ));
-
-        Route::delete('administrador/apoderados/{id}', array(
-            'uses' => 'Cms\Admin\ApoderadoController@destroy',
-            'as' => 'eliminarApoderado',
-        ));*/
 
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
-            Route::get('administrador/parvulos?users_id={user}',[
+         /*   Route::get('administrador/parvulos?users_id={user}',[
                 'uses'=>'Cms\Admin\ParvuloController@index',
                 'as'=>'parvulos-'
             ]);
@@ -154,25 +130,9 @@ Route::group(['middleware' => 'auth'], function(){
             'as'=>'jornadas'
         ]);*/
 
-        Route::resource('administrador/files', 'Cms\Admin\FileController');
+        Route::resource('files', 'Cms\Admin\FileController');
         Route::resource('noticias', 'Cms\Admin\NoticiaController');
 
-            /*
-        Route::get('administrador/noticias',[
-            'uses'=>'Cms\Admin\NoticiaController@index',
-            'as'=>'noticias'
-        ]);
-
-        Route::post( 'administrador/noticias', array(
-            'uses' => 'Cms\Admin\NoticiaController@store',
-            'as' => 'registroNoticia',
-        ));
-
-        Route::delete('administrador/noticias/{id}', array(
-            'uses' => 'Cms\Admin\NoticiaController@destroy',
-            'as' => 'eliminarNoticia',
-        ));
-*/
 
         });
 
