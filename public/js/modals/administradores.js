@@ -54,6 +54,9 @@ $(document).ready(function () {
         var row   = $(this).parents('tr');
         var id    = row.data('id');
         var link  = $('#id_href_admin').attr('href');
+        var row = $(this).parents('tr')
+        var id = row.data('id');
+        var link = $('#id_href_admin').attr('href');
         var route = link.split('%7Badministradores%7D').join(id);
 
         $.get(route, function (resp) {

@@ -69,10 +69,10 @@
                         {!! Form::open([
                         'files' => 'true',
                         'class' => 'dropzone',
-                        'id'    => 'archivos',
+                        'id'    => 'dropzone-imagenes',
                         'method'=> 'POST',
                         'route' => 'administrador.files.store']) !!}
-                        {!! csrf_token() !!}
+                        {!! csrf_field() !!}
                         @include('cms.admin.archivos.form')
                         {!! Form::close() !!}
                     </div>

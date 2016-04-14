@@ -130,7 +130,7 @@ Route::group(['middleware' => 'auth'], function(){
             'as'=>'jornadas'
         ]);*/
 
-        Route::resource('files', 'Cms\Admin\FileController');
+        Route::resource('files', 'Cms\Admin\ArchivoController');
         Route::resource('noticias', 'Cms\Admin\NoticiaController');
 
 

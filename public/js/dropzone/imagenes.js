@@ -3,7 +3,9 @@
 
 Dropzone.options.dropzoneImagenes = {
 
-
+    headers: {
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
+    },
     paramName: "file",
     autoProcessQueue: false,
     uploadMultiple: true,
@@ -12,16 +14,7 @@ Dropzone.options.dropzoneImagenes = {
     addRemoveLinks: true,
     dictRemoveFile: 'Eliminar',
 
-    headers: {
-        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
-    },
 
-
-
-    sending: function(file, xhr, formData) {
-        // Pass token. You can use the same method to pass any other values as well such as a id to associate the image with for example.
-        formData.append("csrf-token", $('[name=csrf-token]').val()); // Laravel expect the token post value to be named _token by default
-    },
 
     init: function(){
         var submitButton= document.querySelector("#guardar-archivos")

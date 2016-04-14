@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Cms\Admin;
 
 use Illuminate\Http\Request;
 
+
+use App\Archivo;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\File\File;
 
-class FileController extends Controller
+
+class ArchivoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -52,11 +55,11 @@ class FileController extends Controller
             $fileSize = $file->getClientSize();
 
 
-            $archivo = new File();
+            $archivo = new Archivo();
             $archivo->fileName = $fileName;
             $archivo->url = $dir;
             $archivo->size = $fileSize;
-            $archivo->type = imagen;
+            $archivo->type = 'imagen';
 
             if ($file->move($dir, $fileName)){
                 $archivo->save();

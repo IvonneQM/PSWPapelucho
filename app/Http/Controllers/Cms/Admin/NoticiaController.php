@@ -89,12 +89,9 @@ class NoticiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-        $noticia = Noticia::find($id);
-        if($request->ajax()){
-            return response()->json($noticia);
-        }
+        //
     }
 
     /**
@@ -106,11 +103,7 @@ class NoticiaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $noticia = Noticia::find($id);
-        $noticia->update($request->all());
-        if($request->ajax()){
-            return response()->json($noticia);
-        }
+        //
     }
 
     /**
