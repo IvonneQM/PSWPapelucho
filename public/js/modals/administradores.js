@@ -30,13 +30,23 @@ $(document).ready(function () {
                         "El registro se ha generado con exito",
                         "success");
                 },
-                error   : function (data) {
+                error   : function (msj) {
+                    var rut = msj.responseJSON.rut;
+                    var nombre = msj.responseJSON.full_name;
+                    var email = msj.responseJSON.email;
+                    var pass = msj.responseJSON.password;
+
+                    if(rut == null){rut = ''}
+                    if(nombre == null){nombre = ''}
+                    if(email == null){email = ''}
+                    if(pass == null){pass = ''}
+
+                    var concatenado = rut + '\n' + nombre + '\n' + email + '\n' + pass;
+                    if(concatenado == ''){concatenado = "Se ha generado un problema de conexión con el servidor"}
+
                     swal({
-                        title             : "!Error¡",
-                        text              : msj.responseJSON.rut +
-                        msj.responseJSON.full_name +
-                        msj.responseJSON.email +
-                        msj.responseJSON.password,
+                        title             : "¡Error!",
+                        text              : concatenado,
                         type              : "warning",
                         confirmButtonColor: "#C32026",
                         confirmButtonText : "Ok",
@@ -89,7 +99,7 @@ $(document).ready(function () {
                     "success");
             },
             error  : function (data) {
-                swal("Oops",
+                swal( "¡Error!",
                     "Se ha generado un problema de conexión con el servidor",
                     "error");
             }
@@ -132,7 +142,7 @@ $(document).ready(function () {
                             "success");
                     },
                     error   : function (data) {
-                        swal("Oops",
+                        swal( "¡Error!",
                             "Se ha generado un problema de conexión con el servidor",
                             "error");
                         row.fadeIn();

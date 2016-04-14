@@ -31,10 +31,25 @@ $(document).ready(function () {
                         "El registro se ha generado con exito",
                         "success");
                 },
-                error   : function (data) {
-                    swal("Oops",
-                        "Se ha generado un problema de conexión con el servidor",
-                        "error");
+                error   : function (msj) {
+                        var title = msj.responseJSON.title;
+                        var content = msj.responseJSON.content;
+                        var publish = msj.responseJSON.publish;
+
+                        if(title == null){title = ''}
+                        if(content == null){content = ''}
+                        if(publish == null){publish = ''}
+
+                        var concatenado = title + '\n' + content + '\n' + publish;
+                        if(concatenado == ''){concatenado = "Se ha generado un problema de conexión con el servidor"}
+                        swal({
+                            title             : "¡Error!",
+                            text              : concatenado,
+                            type              : "warning",
+                            confirmButtonColor: "#C32026",
+                            confirmButtonText : "Ok",
+                            closeOnConfirm    : false
+                        })
                 }
             });
         })
@@ -78,7 +93,7 @@ $(document).ready(function () {
                     "success");
             },
             error  : function (data) {
-                swal("Oops",
+                swal( "¡Error!",
                     "Se ha generado un problema de conexión con el servidor",
                     "error");
             }
@@ -121,7 +136,7 @@ $(document).ready(function () {
                             "success");
                     },
                     error   : function (data) {
-                        swal("Oops",
+                        swal( "¡Error!",
                             "Se ha generado un problema de conexión con el servidor",
                             "error");
                     }
