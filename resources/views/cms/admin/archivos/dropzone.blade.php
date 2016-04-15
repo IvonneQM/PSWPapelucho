@@ -77,7 +77,7 @@
                         'method'=> 'POST',
                         'route' => 'administrador.files.store']) !!}
                         {!! csrf_field() !!}
-                        {!! Form::hidden('type', $type , array('id' => type)) !!}
+                        {!! Form::hidden('type', '{{ $type }}' , array('id' => type)) !!}
                         @include('cms.admin.archivos.form')
                         {!! Form::close() !!}
                     </div>
