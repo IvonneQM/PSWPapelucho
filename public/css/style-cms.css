@@ -82,6 +82,9 @@ a.dz-remove {
     color: #3952A3;
 }
 
+.archivo{
+    text-align: left !important;
+}
 .btn-buscar{
     background: #F7EC3F;
     border:none;
@@ -98,7 +101,7 @@ a.dz-remove {
     padding: 0;
 }
 
-.btn-crear-nuevo:hover,.btn-crear-nuevo:active , .fa-user-plus:hover,  .fa-newspaper-o:hover{
+.btn-crear-nuevo:hover,.btn-crear-nuevo:active , .fa-user-plus:hover,  .fa-newspaper-o:hover, .fa-picture-o:hover{
      background: rgba(0,0,0,0) !important;
      box-shadow: inset 0 0 0 3px #0099CC;
      color: #0099CC;
@@ -148,7 +151,7 @@ a.dz-remove {
     box-shadow: inset 0 0 0 3px #3952A3;
 }
 
-.fa-user-plus, .fa-newspaper-o{
+.fa-user-plus, .fa-newspaper-o, .fa-picture-o{
     padding: 10px !important;
     width:170px !important;
 }
@@ -169,6 +172,10 @@ a.dz-remove {
     box-shadow: inset 0 0 0 3px #C32026;
 }
 
+.form-group .radio-inline{
+    margin-left: 15px !important;
+}
+
 .form-group-buscar{
     display: inline-block;
 }
@@ -177,6 +184,10 @@ a.dz-remove {
     padding: 0 !important;
 }
 
+.panel-dropzone{
+    border-color: #337ab7;
+    margin: 0 15px;
+}
 
 
 .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {

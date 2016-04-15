@@ -20,7 +20,8 @@ class ArchivoController extends Controller
      */
     public function index()
     {
-        return view('cms.admin.archivos.dropzone');
+        $archivos = Archivo::orderBy('id', 'DESC')->paginate(3);
+        return view('cms.admin.archivos.dropzone', compact('archivos'));
 
     }
 

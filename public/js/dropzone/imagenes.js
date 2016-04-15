@@ -30,7 +30,6 @@ Dropzone.options.dropzoneImagenes = {
 
 
         this.on("addedfile", function(file){
-            alert("Se agrego un archivo");
         });
 
         this.on("complete", function(file){
