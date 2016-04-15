@@ -54,4 +54,5 @@ class User extends Model implements AuthenticatableContract,
             $query->where('full_name', "LIKE" ,"%$full_name%");
         }
     }
+
 }

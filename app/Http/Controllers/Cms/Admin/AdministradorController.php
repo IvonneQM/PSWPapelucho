@@ -17,11 +17,11 @@ class AdministradorController extends Controller
     public function index(Request $request)
     {
 
+
+
         $administradores = \App\User::fullName($request->get('full_name'))->where('role','=','admin')->orderBy('id', 'DESC')->paginate();
         return view('cms.admin.administradores.lista',compact('administradores'));
     }
-
-
 
     /*public function findApoderado(Route $route)
     {

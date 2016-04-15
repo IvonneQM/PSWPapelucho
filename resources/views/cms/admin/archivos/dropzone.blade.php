@@ -18,7 +18,7 @@
         <div class="row-fluid">
             <div class="col-lg-12">
                 {{-- col-md-4 col-xs-4 col-xs-4" --}}
-                <div class="panel-heading"><h1 class="title">Archivos</h1></div>
+                <div class="panel-heading"><h1 class="title">Contenido</h1></div>
                   <p>Lista de archivos</p>
                 {!!Form::open ([])  !!}
                 <div class="form-group">
@@ -26,9 +26,13 @@
                    {{--@foreach($categories as $category) --}}
 
                             {{--<input type="radio" name="{{$category->name}}" id="{{$category->id}}" value="{{$category->id}}"> {{$category->name}} --}}
-                            <label class="radio-inline"><input type="radio" name="elegir" id="imagenes" value="imagenes"> imagen</label>
-                            <label class="radio-inline"><input type="radio" name="elegir" id="boletin" value="boletin"> boletin</label>
-                            <label class="radio-inline"><input type="radio" name="elegir" id="informe" value="informe"> informe</label>
+
+                    {{--*/ $type = 'imagen' /*--}}
+                    {{ $type }}
+                            <label class="radio-inline"><input type="radio" name="elegir" id="imagenes" value="imagenes">imágen</label>
+                            <label class="radio-inline"><input type="radio" name="elegir" id="boletin" value="boletin">informe al hogar</label>
+                            <label class="radio-inline"><input type="radio" name="elegir" id="informe" value="informe">boletin semanal</label>
+                            <label class="radio-inline"><input type="radio" name="elegir" id="informe" value="info_gral">información general</label>
 
                     {{--@endforeach--}}
 
@@ -63,7 +67,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                    Carga de archivos
+                    Carga de contenido
                 </div>
                     <div class="panel-body">
                         {!! Form::open([
@@ -73,6 +77,7 @@
                         'method'=> 'POST',
                         'route' => 'administrador.files.store']) !!}
                         {!! csrf_field() !!}
+                        {!! Form::hidden('type', $type , array('id' => type)) !!}
                         @include('cms.admin.archivos.form')
                         {!! Form::close() !!}
                     </div>
