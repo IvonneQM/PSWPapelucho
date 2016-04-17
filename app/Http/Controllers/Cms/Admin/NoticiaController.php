@@ -17,13 +17,13 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = \App\Noticia::orderBy('id','DESC')->paginate();
+        $noticias = Noticia::orderBy('id','DESC')->paginate();
         return view('cms.admin.noticias.lista',compact('noticias'));
     }
 
     public function mostrarNoticias()
     {
-        $noticias = \App\Noticia::orderBy('id','DESC')->paginate(2);
+        $noticias = Noticia::orderBy('id','DESC')->paginate(2);
         return view('home',compact('noticias'));
     }
 
@@ -44,7 +44,7 @@ class NoticiaController extends Controller
      */
     public function create(Request $request)
     {
-        $noticia = new \App\Noticia($request->all());
+        $noticia = new Noticia($request->all());
         $noticia->save();
     }
 
@@ -67,7 +67,7 @@ class NoticiaController extends Controller
 
         if($request->ajax()){
             alert("llegue aqui");
-            \App\Noticia::create($request->all());
+            Noticia::create($request->all());
             return response()->json([]);
         }
     }

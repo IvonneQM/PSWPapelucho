@@ -21,7 +21,7 @@ class ArchivoController extends Controller
     public function index()
     {
         $archivos = Archivo::orderBy('id', 'DESC')->paginate(3);
-        return view('cms.admin.archivos.dropzone', compact('archivos'));
+        return view('cms.admin.archivos.list', compact('archivos'));
 
     }
 
@@ -60,7 +60,6 @@ class ArchivoController extends Controller
             $archivo->fileName = $fileName;
             $archivo->url = $dir;
             $archivo->size = $fileSize;
-            $archivo->type = 'imagen';
 
             if ($file->move($dir, $fileName)){
                 $archivo->save();

@@ -16,9 +16,9 @@ class ParvulosTable extends Migration
 
             $table->increments('id');
             $table->string('rut')->unique();
-            $table->string('full_name');
-            $table->string('nivel');
-            $table->string('jardin');
+            $table->string('full_name')->required();
+            $table->string('nivel')->required();
+            $table->string('jardin')->required();
             $table->integer('user_id')->unsigned()->nullable();
             $table->integer('jornada_id')->unsigned()->nullable();
             $table->timestamps();

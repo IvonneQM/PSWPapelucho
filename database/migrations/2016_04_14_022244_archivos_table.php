@@ -13,11 +13,10 @@ class ArchivosTable extends Migration
     public function up()
     {
         Schema::create('archivos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('fileName');
-            $table->string('url');
-            $table->integer('size');
-            $table->enum('type', ['imagen', 'informe-hogar', 'boletin', 'informacion-general']);
+            $table->increments('id')->unique();
+            $table->string('fileName')->required();
+            $table->string('url')->required();
+            $table->integer('size')->required();
             $table->timestamps();
         });
     }

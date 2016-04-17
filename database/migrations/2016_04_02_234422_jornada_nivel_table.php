@@ -13,7 +13,7 @@ class JornadaNivelTable extends Migration
     public function up()
     {
         Schema::create('jornada_nivel', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->integer('jornada_id')->unsigned()->nullable();
             $table->integer('nivel_id')->unsigned()->nullable();
 

@@ -1,4 +1,4 @@
-@extends('cms/admin/galeria')
+@extends('galerias')
 @section('contentPanel')
     <div class="row">
 

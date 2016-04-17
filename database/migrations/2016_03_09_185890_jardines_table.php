@@ -15,8 +15,8 @@ class JardinesTable extends Migration
         Schema::create('jardines', function (Blueprint $table) {
 
 
-            $table->increments('id');
-            $table->string('name');
+            $table->increments('id')->unique();
+            $table->string('name')->required();
             $table->timestamps();
         });
     }

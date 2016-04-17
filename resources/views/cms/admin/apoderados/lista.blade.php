@@ -14,7 +14,7 @@
 @section('general-content-1')
 
     @include('cms.admin.apoderados.create')
-    @include('cms.admin.parvulos.form')
+    @include('cms.admin.parvulos.form',['parvulos' => isset($parvulos) ? $parvulos : null ])
     @include('cms.admin.apoderados.edit')
 
     <div class="container" style="width: 100%">

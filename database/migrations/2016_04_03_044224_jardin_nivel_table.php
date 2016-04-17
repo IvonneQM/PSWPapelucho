@@ -13,7 +13,7 @@ class JardinNivelTable extends Migration
     public function up()
     {
         Schema::create('jardin_nivel', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->integer('jardin_id')->unsigned()->nullable();
             $table->integer('nivel_id')->unsigned()->nullable();
 

@@ -18,6 +18,11 @@ class Nivel extends Model
         return $this->belongsToMany('App\Jardin','jardines');
     }
 
+    public function archivos()
+    {
+        return $this->morphToMany('App\Archivo', 'archivable');
+    }
+
     protected $fillable = ['name'];
 
 }

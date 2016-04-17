@@ -1,6 +1,3 @@
-
-
-
 Dropzone.options.dropzoneImagenes = {
 
     headers: {
@@ -33,7 +30,7 @@ Dropzone.options.dropzoneImagenes = {
         });
 
         this.on("complete", function(file){
-           // dropzoneImagenes.removeFile(file);
+            dropzoneImagenes.removeFile(file);
         });
 
         this.on("success",
@@ -42,3 +39,13 @@ Dropzone.options.dropzoneImagenes = {
     }
 
 }
+
+$('#archivosTabs a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+    $('#archivosTabs a[href="#imagen"]').tab('show')
+    $('#archivosTabs a[href="#boletin"]').tab('show')
+    $('#archivosTabs a[href="#informe"]').tab('show')
+    $('#archivosTabs a[href="#informacion"]').tab('show')
+})
+

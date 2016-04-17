@@ -17,7 +17,13 @@
 
                         </div>
                         <div class="col-md-6 list-parvulos">
-                            {{-- Contenedor de la vista lista --}}
+
+                                @include('cms.admin.parvulos.lista')
+
+
+                                {!! Form::open(['route' => ['administrador.parvulos.destroy', ':PARVULO_ID'],'method' => 'DELETE', 'id' => 'form-delete-parvulo', 'action' => 'eliminarParvulo']) !!}
+                                {!! Form::close() !!}
+                            </div>
                         </div>
                     </div>
                 </div>

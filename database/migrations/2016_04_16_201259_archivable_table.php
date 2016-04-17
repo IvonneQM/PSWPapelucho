@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class NivelesTable extends Migration
+class ArchivableTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class NivelesTable extends Migration
      */
     public function up()
     {
-        Schema::create('niveles', function (Blueprint $table) {
-            $table->increments('id')>unique();
-            $table->string('name')->required();
-            $table->timestamps();
+        Schema::create('archivable', function (Blueprint $table) {
+            $table->increments('archivable_id')->unique();
+            $table->string('archivable_type');
+            $table->integer('archivo_id');
         });
     }
 
@@ -26,6 +26,6 @@ class NivelesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('niveles');
+        Schema::drop('archivable');
     }
 }

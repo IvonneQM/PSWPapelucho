@@ -13,7 +13,8 @@ class BoletinesTable extends Migration
     public function up()
     {
         Schema::create('boletines', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
+            $table->string('name')->required();
             $table->timestamps();
         });
     }

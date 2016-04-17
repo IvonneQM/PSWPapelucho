@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/',  [
+Route::get('/', [
     'uses' => 'HomeController@index',
     'as' => 'home'
 ]);
 
-Route::get('/',  [
+Route::get('/', [
     'uses' => 'Cms\Admin\NoticiaController@mostrarNoticias',
     'as' => 'home'
 ]);
@@ -30,28 +30,28 @@ Route::get('/gmaps', [
 /*                       AUTENTICACIÓN LOGIN                         */
 /*-------------------------------------------------------------------*/
 
-Route::get('login',[
-   'uses'=>'Auth\AuthController@getLogin',
-    'as'=>'login'
+Route::get('login', [
+    'uses' => 'Auth\AuthController@getLogin',
+    'as' => 'login'
 ]);
 
 Route::post('login', 'Auth\AuthController@postLogin');
 
-Route::get('logout',[
-    'uses'=> 'Auth\AuthController@getLogout',
-    'as'=> 'logout'
+Route::get('logout', [
+    'uses' => 'Auth\AuthController@getLogout',
+    'as' => 'logout'
 ]);
 
-Route::get('register',[
-    'uses'=>'Auth\AuthController@getRegister',
-    'as'=>'register'
+Route::get('register', [
+    'uses' => 'Auth\AuthController@getRegister',
+    'as' => 'register'
 ]);
 
 Route::post('register', 'Auth\AuthController@postRegister');
 
-Route::get('confirmation/{token}',[
-    'uses'=>'Auth\AuthController@getConfirmation',
-    'as'=>'confirmation'
+Route::get('confirmation/{token}', [
+    'uses' => 'Auth\AuthController@getConfirmation',
+    'as' => 'confirmation'
 ]);
 
 Route::get('password/email', 'Auth\PasswordController@getEmail');
@@ -68,21 +68,18 @@ Route::get('mi-jardin', 'MiJardinController@index');
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
 Route::get('papelucho-blumell', 'BlumellController@index');
 
-Route::get('galeria', function (){
-    return view('cms/admin/galeria');
+Route::get('galerias', function () {
+    return view('cms/admin/galerias');
 });
-
-
-
 
 
 /*-------------------------------------------------------------------*/
 /*                            MIDDLEWARES                            */
 /*-------------------------------------------------------------------*/
 
-Route::group(['middleware' => 'auth'], function(){
-    Route::group(['middleware' => 'role:admin'], function(){
-        Route::get('administrador', function (){
+Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'role:admin'], function () {
+        Route::get('administrador', function () {
             return view('cms/admin/administrador');
         });
 
@@ -93,52 +90,22 @@ Route::group(['middleware' => 'auth'], function(){
             Route::resource('apoderados', 'Cms\Admin\ApoderadoController');
 
 
-
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
-         /*   Route::get('administrador/parvulos?users_id={user}',[
-                'uses'=>'Cms\Admin\ParvuloController@index',
-                'as'=>'parvulos-'
+
+            Route::get('parvulos?users={user}', [
+                'uses' => 'Cms\Admin\ParvuloController@index',
+                'as' => 'parvulos-'
             ]);
 
-            Route::get('administrador/parvulos',[
-                'uses'=>'Cms\Admin\ParvuloController@index',
-                'as'=>'parvulos'
-            ]);
-        /*Route::get('administrador/parvulos',[
-            'uses'=>'Cms\Admin\ParvuloController@index',
-            'as'=>'parvulos'
-        ]);
-
-        Route::post( 'administrador/parvulos', array(
-            'uses' => 'Cms\Admin\ParvuloController@store',
-            'as' => 'registroParvulo',
-        ));
-
-        Route::delete('administrador/parvulos/{id}', array(
-            'uses' => 'Cms\Admin\ParvuloController@destroy',
-            'as' => 'eliminarParvulo',
-        ));
-
-        Route::get('administrador/parvulos?users_id={user}',[
-            'uses'=>'Cms\Admin\ParvuloController@index',
-            'as'=>'parvulos-'
-        ]);
-        */
-
-        /*Route::get('administrador/jornadas',[
-            'uses'=>'Cms\Admin\ParvuloController@listJornadas',
-            'as'=>'jornadas'
-        ]);*/
-
-        Route::resource('files', 'Cms\Admin\ArchivoController');
-        Route::resource('noticias', 'Cms\Admin\NoticiaController');
-
+            Route::resource('archivos', 'Cms\Admin\ArchivoController');
+            Route::resource('galerias', 'Cms\Admin\GaleriaController');
+            Route::resource('noticias', 'Cms\Admin\NoticiaController');
 
         });
 
     });
-    Route::group(['middleware' => 'role:apoderado'], function(){
-        Route::get('apoderado', function (){
+    Route::group(['middleware' => 'role:apoderado'], function () {
+        Route::get('apoderado', function () {
             return view('cms/apoderados/apoderado');
         });
     });

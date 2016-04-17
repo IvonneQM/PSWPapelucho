@@ -13,7 +13,8 @@ class InformeHogarTable extends Migration
     public function up()
     {
         Schema::create('informe_hogar', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
+            $table->string('name')->required();
             $table->timestamps();
         });
     }

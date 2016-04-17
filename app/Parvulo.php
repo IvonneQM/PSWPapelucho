@@ -22,4 +22,9 @@ class Parvulo extends Model
             return $query->where("jornada_id", $jornada_id);
         }
     }
+
+    public function archivos()
+    {
+        return $this->morphToMany('App\Archivo', 'archivable');
+    }
 }
