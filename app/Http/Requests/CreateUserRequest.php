@@ -27,7 +27,7 @@ class CreateUserRequest extends Request
             'rut' => 'required|unique:users,rut|max:12',
             'full_name' => 'required|max:255',
             'email' => 'required|email|max:255',
-            'password' => 'required',
+            'password' => 'required|max:255',
             'role' => 'max:12',
         ];
     }

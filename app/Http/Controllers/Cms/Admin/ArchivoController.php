@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Cms\Admin;
 
+use App\Galeria;
+use App\Jardin;
+use App\Nivel;
+use App\Parvulo;
 use Illuminate\Http\Request;
-
 
 use App\Archivo;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\File\File;
-
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ArchivoController extends Controller
 {
@@ -20,8 +23,12 @@ class ArchivoController extends Controller
      */
     public function index()
     {
-        $archivos = Archivo::orderBy('id', 'DESC')->paginate(3);
-        return view('cms.admin.archivos.list', compact('archivos'));
+        $archivos = Archivo::orderBy('id', 'DESC');
+        $galerias=Galeria::doesntHave('archivos')->get();
+        $jardines=Jardin::doesntHave('archivos')->get();
+        $niveles=Nivel::doesntHave('archivos')->get();
+        $parvulos=Parvulo::doesntHave('archivos')->get();
+        return view('cms.admin.archivos.list', compact('archivos','galerias', 'jardines', 'niveles', 'parvulos'));
 
     }
 
@@ -32,7 +39,7 @@ class ArchivoController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -50,13 +57,12 @@ class ArchivoController extends Controller
         }
 
         $files = $request->file('file');
-
+        $archivo = new Archivo();
         foreach($files as $file){
+
             $fileName = $file->getClientOriginalName();
             $fileSize = $file->getClientSize();
 
-
-            $archivo = new Archivo();
             $archivo->fileName = $fileName;
             $archivo->url = $dir;
             $archivo->size = $fileSize;
@@ -65,6 +71,20 @@ class ArchivoController extends Controller
                 $archivo->save();
             }
         }
+
+
+        $methods=explode('|',$request->input('type'));
+
+        foreach ($methods as $model){
+            if(empty($request->input($model))) continue;
+
+            $archivo->{$model}()->attach($request->input($model));
+        }
+
+
+
+
+
     }
 
     /**

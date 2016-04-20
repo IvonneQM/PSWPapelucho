@@ -10,17 +10,17 @@ class Nivel extends Model
 
     public function jornada()
     {
-        return $this->belongsToMany('App\Jornada','jornadas');
+        return $this->belongsToMany(Jornada::class,'jornadas');
     }
 
     public function jardin()
     {
-        return $this->belongsToMany('App\Jardin','jardines');
+        return $this->belongsToMany(Jardin::class,'jardines');
     }
 
     public function archivos()
     {
-        return $this->morphToMany('App\Archivo', 'archivable');
+        return $this->morphToMany(Archivo::class, 'archivable');
     }
 
     protected $fillable = ['name'];

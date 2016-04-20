@@ -1,11 +1,11 @@
 <div>
 
     <ul id="archivosTabs" class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#imagen" aria-controls="imagen" role="tab" data-toggle="tab">Imágen</a>
+        <li role="presentation" class="active"><a href="#imagen" aria-controls="imagen" role="tab" data-toggle="tab" data-type="galerias|jardines">Imágen</a>
         </li>
-        <li role="presentation"><a href="#informe" aria-controls="informe" role="tab" data-toggle="tab">Informe al
+        <li role="presentation"><a href="#informe" aria-controls="informe" role="tab" data-toggle="tab" data-type="niveles">Informe al
                 Hogar</a></li>
-        <li role="presentation"><a href="#boletin" aria-controls="boletin" role="tab" data-toggle="tab">Boletín
+        <li role="presentation"><a href="#boletin" aria-controls="boletin" role="tab" data-toggle="tab" data-type="parvulos">Boletín
                 Semanal</a></li>
         <li role="presentation"><a href="#informacion" aria-controls="informacion" role="tab" data-toggle="tab">Información
                 General</a></li>
@@ -18,13 +18,15 @@
             <div class="col-lg-8">
                 <div class="form-group">
                     <label for="sel1">Seleccionar Galería:</label>
-                    <select class="form-control" id="sel1">
-                        {{--@foreach($categories as $category)--}}
-                        <option>Galería 1</option>
-                        <option>Galería 2</option>
-                        <option>Galería 3</option>
-                        <option>Galería 4</option>
-                        {{--@endforeach--}}
+                    <select name="galerias" class="form-control" id="sel1">
+                       @foreach($galerias as $galeria)
+                        <option value="{{$galeria->getKey()}}">{{$galeria->name}}</option>
+                        @endforeach
+                    </select>
+                    <select name="jardines" class="form-control" id="sel1">
+                        @foreach($jardines as $jardin)
+                            <option value="{{$jardin->getKey()}}">{{$jardin->name}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -38,13 +40,10 @@
             <div class="form-group">
                 <div class="form-group">
                     <label for="sel1">Seleccionar Párvulo:</label>
-                    <select class="form-control" id="sel3">
-                        {{--@foreach($categories as $category)--}}
-                        <option>Mónica</option>
-                        <option>Pascual</option>
-                        <option>Oriana Chiguagua</option>
-                        <option>Tony Espina</option>
-                        {{--@endforeach--}}
+                    <select name="parvulos" class="form-control" id="sel3">
+                        @foreach($parvulos as $parvulo)
+                        <option value=""{{$parvulo->getKey()}}>{{$parvulo->name}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -53,11 +52,10 @@
             <div class="form-group">
                 <div class="form-group">
                     <label for="sel1">Seleccionar Nivel:</label>
-                    <select class="form-control" id="sel4">
-                        {{--@foreach($categories as $category)--}}
-                        <option>Nivel Medio Menor</option>
-                        <option>Nivel Medio Mayor</option>
-                        {{--@endforeach--}}
+                    <select name="niveles" class="form-control" id="sel4">
+                        @foreach($niveles as $nivel)
+                            <option value=""{{$nivel->getKey()}}>{{$nivel->name}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -65,6 +63,6 @@
         <div role="tabpanel" class="tab-pane" id="informacion">
 
         </div>
-
+        {!! Form::hidden('type', null , array('id' => 'type')) !!}
     </div>
 </div>

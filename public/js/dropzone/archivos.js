@@ -42,10 +42,13 @@ Dropzone.options.dropzoneImagenes = {
 
 $('#archivosTabs a').click(function (e) {
     e.preventDefault()
+    alert($(this).data('type'))
     $(this).tab('show')
     $('#archivosTabs a[href="#imagen"]').tab('show')
     $('#archivosTabs a[href="#boletin"]').tab('show')
     $('#archivosTabs a[href="#informe"]').tab('show')
     $('#archivosTabs a[href="#informacion"]').tab('show')
+
+    $('#type').attr('value',$(this).data('type'))
 })
 

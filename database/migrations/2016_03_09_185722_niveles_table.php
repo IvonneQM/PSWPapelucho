@@ -13,7 +13,7 @@ class NivelesTable extends Migration
     public function up()
     {
         Schema::create('niveles', function (Blueprint $table) {
-            $table->increments('id')>unique();
+            $table->increments('id')->unique();
             $table->string('name')->required();
             $table->timestamps();
         });

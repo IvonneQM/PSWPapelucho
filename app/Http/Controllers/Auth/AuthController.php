@@ -88,7 +88,7 @@ class AuthController extends Controller
     /* BLOQUEADO POR 5 MIN*/
     protected function lockoutTime()
     {
-        return property_exists($this, 'lockoutTime') ? $this->lockoutTime : 300;
+        return property_exists($this, 'lockoutTime') ? $this->lockoutTime : 0;
     }
 /*POR MEDIO DEL AUTHENTICATED CALL BACK PARA REGISTRAR LA
 ULTIMA HORA EN LA QUE SE CONECTO UN USUARIO
@@ -105,4 +105,9 @@ ULTIMA HORA EN LA QUE SE CONECTO UN USUARIO
         return redirect()->intended($this->redirectPath());
     }
 */
+
+    protected function isUsingThrottlesLoginsTrait()
+    {
+        return false;
+    }
 }

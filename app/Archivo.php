@@ -10,22 +10,22 @@ class Archivo extends Model
 
     public function galerias()
     {
-        return $this->morphedByMany('App\Galeria', 'archivable');
+        return $this->morphedByMany(Galeria::class, 'archivable');
     }
 
     public function jardines()
     {
-        return $this->morphedByMany('App\Jardin', 'archivable');
+        return $this->morphedByMany(Jardin::class, 'archivable');
     }
 
     public function niveles()
     {
-        return $this->morphedByMany('App\Nivel', 'archivable');
+        return $this->morphedByMany(Nivel::class, 'archivable');
     }
 
     public function parvulos()
     {
-        return $this->morphedByMany('App\Parvulo', 'archivable');
+        return $this->morphedByMany(Parvulo::class, 'archivable');
     }
 
     public static function boot()

@@ -30,40 +30,39 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {!! $archivos -> render() !!}
 
                     <div>
-
-                        @include('cms.admin.archivos.partials.form')
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container" style="width: 100%">
-        <div class="row-fluid">
-            <div class="col-lg-12">
-                <div class="panel panel-primary panel-dropzone">
-                    <div class="panel-heading">
-                    Carga de contenido
-                </div>
-                    <div class="panel-body">
                         {!! Form::open([
-                        'files' => 'true',
-                        'class' => 'dropzone',
-                        'id'    => 'dropzone-imagenes',
-                        'method'=> 'POST',
-                        'route' => 'administrador.archivos.store']) !!}
-                        {!! csrf_field() !!}
-                        @include('cms.admin.archivos.create')
-                        {!! Form::close() !!}
+                          'files' => 'true',
+                          'class' => 'dropzone',
+                          'id'    => 'dropzone-imagenes',
+                          'method'=> 'POST',
+                          'route' => 'administrador.archivos.store']) !!}
+                        @include('cms.admin.archivos.partials.form')
+                        <div class="container" style="width: 100%">
+                            <div class="col-lg-12">
+                                <div class="panel panel-primary panel-dropzone">
+                                    <div class="panel-heading">
+                                            Carga de contenido
+                                        </div>
+                                    <div class="panel-body">
+
+                                        {!! csrf_field() !!}
+                                        @include('cms.admin.archivos.create')
+                                        {!! Form::close() !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 @endsection
 
 

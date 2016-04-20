@@ -12,7 +12,7 @@ class ArchivableTable extends Migration
      */
     public function up()
     {
-        Schema::create('archivable', function (Blueprint $table) {
+        Schema::create('archivables', function (Blueprint $table) {
             $table->increments('archivable_id')->unique();
             $table->string('archivable_type');
             $table->integer('archivo_id');
@@ -26,6 +26,6 @@ class ArchivableTable extends Migration
      */
     public function down()
     {
-        Schema::drop('archivable');
+        Schema::drop('archivables');
     }
 }

@@ -10,12 +10,12 @@ class Jardin extends Model
 
     public function nivel()
     {
-        return $this->belongsToMany('App\Nivel','niveles');
+        return $this->belongsToMany(Nivel::class,'niveles');
     }
 
     public function archivos()
     {
-        return $this->morphToMany('App\Archivo', 'archivable');
+        return $this->morphToMany(Archivo::class, 'archivable');
     }
 
     protected $fillable = ['name'];

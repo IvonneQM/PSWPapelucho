@@ -25,6 +25,6 @@ class Parvulo extends Model
 
     public function archivos()
     {
-        return $this->morphToMany('App\Archivo', 'archivable');
+        return $this->morphToMany(Archivo::class, 'archivable');
     }
 }
