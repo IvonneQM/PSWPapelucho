@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.1.*",
         "laracasts/flash": "^2.0",
         "infinety/alerts": "*@dev",
-        "genealabs/phpgmaps": "~0.3.0"
+        "genealabs/phpgmaps": "~0.3.0",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

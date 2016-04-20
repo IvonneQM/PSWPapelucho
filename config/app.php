@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG'),
 
     /*
     |--------------------------------------------------------------------------
@@ -152,6 +152,7 @@ return [
         Styde\Html\HtmlServiceProvider::class,
         Infinety\Alerts\AlertServiceProvider::class,
         GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -204,7 +205,9 @@ return [
         'Form' 		=> Collective\Html\FormFacade::class,
         'Html' 		=> Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
-        'Gmaps' => GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade::class,
+        'Gmaps'     => GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade::class,
+        'Debugbar'  => Barryvdh\Debugbar\Facade::class,
+
     ],
 
 ];

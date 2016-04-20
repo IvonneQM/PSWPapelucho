@@ -68,9 +68,11 @@ Route::get('mi-jardin', 'MiJardinController@index');
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
 Route::get('papelucho-blumell', 'BlumellController@index');
 
-Route::get('galerias', function () {
+/*Route::get('galerias', function () {
     return view('cms/admin/galerias');
 });
+*/
+
 
 
 /*-------------------------------------------------------------------*/
