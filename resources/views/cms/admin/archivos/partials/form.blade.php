@@ -3,11 +3,11 @@
     <ul id="archivosTabs" class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#imagen" aria-controls="imagen" role="tab" data-toggle="tab" data-type="galerias|jardines">Imágen</a>
         </li>
-        <li role="presentation"><a href="#informe" aria-controls="informe" role="tab" data-toggle="tab" data-type="niveles">Informe al
+        <li role="presentation"><a href="#informe" aria-controls="informe" role="tab" data-toggle="tab" data-type="parvulos">Informe al
                 Hogar</a></li>
-        <li role="presentation"><a href="#boletin" aria-controls="boletin" role="tab" data-toggle="tab" data-type="parvulos">Boletín
+        <li role="presentation"><a href="#boletin" aria-controls="boletin" role="tab" data-toggle="tab" data-type="niveles">Boletín
                 Semanal</a></li>
-        <li role="presentation"><a href="#informacion" aria-controls="informacion" role="tab" data-toggle="tab">Información
+        <li role="presentation"><a href="#informacion" aria-controls="informacion" role="tab" data-toggle="tab" data-type="general">Información
                 General</a></li>
     </ul>
 
@@ -42,7 +42,7 @@
                     <label for="sel1">Seleccionar Párvulo:</label>
                     <select name="parvulos" class="form-control" id="sel3">
                         @foreach($parvulos as $parvulo)
-                        <option value=""{{$parvulo->getKey()}}>{{$parvulo->name}}</option>
+                        <option value="{{$parvulo->getKey()}}">{{$parvulo->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -63,6 +63,6 @@
         <div role="tabpanel" class="tab-pane" id="informacion">
 
         </div>
-        {!! Form::hidden('type', null , array('id' => 'type')) !!}
+        {!! Form::hidden('type', 'galerias|jardines' , array('id' => 'type')) !!}
     </div>
 </div>

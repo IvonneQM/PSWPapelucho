@@ -11,6 +11,21 @@
 |
 */
 
+/*Route::get('/ramny', function()
+{
+    $archivo = \App\Archivo::find(1);
+
+    if( $archivo->exists )
+    {
+        $archivo->galerias()->attach(2);
+    }
+
+    print_r($archivo);
+
+    die;
+});*/
+
+
 Route::get('/', [
     'uses' => 'HomeController@index',
     'as' => 'home'

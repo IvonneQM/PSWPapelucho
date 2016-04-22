@@ -32,28 +32,33 @@
                     </table>
 
                     <div>
+                        <div>
+
+
+
+
+
+                                    <div class="panel-primary">
+                                        <div class="panel-heading">
+                                            Carga de contenido
+                                        </div>
                         {!! Form::open([
                           'files' => 'true',
                           'class' => 'dropzone',
                           'id'    => 'dropzone-imagenes',
                           'method'=> 'POST',
                           'route' => 'administrador.archivos.store']) !!}
-                        @include('cms.admin.archivos.partials.form')
-                        <div class="container" style="width: 100%">
-                            <div class="col-lg-12">
-                                <div class="panel panel-primary panel-dropzone">
-                                    <div class="panel-heading">
-                                            Carga de contenido
-                                        </div>
-                                    <div class="panel-body">
 
+
+                                    <div class="panel-body">
+                                        <div class="container" style="width: 100%">
+                                        @include('cms.admin.archivos.partials.form')
+                                            </div>
                                         {!! csrf_field() !!}
                                         @include('cms.admin.archivos.create')
                                         {!! Form::close() !!}
                                     </div>
                                 </div>
-
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -50,11 +50,7 @@ class ArchivoController extends Controller
      */
     public function store(Request $request)
     {
-        $tipo = 'img';
         $dir = public_path().'/uploads/';
-        if($tipo == 'img'){
-            $dir = public_path().'/uploads/imagenes/';
-        }
 
         $files = $request->file('file');
         $archivo = new Archivo();
@@ -72,18 +68,12 @@ class ArchivoController extends Controller
             }
         }
 
-
         $methods=explode('|',$request->input('type'));
 
         foreach ($methods as $model){
             if(empty($request->input($model))) continue;
-
-            $archivo->{$model}()->attach($request->input($model));
+            if($archivo->exists) $archivo->{$model}()->attach($request->input($model));
         }
-
-
-
-
 
     }
 

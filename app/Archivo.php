@@ -38,4 +38,9 @@ class Archivo extends Model
         });
     }
 
+    public function getFileUrlAttribute()
+    {
+        return url($this->url . $this->fileName);
+    }
+
 }

@@ -13,9 +13,10 @@ class ArchivableTable extends Migration
     public function up()
     {
         Schema::create('archivables', function (Blueprint $table) {
-            $table->increments('archivable_id')->unique();
-            $table->string('archivable_type');
             $table->integer('archivo_id');
+            $table->integer('archivable_id');
+            $table->string('archivable_type');
+            $table->unique(['archivable_id','archivable_type','archivo_id']);
         });
     }
 
