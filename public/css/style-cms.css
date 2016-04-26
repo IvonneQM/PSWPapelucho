@@ -117,12 +117,23 @@ a.dz-remove {
     margin-bottom: 15px;
 }
 
+.conteiner-option{
+    padding: 0;
+}
 .contenedor-parvulos{
     margin-top:132.5px;
 }
 
 .div-btn{
     padding-bottom: 10px;
+}
+
+.dropzone .nav-tabs li a, .dropzone .nav-tabs>li.active>a {
+    color: #2F2E7E;
+}
+
+.dropzone .nav-tabs>li.active>a{
+    font-weight: bold;
 }
 
 .fa{
@@ -179,6 +190,11 @@ a.dz-remove {
 .form-group-buscar{
     display: inline-block;
 }
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #1056A7;
+    border-color: #2F2E7E;
+}
 
 .panel-body , .container{
     padding: 0 !important;
@@ -189,11 +205,23 @@ a.dz-remove {
     margin: 0 15px;
 }
 
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: none;
+}
+
+.panel-option{
+    margin-top:20px;
+}
+
 
 .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
     background-color: #0099CC;
 }
 
+.row-thumbnails{
+    margin:20px 0;
+}
 .t-actions{
     display:block;
     min-width:99px !important;
@@ -207,6 +235,14 @@ a.dz-remove {
     margin-top: 30px;
     max-width: 230px;
     padding:5px;
+}
+
+.thumbnail > img {
+    display: block;
+    height: 100px; /* add this */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
 }
 
 #aside1{
@@ -256,6 +292,15 @@ a.dz-remove {
     float:right;
     margin: 25px 20px;
     height:30px;
+}
+
+#panel-content-heading{
+    background: #F7EC3F !important;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    color: #3952A3;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
 }
 
 #sidebar{

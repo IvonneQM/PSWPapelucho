@@ -23,11 +23,11 @@ class ArchivoController extends Controller
      */
     public function index()
     {
-        $archivos = Archivo::orderBy('id', 'DESC');
-        $galerias=Galeria::doesntHave('archivos')->get();
-        $jardines=Jardin::doesntHave('archivos')->get();
-        $niveles=Nivel::doesntHave('archivos')->get();
-        $parvulos=Parvulo::doesntHave('archivos')->get();
+        $archivos = Archivo::orderBy('id', 'DESC')->paginate(12);
+        $galerias=Galeria::with('archivos')->get();
+        $jardines=Jardin::with('archivos')->get();
+        $niveles=Nivel::with('archivos')->get();
+        $parvulos=Parvulo::with('archivos')->get();
         return view('cms.admin.archivos.list', compact('archivos','galerias', 'jardines', 'niveles', 'parvulos'));
 
     }
@@ -60,7 +60,7 @@ class ArchivoController extends Controller
             $fileSize = $file->getClientSize();
 
             $archivo->fileName = $fileName;
-            $archivo->url = $dir;
+            $archivo->url = 'uploads/' . $fileName;
             $archivo->size = $fileSize;
 
             if ($file->move($dir, $fileName)){

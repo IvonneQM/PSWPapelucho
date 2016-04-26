@@ -20,7 +20,7 @@ class ParvuloController extends Controller
     public function index(Request $request)
     {
 
-            $parvulos = Parvulo::user($request->get('user'))->paginate();
+            $parvulos = Parvulo::with('user')->paginate();
             return view('cms.admin.parvulos.lista', compact('parvulos'));
 
     }

@@ -13,9 +13,9 @@
 
     <div class="tab-content">
 
-        <div role="tabpanel" class="tab-pane active" id="imagen">
+        <div role="tabpanel" class="tab-pane active panel-option" id="imagen">
 
-            <div class="col-lg-8">
+            <div class="col-lg-8 conteiner-option">
                 <div class="form-group">
                     <label for="sel1">Seleccionar Galería:</label>
                     <select name="galerias" class="form-control" id="sel1">
@@ -36,7 +36,7 @@
                    ><i class="fa fa-picture-o"> Crear Galería</i></a>
             </div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="informe">
+        <div role="tabpanel" class="tab-pane panel-option" id="informe">
             <div class="form-group">
                 <div class="form-group">
                     <label for="sel1">Seleccionar Párvulo:</label>
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="boletin">
+        <div role="tabpanel" class="tab-pane panel-option" id="boletin">
             <div class="form-group">
                 <div class="form-group">
                     <label for="sel1">Seleccionar Nivel:</label>
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="informacion">
+        <div role="tabpanel" class="tab-pane panel-option" id="informacion">
 
         </div>
         {!! Form::hidden('type', 'galerias|jardines' , array('id' => 'type')) !!}

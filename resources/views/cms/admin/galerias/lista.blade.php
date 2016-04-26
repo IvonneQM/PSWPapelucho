@@ -2,7 +2,7 @@
 
 @section('meta')
 
-    {!!Html::script('js/modals/galerias.js')!!}
+    {!!Html::script('lightbox')!!}
 @stop
 
 @section('aside1')

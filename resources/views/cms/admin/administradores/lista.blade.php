@@ -11,7 +11,7 @@
 @stop
 @section('general-content-1')
     @include('cms.admin.administradores.create')
-    @include('cms.admin.administradores.editAdmin')
+    @include('cms.admin.administradores.edit')
 
     <div class="container" style="width: 100%">
         <div class="row-fluid" >

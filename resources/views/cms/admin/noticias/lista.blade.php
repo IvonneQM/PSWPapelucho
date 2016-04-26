@@ -1,8 +1,7 @@
 @extends('cms.layout')
 
 @section('meta')
-    {!!Html::script('js/modals/noticias.js')!!}
-@stop
+    {!!Html::script('js/modals/noticias.js')!!}@stop
 
 @section('aside1')
 

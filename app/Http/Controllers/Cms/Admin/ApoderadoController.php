@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Cms\Admin;
 
 use App\Http\Requests\CreateUserRequest;
 use App\User;
+use App\Parvulo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,6 +18,7 @@ class ApoderadoController extends Controller
      */
     public function index(Request $request)
     {
+
         $apoderados = User::fullName($request->get('full_name'))->where('role','=','apoderado')->orderBy('id', 'DESC')->paginate();
         return view('cms.admin.apoderados.lista', compact('apoderados'));
     }
