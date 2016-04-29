@@ -32,6 +32,13 @@ class ArchivoController extends Controller
 
     }
 
+    public function files(Request $request)
+    {
+        $archivos = Archivo::types($request->get('type'))->orderBy('id', 'DESC')->paginate(12);
+        return view('cms.admin.archivos.partials.thumbnails', compact('archivos'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

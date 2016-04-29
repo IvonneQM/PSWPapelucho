@@ -30,7 +30,7 @@
                     </select>
                 </div>
             </div>
-            {{--<button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>--}}
+            {{--button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>--}}
             <div class="col-md-4 div-btn">
                 <a class="btn btn-primary pull-right btn-crear-nuevo" href="{{ route('administrador.galerias.index') }}"
                    ><i class="fa fa-picture-o"> Crear Galería</i></a>
@@ -42,7 +42,7 @@
                     <label for="sel1">Seleccionar Párvulo:</label>
                     <select name="parvulos" class="form-control" id="sel3">
                         @foreach($parvulos as $parvulo)
-                        <option value="{{$parvulo->getKey()}}">{{$parvulo->name}}</option>
+                        <option value="{{$parvulo->getKey()}}">{{$parvulo->full_name}}</option>
                         @endforeach
                     </select>
                 </div>

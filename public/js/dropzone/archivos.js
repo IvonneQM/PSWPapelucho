@@ -43,7 +43,17 @@ Dropzone.options.dropzoneImagenes = {
 $(function(){
     $('body').on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
         console.log($(this).data('type'));
-        $('#type').attr('value',$(this).data('type'))
+        $('#type').attr('value',$(this).data('type'));
+        $.ajax({
+            url: $('#row-thumbnails').data('url'),
+            type: 'POST',
+            data: {
+                type: $(this).data('type')
+            },
+            dataType: 'html'
+        }).done(function(d){
+            $('#row-thumbnails').html(d);
+        });
     })
 });
 

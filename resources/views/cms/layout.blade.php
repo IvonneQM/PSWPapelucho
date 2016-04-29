@@ -14,7 +14,9 @@
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
     {!!Html::style('//allfont.es/allfont.css?fonts=linotypezapfino-one')!!}
     {!!Html::style('css/font-awesome.min.css')!!}
+
     {!!Html::script('js/jquery-2.2.0.js')!!}
+    {!!Html::script('js/main.js')!!}
     {!!Html::script('js/bootstrap.min.js')!!}
     {!!Html::script('js/sweetalert.js')!!}
 

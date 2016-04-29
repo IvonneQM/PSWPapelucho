@@ -27,18 +27,28 @@ $(document).ready(function () {
                         "success");
                 },
                 error   : function (msj) {
-                    var rut = msj.responseJSON.rut;
+                    var rut    = msj.responseJSON.rut;
                     var nombre = msj.responseJSON.full_name;
-                    var email = msj.responseJSON.email;
-                    var pass = msj.responseJSON.password;
+                    var email  = msj.responseJSON.email;
+                    var pass   = msj.responseJSON.password;
 
-                    if(rut == null){rut = ''}
-                    if(nombre == null){nombre = ''}
-                    if(email == null){email = ''}
-                    if(pass == null){pass = ''}
+                    if (rut == null) {
+                        rut = ''
+                    }
+                    if (nombre == null) {
+                        nombre = ''
+                    }
+                    if (email == null) {
+                        email = ''
+                    }
+                    if (pass == null) {
+                        pass = ''
+                    }
 
                     var concatenado = rut + '\n' + nombre + '\n' + email + '\n' + pass;
-                    if(concatenado == ''){concatenado = "Se ha generado un problema de conexión con el servidor"}
+                    if (concatenado == '') {
+                        concatenado = "Se ha generado un problema de conexión con el servidor"
+                    }
 
 
                     swal({
@@ -115,7 +125,7 @@ $(document).ready(function () {
                     "success");
             },
             error  : function (data) {
-                swal( "¡Error!",
+                swal("¡Error!",
                     "Se ha generado un problema de conexión con el servidor",
                     "error");
             }
@@ -162,7 +172,7 @@ $(document).ready(function () {
                             "success");
                     },
                     error   : function (data) {
-                        swal( "¡Error!",
+                        swal("¡Error!",
                             "Se ha generado un problema de conexión con el servidor",
                             "error");
                         row.fadeIn();

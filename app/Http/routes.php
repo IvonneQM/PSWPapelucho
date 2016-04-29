@@ -107,11 +107,16 @@ Route::group(['middleware' => 'auth'], function () {
             Route::resource('apoderados', 'Cms\Admin\ApoderadoController');
 
 
+            Route::get('parvulos?user={user}', [
+                'uses' => 'Cms\Admin\ParvuloController@index',
+                'as' => 'parvulos_user'
+            ]);
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
 
-            Route::get('parvulos?users={user}', [
-                'uses' => 'Cms\Admin\ParvuloController@index',
-                'as' => 'parvulos-'
+
+            Route::post('archivos/files',[
+                'uses' => 'Cms\Admin\ArchivoController@files',
+                'as' => 'archivos-files'
             ]);
 
             Route::resource('archivos', 'Cms\Admin\ArchivoController');

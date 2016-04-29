@@ -6,8 +6,6 @@
 
     {!! Html::script('js/dropzone/dropzone.js') !!}
     {!! Html::script('js/dropzone/archivos.js') !!}
-    {!! Html::script('js/lightbox/lightbox-plus-jquery.min.js') !!}
-    {!! Html::script('js/lightbox/lightbox-plus-jquery.min.map') !!}
 
 
 @stop
@@ -28,20 +26,11 @@
                         <div class="panel-heading" id="panel-content-heading">
                             Lista de archivos
                         </div>
-                        <div class="row row-thumbnails">
 
-                            @foreach($archivos as $archivo)
-                                <div class="col-md-2">
-                                    <a href="../{{$archivo->url}}" class="thumbnail" data-lightbox="archivo">
-                                        <img src="../{{$archivo->url}}">
-                                    </a>
-                                </div>
-                            @endforeach
+                        <div id="row-thumbnails" data-url="{!! route('archivos-files') !!}">
 
-
+                            @include('cms.admin.archivos.partials.thumbnails')
                         </div>
-
-                        {!! $archivos->render() !!}
 
                         <div>
                             <div>
@@ -72,8 +61,7 @@
                 </div>
             </div>
         </div>
-
-    {!! Html::script('js/lightbox/lightbox-plus-jquery.min.js') !!}
+    </div>
 
 @endsection
 

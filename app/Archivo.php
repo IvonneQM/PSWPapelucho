@@ -43,4 +43,22 @@ class Archivo extends Model
         return url($this->url . $this->fileName);
     }
 
+    public function scopeTypes($query, $types)
+    {
+        if( ! empty($types ))
+        {
+            $methodes = (array) explode('|',$types);
+            return $query->where(function($q) use ($methodes)
+            {
+                foreach($methodes as $i => $method)
+                {
+                    $m = ($i == 0) ? 'has' : 'orHas';
+                    $q->{$m}($method);
+                }
+            });
+        }
+
+        return $query;
+    }
+
 }
