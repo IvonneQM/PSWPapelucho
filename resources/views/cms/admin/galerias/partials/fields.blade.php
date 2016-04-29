@@ -6,5 +6,5 @@
 
 <div class="form-group">
     {!!Form::label('publish','Publicada: ')!!}
-    {!!Form::text('publish',null, ['id'=>'publish_galeria','class'=>'form-control', 'placeholder' => 'Ingresa si esta publicada'])!!}
+    {!! Form::checkbox('agree', 1, null, ['id'=>'publish_galeria', 'class' => 'form-control']) !!}
 </div>

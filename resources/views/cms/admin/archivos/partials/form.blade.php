@@ -1,13 +1,17 @@
 <div>
 
     <ul id="archivosTabs" class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#imagen" aria-controls="imagen" role="tab" data-toggle="tab" data-type="galerias|jardines">Imágen</a>
+        <li role="presentation" class="active"><a href="#imagen" aria-controls="imagen" role="tab" data-toggle="tab"
+                                                  data-type="galerias|jardines">Imágen</a>
         </li>
-        <li role="presentation"><a href="#informe" aria-controls="informe" role="tab" data-toggle="tab" data-type="parvulos">Informe al
+        <li role="presentation"><a href="#informe" aria-controls="informe" role="tab" data-toggle="tab"
+                                   data-type="parvulos">Informe al
                 Hogar</a></li>
-        <li role="presentation"><a href="#boletin" aria-controls="boletin" role="tab" data-toggle="tab" data-type="niveles">Boletín
+        <li role="presentation"><a href="#boletin" aria-controls="boletin" role="tab" data-toggle="tab"
+                                   data-type="niveles">Boletín
                 Semanal</a></li>
-        <li role="presentation"><a href="#informacion" aria-controls="informacion" role="tab" data-toggle="tab" data-type="general">Información
+        <li role="presentation"><a href="#informacion" aria-controls="informacion" role="tab" data-toggle="tab"
+                                   data-type="general">Información
                 General</a></li>
     </ul>
 
@@ -17,34 +21,44 @@
 
             <div class="col-lg-8 conteiner-option">
                 <div class="form-group">
-                    <label for="sel1">Seleccionar Galería:</label>
-                    <select name="galerias" class="form-control" id="sel1">
-                       @foreach($galerias as $galeria)
-                        <option value="{{$galeria->getKey()}}">{{$galeria->name}}</option>
-                        @endforeach
-                    </select>
-                    <select name="jardines" class="form-control" id="sel1">
-                        @foreach($jardines as $jardin)
-                            <option value="{{$jardin->getKey()}}">{{$jardin->name}}</option>
-                        @endforeach
-                    </select>
+                    <div class="form-group">
+                        <label for="sel1">Galería:</label>
+                        <select name="galerias" class="form-control" id="sel1">
+                            @foreach($galerias as $galeria)
+
+                                <option value="{{$galeria->getKey()}}">{{$galeria->name}} </option>
+
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sel1">Jardin:</label>
+                        <select name="jardines" class="form-control" id="sel1">
+                            @foreach($jardines as $jardin)
+
+                                <option value="{{$jardin->getKey()}}">{{$jardin->name}}</option>
+
+                            @endforeach
+
+                        </select>
+                    </div>
                 </div>
             </div>
             {{--button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>--}}
             <div class="col-md-4 div-btn">
                 <a class="btn btn-primary pull-right btn-crear-nuevo" href="{{ route('administrador.galerias.index') }}"
-                   ><i class="fa fa-picture-o"> Crear Galería</i></a>
+                ><i class="fa fa-picture-o"> Crear Galería</i></a>
             </div>
         </div>
         <div role="tabpanel" class="tab-pane panel-option" id="informe">
             <div class="form-group">
                 <div class="form-group">
                     <label for="sel1">Seleccionar Párvulo:</label>
-                    <select name="parvulos" class="form-control" id="sel3">
+                    <select2 name="parvulos" class="form-control" id="sel3">
                         @foreach($parvulos as $parvulo)
-                        <option value="{{$parvulo->getKey()}}">{{$parvulo->full_name}}</option>
+                            <option value="{{$parvulo->getKey()}}">{{$parvulo->full_name}}</option>
                         @endforeach
-                    </select>
+                    </select2>
                 </div>
             </div>
         </div>

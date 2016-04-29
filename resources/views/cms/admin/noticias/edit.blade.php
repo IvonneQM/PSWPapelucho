@@ -22,8 +22,7 @@
                         {!!Form::textarea('content',null, ['id'=>'contentNoticia','class'=>'form-control', 'placeholder' => 'Ingresa el contenido de la noticia'])!!}
                     </div>
                     <div class="form-group">
-                        {!!Form::label('publish','Publicar: ')!!}
-                        {!!Form::text('publish',null, ['id'=>'publishNoticia','class'=>'form-control', 'placeholder' => 'Ingresa si se publica de la noticia'])!!}
+                        {!!Form::checkbox('publishNoticia', 'publishNoticia', ['id'=>'publishNoticia', 'class' => 'field']) !!}
                     </div>
 
                     {!!Form::submit('Aceptar',['class'=>'btn btn-primary','id' => 'btnActualizarNoticia'])!!}

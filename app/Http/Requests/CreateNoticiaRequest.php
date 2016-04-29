@@ -26,7 +26,7 @@ class CreateNoticiaRequest extends Request
         return [
             'title' => 'required|max:200',
             'content' => 'required|max:255',
-            'publish' => 'required|max:255',
+            'publish' => 'max:5',
         ];
     }
 }
