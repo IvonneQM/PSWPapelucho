@@ -10,16 +10,12 @@ class Jornada extends Model
 
 
     public function parvulos(){
-        return $this->hasMany('App\Parvulo', 'jornadas');
-    }
-
-    public function nivel(){
-        return $this->belongsToMany('App\Nivel','niveles');
+        return $this->hasMany(Parvulo::class);
     }
 
     public function archivos()
     {
-        return $this->morphToMany('App\Archivo', 'archivable');
+        return $this->morphToMany(Archivo::class, 'archivable');
     }
 
     protected $fillable = ['name'];

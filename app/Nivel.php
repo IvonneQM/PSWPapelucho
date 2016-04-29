@@ -8,14 +8,8 @@ class Nivel extends Model
 {
     protected $table = 'niveles';
 
-    public function jornada()
-    {
-        return $this->belongsToMany(Jornada::class,'jornadas');
-    }
-
-    public function jardin()
-    {
-        return $this->belongsToMany(Jardin::class,'jardines');
+    public function parvulos(){
+        return $this->hasMany(Parvulo::class);
     }
 
     public function archivos()

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Cms\Admin;
 
+use App\Nivel;
 use App\Jornada;
+use App\Jardin;
 use App\Parvulo;
-
 use App\User;
 use Illuminate\Http\Request;
 
@@ -20,12 +21,12 @@ class ParvuloController extends Controller
      */
     public function index(Request $request)
     {
-        $niveles;
-        $jornadas;
-        $jardines;
+        $niveles=Nivel::with('parvulos')->get();
+        $jornadas=Jornada::with('parvulos')->get();
+        $jardines=Jardin::with('parvulos')->get();
         $apoderado = User::find($request->get('user'));
         $parvulos = Parvulo::apoderado($request->get('user'))->paginate();
-        return view('cms.admin.parvulos.lista', compact('parvulos','apoderado'));
+        return view('cms.admin.parvulos.lista', compact('parvulos','apoderado','niveles','jornadas','jardines'));
 
     }
 

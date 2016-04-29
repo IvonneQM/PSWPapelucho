@@ -16,6 +16,23 @@ class Parvulo extends Model
         return $this->belongsTo(User::class) ;
     }
 
+    public function niveles(){
+        return $this->has(Nivel::class);
+    }
+
+    public function jornadas(){
+        return $this->has(Jornada::class);
+    }
+
+    public function jardines(){
+        return $this->has(Jardin::class);
+    }
+
+    public function archivos()
+    {
+        return $this->morphToMany(Archivo::class, 'archivable');
+    }
+
     public function scopeApoderado($query, $user_id){
             return $query->whereHas('user', function($q) use ($user_id)
             {
@@ -23,14 +40,4 @@ class Parvulo extends Model
             });
     }
 
-    public function scopeJornada($query, $jornada_id){
-        if( !empty($jornada_id)) {
-            return $query->where('jornada_id', $jornada_id);
-        }
-    }
-
-    public function archivos()
-    {
-        return $this->morphToMany(Archivo::class, 'archivable');
-    }
 }

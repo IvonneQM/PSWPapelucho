@@ -8,9 +8,8 @@ class Jardin extends Model
 {
     protected $table = 'jardines';
 
-    public function nivel()
-    {
-        return $this->belongsToMany(Nivel::class,'niveles');
+    public function parvulos(){
+        return $this->hasMany(Parvulo::class);
     }
 
     public function archivos()
