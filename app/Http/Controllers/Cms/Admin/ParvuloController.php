@@ -20,10 +20,12 @@ class ParvuloController extends Controller
      */
     public function index(Request $request)
     {
-
-            $apoderado = User::find($request->get('user'));
-            $parvulos = Parvulo::apoderado($request->get('user'))->paginate();
-            return view('cms.admin.parvulos.lista', compact('parvulos','apoderado'));
+        $niveles;
+        $jornadas;
+        $jardines;
+        $apoderado = User::find($request->get('user'));
+        $parvulos = Parvulo::apoderado($request->get('user'))->paginate();
+        return view('cms.admin.parvulos.lista', compact('parvulos','apoderado'));
 
     }
 

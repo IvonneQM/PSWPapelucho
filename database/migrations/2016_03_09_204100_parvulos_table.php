@@ -17,14 +17,18 @@ class ParvulosTable extends Migration
             $table->increments('id');
             $table->string('rut')->unique();
             $table->string('full_name')->required();
-            $table->string('nivel')->required();
-            $table->string('jardin')->required();
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('nivel_id')->required()->nullable();
             $table->integer('jornada_id')->unsigned()->nullable();
+            $table->integer('jardin_id')->required()->nullable();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->timestamps();
 
 
+            $table->foreign('nivel_id')->references('id')->on('niveles')
+                ->onDelete('cascade');
             $table->foreign('jornada_id')->references('id')->on('jornadas')
+                ->onDelete('cascade');
+            $table->foreign('jardin_id')->references('id')->on('jardines')
                 ->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade');
