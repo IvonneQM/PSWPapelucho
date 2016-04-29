@@ -1,6 +1,5 @@
 {{-- Modal --}}
-
-<div class="modal fade bs-example-modal-lg" id="modal-parvulos" tabindex="-1" role="dialog"
+<div class="modal fade bs-example-modal-lg" id="modal-crear-parvulos" tabindex="-1" role="dialog"
      aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

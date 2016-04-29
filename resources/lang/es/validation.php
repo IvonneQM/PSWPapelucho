@@ -104,6 +104,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => 'titulo',
+        'content' => 'contenido',
+        'publish' => 'publicar'
+    ],
 
 ];

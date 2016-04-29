@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cms\Admin;
 
+use App\Http\Requests\CreateNoticiaRequest;
 use Illuminate\Http\Request;
 use App\Noticia;
 use Validator;
@@ -27,46 +28,25 @@ class NoticiaController extends Controller
         return view('home',compact('noticias'));
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'title' => 'required|max:200',
-            'content' => 'required|max:255',
-            'publish' => 'required|max:255',
-        ]);
-    }
-
-
     /**
      * Show the form for creating a new resource.
      *
+     * @param CreateNoticiaRquest $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(CreateNoticiaRquest $request)
     {
-        $noticia = new Noticia($request->all());
-        $noticia->save();
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CreateNoticiaRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateNoticiaRequest $request)
     {
-
-       $validator = $this->validator($request->all());
-
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
-
         if($request->ajax()){
-            alert("llegue aqui");
             Noticia::create($request->all());
             return response()->json([]);
         }

@@ -48,9 +48,11 @@ class ParvuloController extends Controller
             return response()->json($jornadas);
         }
     }
+
     /**
      * Show the form for creating a new resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
@@ -89,12 +91,17 @@ class ParvuloController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        $parvulo = User::findOrFail($id);
+        $parvulo = Parvulo::find($id);
+
+        if($request->ajax()) {
+            return response()->json($parvulo);
+        }
     }
 
     /**
@@ -106,7 +113,11 @@ class ParvuloController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $parvulo = Parvulo::find($id);
+        $parvulo->update($request->all());
+        if($request->ajax()){
+            return response()->json($parvulo);
+        }
     }
 
     /**

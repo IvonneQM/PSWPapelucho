@@ -75,13 +75,11 @@ $(document).ready(function () {
         var route = link.split('%7Bparvulos%7D').join(id);
 
         $.get(route, function (resp) {
-
+           console.log(resp)
             $('#parv').html("Editar párvulo: " + resp.full_name);
             $('#idParvulo').val(resp.id);
             $('#rutParvulo').val(resp.rut);
             $('#full_nameParvulo').val(resp.full_name);
-            $('#emailApo').val(resp.email);
-            $('#passApo').val("");
         })
     });
 
