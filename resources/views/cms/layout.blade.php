@@ -20,6 +20,7 @@
     {!!Html::script('js/main.js')!!}
     {!!Html::script('js/bootstrap.min.js')!!}
     {!!Html::script('js/sweetalert.js')!!}
+    {!!Html::script('js/menu.js')!!}
 
 
 

@@ -194,7 +194,6 @@ a.dz-remove {
     display: inline-block;
 }
 
-
 .panel-primary > .panel-heading {
     color: #fff;
     background-color: #1056A7;
@@ -264,7 +263,7 @@ a.dz-remove {
     position: fixed;
     width: 100%;
     z-index: 2;
-    margin-top:-72px;
+    margin-top: -72px;
 }
 
 #header-bar ul {
@@ -358,13 +357,13 @@ a.dz-remove {
 
     header nav ul li {
         background: #00A04A;
-        border-bottom:3px solid rgba(255,255,255, .3);
+        border-bottom: 3px solid rgba(255, 255, 255, .3);
         display: block;
         float: none;
-        margin-top:10px;
-        padding:10px;
-        text-align:left;
-        width:90%;
+        margin-top: 10px;
+        padding: 10px;
+        text-align: left;
+        width: 90%;
     }
 
     nav li a:hover:before {
@@ -384,11 +383,9 @@ a.dz-remove {
         width: 40px;
     }
 
-
     #sidebar-mobile {
         transition: right 0.3s linear;
     }
-
 
     #sidebar-mobile ul li:first-of-type {
         margin-top: 40px;
@@ -400,3 +397,15 @@ a.dz-remove {
         transition: right 0.3s linear;
     }
 }
+
+@media screen and (max-width: 737px ) {
+    section{
+        width: 100%;
+    }
+
+    #aside2{
+        background: red;
+        display: none;
+    }
+}
+

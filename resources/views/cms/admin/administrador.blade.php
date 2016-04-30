@@ -1,8 +1,5 @@
 @extends('cms.layout')
 
-@section('meta')
-    {!!Html::script('js/menu.js')!!}
-@stop
 @section('menu-mobile')
     @include('cms.admin.menu-lateral')
 @stop

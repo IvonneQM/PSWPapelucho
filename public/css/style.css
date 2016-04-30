@@ -768,7 +768,9 @@ ul{
         height: 0;
     }
 
-    section{ margin-top: 200px; }
+    section{
+        margin-top: 200px;
+    }
 
 
     .cycle-slideshow{ display: none; }

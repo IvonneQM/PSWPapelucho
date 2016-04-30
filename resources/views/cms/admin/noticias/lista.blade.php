@@ -3,10 +3,17 @@
 @section('meta')
     {!!Html::script('js/modals/noticias.js')!!}@stop
 
+@section('menu-mobile')
+    @include('cms.admin.menu-lateral')
+@stop
 @section('aside1')
 
-    @include('cms.admin.menu-lateral')
+    <nav id="sidebar-desktop">
+        <ul>
 
+            @include('cms.admin.menu-lateral')
+        </ul>
+    </nav>
 @stop
 @section('general-content-1')
     @include('cms.admin.noticias.form')
