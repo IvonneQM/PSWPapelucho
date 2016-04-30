@@ -11,8 +11,6 @@ Dropzone.options.dropzoneImagenes = {
     addRemoveLinks: true,
     dictRemoveFile: 'Eliminar',
 
-
-
     init: function(){
         var submitButton= document.querySelector("#guardar-archivos")
 

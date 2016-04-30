@@ -107,7 +107,8 @@ return [
     'attributes' => [
         'title' => 'titulo',
         'content' => 'contenido',
-        'publish' => 'publicar'
+        'publish' => 'publicar',
+        'name' => 'nombre'
     ],
 
 ];

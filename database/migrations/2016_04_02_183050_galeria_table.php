@@ -18,7 +18,6 @@ class GaleriaTable extends Migration
             $table->increments('id')->unique();
             $table->string('name')->required();
             $table->string('publish')->required();
-            $table->string('description')->required();
             $table->timestamps();
         });
     }

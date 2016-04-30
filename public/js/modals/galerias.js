@@ -8,7 +8,6 @@ $(document).ready(function () {
     $('#register-galeria').click(function () {
         $('#modal-crear-galeria').modal();
 
-
         $(document).on('submit', '#form-register-galerias', function (e) {
             e.preventDefault();
 
@@ -28,27 +27,22 @@ $(document).ready(function () {
                         "success");
                 },
                 error   : function (msj) {
-                   /* var title   = msj.responseJSON.title;
-                    var content = msj.responseJSON.content;
+                    var name   = msj.responseJSON.name;
                     var publish = msj.responseJSON.publish;
 
-                    if (title == null) {
-                        title = ''
+                    if (name == null) {
+                        name = ''
                     }
-                    if (content == null) {
-                        content = ''
-                    }
+
                     if (publish == null) {
                         publish = ''
                     }
 
-                    var concatenado = title + '\n' + content + '\n' + publish;
-                    if (concatenado == '') {
-                        concatenado = "Se ha generado un problema de conexión con el servidor"
-                    }*/
+                    var concatenado = name + '\n' + publish;
+                    if(concatenado == ''){concatenado = "Se ha generado un problema de conexión con el servidor"}
                     swal({
                         title             : "¡Error!",
-                        text              : "OOOOO",
+                        text              : concatenado,
                         type              : "warning",
                         confirmButtonColor: "#C32026",
                         confirmButtonText : "Ok",

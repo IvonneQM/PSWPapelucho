@@ -10,9 +10,7 @@ $(document).ready(function () {
         }
     })
     $('#register-noticia').click(function () {
-        $('#modal-noticias').modal();
-
-
+            $('#modal-noticias').modal();
         $(document).on('submit', '#form-register-noticia', function (e) {
             e.preventDefault();
 
