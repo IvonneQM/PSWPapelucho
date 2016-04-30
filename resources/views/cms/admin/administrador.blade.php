@@ -1,10 +1,20 @@
 @extends('cms.layout')
 
+@section('meta')
+    {!!Html::script('js/menu.js')!!}
+@stop
+@section('menu-mobile')
+    @include('cms.admin.menu-lateral')
+@stop
 @section('aside1')
 
-    @include('cms.admin.menu-lateral')
+    <nav id="sidebar-desktop">
+        <ul>
 
-    @stop
+            @include('cms.admin.menu-lateral')
+        </ul>
+    </nav>
+@stop
 @section('general-content-1')
 
     BIENVENIDO A TU PANEL DE CONTROL

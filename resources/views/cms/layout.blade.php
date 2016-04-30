@@ -3,7 +3,8 @@
 <head>
     <title>@yield('title', 'Jardin infantil Papelucho')</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/normalize.css')!!}
@@ -21,6 +22,7 @@
     {!!Html::script('js/sweetalert.js')!!}
 
 
+
     @yield('meta')
     @include('Alerts::alerts')
 </head>
@@ -28,25 +30,36 @@
 <header>
     <div id="header-bar">
 
-        <a href="#" >{!!Html::image('images/isologo.png', 'Isologo', array('id' => 'img-isologo'))!!}</a>
-        <a href="#" >{!!Html::image('images/logotipo.png', 'Logotipo', array('id' => 'img-logotipo'))!!}</a>
-        <a href="#">{!!Html::image('images/menu-icon.png', 'Icono Menu', array('id' => 'img-menu'))!!}</a>
+        <a href="#">{!!Html::image('images/isologo.png', 'Isologo', array('id' => 'img-isologo'))!!}</a>
+        <a href="#">{!!Html::image('images/logotipo.png', 'Logotipo', array('id' => 'img-logotipo'))!!}</a>
+        <div id="sidebar-btn">
+            <a href="#">{!!Html::image('images/menu-icon.png', 'Icono Menu', array('id' => 'img-menu'))!!}</a>
+        </div>
+
         <ul>
-            <li> {{(Auth::user()->full_name)}} | </li>
-            <li> <a href="{{ route('logout') }}">Cerrar Sesión <i id='icon-font' class="fa fa-sign-out"></i></a></li>
+            <li> {{(Auth::user()->full_name)}} |</li>
+            <li><a href="{{ route('logout') }}"  id="btn-logout">Cerrar Sesión <i id='icon-font' class="fa fa-sign-out"></i></a></li>
         </ul>
+        <nav id="sidebar-mobile">
+            <ul>
+                <li><a href="{{ route('logout') }}">Cerrar Sesión</a></li>
+                @yield('menu-mobile')
+            </ul>
+        </nav>
     </div>
 </header>
 <main>
 
     <aside id="aside1">
         @yield('aside1')
-    </aside><section>
+    </aside>
+    <section>
         <article>
 
             @yield('general-content-1')
         </article>
-    </section><aside id="aside2">
+    </section>
+    <aside id="aside2">
 
         @yield('aside2')
     </aside>
@@ -55,7 +68,8 @@
 <footer>
     <p id="copyright">
         &copy;2016 <a href="https://www.jardinpapelucho.cl">Jardín Papelucho</a>, Todos los derechos reservados.
-        <span id="computec-logo"><a href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a></span>
+        <span id="computec-logo"><a
+                    href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a></span>
     </p>
 </footer>
 </body>
