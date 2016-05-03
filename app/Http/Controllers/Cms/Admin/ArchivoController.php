@@ -34,8 +34,15 @@ class ArchivoController extends Controller
 
     public function files(Request $request)
     {
-        $archivos = Archivo::types($request->get('type'))->orderBy('id', 'DESC')->paginate(12);
-        return view('cms.admin.archivos.partials.thumbnails', compact('archivos'));
+        $method = $request->get('type');
+
+        if(
+            ! in_array($method, ['general'])
+        )
+        {
+            $archivos = Archivo::types($method)->orderBy('id', 'DESC')->paginate(12);
+            return view('cms.admin.archivos.partials.thumbnails', compact('archivos'));
+        }
 
     }
 
@@ -75,13 +82,22 @@ class ArchivoController extends Controller
             }
         }
 
-        $methods=explode('|',$request->input('type'));
+        $methods = explode('|',$request->input('type'));
 
-        foreach ($methods as $model){
+        $archivo->type = $request->input('type');
+
+        foreach ((array) $methods as $model){
             if(empty($request->input($model))) continue;
-            if($archivo->exists) $archivo->{$model}()->attach($request->input($model));
+            if(
+                $archivo->exists &&
+                ! in_array($model, ['general'])
+            )
+            {
+                $archivo->{$model}()->attach($request->input($model));
+            }
         }
 
+        event( (new \App\Events\SendMail($archivo)) );
     }
 
     /**

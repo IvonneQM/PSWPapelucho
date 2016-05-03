@@ -1,6 +1,6 @@
 @extends('layout')
 @section('meta')
-    {!!Html::script('lightbox')!!}
+    {!!Html::script('js/collapse.js')!!}
 @stop
 @section('page-title')
     Mi Jardin

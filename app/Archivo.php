@@ -2,9 +2,11 @@
 
 namespace App;
 
+use App\Events\SendMail;
+use App\Interfaces\SendmailInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Archivo extends Model
+class Archivo extends Model implements SendmailInterface
 {
     protected $fillable = ['fileName','url','size'];
 
@@ -33,7 +35,9 @@ class Archivo extends Model
         parent::boot();
 
         // al guardar un post
-        \App\Archivo::saving(function($table){
+        \App\Archivo::saving(function($archivo){
+
+            //event( new SendMail($archivo) );
 
         });
     }
@@ -61,4 +65,73 @@ class Archivo extends Model
         return $query;
     }
 
+    public function getTo()
+    {
+        $mail = array();
+
+        switch( $this->type )
+        {
+            case "galerias|jardines":
+                $mail =  User::whereHas('parvulos',function($q)
+                    {
+                        $q->whereHas('jardines',function($q)
+                        {
+                            $q->whereHas('archivos',function($q)
+                            {
+                                $q->where($this->getKeyName(),$this->getKey());
+                            });
+                        });
+                    })->get();
+                break;
+            case "niveles":
+                $mail =  User::whereHas('parvulos',function($q)
+                    {
+                        $q->whereHas('niveles',function($q)
+                        {
+                            $q->whereHas('archivos',function($q)
+                            {
+                                $q->where($this->getKeyName(),$this->getKey());
+                            });
+                        });
+                    })->get();
+                break;
+            case "parvulos":
+
+                $mail = User::whereHas('parvulos',function($q)
+                {
+                    $q->whereHas('archivos',function($q)
+                        {
+                            $q->where($this->getKeyName(),$this->getKey());
+                        });
+                })->get();
+                break;
+            case "general":
+                $mail =  User::get();
+                break;
+        }
+
+        if( ! empty($mail) ) $mail = $mail->lists('email')->toArray();
+
+        return array_unique( (array) $mail );
+    }
+
+    public function getSubject()
+    {
+        return 'contenido modificado.';
+    }
+
+    public function getAttachments()
+    {
+        return false;
+    }
+
+    public function getData()
+    {
+        return [];
+    }
+
+    public function getTemplate()
+    {
+        return 'mails.content';
+    }
 }

@@ -73,5 +73,6 @@
                     href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a></span>
     </p>
 </footer>
+@yield('meta-footer')
 </body>
 </html>

@@ -27,7 +27,7 @@
                 <div class="panel-heading"><h1 class="title">Parvulos de {{$apoderado->full_name}}</h1></div>
                 <div class="col-lg-12 div-btn">
 
-                    {!! Form::open(['route' => 'administrador.parvulos.index', 'method' => 'GET', 'class' =>'nav-form nav-left', 'role' => 'search']) !!}
+                    {!! Form::open(['route' => 'administrador.parvulos.index', 'method' => 'GET', 'class' =>'nav-form nav-left pull-left', 'role' => 'search']) !!}
 
                     <div class="form-group form-group-buscar">
                         {!! Form::text('full_name', null, ['class' => 'form-control ', 'placeholder' => 'Nombre del Párvulo']) !!}
@@ -37,7 +37,7 @@
                     {!! Form::close()  !!}
 
 
-                    <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-parvulo" href="#" role="button"> <i class="fa fa-user-plus"> Crear Párvulo</i></a>
+                    <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-parvulo" href="#" role="button"> <i class="fa fa-user-plus"><span class="button-title">Crear Párvulo</span></i></a>
                 </div>
 
                 <div class="panel-body">

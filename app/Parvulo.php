@@ -17,15 +17,15 @@ class Parvulo extends Model
     }
 
     public function niveles(){
-        return $this->has(Nivel::class);
+        return $this->belongsTo(Nivel::class,'nivel_id');
     }
 
     public function jornadas(){
-        return $this->has(Jornada::class);
+        return $this->belongsTo(Jornada::class,'jornada_id');
     }
 
     public function jardines(){
-        return $this->has(Jardin::class);
+        return $this->belongsTo(Jardin::class,'jardin_id');
     }
 
     public function archivos()

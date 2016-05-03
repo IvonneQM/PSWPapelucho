@@ -28,4 +28,13 @@ class CreateNoticiaRequest extends Request
             'content' => 'required|max:255',
         ];
     }
+
+    public function sanitize()
+    {
+        $all = $this->all();
+
+        $all['publish'] = $this->has('pub') ? 'Si' : 'No';
+
+        return $all;
+    }
 }

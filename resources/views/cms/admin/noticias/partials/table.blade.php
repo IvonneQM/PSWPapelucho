@@ -2,7 +2,6 @@
     <table class="table table-striped">
         <tbody id="tb-noticias">
         <tr id="t-header-content-principal">
-            <th>Id</th>
             <th>Titulo</th>
             <th>Contenido de Noticia</th>
             <th>Publicado</th>
@@ -10,7 +9,6 @@
         </tr>
         @foreach($noticias as $noticia)
             <tr data-id="{{ $noticia->id }}">
-                <td>{!! $noticia->id !!}</td>
                 <td>{!! $noticia->title !!}</td>
                 <td>{!! $noticia->content !!}</td>
                 <td>{!! $noticia->publish !!}</td>

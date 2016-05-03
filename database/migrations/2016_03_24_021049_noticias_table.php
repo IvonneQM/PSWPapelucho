@@ -16,7 +16,7 @@ class NoticiasTable extends Migration
             $table->increments('id')->unique();
             $table->string('title')->required();
             $table->string('content')->required();
-            $table->boolean('publish');
+            $table->string('publish');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -27,4 +27,14 @@ class CreateGaleriaRequest extends Request
             'name' => 'required|max:200',
         ];
     }
+
+    public function sanitize()
+    {
+        $all = $this->all();
+
+        $all['publish'] = $this->has('agree') ? 'Si' : 'No';
+
+        return $all;
+    }
+
 }

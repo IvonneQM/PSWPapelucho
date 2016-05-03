@@ -47,7 +47,8 @@ class NoticiaController extends Controller
     public function store(CreateNoticiaRequest $request)
     {
         if($request->ajax()){
-            Noticia::create($request->all());
+            $noticias = new Noticia();
+            Noticia::create($request->sanitize());
             return response()->json([]);
         }
     }
@@ -85,11 +86,11 @@ class NoticiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateNoticiaRequest $request, $id)
     {
         //
         $noticia = Noticia::find($id);
-        $noticia->update($request->all());
+        $noticia->update($request->sanitize());
         if($request->ajax()){
             return response()->json($noticia);
         }
@@ -103,7 +104,7 @@ class NoticiaController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        $noticia = \App\Noticia::find($id);
+        $noticia = Noticia::find($id);
         $noticia->delete();
         if($request->ajax()){
             return response()->json([

@@ -21,59 +21,56 @@
 
             <div class="col-lg-8 conteiner-option">
                 <div class="form-group">
-                    <div class="form-group">
-                        <label for="sel1">Galería:</label>
-                        <select name="galerias" class="form-control" id="sel1">
-                            @foreach($galerias as $galeria)
 
-                                <option value="{{$galeria->getKey()}}">{{$galeria->name}} </option>
+                    <label for="sel1">Galería:</label>
+                    <select name="galerias" class="form-control" id="sel1">
+                        @foreach($galerias as $galeria)
 
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="sel1">Jardin:</label>
-                        <select name="jardines" class="form-control" id="sel1">
-                            @foreach($jardines as $jardin)
+                            <option value="{{$galeria->getKey()}}">{{$galeria->name}} </option>
 
-                                <option value="{{$jardin->getKey()}}">{{$jardin->name}}</option>
+                        @endforeach
+                    </select>
 
-                            @endforeach
 
-                        </select>
-                    </div>
+                    <label for="sel2">Jardin:</label>
+                    <select name="jardines" class="form-control" id="sel2">
+                        @foreach($jardines as $jardin)
+
+                            <option value="{{$jardin->getKey()}}">{{$jardin->name}}</option>
+
+                        @endforeach
+
+                    </select>
+
                 </div>
-            </div>
-            {{--button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>--}}
-            <div class="col-md-4 div-btn">
-                <a class="btn btn-primary pull-right btn-crear-nuevo" href="{{ route('administrador.galerias.index') }}"
-                ><i class="fa fa-picture-o"> Crear Galería</i></a>
+
+                {{--button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>--}}
+                <div class="col-md-4 div-btn">
+                    <a class="btn btn-primary pull-right btn-crear-nuevo"
+                       href="{{ route('administrador.galerias.index') }}"
+                    ><i class="fa fa-picture-o"> <span class="button-title">Crear Galería</span></i></a>
+                </div>
             </div>
         </div>
         <div role="tabpanel" class="tab-pane panel-option" id="informe">
             <div class="form-group">
-                <div class="form-group">
-                    <label for="sel1">Seleccionar Párvulo:</label>
-                    <select2 name="parvulos" class="form-control" id="sel3">
-                        @foreach($parvulos as $parvulo)
-                            <option value="{{$parvulo->getKey()}}">{{$parvulo->full_name}}</option>
-                        @endforeach
-                    </select2>
-                </div>
+                {!! Form::label('nombreParvulo','Seleccionar Párvulo: ') !!}
+                {!! Form::text('user',null, ['id'=>'user' , 'class'=>'form-control']) !!}
+                {!! Form::hidden('parvulos',null, ['id'=>'user_id']) !!}
             </div>
         </div>
+
         <div role="tabpanel" class="tab-pane panel-option" id="boletin">
             <div class="form-group">
-                <div class="form-group">
-                    <label for="sel1">Seleccionar Nivel:</label>
-                    <select name="niveles" class="form-control" id="sel4">
-                        @foreach($niveles as $nivel)
-                            <option value=""{{$nivel->getKey()}}>{{$nivel->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
+                <label for="sel4">Seleccionar Nivel:</label>
+                <select name="niveles" class="form-control" id="sel4">
+                    @foreach($niveles as $nivel)
+                        <option value="{{$nivel->getKey()}}">{{$nivel->name}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
+
         <div role="tabpanel" class="tab-pane panel-option" id="informacion">
 
         </div>

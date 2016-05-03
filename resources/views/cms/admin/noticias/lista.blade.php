@@ -23,7 +23,7 @@
         <div class="panel-heading"><h1 class="title">Noticias</h1></div>
 
         <div class="col-md-12 div-btn">
-            <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-noticia" href="#" role="button"> <i class="fa fa-newspaper-o"> Crear Noticia</i></a>
+            <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-noticia" href="#" role="button"> <i class="fa fa-newspaper-o"> <span class="button-title">Crear Noticia</span></i></a>
         </div>
         <div class="panel-body">
             @include('cms.admin.noticias.partials.table')

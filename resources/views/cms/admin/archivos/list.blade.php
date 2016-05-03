@@ -2,11 +2,9 @@
 
 @section('meta')
     {!! Html::style('css/dropzone.css') !!}
-    {!! Html::style('css/lightbox.css') !!}
-
+    {!! Html::style('css/jquery.easy-autocomplete.css') !!}
     {!! Html::script('js/dropzone/dropzone.js') !!}
     {!! Html::script('js/dropzone/archivos.js') !!}
-
 
 @stop
 
@@ -24,7 +22,7 @@
 @stop
 @section('general-content-1')
 
-    <div class="container" style="width: 100%">
+    <div class="container" >
         <div class="row-fluid">
             <div class="col-lg-12">
                 <div class="panel-heading"><h1 class="title">Contenido</h1></div>
@@ -70,9 +68,13 @@
         </div>
     </div>
 
+
+
 @endsection
 
-
-
+@section('meta-footer')
+    {!! Html::script('js/easy-autocomplete/jquery.easy-autocomplete.js') !!}
+    {!! Html::script('js/easy-autocomplete/autocomplete.js') !!}
+@endsection
 
 

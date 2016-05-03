@@ -723,7 +723,7 @@ ul{
 
 }
 
-@media screen and (max-width:737px) {
+@media screen and (max-width:773px) {
 
 
     header nav {
@@ -732,7 +732,7 @@ ul{
         left: -70%;
         margin: -479px 0 0;
         position: fixed;
-        width: 70%;
+        width: 65%;
         z-index: 9999999;
     }
 
@@ -744,19 +744,19 @@ ul{
         float: none;
         font-family: 'Arial';
         font-size:16px;
-        line-height: 2em;
-        margin: 0 0 5px 58px;
-        padding:10px;
+        line-height: 2.7em;
+        margin: 0 0 0 40px;
+        padding: 5px;
         text-align:left;
-        width:70%;
+        width:75%;
+    }
+    header nav ul li:first-of-type {
+        margin: 3px 0 0 40px;
+        padding:5px;
     }
 
     header nav ul .li-two-lines{
-        line-height: 2em;
-    }
-    header nav ul li:first-of-type {
-        margin: 60px 0 5px 58px;
-        padding:10px;
+        line-height: 2.7em;
     }
 
     nav li a {

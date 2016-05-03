@@ -1,7 +1,6 @@
 <table class="table table-striped">
     <tbody>
     <tr id="t-header-content-principal">
-        <th>Id</th>
         <th>Rut</th>
         <th>Nombre Completo</th>
         <th>Acciones</th>
@@ -9,7 +8,6 @@
     @foreach($administradores as $administrador)
 
         <tr data-id="{{ $administrador->id }}">
-            <td>{!! $administrador->id !!}</td>
             <td>{!! $administrador->rut !!}</td>
             <td>{!! $administrador->full_name !!}</td>
             <td>

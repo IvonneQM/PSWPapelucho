@@ -23,7 +23,16 @@
     print_r($archivo);
 
     die;
-});*/
+})*/
+
+Route::get('/ramny', function()
+{
+    $archivo = \App\Archivo::find(2);
+
+    //$apoderado = \App\User::find(3)->get('user');
+
+    event( (new \App\Events\SendMail($archivo)) );
+});
 
 
 Route::get('/', [
@@ -113,6 +122,13 @@ Route::group(['middleware' => 'auth'], function () {
             ]);
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
 
+
+            Route::get('autocomplete/parvulos', function(){
+                $search = Request::get('search');
+                return App\Parvulo::where('full_name', 'LIKE', "%$search%")
+                    ->orWhere('rut', 'LIKE', "%$search%")
+                    ->get();
+            });
 
             Route::post('archivos/files',[
                 'uses' => 'Cms\Admin\ArchivoController@files',

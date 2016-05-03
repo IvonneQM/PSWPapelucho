@@ -41,8 +41,8 @@ class GaleriaController extends Controller
     public function store(CreateGaleriaRequest $request){
 
         if($request->ajax()){
-            $galerias = new Galeria($request->all());
-            Galeria::create($request->all());
+            $galerias = new Galeria();
+            Galeria::create($request->sanitize());
             return response()->json([]);
         }
 
@@ -83,10 +83,10 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateGaleriaRequest $request, $id)
     {
         $galeria = Galeria::find($id);
-        $galeria->update($request->all());
+        $galeria->update($request->sanitize());
         if($request->ajax()){
             return response()->json($galeria);
         }

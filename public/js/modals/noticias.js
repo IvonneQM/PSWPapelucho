@@ -64,6 +64,7 @@ $(document).ready(function () {
 
 
         $.get(route, function (resp) {
+            $('#nombre_noticia').html("Editar noticia: " + resp.title);
             $('#idNoticia').val(resp.id);
             $('#titleNoticia').val(resp.title);
             $('#contentNoticia').val(resp.content);
