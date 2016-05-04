@@ -68,7 +68,17 @@ $(document).ready(function () {
             $('#idNoticia').val(resp.id);
             $('#titleNoticia').val(resp.title);
             $('#contentNoticia').val(resp.content);
-            $('#publishNoticia').val(resp.publish);
+
+            var pub;
+            if (resp.publish == 'Si')
+            {
+                pub = $('#publishNoticia').prop('checked', true);
+            }
+            else
+            {
+                pub = $('#publishNoticia').prop('checked', false);
+            }
+            $('#publishNoticia').val(pub);
         })
     });
 

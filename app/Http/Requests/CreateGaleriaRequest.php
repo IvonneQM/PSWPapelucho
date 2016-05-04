@@ -31,9 +31,7 @@ class CreateGaleriaRequest extends Request
     public function sanitize()
     {
         $all = $this->all();
-
         $all['publish'] = $this->has('agree') ? 'Si' : 'No';
-
         return $all;
     }
 

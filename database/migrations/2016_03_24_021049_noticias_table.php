@@ -14,8 +14,8 @@ class NoticiasTable extends Migration
     {
         Schema::create('noticias', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('title')->required();
-            $table->string('content')->required();
+            $table->string('title');
+            $table->string('content');
             $table->string('publish');
             $table->rememberToken();
             $table->timestamps();

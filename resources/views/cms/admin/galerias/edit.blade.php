@@ -21,7 +21,7 @@
 
                     <div class="form-group">
                         {!!Form::label('publish','Publicar: ')!!}
-                        {!! Form::checkbox('agree', 1, null, ['id'=>'publishGaleria', 'class' => 'field']) !!}
+                        {!! Form::checkbox('agree',1,null, ['id'=>'publishGaleria', 'class' => 'field']) !!}
                     </div>
                     {!!Form::submit('Guardar',['class'=>'btn btn-primary', 'id' => 'btnActualizarGaleria'])!!}
 

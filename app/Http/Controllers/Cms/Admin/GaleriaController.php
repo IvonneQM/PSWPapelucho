@@ -70,7 +70,6 @@ class GaleriaController extends Controller
     public function edit(Request $request, $id)
     {
         $galeria = Galeria::find($id);
-
         if($request->ajax()) {
             return response()->json($galeria);
         }
@@ -78,10 +77,9 @@ class GaleriaController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param CreateGaleriaRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(CreateGaleriaRequest $request, $id)
     {

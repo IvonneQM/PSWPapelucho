@@ -76,7 +76,16 @@ $(document).ready(function () {
             $('#nombre_galeria').html("Editar Galería: " + resp.name);
             $('#idGaleria').val(resp.id);
             $('#nameGaleria').val(resp.name);
-            $('#publishGaleria').val(resp.publish);
+            var pub;
+            if (resp.publish == 'Si')
+            {
+                pub = $('#publishGaleria').prop('checked', true);
+            }
+            else
+            {
+                pub = $('#publishGaleria').prop('checked', false);
+            }
+            $('#publishGaleria').val(pub);
         })
     });
 
