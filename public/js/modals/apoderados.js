@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+    $('#rut').Rut({
+        on_error: function(){
+            swal("Error!",
+                "Rut Inválido",
+                "warning");
+        },
+        format_on: 'keyup'
+    });
+
     //INGRESAR APODERADOS//
     $.ajaxSetup({
         headers: {

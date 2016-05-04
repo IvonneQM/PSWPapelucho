@@ -2,7 +2,9 @@
 
 @section('meta')
     {!!Html::script('js/modals/apoderados.js')!!}
+
 @stop
+
 
 @section('menu-mobile')
     @include('cms.admin.menu-lateral')
@@ -50,8 +52,7 @@
         </div>
     </div>
 
-
-    {!! Form::open(['route' => ['administrador.apoderados.destroy', ':APODERADO_ID'],'method' => 'DELETE', 'id' => 'form-delete-apoderado', 'action' => 'eliminarApoderado']) !!}
+        {!! Form::open(['route' => ['administrador.apoderados.destroy', ':APODERADO_ID'],'method' => 'DELETE', 'id' => 'form-delete-apoderado', 'action' => 'eliminarApoderado']) !!}
     {!! Form::close() !!}
 
 
@@ -60,3 +61,7 @@
 
 
 @stop
+
+@section('meta-footer')
+    {!!Html::script('js/jquery.Rut.js')!!}
+    @endsection
