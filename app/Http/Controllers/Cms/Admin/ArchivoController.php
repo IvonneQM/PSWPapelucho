@@ -65,19 +65,20 @@ class ArchivoController extends Controller
     public function store(Request $request)
     {
         $dir = public_path().'/uploads/';
-
         $files = $request->file('file');
+
         $archivo = new Archivo();
         foreach($files as $file){
 
             $fileName = $file->getClientOriginalName();
             $fileSize = $file->getClientSize();
+            $fileType = $file->guessExtension();
 
             $archivo->fileName = $fileName;
             $archivo->url = 'uploads/' . $fileName;
             $archivo->size = $fileSize;
-            $archivo->extension = File::extension($fileName);
-dd(File::extension($fileName));
+            $archivo->extension = $fileType;
+
             if ($file->move($dir, $fileName)){
                 $archivo->save();
             }
