@@ -76,7 +76,8 @@ class ArchivoController extends Controller
             $archivo->fileName = $fileName;
             $archivo->url = 'uploads/' . $fileName;
             $archivo->size = $fileSize;
-
+            $archivo->extension = File::extension($fileName);
+dd(File::extension($fileName));
             if ($file->move($dir, $fileName)){
                 $archivo->save();
             }

@@ -17,6 +17,7 @@ class ArchivosTable extends Migration
             $table->string('fileName')->required();
             $table->string('url')->required();
             $table->integer('size')->required();
+            $table->integer('extension');
             $table->timestamps();
         });
     }
