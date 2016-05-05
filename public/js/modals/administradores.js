@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 
     //INGRESAR ADMINISTRADOR//
@@ -11,10 +9,8 @@ $(document).ready(function () {
     $('#register-administrador').click(function () {
         $('#modal-administradores').modal();
 
-
         $(document).on('submit', '#form-register-administrador', function (e) {
             e.preventDefault();
-            $('input').parent().removeClass('has-error');
             $.ajax({
                 method  : $(this).attr('method'),
                 type    : "POST",
@@ -23,7 +19,8 @@ $(document).ready(function () {
                 url     : $(this).attr('action'),
                 data    : $(this).serialize(),
                 dataType: "json",
-                success : function (data) {
+                success: function(data) {
+
                     swal("Registro creado!",
                         "El registro se ha generado con exito",
                         "success");

@@ -71,8 +71,8 @@ class ParvuloController extends Controller
     {
 
         if($request->ajax()){
-            Parvulo::create($request->all());
-            return response()->json([]);
+            $parvulo = Parvulo::create($request->all());
+            return response()->json($parvulo);
         }
 
 

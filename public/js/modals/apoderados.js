@@ -14,7 +14,7 @@ $(document).ready(function () {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    })
+    });
 
     $('#register-apoderado').click(function () {
         $('#modal-crear-apoderados').modal();
@@ -31,6 +31,9 @@ $(document).ready(function () {
                 data    : $(this).serialize(),
                 dataType: "json",
                 success : function (data) {
+                    addRow(data);
+                    $('#form-register-apoderado').trigger('reset');
+                    $('#rut').focus();
                     swal("Registro creado!",
                         "El registro se ha generado con exito",
                         "success");
@@ -59,7 +62,6 @@ $(document).ready(function () {
                         concatenado = "Se ha generado un problema de conexión con el servidor"
                     }
 
-
                     swal({
                         title             : "¡Error!",
                         text              : concatenado,
@@ -71,25 +73,27 @@ $(document).ready(function () {
 
                 }
 
-                /*     var errors = data.responseJSON;
-
-                 console.log(errors);
-                 $.each(errors, function(index, value) {
-                 alert(value);
-                 });
-
-                 }
-                 swal("Oops",
-                 "Se ha generado un problema de conexión con el servidor",
-                 "error");
-                 }*/
-                /*  swal("Oops",
-                 "Se ha generado un problema de conexión con el servidor",
-                 "error");
-                 }*/
             });
-        })
+        });
     });
+
+    //AGREGAR ROW //
+    function addRow (data){
+        var row = '<tr>'+
+            '<td>'+ data.rut + '</td>'+
+            '<td>'+ data.full_name + '</td>'+
+            '<td>'+
+            '<div class="t-actions">'+
+            '<a class="parvulos-del-apoderado" href="parvulos?user={{$apoderado->id}}"><i class="fa fa-child"></i></a>'+
+            '<a class="editar_apo" href="#" data-toggle="modal" data-target="#modal-editar-apoderado" role="button" ><i class="fa fa-pencil"></i></a>'+
+            '<a href="#" type="submit" class="btn-delete-apoderado"><i class="fa fa-trash-o"></i></a>'+
+            '</div>'+
+            '</td>'+
+            '</tr>';
+        $('tbody').append(row);
+    }
+
+
 
     //ACTUALIZAR APODERADOS//
 
@@ -113,21 +117,16 @@ $(document).ready(function () {
 
 
     $('#btnSave').on('click', function (e) {
-
         e.preventDefault();
-
         var id     = $('#idUser').val();
         var form   = $('#id_prueba');
         var link   = $('#id_update').attr('href');
         var metodo = form.attr('method');
         var route  = link.split('%7Bapoderados%7D').join(id);
-
         $.ajax({
-
             url : route,
             type: metodo,
             data: form.serialize(),
-
             success: function (data) {
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
@@ -138,11 +137,7 @@ $(document).ready(function () {
                     "Se ha generado un problema de conexión con el servidor",
                     "error");
             }
-
-
         })
-
-
     });
 
 
@@ -192,5 +187,6 @@ $(document).ready(function () {
             });
 
     })
-})
+
+});
 

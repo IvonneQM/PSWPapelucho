@@ -1,12 +1,12 @@
+<div class="panel-body">
 <table class="table table-striped">
-    <tbody>
     <tr id="t-header-content-principal">
         <th>Rut</th>
         <th>Nombre Completo</th>
         <th>Acciones</th>
     </tr>
+    <tbody>
     @foreach($apoderados as $apoderado)
-
         <tr data-id="{{ $apoderado->id }}">
             <td>{!! $apoderado->rut !!}</td>
             <td>{!! $apoderado->full_name !!}</td>
@@ -18,9 +18,9 @@
                 </div>
             </td>
         </tr>
-
     @endforeach
     </tbody>
 </table>
+</div>
 {!! $apoderados -> render() !!}
 

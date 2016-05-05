@@ -41,9 +41,8 @@ class GaleriaController extends Controller
     public function store(CreateGaleriaRequest $request){
 
         if($request->ajax()){
-            $galerias = new Galeria();
-            Galeria::create($request->sanitize());
-            return response()->json([]);
+            $galerias = Galeria::create($request->sanitize());
+            return response()->json($galerias);
         }
 
     }

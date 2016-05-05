@@ -12,6 +12,7 @@ class AdministradorController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -31,6 +32,7 @@ class AdministradorController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param CreateUserRequest $request
      * @return \Illuminate\Http\Response
      */
 
@@ -41,15 +43,15 @@ class AdministradorController extends Controller
     }
 
     /**
-     * @param Request $request
+     *
+     * @param CreateUserRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(CreateUserRequest $request){
+    public function store( CreateUserRequest $request){
 
         if($request->ajax()){
-            $administrador = new User($request->all());
-            \App\User::create($request->all());
-            return response()->json([]);
+            $administrador = User::create($request->all());
+            return response()->json($administrador);
         }
 
     }

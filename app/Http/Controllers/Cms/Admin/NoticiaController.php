@@ -47,9 +47,8 @@ class NoticiaController extends Controller
     public function store(CreateNoticiaRequest $request)
     {
         if($request->ajax()){
-            $noticias = new Noticia();
-            Noticia::create($request->sanitize());
-            return response()->json([]);
+            $noticias = Noticia::create($request->sanitize());
+            return response()->json($noticias);
         }
     }
 
