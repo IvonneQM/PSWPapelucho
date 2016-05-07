@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $('#rut').Rut({
-        on_error: function(){
+        on_error : function () {
             swal("Error!",
                 "Rut Inválido",
                 "warning");
@@ -14,7 +14,7 @@ $(document).ready(function () {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    })
+    });
     $('#register-administrador').click(function () {
         $('#modal-administradores').modal();
 
@@ -28,30 +28,36 @@ $(document).ready(function () {
                 url     : $(this).attr('action'),
                 data    : $(this).serialize(),
                 dataType: "json",
-                success: function(data) {
-
+                success : function (data) {
                     addRow(data);
-
-                    $('#register-administrador').trigger('reset');
+                    $('#form-register-administrador').trigger('reset');
                     $('#rut').focus();
-
                     swal("Registro creado!",
                         "El registro se ha generado con exito",
                         "success");
                 },
                 error   : function (msj) {
-                    var rut = msj.responseJSON.rut;
+                    var rut    = msj.responseJSON.rut;
                     var nombre = msj.responseJSON.full_name;
-                    var email = msj.responseJSON.email;
-                    var pass = msj.responseJSON.password;
+                    var email  = msj.responseJSON.email;
+                    var pass   = msj.responseJSON.password;
 
-                    if(rut == null){rut = ''}
-                    if(nombre == null){nombre = ''}
-                    if(email == null){email = ''}
-                    if(pass == null){pass = ''}
-
+                    if (rut == null) {
+                        rut = ''
+                    }
+                    if (nombre == null) {
+                        nombre = ''
+                    }
+                    if (email == null) {
+                        email = ''
+                    }
+                    if (pass == null) {
+                        pass = ''
+                    }
                     var concatenado = rut + '\n' + nombre + '\n' + email + '\n' + pass;
-                    if(concatenado == ''){concatenado = "Se ha generado un problema de conexión con el servidor"}
+                    if (concatenado == '') {
+                        concatenado = "Se ha generado un problema de conexión con el servidor"
+                    }
 
                     swal({
                         title             : "¡Error!",
@@ -67,31 +73,27 @@ $(document).ready(function () {
     });
 
     //AGREGAR ROW //
-    function addRow (data){
-        var row = '<tr data-id='+data.id+'>'+
-            '<td>'+ data.rut + '</td>'+
-            '<td>'+ data.full_name + '</td>'+
-            '<td>'+
-            '<div class="t-actions">'+
-            '<a class="editar_admin" href="#" data-toggle="modal" data-target="#modal-editar-administrador" role="button" ><i class="fa fa-pencil"></i></a>'+ ' ' +
-            '<a href="#" type="submit" class="btn-delete-administrador"><i class="fa fa-trash-o"></i></a>'+ ' ' +
-            '</div>'+
-            '</td>'+
+    function addRow(data) {
+        var row = '<tr data-id=' + data.id + '>' +
+            '<td>' + data.rut + '</td>' +
+            '<td>' + data.full_name + '</td>' +
+            '<td>' +
+            '<div class="t-actions">' +
+            '<a class="editar_admin" href="#" data-toggle="modal" data-target="#modal-editar-administrador" role="button" ><i class="fa fa-pencil"></i></a>' + ' ' +
+            '<a href="#" type="submit" class="btn-delete-administrador"><i class="fa fa-trash-o"></i></a>' + ' ' +
+            '</div>' +
+            '</td>' +
             '</tr>';
-        $('tbody:eq(0)').append(row);
-
+        $('#t-header-content-principal').after(row);
     }
 
-//ACTUALIZAR ADMINISTRADOR
+//MOSTRAR DATOS ADMINISTRADOR//
 
-    $('.editar_admin').click(function (e) {
+    $('body').on('click', '.editar_admin', function (e) {
         e.preventDefault();
         var row   = $(this).parents('tr');
         var id    = row.data('id');
         var link  = $('#id_href_admin').attr('href');
-        var row = $(this).parents('tr')
-        var id = row.data('id');
-        var link = $('#id_href_admin').attr('href');
         var route = link.split('%7Badministradores%7D').join(id);
 
         $.get(route, function (resp) {
@@ -104,9 +106,9 @@ $(document).ready(function () {
         })
     });
 
-    $('#btnSaveAdmin').click(function (e) {
+    //ACTUALIZAR ADMINISTRADOR//
+    $('#btnSaveAdmin').on('click', function (e) {
         e.preventDefault();
-
         var id     = $('#idAdmin').val();
         var form   = $('#id_form_admin');
         var link   = $('#id_update_admin').attr('href');
@@ -119,22 +121,32 @@ $(document).ready(function () {
             data: form.serialize(),
 
             success: function (data) {
+
+                var row = '<tr data-id=' + data.id + '>' +
+                    '<td>' + data.rut + '</td>' +
+                    '<td>' + data.full_name + '</td>' +
+                    '<td>' +
+                    '<div class="t-actions">' +
+                    '<a class="editar_admin" href="#" data-toggle="modal" data-target="#modal-editar-administrador" role="button" ><i class="fa fa-pencil"></i></a>' + ' ' +
+                    '<a href="#" type="submit" class="btn-delete-administrador"><i class="fa fa-trash-o"></i></a>' + ' ' +
+                    '</div>' +
+                    '</td>' +
+                    '</tr>';
+
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
                     "success");
             },
             error  : function (data) {
-                swal( "¡Error!",
+                swal("¡Error!",
                     "Se ha generado un problema de conexión con el servidor",
                     "error");
             }
-
         })
-    })
-
+    });
 
 //ELIMINAR ADMINISTRADOR//
-    $('.btn-delete-administrador').click(function (e) {
+    $('body').on('click', '.btn-delete-administrador', function (e) {
         e.preventDefault();
         var row  = $(this).parents('tr');
         var id   = row.data('id');
@@ -167,14 +179,13 @@ $(document).ready(function () {
                             "success");
                     },
                     error   : function (data) {
-                        swal( "¡Error!",
+                        swal("¡Error!",
                             "Se ha generado un problema de conexión con el servidor",
                             "error");
                         row.fadeIn();
                     }
 
                 });
-
             });
     })
 })

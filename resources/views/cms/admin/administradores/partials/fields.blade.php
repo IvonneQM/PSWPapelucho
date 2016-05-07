@@ -18,5 +18,3 @@
 </div>
 
 {!! Form::hidden('role', 'admin', array('id' => 'role')) !!}
-
-{!!Form::submit('Guardar',['class'=>'btn btn-primary'])!!}

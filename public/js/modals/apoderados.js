@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $('#rut').Rut({
-        on_error: function(){
+        on_error : function () {
             swal("Error!",
                 "Rut Inválido",
                 "warning");
@@ -18,7 +18,6 @@ $(document).ready(function () {
 
     $('#register-apoderado').click(function () {
         $('#modal-crear-apoderados').modal();
-
 
         $(document).on('submit', '#form-register-apoderado', function (e) {
             e.preventDefault();
@@ -70,9 +69,7 @@ $(document).ready(function () {
                         confirmButtonText : "Ok",
                         closeOnConfirm    : false
                     })
-
                 }
-
             });
         });
     });
@@ -91,11 +88,7 @@ $(document).ready(function () {
             '</td>'+
             '</tr>';
         $('#t-header-content-principal').after(row);
-        console.log(data.id)
-
     }
-
-
 
     //ACTUALIZAR APODERADOS//
 
@@ -105,9 +98,7 @@ $(document).ready(function () {
         var id    = row.data('id');
         var link  = $('#id_href').attr('href');
         var route = link.split('%7Bapoderados%7D').join(id);
-
         $.get(route, function (resp) {
-
             $('#yo').html("Editar apoderado: " + resp.full_name);
             $('#idUser').val(resp.id);
             $('#rutApo').val(resp.rut);
@@ -116,7 +107,6 @@ $(document).ready(function () {
             $('#passApo').val("");
         })
     });
-
 
     $('#btnSave').on('click', function (e) {
         e.preventDefault();
@@ -143,7 +133,6 @@ $(document).ready(function () {
         })
     });
 
-
     //ELIMINAR APODERADOS//
 
     $('body').on('click','.btn-delete-apoderado',function (e) {
@@ -153,7 +142,6 @@ $(document).ready(function () {
         var form = $('#form-delete-apoderado');
         var url  = form.attr('action').replace(':APODERADO_ID', id);
         var data = form.serialize();
-
         swal({
                 title             : "¿Confirma eliminación?",
                 text              : "El registro se eliminará permanentementer",
@@ -185,11 +173,8 @@ $(document).ready(function () {
                             "error");
                         row.fadeIn();
                     }
-
                 });
-
             });
     })
-
 });
 

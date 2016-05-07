@@ -1,7 +1,3 @@
-/**
- * Created by YvonneQM on 25-03-16.
- */
-
 $(document).ready(function () {
     //INGRESAR NOTICIAS//
     $.ajaxSetup({
@@ -9,13 +5,12 @@ $(document).ready(function () {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     })
+
     $('#register-noticia').click(function () {
-            $('#modal-noticias').modal();
+        $('#modal-noticias').modal();
+
         $(document).on('submit', '#form-register-noticia', function (e) {
             e.preventDefault();
-
-            $('input+small').text('');
-            $('input').parent().removeClass('has-error');
             $.ajax({
                 method  : $(this).attr('method'),
                 type    : "POST",
@@ -25,6 +20,9 @@ $(document).ready(function () {
                 data    : $(this).serialize(),
                 dataType: "json",
                 success : function (data) {
+                    addRow(data);
+                    $('#form-register-noticia').trigger('reset');
+                    $('#title').focus();
                     swal("Registro creado!",
                         "El registro se ha generado con exito",
                         "success");
@@ -53,16 +51,29 @@ $(document).ready(function () {
         })
     });
 
-    //ACTUALIZAR NOTICIA
+    //AGREGAR ROW //
+    function addRow (data){
+        var row = '<tr data-id='+data.id+'>'+
+            '<td>'+ data.title + '</td>'+
+            '<td>'+ data.content + '</td>'+
+            '<td>'+ data.publish + '</td>'+
+            '<td>'+
+            '<div class="t-actions">'+
+            '<a class="editar_noticia" href="#" data-toggle="modal" data-target="#modal-editar-noticia" role="button"><i class="fa fa-pencil"></i></a>'+ ' ' +
+            '<a href="#" type="submit" class="btn-delete-noticia"><i class="fa fa-trash-o"></i></a>'+ ' ' +
+            '</div>'+
+            '</td>'+
+            '</tr>';
+        $('#t-header-content-principal').after(row);
+    }
+    //MOSTRAR DATOS NOTICIA //
 
-    $('.editar_noticia').click(function (e) {
+    $('body').on('click','.editar_noticia',function (e) {
         e.preventDefault();
         var row   = $(this).parents('tr');
         var id    = row.data('id');
         var link  = $('#id_href_noticia').attr('href');
         var route = link.split('%7Bnoticias%7D').join(id);
-
-
         $.get(route, function (resp) {
             $('#nombre_noticia').html("Editar noticia: " + resp.title);
             $('#idNoticia').val(resp.id);
@@ -82,9 +93,9 @@ $(document).ready(function () {
         })
     });
 
-    $('#btnActualizarNoticia').click(function (e) {
+    //ACTUALIZAR NOTICIA //
+    $('#btnActualizarNoticia').on('click', function (e) {
         e.preventDefault();
-
         var id     = $('#idNoticia').val();
         var form   = $('#id_form_noticia');
         var link   = $('#id_update_noticia').attr('href');
@@ -110,15 +121,13 @@ $(document).ready(function () {
     })
 
     //ELIMINAR NOTICIAS//
-    $('.btn-delete-noticia').click(function (e) {
+    $('body').on('click','.btn-delete-noticia',function (e) {
         e.preventDefault();
         var row  = $(this).parents('tr');
         var id   = row.data('id');
         var form = $('#form-delete-noticia');
         var url  = form.attr('action').replace(':NOTICIA_ID', id);
         var data = form.serialize();
-
-
         swal({
                 title             : "¿Confirma eliminación?",
                 text              : "El registro se eliminará permanentementer",
@@ -130,7 +139,6 @@ $(document).ready(function () {
             },
 
             function () {
-
                 row.fadeOut();
                 $.ajax({
                     method  : $(this).attr('method'),
@@ -149,9 +157,7 @@ $(document).ready(function () {
                             "Se ha generado un problema de conexión con el servidor",
                             "error");
                     }
-
                 });
-
             });
     })
 });
