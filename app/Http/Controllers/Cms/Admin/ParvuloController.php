@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Cms\Admin;
 
+use App\Http\Requests\CreateParvuloRequest;
 use App\Nivel;
 use App\Jornada;
 use App\Jardin;
 use App\Parvulo;
 use App\User;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -21,25 +21,18 @@ class ParvuloController extends Controller
      */
     public function index(Request $request)
     {
-        $niveles=Nivel::with('parvulos')->get();
-        $jornadas=Jornada::with('parvulos')->get();
-        $jardines=Jardin::with('parvulos')->get();
-        $apoderado = User::find($request->get('user'));
-        $parvulos = Parvulo::apoderado($request->get('user'))->paginate();
+        $niveles    =   Nivel::with('parvulos')->get();
+        $jornadas   =   Jornada::with('parvulos')->get();
+        $jardines   =   Jardin::with('parvulos')->get();
+        $apoderado  =   User::find($request->get('user'));
+        $parvulos   =   Parvulo::apoderado($request->get('user'))->orderBy('id', 'DESC')->paginate();
         return view('cms.admin.parvulos.lista', compact('parvulos','apoderado','niveles','jornadas','jardines'));
 
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'rut' => 'required|max:12',
-            'full_name' => 'required|max:255',
-        ]);
-    }
 
     public function listJornadas(Request $request){
-        $jornadas= Jornada::jornadas($request->get('jornada'))->paginate();
+        $jornadas   =   Jornada::jornadas($request->get('jornada'))->paginate();
         return $jornadas;
     }
 
@@ -67,15 +60,12 @@ class ParvuloController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateParvuloRequest $request)
     {
-
         if($request->ajax()){
             $parvulo = Parvulo::create($request->all());
             return response()->json($parvulo);
         }
-
-
     }
 
     /**

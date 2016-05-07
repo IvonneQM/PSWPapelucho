@@ -20,7 +20,7 @@ class AdministradorController extends Controller
 
 
 
-        $administradores = \App\User::fullName($request->get('full_name'))->where('role','=','admin')->orderBy('id', 'DESC')->paginate();
+        $administradores = User::fullName($request->get('full_name'))->where('role','=','admin')->orderBy('id', 'DESC')->paginate();
         return view('cms.admin.administradores.lista',compact('administradores'));
     }
 

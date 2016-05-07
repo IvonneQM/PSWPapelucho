@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    $('#rut').Rut({
+        on_error: function(){
+            swal("Error!",
+                "Rut Inválido",
+                "warning");
+        },
+        format_on: 'keyup'
+    });
 
     //Listar parvulos de un apoderado//
     $.ajaxSetup({
@@ -12,7 +20,6 @@ $(document).ready(function () {
 
         $(document).on('submit', '#form-register-parvulo', function (e) {
             e.preventDefault();
-            $('input').parent().removeClass('has-error');
             $.ajax({
                 method  : $(this).attr('method'),
                 type    : "POST",
@@ -22,15 +29,19 @@ $(document).ready(function () {
                 data    : $(this).serialize(),
                 dataType: "json",
                 success : function (data) {
+                    addRow(data);
+                    $('#form-register-parvulo').trigger('reset');
+                    $('#rut').focus();
+                    
                     swal("Registro creado!",
                         "El registro se ha generado con exito",
                         "success");
                 },
-                error   : function (msj) {
-                    var rut    = msj.responseJSON.rut;
-                    var nombre = msj.responseJSON.full_name;
-                    var email  = msj.responseJSON.email;
-                    var pass   = msj.responseJSON.password;
+
+               error   : function (msj) {
+                    var rut     =   msj.responseJSON.rut;
+                    var nombre  =   msj.responseJSON.full_name;
+
 
                     if (rut == null) {
                         rut = ''
@@ -38,19 +49,12 @@ $(document).ready(function () {
                     if (nombre == null) {
                         nombre = ''
                     }
-                    if (email == null) {
-                        email = ''
-                    }
-                    if (pass == null) {
-                        pass = ''
-                    }
 
-                    var concatenado = rut + '\n' + nombre + '\n' + email + '\n' + pass;
+                    var concatenado = rut + '\n' + nombre;
                     if (concatenado == '') {
                         concatenado = "Se ha generado un problema de conexión con el servidor"
                     }
-
-
+                   
                     swal({
                         title             : "¡Error!",
                         text              : concatenado,
@@ -65,6 +69,23 @@ $(document).ready(function () {
         })
     });
 
+    //AGREGAR ROW //
+    function addRow (data){
+        var row = '<tr data-id='+data.id+'>'+
+            '<td>'+ data.rut + '</td>'+
+            '<td>'+ data.full_name + '</td>'+
+            '<td>'+
+            '<div class="t-actions">'+
+            '<a class="editar_parvulo" href="#" data-toggle="modal" data-target="#modal-editar-parvulo" role="button" ><i class="fa fa-pencil"></i></a>'+ ' ' +
+            '<a href="#" type="submit" class="btn-delete-parvulo"><i class="fa fa-trash-o"></i></a>'+ ' ' +
+            '</div>'+
+            '</td>'+
+            '</tr>';
+        $('tbody:eq(0)').append(row);
+
+    }
+
+
     //ACTUALIZAR APODERADOS//
 
     $('.editar_parvulo').click(function (e) {
@@ -75,22 +96,25 @@ $(document).ready(function () {
         var route = link.split('%7Bparvulos%7D').join(id);
 
         $.get(route, function (resp) {
-           console.log(resp)
             $('#parv').html("Editar párvulo: " + resp.full_name);
             $('#idParvulo').val(resp.id);
             $('#rutParvulo').val(resp.rut);
             $('#full_nameParvulo').val(resp.full_name);
+            $('#nivel_id').val(resp.nivel_id);
+            $('#jornada_id').val(resp.jornada_id);
+            $('#jardin_id').val(resp.jardin_id);
+
         })
     });
 
 
-    $('#btnSave').on('click', function (e) {
+    $('#btn_save_parvulo').on('click', function (e) {
 
         e.preventDefault();
 
-        var id     = $('#idUser').val();
-        var form   = $('#id_prueba');
-        var link   = $('#id_update').attr('href');
+        var id     = $('#idParvulo').val();
+        var form   = $('#form_update_parvulo');
+        var link   = $('#id_update_parvulo').attr('href');
         var metodo = form.attr('method');
         var route  = link.split('%7Bparvulos%7D').join(id);
 

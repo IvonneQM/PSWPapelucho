@@ -16,10 +16,10 @@ class CreateUsersTable extends Migration {
 		{
 
 			$table->increments('id');
-			$table->string('rut')->unique();
-			$table->string('full_name');
-			$table->string('email');
-			$table->string('password', 250);
+			$table->string('rut',12)->unique();
+			$table->string('full_name',50);
+			$table->string('email',100);
+			$table->string('password', 30);
             $table->enum('role',['apoderado','admin']);
 			$table->rememberToken();
 			$table->timestamps();

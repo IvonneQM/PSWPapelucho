@@ -2,6 +2,7 @@
 
 @section('meta')
     {!!Html::script('js/modals/apoderados.js')!!}
+    {!!Html::script('js/jquery.Rut.js')!!}
 
 @stop
 
@@ -41,7 +42,7 @@
                     {!! Form::close()  !!}
 
 
-                    <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-apoderado" href="#" role="button"> <i class="fa fa-user-plus"> <span class="button-title">Crear Apoderado</span></i></a>
+                    <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-apoderado" href="#" role="button"><i class="fa fa-user-plus"><span class="button-title">Crear Apoderado</span></i></a>
                 </div>
 
                 <div class="panel-body">
@@ -62,6 +63,5 @@
 
 @stop
 
-@section('meta-footer')
-    {!!Html::script('js/jquery.Rut.js')!!}
-    @endsection
+
+

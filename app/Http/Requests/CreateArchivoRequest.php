@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CreateGaleriaRequest extends Request
+class CreateArchivoRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,6 +15,7 @@ class CreateGaleriaRequest extends Request
     {
         return true;
     }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,15 +24,11 @@ class CreateGaleriaRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|max:50',
+            'type'      => 'Required',
+            'galerias'  => 'RequiredIf:type,galerias-jardines',
+            'jardines' =>  'RequiredIf:type,galerias-jardines',
+            'niveles' => 'RequiredIf:type,niveles',
+            'parvulos' => 'RequiredIf:type,parvulos'
         ];
     }
-
-    public function sanitize()
-    {
-        $all = $this->all();
-        $all['publish'] = $this->has('agree') ? 'Si' : 'No';
-        return $all;
-    }
-
 }

@@ -2,6 +2,7 @@
 
 @section('meta')
     {!!Html::script('js/modals/administradores.js')!!}
+    {!!Html::script('js/jquery.Rut.js')!!}
 @stop
 
 @section('menu-mobile')

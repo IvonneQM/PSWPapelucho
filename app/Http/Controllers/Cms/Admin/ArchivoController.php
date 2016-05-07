@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Cms\Admin;
 
 use App\Galeria;
+use App\Http\Requests\CreateArchivoRequest;
 use App\Jardin;
 use App\Nivel;
 use App\Parvulo;
@@ -37,7 +38,7 @@ class ArchivoController extends Controller
         $method = $request->get('type');
 
         if(
-            ! in_array($method, ['general'])
+            ! empty($method)
         )
         {
             $archivos = Archivo::types($method)->orderBy('id', 'DESC')->paginate(12);
@@ -62,7 +63,7 @@ class ArchivoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateArchivoRequest $request)
     {
         $dir = public_path().'/uploads/';
         $files = $request->file('file');
@@ -84,7 +85,7 @@ class ArchivoController extends Controller
             }
         }
 
-        $methods = explode('|',$request->input('type'));
+        $methods = explode('-',$request->input('type'));
 
         $archivo->type = $request->input('type');
 
@@ -98,7 +99,6 @@ class ArchivoController extends Controller
                 $archivo->{$model}()->attach($request->input($model));
             }
         }
-
         event( (new \App\Events\SendMail($archivo)) );
     }
 

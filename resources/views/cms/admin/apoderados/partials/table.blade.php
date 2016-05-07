@@ -1,11 +1,11 @@
 <div class="panel-body">
 <table class="table table-striped">
-    <tr id="t-header-content-principal">
-        <th>Rut</th>
-        <th>Nombre Completo</th>
-        <th>Acciones</th>
-    </tr>
     <tbody>
+        <tr id="t-header-content-principal">
+            <th>Rut</th>
+            <th>Nombre Completo</th>
+            <th>Acciones</th>
+        </tr>
     @foreach($apoderados as $apoderado)
         <tr data-id="{{ $apoderado->id }}">
             <td>{!! $apoderado->rut !!}</td>

@@ -19,9 +19,9 @@ $(document).ready(function () {
     $('#register-apoderado').click(function () {
         $('#modal-crear-apoderados').modal();
 
+
         $(document).on('submit', '#form-register-apoderado', function (e) {
             e.preventDefault();
-            $('input').parent().removeClass('has-error');
             $.ajax({
                 method  : $(this).attr('method'),
                 type    : "POST",
@@ -79,25 +79,27 @@ $(document).ready(function () {
 
     //AGREGAR ROW //
     function addRow (data){
-        var row = '<tr>'+
+        var row = '<tr data-id='+data.id+'>'+
             '<td>'+ data.rut + '</td>'+
             '<td>'+ data.full_name + '</td>'+
             '<td>'+
             '<div class="t-actions">'+
-            '<a class="parvulos-del-apoderado" href="parvulos?user={{$apoderado->id}}"><i class="fa fa-child"></i></a>'+
-            '<a class="editar_apo" href="#" data-toggle="modal" data-target="#modal-editar-apoderado" role="button" ><i class="fa fa-pencil"></i></a>'+
-            '<a href="#" type="submit" class="btn-delete-apoderado"><i class="fa fa-trash-o"></i></a>'+
+            '<a class="parvulos-del-apoderado" href="parvulos?user='+data.id+'"><i class="fa fa-child"></i></a>'+ ' ' +
+            '<a class="editar_apo" href="#" data-toggle="modal" data-target="#modal-editar-apoderado" role="button" ><i class="fa fa-pencil"></i></a>'+ ' ' +
+            '<a href="#" type="submit" class="btn-delete-apoderado"><i class="fa fa-trash-o"></i></a>'+ ' ' +
             '</div>'+
             '</td>'+
             '</tr>';
-        $('tbody').append(row);
+        $('#t-header-content-principal').after(row);
+        console.log(data.id)
+
     }
 
 
 
     //ACTUALIZAR APODERADOS//
 
-    $('.editar_apo').click(function (e) {
+    $('body').on('click','.editar_apo',function (e) {
         e.preventDefault();
         var row   = $(this).parents('tr');
         var id    = row.data('id');
@@ -128,6 +130,7 @@ $(document).ready(function () {
             type: metodo,
             data: form.serialize(),
             success: function (data) {
+                
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
                     "success");
@@ -142,7 +145,8 @@ $(document).ready(function () {
 
 
     //ELIMINAR APODERADOS//
-    $('.btn-delete-apoderado').click(function (e) {
+
+    $('body').on('click','.btn-delete-apoderado',function (e) {
         e.preventDefault();
         var row  = $(this).parents('tr');
         var id   = row.data('id');
@@ -185,7 +189,6 @@ $(document).ready(function () {
                 });
 
             });
-
     })
 
 });

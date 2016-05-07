@@ -16,7 +16,7 @@ class ParvulosTable extends Migration
 
             $table->increments('id');
             $table->string('rut')->unique();
-            $table->string('full_name')->required();
+            $table->string('full_name');
             $table->integer('nivel_id')->unsigned()->nullable();
             $table->integer('jornada_id')->unsigned()->nullable();
             $table->integer('jardin_id')->unsigned()->nullable();
@@ -43,5 +43,6 @@ class ParvulosTable extends Migration
     public function down()
     {
         Schema::drop('parvulos');
+        
     }
 }

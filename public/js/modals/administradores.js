@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+    $('#rut').Rut({
+        on_error: function(){
+            swal("Error!",
+                "Rut Inválido",
+                "warning");
+        },
+        format_on: 'keyup'
+    });
+
     //INGRESAR ADMINISTRADOR//
     $.ajaxSetup({
         headers: {
@@ -20,6 +29,11 @@ $(document).ready(function () {
                 data    : $(this).serialize(),
                 dataType: "json",
                 success: function(data) {
+
+                    addRow(data);
+
+                    $('#register-administrador').trigger('reset');
+                    $('#rut').focus();
 
                     swal("Registro creado!",
                         "El registro se ha generado con exito",
@@ -51,6 +65,22 @@ $(document).ready(function () {
             })
         })
     });
+
+    //AGREGAR ROW //
+    function addRow (data){
+        var row = '<tr data-id='+data.id+'>'+
+            '<td>'+ data.rut + '</td>'+
+            '<td>'+ data.full_name + '</td>'+
+            '<td>'+
+            '<div class="t-actions">'+
+            '<a class="editar_admin" href="#" data-toggle="modal" data-target="#modal-editar-administrador" role="button" ><i class="fa fa-pencil"></i></a>'+ ' ' +
+            '<a href="#" type="submit" class="btn-delete-administrador"><i class="fa fa-trash-o"></i></a>'+ ' ' +
+            '</div>'+
+            '</td>'+
+            '</tr>';
+        $('tbody:eq(0)').append(row);
+
+    }
 
 //ACTUALIZAR ADMINISTRADOR
 

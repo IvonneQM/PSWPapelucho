@@ -154,7 +154,6 @@ return [
         GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-
     ],
 
     /*
@@ -209,6 +208,7 @@ return [
         'Gmaps'     => GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Image'     => Intervention\Image\Facades\Image::class,
+        'Google'    => App\Helpers\Google::class,
     ],
 
 ];

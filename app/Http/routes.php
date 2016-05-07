@@ -45,10 +45,6 @@ Route::get('/', [
     'as' => 'home'
 ]);
 
-Route::get('/gmaps', [
-    'uses' => 'GmapsController@index',
-    'as ' => 'gmaps/gmaps'
-]);
 
 /*-------------------------------------------------------------------*/
 /*                       AUTENTICACIÓN LOGIN                         */

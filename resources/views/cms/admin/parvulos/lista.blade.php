@@ -2,6 +2,7 @@
 
 @section('meta')
     {!!Html::script('js/modals/parvulos.js')!!}
+    {!!Html::script('js/jquery.Rut.js')!!}
 @stop
 @section('menu-mobile')
     @include('cms.admin.menu-lateral')
@@ -29,9 +30,6 @@
 
                     {!! Form::open(['route' => 'administrador.parvulos.index', 'method' => 'GET', 'class' =>'nav-form nav-left pull-left', 'role' => 'search']) !!}
 
-                    <div class="form-group form-group-buscar">
-                        {!! Form::text('full_name', null, ['class' => 'form-control ', 'placeholder' => 'Nombre del Párvulo']) !!}
-                    </div>
                     <button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>
 
                     {!! Form::close()  !!}

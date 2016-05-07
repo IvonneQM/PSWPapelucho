@@ -24,11 +24,11 @@ class CreateUserRequest extends Request
     public function rules()
     {
         return [
-            'rut' => 'required|unique:users,rut|max:12',
-            'full_name' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'password' => 'required|max:255',
-            'role' => 'max:12',
+            'rut' => 'Required|Unique:Users,Rut|Max:12',
+            'full_name' => 'Required|Alpha|Max:50',
+            'email' => 'Required|email|Max:100',
+            'password' => 'Required|Max:30',
+            'role' => 'Required|Between:5,9',
         ];
     }
 }

@@ -49,15 +49,27 @@ class Archivo extends Model implements SendmailInterface
 
     public function scopeTypes($query, $types)
     {
-        if( ! empty($types ))
+        if( ! empty($types) && ! in_array($types,['general']))
         {
-            $methodes = (array) explode('|',$types);
-            return $query->where(function($q) use ($methodes)
+            $methodes = (array) explode('-',$types);
+            $query->where(function($q) use ($methodes)
             {
                 foreach($methodes as $i => $method)
                 {
                     $m = ($i == 0) ? 'has' : 'orHas';
                     $q->{$m}($method);
+                }
+            });
+        }
+
+        if( ! empty($types) && in_array($types,['general']))
+        {
+            $methodes = ['jardines','niveles','galerias','parvulos'];
+            $query->where(function($q) use ($methodes)
+            {
+                foreach($methodes as $i => $method)
+                {
+                    $q->doesntHave($method);
                 }
             });
         }
@@ -71,7 +83,7 @@ class Archivo extends Model implements SendmailInterface
 
         switch( $this->type )
         {
-            case "galerias|jardines":
+            case "galerias-jardines":
                 $mail =  User::whereHas('parvulos',function($q)
                     {
                         $q->whereHas('jardines',function($q)

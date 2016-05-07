@@ -10,7 +10,7 @@
                 <div class="modal-body">
                     {!!Form::open(['id'=>'form-register-apoderado'],['class'=>'form-horizontal'],['route'=>'administrador.apoderados.create', 'method' => 'POST', 'role' => 'form', 'action' => 'registroApoderado'])!!}
                     @include('cms.admin.apoderados.partials.fields')
-                    {!!Form::submit('Guardar',['class'=>'btn btn-primary'])!!}
+                    {!!Form::submit('Guardar',['class'=>'btn btn-primary', 'id' => 'idGuardar'])!!}
                     {!!Form::close()!!}
                 </div>
             </div>

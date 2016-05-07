@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ArchivosTable extends Migration
+class AuditoriaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,13 @@ class ArchivosTable extends Migration
      */
     public function up()
     {
-        Schema::create('archivos', function (Blueprint $table) {
+        Schema::create('auditorias', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('fileName',200)->required();
-            $table->string('url',200)->required();
-            $table->integer('size')->required();
-            $table->string('extension');
+            $table->integer('user_id')->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('cascade');
         });
     }
 
@@ -29,6 +29,7 @@ class ArchivosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('archivos');
+        Schema::drop('auditorias');
+
     }
 }

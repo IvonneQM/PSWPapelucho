@@ -1,10 +1,11 @@
 <table class="table table-striped">
-    <tbody>
+
     <tr id="t-header-content-principal">
         <th>Rut</th>
         <th>Nombre Completo</th>
         <th>Acciones</th>
     </tr>
+    <tbody>
     @foreach($administradores as $administrador)
 
         <tr data-id="{{ $administrador->id }}">

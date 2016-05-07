@@ -2,7 +2,7 @@
 
     <ul id="archivosTabs" class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#imagen" aria-controls="imagen" role="tab" data-toggle="tab"
-                                                  data-type="galerias|jardines">Imágen</a>
+                                                  data-type="galerias-jardines">Imágen</a>
         </li>
         <li role="presentation"><a href="#informe" aria-controls="informe" role="tab" data-toggle="tab"
                                    data-type="parvulos">Informe al
@@ -74,6 +74,6 @@
         <div role="tabpanel" class="tab-pane panel-option" id="informacion">
 
         </div>
-        {!! Form::hidden('type', 'galerias|jardines' , array('id' => 'type')) !!}
+        {!! Form::hidden('type', 'galerias-jardines' , array('id' => 'type')) !!}
     </div>
 </div>

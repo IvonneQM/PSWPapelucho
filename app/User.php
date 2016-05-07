@@ -28,6 +28,9 @@ class User extends Model implements AuthenticatableContract,
       return $this->hasMany(Parvulo::class);
     }
 
+    public function auditorias(){
+        return $this->hasMany(Auditoria::class);
+    }
     /**
      * The attributes that are mass assignable.
      *

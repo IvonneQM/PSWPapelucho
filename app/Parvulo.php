@@ -10,10 +10,10 @@ class Parvulo extends Model
     protected $table = 'parvulos';
 
 
-    protected $fillable = ['rut','full_name'];
+    protected $fillable = ['rut','full_name','nivel_id', 'jornada_id', 'jardin_id', 'user_id'];
 
     public function user(){
-        return $this->belongsTo(User::class) ;
+        return $this->belongsTo(User::class, 'user_id') ;
     }
 
     public function niveles(){
@@ -27,6 +27,7 @@ class Parvulo extends Model
     public function jardines(){
         return $this->belongsTo(Jardin::class,'jardin_id');
     }
+
 
     public function archivos()
     {

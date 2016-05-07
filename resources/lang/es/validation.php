@@ -108,7 +108,9 @@ return [
         'title' => 'titulo',
         'content' => 'contenido',
         'publish' => 'publicar',
-        'name' => 'nombre'
+        'name' => 'nombre',
+        'full name' => 'nombre completo',
+        'email' => 'correo electrónico',
     ],
 
 ];
