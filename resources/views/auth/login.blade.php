@@ -21,6 +21,7 @@
     {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
 
     <a href="#" id="forgot-pass">¿Olvidaste tu contraseña?</a>
+
     {!! Form::submit('Entrar', ['class' => 'button'])!!}
     {!! Form::close() !!}
 </div>

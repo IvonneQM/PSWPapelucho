@@ -25,7 +25,7 @@
     die;
 })*/
 
-Route::get('/ramny', function()
+/*Route::get('/ramny', function()
 {
     $archivo = \App\Archivo::find(2);
 
@@ -33,7 +33,7 @@ Route::get('/ramny', function()
 
     event( (new \App\Events\SendMail($archivo)) );
 });
-
+*/
 
 Route::get('/', [
     'uses' => 'HomeController@index',
@@ -52,7 +52,7 @@ Route::get('/', [
 
 Route::get('login', [
     'uses' => 'Auth\AuthController@getLogin',
-    'as' => 'login'
+    'as' => 'login',
 ]);
 
 Route::post('login', 'Auth\AuthController@postLogin');
