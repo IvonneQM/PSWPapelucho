@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $('#rut').Rut({
+    $('.rut').Rut({
         on_error : function () {
             swal("Error!",
                 "Rut Inválido",
@@ -101,7 +101,7 @@ $(document).ready(function () {
         $.get(route, function (resp) {
             $('#yo').html("Editar apoderado: " + resp.full_name);
             $('#idUser').val(resp.id);
-            $('#rutApo').val(resp.rut);
+            $('.rut').val(resp.rut);
             $('#nameApo').val(resp.full_name);
             $('#emailApo').val(resp.email);
             $('#passApo').val("");

@@ -14,7 +14,7 @@
 
                     <div class="form-group">
                         {!!Form::label('rut','Rut: ')!!}
-                        {!!Form::text('rut',null,['class'=>'form-control', 'id'=>'rutApo', 'placeholder'=>'Rut usuario'])!!}
+                        {!!Form::text('rut',null,['class'=>'form-control rut' , 'id'=>'rutApo', 'placeholder'=>'Rut usuario'])!!}
                         {!!Form::hidden('id',null,['id'=>'idUser'])!!}
                     </div>
                     <div class="form-group">
