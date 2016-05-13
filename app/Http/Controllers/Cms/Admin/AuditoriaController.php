@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cms\Admin;
 
+use App\Auditoria;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -37,8 +38,11 @@ class AuditoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $auditoria = request()->all();
+        Auditoria::create($auditoria);
+
     }
+
 
     /**
      * Display the specified resource.

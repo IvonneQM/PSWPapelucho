@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Auditoria;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -61,17 +62,28 @@ class AuthController extends Controller
     }
 
 
+    public function registerLogin()
+    {
+        $userId = \Auth::user()->id;
+        $user = ['user_id' => $userId];
+        Auditoria::create($user);
+    }
 
     public function redirectPath()
     {
         if(\Auth::user()->role == 'admin')
         {
+            $this->registerLogin();
             return 'administrador';
         }
         else
         {
+            $this->registerLogin();
             return 'apoderado';
         }
+
+
+
     }
 
     /* Tiempo de bloqueo*/

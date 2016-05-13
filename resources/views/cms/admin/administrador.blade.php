@@ -17,3 +17,6 @@
     BIENVENIDO A TU PANEL DE CONTROL
 
 @stop
+@section('aside2')
+    @include('cms.admin.right-side')
+@endsection

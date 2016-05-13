@@ -1,17 +1,19 @@
 <?php namespace App\Helpers;
 
+use App\Mapa;
+
 class Google{
 
     public static function maps($id){
         
-        $map = Maps::find($id);
+        $map = Mapa::find($id);
+        $coordenadas = $map->latitud + "," + $map->longitud;
         
-        $config['center'] = $map->center; //'-23.6744358, -70.4094682';
-        $config['zoom'] = '17';
+        $config['zoom'] = $map->zoom;
         \Gmaps::initialize($config);
 
         $marker = array();
-        $marker['position'] = '-23.6744358, -70.4094682';
+        $marker['position'] = $coordenadas;
         \Gmaps::add_marker($marker);
         $map = \Gmaps::create_map();
 

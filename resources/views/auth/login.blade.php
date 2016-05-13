@@ -5,7 +5,7 @@
             @if(Auth::user()->role == 'admin')
 
             <li id="li-zona-apoderados"><a href="{{url('administrador')}}">Administración</a></li>
-            @else(\Auth::user()->role == 'apoderado')
+            @else(Auth::user()->role == 'apoderado')
             <li id="li-zona-apoderados"><a href="{{url('apoderado')}}">Zona Apoderados</a></li>
             @endif
         @else

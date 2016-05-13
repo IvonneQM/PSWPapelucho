@@ -89,6 +89,21 @@
         </div>
 
     </div>
+
+<div>
+    {!!Form::open(['id'=>'showGaleria'],['class'=>'form-horizontal'])!!}
+
+    {!!Form::label('galeria','Galeria: ')!!}
+    <select name="galeria_id" class="form-control" >
+        @foreach($galerias as $galeria)
+            @if($galeria->publish == 'Si')
+
+            <option value="{{$galeria->getKey()}}">{{$galeria->name}}</option>
+            @endif
+        @endforeach
+    </select>
+    {!!Form::close()!!}
+</div>
 @stop
 
 @section('aside')

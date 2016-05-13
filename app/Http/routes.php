@@ -94,16 +94,17 @@ Route::get('papelucho-blumell', 'BlumellController@index');
 */
 
 
-
+ Route::get('archivos?galeria={galeria}', [
+     'uses' => 'BlumellController@archivosGaleria',
+     'as' => 'galeria-blumell'
+ ]);
 /*-------------------------------------------------------------------*/
 /*                            MIDDLEWARES                            */
 /*-------------------------------------------------------------------*/
 
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'role:admin'], function () {
-        Route::get('administrador', function () {
-            return view('cms/admin/administrador');
-        });
+        Route::get('administrador', 'Cms\Admin\AdminController@index');
 
         Route::group(['prefix' => 'administrador'], function () {
 
@@ -116,6 +117,7 @@ Route::group(['middleware' => 'auth'], function () {
                 'uses' => 'Cms\Admin\ParvuloController@index',
                 'as' => 'parvulos_user'
             ]);
+
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
 
 

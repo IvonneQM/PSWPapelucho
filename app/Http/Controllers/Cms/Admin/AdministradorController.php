@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Cms\Admin;
 
 use App\Http\Requests\CreateUserRequest;
 use App\User;
+use App\Auditorias;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,9 +18,6 @@ class AdministradorController extends Controller
      */
     public function index(Request $request)
     {
-
-
-
         $administradores = User::fullName($request->get('full_name'))->where('role','=','admin')->orderBy('id', 'DESC')->paginate();
         return view('cms.admin.administradores.lista',compact('administradores'));
     }

@@ -23,6 +23,7 @@
 </head>
 <body>
 <header>
+
     <div class="logo">
         <a href="#" >{!!Html::image('images/isologo.png', 'Isologo', array('id' => 'img-isologo'))!!}</a>
         <a href="#" >{!!Html::image('images/logotipo.png', 'Logotipo', array('id' => 'img-logotipo'))!!}</a>
@@ -78,22 +79,23 @@
 {!!Html::image('images/fondo-arco-azul.png', 'Arco Azul', array('id' => 'img-arco-azul'))!!}
 <footer>
     <div id="bottom-footer-box">
-    <div class="footer-box">
+    <div class="footer-box col-lg-2">
     <h3>Blumell</h3>
     <p>
         <span class="span-ico-footer">{!!Html::image('images/ico-mapa.png', 'ico-mapa', array('class' => 'span-ico-footer'))!!} Blumell 049 Playa Blanca</span><br>
         <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!} 55 245 4645</span><br>
         <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!} infoblumell@jardinpapelucho.cl</span>
     </p>
-       {{-- {!! App\Helpers\Google::maps() !!} --}}
+       {!! App\Helpers\Google::maps(1) !!}
     </div>
-    <div class="footer-box">
+    <div class="footer-box col-lg-2">
     <h3>Las Colonias</h3>
     <p>
         <span class="span-ico-footer"> {!!Html::image('images/ico-mapa.png', 'ico-mapa', array('class' => 'span-ico-footer'))!!} Las Colonias 557</span><br>
         <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!} 55 245 4647 -  55 245 4648</span><br>
         <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!} info@jardinpapelucho.cl</span>
     </p>
+        {!! App\Helpers\Google::maps(2) !!}
     </div>
     </div>
 
