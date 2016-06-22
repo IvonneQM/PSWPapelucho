@@ -28,11 +28,7 @@
                 <div class="panel-heading"><h1 class="title">Parvulos de {{$apoderado->full_name}}</h1></div>
                 <div class="col-lg-12 div-btn">
 
-                    {!! Form::open(['route' => 'administrador.parvulos.index', 'method' => 'GET', 'class' =>'nav-form nav-left pull-left', 'role' => 'search']) !!}
 
-                    <button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>
-
-                    {!! Form::close()  !!}
 
 
                     <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-parvulo" href="#" role="button"> <i class="fa fa-user-plus"><span class="button-title">Crear Párvulo</span></i></a>

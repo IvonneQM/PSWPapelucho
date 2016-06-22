@@ -86,7 +86,7 @@
         <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!} 55 245 4645</span><br>
         <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!} infoblumell@jardinpapelucho.cl</span>
     </p>
-       {!! App\Helpers\Google::maps(1) !!}
+      {{-- {!! App\Helpers\Google::maps(1) !!} --}}
     </div>
     <div class="footer-box col-lg-2">
     <h3>Las Colonias</h3>
@@ -95,7 +95,7 @@
         <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!} 55 245 4647 -  55 245 4648</span><br>
         <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!} info@jardinpapelucho.cl</span>
     </p>
-        {!! App\Helpers\Google::maps(2) !!}
+       {{-- {!! App\Helpers\Google::maps(2) !!} --}}
     </div>
     </div>
 

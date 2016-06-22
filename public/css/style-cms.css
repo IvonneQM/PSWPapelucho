@@ -9,6 +9,14 @@
    Amarillo: F7EC3F
    Plomo: 939597
 **/
+.auditoria_name{
+    font-size: 14px;
+}
+
+.auditoria{
+    font-size: 10px;
+
+}
 
 a, a:hover, a:active, a:link, a:visited {
     color: white;

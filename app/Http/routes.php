@@ -31,7 +31,7 @@
 
     //$apoderado = \App\User::find(3)->get('user');
 
-    event( (new \App\Events\SendMail($archivo)) );
+    event( (new \App\Events\archivo)SendMail($) );
 });
 */
 
@@ -86,6 +86,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('mi-jardin', 'MiJardinController@index');
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
+Route::post('send', ['as' => 'send', 'uses' => 'LasColoniasController@send']);
 Route::get('papelucho-blumell', 'BlumellController@index');
 
 /*Route::get('galerias', function () {
@@ -144,6 +145,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('apoderado', function () {
             return view('cms/apoderados/apoderado');
         });
+
+        Route::get('parvulo={id}', [
+            'uses' => 'Cms\Apoderados\ParController@index',
+            'as' => 'parvulo'
+        ]);
     });
 });
 

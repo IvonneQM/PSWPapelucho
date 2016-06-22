@@ -18,6 +18,7 @@ $(document).ready(function () {
     $('#register-administrador').click(function () {
         $('#modal-administradores').modal();
 
+
         $(document).on('submit', '#form-register-administrador', function (e) {
             e.preventDefault();
             $.ajax({

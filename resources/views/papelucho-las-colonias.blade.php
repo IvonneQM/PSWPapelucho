@@ -102,7 +102,7 @@
     </div>
     <h3 class="side-section-title">Contáctenos</h3>
 
-    {!! Form::open(array('url' => url('foo/bar'), 'class'=>'contact-form')) !!}
+    {!! Form::open(['route' => 'send', 'method' => 'post','class'=>'contact-form']) !!}
     <div class="form-group col-md-4">
     {{--{!! Form::label('name', 'Nombre:') !!}--}}
         {!! Form::text('name', null , array('placeholder' => 'Nombre', 'class' => 'form-control')) !!}
@@ -120,7 +120,7 @@
 
     <div class="form-group col-md-4">
        {{-- {!! Form::label('message', 'Mensaje:') !!}--}}
-        {!! Form::textarea('message', null, array('placeholder' => 'Mensaje', 'class' => 'form-control')) !!}
+        {!! Form::textarea('subject', null, array('placeholder' => 'Mensaje', 'class' => 'form-control')) !!}
     </div>
 
     <div class="form-group col-md-4">
