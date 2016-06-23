@@ -9,6 +9,11 @@
    Amarillo: F7EC3F
    Plomo: 939597
 **/
+
+.archivosParvulos{
+    color: blue !important;
+}
+
 .auditoria_name{
     font-size: 14px;
 }

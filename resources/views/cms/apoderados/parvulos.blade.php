@@ -40,6 +40,24 @@
                         </tr>
                     </table>
 
+                    @foreach($par->archivos as $archivos)
+                        <div class="col-xs-3 text-center">
+                           <a class="archivosParvulos" href="#" download>  {{$archivos->fileName}} </a>
+
+
+                        </div>
+
+                    @endforeach
+
+                    @foreach($par->niveles->archivos as $nivel)
+                        <div class="col-xs-3 text-center">
+                            <a class="archivosParvulos" href="#" download>  {{$nivel->name}} </a>
+
+
+                        </div>
+
+                    @endforeach
+
 
 
 
