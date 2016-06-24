@@ -147,7 +147,7 @@ Route::group(['middleware' => 'auth'], function () {
         });
 
         Route::get('parvulo={id}', [
-            'uses' => 'Cms\Apoderados\ParController@index',
+            'uses' => 'Cms\Admin\ParvuloController@indexApoderado',
             'as' => 'parvulo'
         ]);
     });

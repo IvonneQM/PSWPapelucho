@@ -29,6 +29,7 @@ class ArchivoController extends Controller
         $jardines=Jardin::with('archivos')->get();
         $niveles=Nivel::with('archivos')->get();
         $parvulos=Parvulo::with('archivos')->get();
+
         return view('cms.admin.archivos.list', compact('archivos','galerias', 'jardines', 'niveles', 'parvulos'));
 
     }

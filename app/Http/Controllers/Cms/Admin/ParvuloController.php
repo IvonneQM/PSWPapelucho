@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Cms\Admin;
 
 use App\Http\Requests\CreateParvuloRequest;
+use App\Archivo;
 use App\Nivel;
 use App\Jornada;
 use App\Jardin;
@@ -21,24 +22,34 @@ class ParvuloController extends Controller
      */
     public function index(Request $request)
     {
-        $niveles    =   Nivel::with('parvulos')->get();
-        $jornadas   =   Jornada::with('parvulos')->get();
-        $jardines   =   Jardin::with('parvulos')->get();
-        $apoderado  =   User::find($request->get('user'));
-        $parvulos   =   Parvulo::apoderado($request->get('user'))->orderBy('id', 'DESC')->paginate();
-        return view('cms.admin.parvulos.lista', compact('parvulos','apoderado','niveles','jornadas','jardines'));
+        $niveles = Nivel::with('parvulos')->get();
+        $jornadas = Jornada::with('parvulos')->get();
+        $jardines = Jardin::with('parvulos')->get();
+        $apoderado = User::find($request->get('user'));
+        $parvulos = Parvulo::apoderado($request->get('user'))->orderBy('id', 'DESC')->paginate();
+        return view('cms.admin.parvulos.lista', compact('parvulos', 'apoderado', 'niveles', 'jornadas', 'jardines'));
 
     }
 
+    public function indexApoderado(Request $request, $id)
+    {
+        $par = Parvulo::find($id);
+        $archivosss = Archivo::whereDoesnthave('parvulos');
+        return view('cms.apoderados.parvulos', compact('par', 'archivosss'));
+    }
 
-    public function listJornadas(Request $request){
-        $jornadas   =   Jornada::jornadas($request->get('jornada'))->paginate();
+    public
+    function listJornadas(Request $request)
+    {
+        $jornadas = Jornada::jornadas($request->get('jornada'))->paginate();
         return $jornadas;
     }
 
-    public function getJornadas(Request $request, $id){
-        if($request->ajax()){
-            $jornadas= Jornada::jornadas();
+    public
+    function getJornadas(Request $request, $id)
+    {
+        if ($request->ajax()) {
+            $jornadas = Jornada::jornadas();
             return response()->json($jornadas);
         }
     }
@@ -49,7 +60,8 @@ class ParvuloController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public
+    function create(Request $request)
     {
 
     }
@@ -57,12 +69,13 @@ class ParvuloController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateParvuloRequest $request)
+    public
+    function store(CreateParvuloRequest $request)
     {
-        if($request->ajax()){
+        if ($request->ajax()) {
             $parvulo = Parvulo::create($request->all());
             return response()->json($parvulo);
         }
@@ -71,10 +84,11 @@ class ParvuloController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public
+    function show($id)
     {
         //
     }
@@ -86,11 +100,12 @@ class ParvuloController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public
+    function edit(Request $request, $id)
     {
         $parvulo = Parvulo::find($id);
 
-        if($request->ajax()) {
+        if ($request->ajax()) {
             return response()->json($parvulo);
         }
     }
@@ -98,15 +113,16 @@ class ParvuloController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public
+    function update(Request $request, $id)
     {
         $parvulo = Parvulo::find($id);
         $parvulo->update($request->all());
-        if($request->ajax()){
+        if ($request->ajax()) {
             return response()->json($parvulo);
         }
     }
@@ -114,14 +130,15 @@ class ParvuloController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, Request $request)
+    public
+    function destroy($id, Request $request)
     {
         $parvulos = Parvulo::find($id);
         $parvulos->delete();
-        if($request->ajax()){
+        if ($request->ajax()) {
             return response()->json([
                 'id' => Parvulo::find($id),
             ]);

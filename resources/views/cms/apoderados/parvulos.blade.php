@@ -40,32 +40,37 @@
                         </tr>
                     </table>
 
-                    @foreach($par->archivos as $archivos)
+
+                    <H2> ESTOS SON LOS DOCUMETOS DEL NIÑO (INFORME AL HOGAR</H2>
+                    @foreach($par->archivos as $ar)
                         <div class="col-xs-3 text-center">
-                           <a class="archivosParvulos" href="#" download>  {{$archivos->fileName}} </a>
-
-
+                            <a class="archivosParvulos" href="{{$ar->url}}" download>  {{$ar->fileName}} </a>
                         </div>
 
                     @endforeach
 
-                    @foreach($par->niveles->archivos as $nivel)
+                    <H2> ESTOS SON LOS DOCUMETOS POR NIVEL (BOLETIN SEMANAL)</H2>
+
+                    @foreach($par->niveles->archivos as $arch)
                         <div class="col-xs-3 text-center">
-                            <a class="archivosParvulos" href="#" download>  {{$nivel->name}} </a>
-
-
+                            <a class="archivosParvulos" href="{{$arch->url}}" download>  {{$arch->fileName}} </a>
                         </div>
 
-                    @endforeach
+                        @endforeach
+                        </br>
+                        <H2> ESTOS SON LOS DOCUMENTOS POR JARDIN SI ES QUE HUBIERA</H2>
+                        @foreach($par->jardines->archivos as $archi)
+                            <div class="col-xs-3 text-center">
+                                <a class="archivosParvulos" href="{{$archi->url}}" download>  {{$archi->fileName}} </a>
+                            </div>
+                        @endforeach
 
-
-
-
-
-
-
-
-
+                        <H2> ESTOS SON LOS DOCUMENTOS GENERALES</H2>
+                        @foreach($archivosss as $archivoooooo)
+                            <div class="col-xs-3 text-center">
+                                <a class="archivosParvulos" href="{{$archivoooooo->url}}" download>  {{$archivoooooo->fileName}} </a>
+                            </div>
+                        @endforeach
                 </div>
             </div>
         </div>

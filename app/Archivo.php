@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Archivo extends Model implements SendmailInterface
 {
-    protected $fillable = ['fileName','url','size'];
+    protected $fillable = ['fileName', 'url', 'size', 'type'];
 
     public function galerias()
     {
@@ -35,7 +35,7 @@ class Archivo extends Model implements SendmailInterface
         parent::boot();
 
         // al guardar un post
-        \App\Archivo::saving(function($archivo){
+        \App\Archivo::saving(function ($archivo) {
 
             //event( new SendMail($archivo) );
 
@@ -49,26 +49,20 @@ class Archivo extends Model implements SendmailInterface
 
     public function scopeTypes($query, $types)
     {
-        if( ! empty($types) && ! in_array($types,['general']))
-        {
-            $methodes = (array) explode('-',$types);
-            $query->where(function($q) use ($methodes)
-            {
-                foreach($methodes as $i => $method)
-                {
+        if (!empty($types) && !in_array($types, ['general'])) {
+            $methodes = (array)explode('-', $types);
+            $query->where(function ($q) use ($methodes) {
+                foreach ($methodes as $i => $method) {
                     $m = ($i == 0) ? 'has' : 'orHas';
                     $q->{$m}($method);
                 }
             });
         }
 
-        if( ! empty($types) && in_array($types,['general']))
-        {
-            $methodes = ['jardines','niveles','galerias','parvulos'];
-            $query->where(function($q) use ($methodes)
-            {
-                foreach($methodes as $i => $method)
-                {
+        if (!empty($types) && in_array($types, ['general'])) {
+            $methodes = ['jardines', 'niveles', 'galerias', 'parvulos'];
+            $query->where(function ($q) use ($methodes) {
+                foreach ($methodes as $i => $method) {
                     $q->doesntHave($method);
                 }
             });
@@ -81,51 +75,43 @@ class Archivo extends Model implements SendmailInterface
     {
         $mail = array();
 
-        switch( $this->type )
-        {
+        switch ($this->type) {
             case "galerias-jardines":
-                $mail =  User::whereHas('parvulos',function($q)
-                    {
-                        $q->whereHas('jardines',function($q)
-                        {
-                            $q->whereHas('archivos',function($q)
-                            {
-                                $q->where($this->getKeyName(),$this->getKey());
-                            });
+                $mail = User::whereHas('parvulos', function ($q) {
+                    $q->whereHas('jardines', function ($q) {
+                        $q->whereHas('archivos', function ($q) {
+                            $q->where($this->getKeyName(), $this->getKey());
                         });
-                    })->get();
+                    });
+                })->get();
                 break;
             case "niveles":
-                $mail =  User::whereHas('parvulos',function($q)
-                    {
-                        $q->whereHas('niveles',function($q)
-                        {
-                            $q->whereHas('archivos',function($q)
-                            {
-                                $q->where($this->getKeyName(),$this->getKey());
-                            });
+                $mail = User::whereHas('parvulos', function ($q) {
+                    $q->whereHas('niveles', function ($q) {
+                        $q->whereHas('archivos', function ($q) {
+                            $q->where($this->getKeyName(), $this->getKey());
                         });
-                    })->get();
+                    });
+                })->get();
                 break;
             case "parvulos":
 
-                $mail = User::whereHas('parvulos',function($q)
-                {
-                    $q->whereHas('archivos',function($q)
-                        {
-                            $q->where($this->getKeyName(),$this->getKey());
-                        });
+                $mail = User::whereHas('parvulos', function ($q) {
+                    $q->whereHas('archivos', function ($q) {
+                        $q->where($this->getKeyName(), $this->getKey());
+                    });
                 })->get();
                 break;
             case "general":
-                $mail =  User::get();
+                $mail = User::get();
                 break;
         }
 
-        if( ! empty($mail) ) $mail = $mail->lists('email')->toArray();
+        if (!empty($mail)) $mail = $mail->lists('email')->toArray();
 
-        return array_unique( (array) $mail );
+        return array_unique((array)$mail);
     }
+
 
     public function getSubject()
     {
