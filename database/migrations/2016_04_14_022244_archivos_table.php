@@ -16,8 +16,7 @@ class ArchivosTable extends Migration
             $table->increments('id')->unique();
             $table->string('fileName',200)->required();
             $table->string('url',200)->required();
-            $table->integer('size')->required();
-            $table->enum('type',['general','galerias-jardines','niveles','parvulos'])->required();
+            $table->bigInteger('size')->required();
             $table->string('extension');
             $table->timestamps();
         });

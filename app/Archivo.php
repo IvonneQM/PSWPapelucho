@@ -2,13 +2,15 @@
 
 namespace App;
 
+
+
 use App\Events\SendMail;
 use App\Interfaces\SendmailInterface;
 use Illuminate\Database\Eloquent\Model;
 
 class Archivo extends Model implements SendmailInterface
 {
-    protected $fillable = ['fileName', 'url', 'size', 'type'];
+    protected $fillable = ['fileName', 'url', 'size'];
 
     public function galerias()
     {
@@ -41,6 +43,15 @@ class Archivo extends Model implements SendmailInterface
 
         });
     }
+
+    public function getThumbnail(){
+
+        if (in_array($this->extension,['jpg,jpeg,png,bmp,gif']))
+            return url($this->dir);
+        else
+            return url ('thumbnails/'.($this->extension).'.png');
+    }
+
 
     public function getFileUrlAttribute()
     {

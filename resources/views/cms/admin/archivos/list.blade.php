@@ -1,6 +1,7 @@
 @extends('cms.layout')
 
 @section('meta')
+
     {!! Html::style('css/dropzone.css') !!}
     {!! Html::style('css/jquery.easy-autocomplete.css') !!}
     {!! Html::script('js/dropzone/dropzone.js') !!}
@@ -12,10 +13,8 @@
     @include('cms.admin.menu-lateral')
 @stop
 @section('aside1')
-
     <nav id="sidebar-desktop">
         <ul>
-
             @include('cms.admin.menu-lateral')
         </ul>
     </nav>
@@ -32,8 +31,8 @@
                             Lista de archivos
                         </div>
 
-                        <div id="row-thumbnails" data-url="{!! route('archivos-files') !!}">
 
+                        <div id="row-thumbnails" data-url="{!! route('archivos-files') !!}">
                             @include('cms.admin.archivos.partials.thumbnails')
                         </div>
 
@@ -41,12 +40,12 @@
                             <div>
                                 <div class="panel-primary">
                                     <div class="panel-heading">
-                                            Carga de contenido
-                                        </div>
+                                        Carga de contenido
+                                    </div>
                                     {!! Form::open([
                                       'files' => 'true',
                                       'class' => 'dropzone',
-                                      'id'    => 'dropzone-imagenes',
+                                      'id'    => 'dropzone',
                                       'method'=> 'POST',
                                       'route' => 'administrador.archivos.store']) !!}
 
@@ -67,14 +66,12 @@
             </div>
         </div>
     </div>
-
-
-
 @endsection
 
 @section('meta-footer')
     {!! Html::script('js/easy-autocomplete/jquery.easy-autocomplete.js') !!}
     {!! Html::script('js/easy-autocomplete/autocomplete.js') !!}
+
 @endsection
 
 

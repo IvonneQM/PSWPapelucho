@@ -51,27 +51,18 @@ class ArchivoController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     *
      * @param CreateArchivoRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(CreateArchivoRequest $request)
     {
-        $dir = public_path().'/uploads/';
-        $files = $request->file('file');
 
-        $archivo = new Archivo();
-        foreach($files as $file){
+        $dir = public_path() . '/uploads/';
+        $files = $request->file('file');
+        $methods = explode('-', $request->input('type'));
+
+        foreach ($files as $file) {
+            $archivo = new Archivo();
 
             $fileName = $file->getClientOriginalName();
             $fileSize = $file->getClientSize();
@@ -82,27 +73,33 @@ class ArchivoController extends Controller
             $archivo->size = $fileSize;
             $archivo->extension = $fileType;
 
-            if ($file->move($dir, $fileName)){
+            if ($file->move($dir, $fileName)) {
                 $archivo->save();
+
+                $archivo->type = $request->input('type');
+
+                foreach ((array)$methods as $model) {
+                    if (empty($request->input($model))) continue;
+                    if (
+                        $archivo->exists &&
+                        !in_array($model, ['general'])
+                    ) {
+                        $archivo->{$model}()->attach($request->input($model));
+                    }
+                }
             }
         }
 
-        $methods = explode('-',$request->input('type'));
-
-        $archivo->type = $request->input('type');
-
-        foreach ((array) $methods as $model){
-            if(empty($request->input($model))) continue;
-            if(
-                $archivo->exists &&
-                ! in_array($model, ['general'])
-            )
-            {
-                $archivo->{$model}()->attach($request->input($model));
-            }
-        }
-        event( (new \App\Events\SendMail($archivo)) );
+        event((new \App\Events\SendMail($archivo)));
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     *
+     * @param CreateArchivoRequest $request
+     * @return \Illuminate\Http\Response
+     */
 
     /**
      * Display the specified resource.

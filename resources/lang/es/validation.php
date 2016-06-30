@@ -76,6 +76,10 @@ return [
     'unique'               => 'El elemento :attribute ya está en uso.',
     'url'                  => 'El formato de :attribute no corresponde con el de una URL válida.',
 
+
+
+
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -111,6 +115,8 @@ return [
         'name' => 'nombre',
         'full name' => 'nombre completo',
         'email' => 'correo electrónico',
+        'type,galerias-jardines' => ''
+
     ],
 
 ];

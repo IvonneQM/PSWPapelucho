@@ -18,6 +18,7 @@ class ParvuloController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -27,15 +28,17 @@ class ParvuloController extends Controller
         $jardines = Jardin::with('parvulos')->get();
         $apoderado = User::find($request->get('user'));
         $parvulos = Parvulo::apoderado($request->get('user'))->orderBy('id', 'DESC')->paginate();
+
+
         return view('cms.admin.parvulos.lista', compact('parvulos', 'apoderado', 'niveles', 'jornadas', 'jardines'));
 
     }
 
     public function indexApoderado(Request $request, $id)
     {
-        $par = Parvulo::find($id);
-        $archivosss = Archivo::whereDoesnthave('parvulos');
-        return view('cms.apoderados.parvulos', compact('par', 'archivosss'));
+        $par = Parvulo::findOrFail($id);
+        $archivosss = Archivo::doesntHave('galerias')->doesntHave('jardines')->doesntHave('niveles')->doesntHave('parvulos')->get();
+        return view('cms.apoderados.parvulos', compact('par','archivosss'));
     }
 
     public
@@ -69,7 +72,7 @@ class ParvuloController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param CreateParvuloRequest $request
      * @return \Illuminate\Http\Response
      */
     public
