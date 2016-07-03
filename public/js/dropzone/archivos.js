@@ -14,6 +14,7 @@ $(function(){
         maxFiles        : 20,
         addRemoveLinks  : true,
         dictRemoveFile  : 'Eliminar',
+        hiddenInputContainer: true,
 
 
         init: function () {
@@ -89,7 +90,8 @@ $(function(){
             var accept = '';
             switch($(this).data('type')){
                 case "galerias-jardines":
-                    accept = "image/*"
+                    accept = "image/*",
+                    hiddenInputContainer =false
                     break;
                 case "parvulos":
                     accept = "application/pdf"

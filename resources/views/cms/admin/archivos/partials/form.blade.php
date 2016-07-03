@@ -20,6 +20,8 @@
         <div role="tabpanel" class="tab-pane active panel-option" id="imagen">
 
             <div class="col-lg-8 conteiner-option">
+
+                {!! Form::open (['id' => 'form'])!!}
                 <div class="form-group">
 
                     <label for="sel1">Galería:</label>
@@ -43,6 +45,7 @@
                     </select>
 
                 </div>
+                {!! Form::close()!!}
 
                 {{--button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>--}}
                 <div class="col-md-4 div-btn">

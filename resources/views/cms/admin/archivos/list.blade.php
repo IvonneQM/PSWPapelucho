@@ -4,6 +4,7 @@
 
     {!! Html::style('css/dropzone.css') !!}
     {!! Html::style('css/jquery.easy-autocomplete.css') !!}
+    {!! Html::style('css/select2.min.css') !!}
     {!! Html::script('js/dropzone/dropzone.js') !!}
     {!! Html::script('js/dropzone/archivos.js') !!}
 
@@ -82,9 +83,20 @@
 @section('meta-footer')
     {!! Html::script('js/easy-autocomplete/jquery.easy-autocomplete.js') !!}
     {!! Html::script('js/easy-autocomplete/autocomplete.js') !!}
-    <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-    {!!Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
 
+    <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
+    {!! Html::script('js/select2.min.js') !!}
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+        $('select').select2();
+            $('#form select').change(function () {
+                ('#form').submit();
+            })
+        });
+    </script>
 @endsection
 
 

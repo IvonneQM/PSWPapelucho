@@ -136,6 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
 
         Laracasts\Flash\FlashServiceProvider::class,
 
@@ -147,8 +148,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Collective\Html\HtmlServiceProvider::class,
+
         Styde\Html\HtmlServiceProvider::class,
+
+
+
+        Collective\Html\HtmlServiceProvider::class,
         Infinety\Alerts\AlertServiceProvider::class,
         GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
@@ -201,6 +206,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Alert'     => Styde\Html\Facades\Alert::class,
+        'Field'     => Styde\Html\Facades\Field::class,
+        'Menu'      => Styde\Html\Facades\Menu::class,
         'Form' 		=> Collective\Html\FormFacade::class,
         'Html' 		=> Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
