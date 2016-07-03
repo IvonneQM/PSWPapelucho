@@ -7,6 +7,10 @@
     {!! Html::script('js/dropzone/dropzone.js') !!}
     {!! Html::script('js/dropzone/archivos.js') !!}
 
+
+    <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    {!!Html::style('css/bootstrap-image-gallery.min.css')!!}
+
 @stop
 
 @section('menu-mobile')
@@ -27,15 +31,22 @@
                 <div class="panel-heading"><h1 class="title">Contenido</h1></div>
                 <div class="col-lg-12 div-btn">
                     <div class="panel-primary">
+
+
+
                         <div class="panel-heading" id="panel-content-heading">
                             Lista de archivos
                         </div>
 
-
                         <div id="row-thumbnails" data-url="{!! route('archivos-files') !!}">
                             @include('cms.admin.archivos.partials.thumbnails')
-                        </div>
 
+
+
+                                {!! $archivos->render() !!}
+                            </div>
+
+                        </div>
                         <div>
                             <div>
                                 <div class="panel-primary">
@@ -71,6 +82,8 @@
 @section('meta-footer')
     {!! Html::script('js/easy-autocomplete/jquery.easy-autocomplete.js') !!}
     {!! Html::script('js/easy-autocomplete/autocomplete.js') !!}
+    <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    {!!Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
 
 @endsection
 

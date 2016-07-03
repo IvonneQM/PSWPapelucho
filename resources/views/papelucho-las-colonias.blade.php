@@ -90,11 +90,16 @@
         </div>
 
     </div>
-
-
-
-
+  {{--  <div>
+        @foreach( $jardines->galerias as $jardines)
+            <h1> {{$jardines -> name }}</h1>
+        @endforeach
+    </div>
+    --}}
 @stop
+
+
+
 
 @section('aside')
     <div id="cuerdas">
@@ -131,3 +136,4 @@
 
 
 @stop
+

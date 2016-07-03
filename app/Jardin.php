@@ -17,5 +17,10 @@ class Jardin extends Model
         return $this->morphToMany(Archivo::class, 'archivable');
     }
 
+    public function galerias()
+    {
+        return $this->hasMany(Galeria::class);
+    }
+
     protected $fillable = ['name'];
 }

@@ -45,13 +45,18 @@ class Archivo extends Model implements SendmailInterface
     }
 
     public function getThumbnail(){
-
-        if (in_array($this->extension,['jpg,jpeg,png,bmp,gif']))
-            return url($this->dir);
+        if($this->getImageExtension())
+            return url($this->url);
         else
             return url ('thumbnails/'.($this->extension).'.png');
     }
 
+    public function getImageExtension(){
+        if (in_array($this->extension,['jpg','jpeg','png','bmp','gif']))
+            return true;
+        else
+            return false;
+    }
 
     public function getFileUrlAttribute()
     {

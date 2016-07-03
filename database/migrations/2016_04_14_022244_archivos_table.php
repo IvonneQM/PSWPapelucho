@@ -16,7 +16,7 @@ class ArchivosTable extends Migration
             $table->increments('id')->unique();
             $table->string('fileName',200)->required();
             $table->string('url',200)->required();
-            $table->bigInteger('size')->required();
+            $table->Integer('size')->required();
             $table->string('extension');
             $table->timestamps();
         });

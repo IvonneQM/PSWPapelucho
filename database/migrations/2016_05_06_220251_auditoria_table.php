@@ -14,7 +14,7 @@ class AuditoriaTable extends Migration
     {
         Schema::create('auditorias', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('user_id')->unsigned()->nullable();;
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')

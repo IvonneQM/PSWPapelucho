@@ -18,7 +18,11 @@ class GaleriaTable extends Migration
             $table->increments('id')->unique();
             $table->string('name')->required();
             $table->string('publish')->required();
+            $table->integer('jardin_id')->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('jardin_id')->references('id')->on('jardines')
+                ->onDelete('cascade');
         });
     }
 
@@ -29,6 +33,6 @@ class GaleriaTable extends Migration
      */
     public function down()
     {
-        Schema::drop('jornadas');
+        Schema::drop('galerias');
     }
 }

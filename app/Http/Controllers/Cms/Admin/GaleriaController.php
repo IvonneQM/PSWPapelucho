@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Cms\Admin;
 
 use App\Http\Requests\CreateGaleriaRequest;
+use App\Jardin;
 use Illuminate\Http\Request;
 use App\Galeria;
 use App\Http\Requests;
@@ -19,7 +20,8 @@ class GaleriaController extends Controller
     public function index(Request $request)
     {
         $galerias = Galeria::orderBy('id', 'DESC')->paginate();
-        return view('cms.admin.galerias.lista', compact('galerias'));
+        $jardines = Jardin::get();
+        return view('cms.admin.galerias.lista', compact('galerias','jardines'));
     }
 
 
@@ -40,9 +42,12 @@ class GaleriaController extends Controller
      */
     public function store(CreateGaleriaRequest $request){
 
+
         if($request->ajax()){
             $galerias = Galeria::create($request->sanitize());
-            return response()->json($galerias);
+            $galerias = Galeria::with('jardin')->find($galerias->id);
+            return $galerias;
+
         }
 
     }

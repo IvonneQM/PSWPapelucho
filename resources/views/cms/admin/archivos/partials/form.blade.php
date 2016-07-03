@@ -32,7 +32,7 @@
                     </select>
 
 
-                    <label for="sel2">Jardin:</label>
+                    {!!Form::label('name','Jardin: ')!!}
                     <select name="jardines" class="form-control" id="sel2">
                         @foreach($jardines as $jardin)
 

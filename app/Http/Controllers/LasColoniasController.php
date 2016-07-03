@@ -1,14 +1,17 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Galeria;
 use App\Http\Controllers\Controller;
 
+use App\Jardin;
 use Illuminate\Http\Request;
 
 class LasColoniasController extends Controller {
 
 	public function index()
 	{
+		//$jardines = Jardin::with('galerias')->where('name', 'Las colonias');
 		return view('papelucho-las-colonias');
 	}
 

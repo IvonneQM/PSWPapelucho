@@ -21,6 +21,8 @@ $(document).ready(function () {
                 data    : $(this).serialize(),
                 dataType: "json",
                 success : function (data) {
+
+                    console.log(data);
                     addRow(data);
                     $('#form-register-galerias').trigger('reset');
                     $('#name_galeria').focus();
@@ -68,6 +70,7 @@ $(document).ready(function () {
     function addRow (data){
         var row = '<tr data-id='+data.id+'>'+
             '<td>'+ data.name + '</td>'+
+            '<td>'+ data.jardin.name + '</td>'+
             '<td>'+ data.publish + '</td>'+
             '<td>'+
             '<div class="t-actions">'+

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use App\Jardin;
 
 class CreateGaleriaRequest extends Request
 {

@@ -13,8 +13,6 @@ class JardinesTable extends Migration
     public function up()
     {
         Schema::create('jardines', function (Blueprint $table) {
-
-
             $table->increments('id')->unique();
             $table->string('name')->required();
             $table->timestamps();

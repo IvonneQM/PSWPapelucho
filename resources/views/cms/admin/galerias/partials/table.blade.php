@@ -2,13 +2,14 @@
     <tbody>
     <tr id="t-header-content-principal">
         <th>Nombre</th>
+        <th>Jardin</th>
         <th>Publicada</th>
         <th>Acciones</th>
     </tr>
     @foreach($galerias as $galeria)
-
         <tr data-id="{{ $galeria->id }}">
-            <td>{!! $galeria->name !!}</td>
+            <td>{{ $galeria->name }}</td>
+            <td>{!! $galeria->jardin->name !!}</td>
             <td>{!! $galeria->publish !!}</td>
             <td>
                 <div class="t-actions">

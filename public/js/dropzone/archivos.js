@@ -58,8 +58,34 @@ $(function(){
             })
         }
     }
+
         $('body').on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+            e.preventDefault();
             console.log($(this).data('type'));
+            if ( dropzoneImagenes.files.length > 0)
+            {
+                swal({
+                        title             : "¿Està seguro de abandonar el item actual?",
+                        text              : "Perderá los cambios",
+                        type              : "warning",
+                        showCancelButton  : true,
+                        confirmButtonClass: "btn-danger",
+                        confirmButtonText : "Si",
+                        cancelButtonText  : "No",
+                        closeOnConfirm    : false,
+                        closeOnCancel     : true
+                    },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            dropzoneImagenes.removeAllFiles();
+                            swal.close();
+                        } else {
+                            swal.close();
+                            $(this).data('type').active;
+                        }
+                    });
+            }
+
             var accept = '';
             switch($(this).data('type')){
                 case "galerias-jardines":

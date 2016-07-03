@@ -64,6 +64,7 @@ $(document).ready(function () {
             });
         })
     });
+
     //AGREGAR ROW //
     function addRow(data) {
         var row = '<tr data-id=' + data.id + '>' +
