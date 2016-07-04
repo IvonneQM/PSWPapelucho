@@ -1,19 +1,15 @@
 @extends('cms.layout')
-
 @section('meta')
-
     {!! Html::style('css/dropzone.css') !!}
     {!! Html::style('css/jquery.easy-autocomplete.css') !!}
     {!! Html::style('css/select2.min.css') !!}
     {!! Html::script('js/dropzone/dropzone.js') !!}
     {!! Html::script('js/dropzone/archivos.js') !!}
 
-
     <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
     {!!Html::style('css/bootstrap-image-gallery.min.css')!!}
 
 @stop
-
 @section('menu-mobile')
     @include('cms.admin.menu-lateral')
 @stop
@@ -32,35 +28,25 @@
                 <div class="panel-heading"><h1 class="title">Contenido</h1></div>
                 <div class="col-lg-12 div-btn">
                     <div class="panel-primary">
-
-
                         <div class="panel-heading" id="panel-content-heading">
                             Lista de archivos
                         </div>
-
                         <div id="row-thumbnails" data-url="{!! route('archivos-files') !!}">
                             @include('cms.admin.archivos.partials.thumbnails')
-
-
-
                         </div>
-
                     </div>
                     <div>
                         <div>
                             <div class="panel-primary">
                                 <div class="panel-heading">
-                                        Carga de contenido
-                                    </div>
+                                    Carga de contenido
+                                </div>
                                 {!! Form::open([
                                   'files' => 'true',
                                   'class' => 'dropzone',
                                   'id'    => 'dropzone',
                                   'method'=> 'POST',
                                   'route' => 'administrador.archivos.store']) !!}
-
-
-
                                 <div class="panel-body">
                                     <div class="container" style="width: 100%">
                                         @include('cms.admin.archivos.partials.form')
@@ -76,13 +62,11 @@
             </div>
         </div>
     </div>
-    </div>
 @endsection
 
 @section('meta-footer')
     {!! Html::script('js/easy-autocomplete/jquery.easy-autocomplete.js') !!}
     {!! Html::script('js/easy-autocomplete/autocomplete.js') !!}
-
     <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
     {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
     {!! Html::script('js/select2.min.js') !!}
@@ -95,11 +79,9 @@
                 placeholder:{
                     id : "",
                     text: "Seleccione una opción"
-
                 }
 
             });
-
             $.fn.populateSelect = function (values) {
                 var options = '';
                 $.each(values, function (key, row) {
@@ -107,23 +89,18 @@
                 });
                 $(this).html(options);
             }
-
             $('#jardin_id').change(function () {
-
                 var jardin_id = $(this).val();
 
                 if (jardin_id == '') {
                     $('#galeria_id').empty();
                 }
                 else {
-
                     $.getJSON('galerias/jardin/' + jardin_id, null, function (values) {
                         $('#galeria_id').populateSelect(values);
                     });
                 }
             })
-
-
         });
     </script>
 @endsection

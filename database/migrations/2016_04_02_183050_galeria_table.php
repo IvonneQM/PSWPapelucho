@@ -13,8 +13,6 @@ class GaleriaTable extends Migration
     public function up()
     {
         Schema::create('galerias', function (Blueprint $table) {
-
-
             $table->increments('id')->unique();
             $table->string('name')->required();
             $table->string('publish')->required();

@@ -1,7 +1,5 @@
 
 $(window).load(function(){
-
-
     accept = "image/*";
         hiddenInputContainer = false;
     $('#archivosTabs').data('type','galerias-jardines');

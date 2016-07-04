@@ -16,7 +16,6 @@ class ArchivableTable extends Migration
             $table->integer('archivo_id');
             $table->integer('archivable_id');
             $table->string('archivable_type');
-            $table->unique(['archivable_id','archivable_type','archivo_id']);
         });
     }
 

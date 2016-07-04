@@ -1,16 +1,13 @@
 $(document).ready(function () {
     $("#user").easyAutocomplete({
         url: "autocomplete/parvulos",
-
         getValue: "full_name",
-
         template: {
             type  : "description",
             fields: {
                 description: "rut"
             }
         },
-
         list: {
             match: {
                 enabled: true
@@ -18,11 +15,9 @@ $(document).ready(function () {
 
             onSelectItemEvent: function() {
                 var user = $("#user").getSelectedItemData();
-
                 $("#user_id").val(user.id);
             }
         },
-
         theme: "bootstrap",
 
         ajaxSettings: {

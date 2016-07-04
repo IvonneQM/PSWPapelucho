@@ -104,10 +104,11 @@ Route::get('archivos?galeria={galeria}', [
 ]);
 
 Route::group(['prefix' => 'papelucho-blumell'], function () {
-    Route::get('', [
+    Route::get('/', [
         'uses' => 'BlumellController@archivosGaleria',
         'as' => 'galerias-blumell'
     ]);
+
 
     Route::get('archivos/galeria/{galeria_id}', function ($galeria_id) {
         return Archivo::with('pivot')->where('id', $galeria_id)

@@ -1,20 +1,23 @@
 
+{{--<div class="form-group">
+    <label for="sel4">Seleccionar galería:</label>
+    <select name="niveles" class="form-control" id="sel4">
+        @foreach($galerias as $galeria)
+            <option value="{{$galeria->getKey()}}">{{$galeria->name}} </option>
+            @foreach($galeria->archivos as $archivo)
+                <img id="imgs" src="{!! $archivo->fileName!!}">
+            @endforeach
+        @endforeach
+    </select>
+</div>
+--}}
 
-{!!Form::open(['id'=>'showGaleria'],['class'=>'form-horizontal'])!!}
 
 {!!Form::label('galeria','Galeria: ')!!}
-<select name="galeria_id" class="form-control">
-    @if($galerias != null)
-
         @foreach($galerias as $galeria)
-            @if($galeria->publish == 'Si')
-                <option value="{{$galeria->getKey()}}">{{$galeria->name}}</option>
-            @endif
-
-
-
+            <h1> {{$galeria -> name}}</h1>
+            @foreach($galeria->archivos as $archivo)
+                <h5> {{$archivo -> fileName}}</h5>
+            @endforeach
         @endforeach
-    @endif
-
-</select>
 {!!Form::close()!!}
