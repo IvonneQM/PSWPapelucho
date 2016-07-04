@@ -136,7 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Illuminate\Html\HtmlServiceProvider::class,
+         Illuminate\Html\HtmlServiceProvider::class,
 
         Laracasts\Flash\FlashServiceProvider::class,
 
@@ -158,6 +158,9 @@ return [
         GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+
+       // \App\Providers\ViewServiceProvider::class,
+
     ],
 
     /*

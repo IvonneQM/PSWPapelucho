@@ -87,23 +87,12 @@
                 <p>Adquirir gradualmente una autonomía que le permita un desarrollo integral en los ámbitos de: formación personal y social, comunicación, relación con el medio natural, social y cultural, propiciando un clima de confianza seguridad y afectividad.</p>
             </div>
         </div>
-
+        <div>
+            @include(('galerias.galeriasBlumell'))
+        </div>
     </div>
 
-<div>
-    {!!Form::open(['id'=>'showGaleria'],['class'=>'form-horizontal'])!!}
 
-    {!!Form::label('galeria','Galeria: ')!!}
-    <select name="galeria_id" class="form-control" >
-        @foreach($galerias as $galeria)
-            @if($galeria->publish == 'Si')
-
-            <option value="{{$galeria->getKey()}}">{{$galeria->name}}</option>
-            @endif
-        @endforeach
-    </select>
-    {!!Form::close()!!}
-</div>
 @stop
 
 @section('aside')

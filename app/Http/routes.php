@@ -35,6 +35,9 @@
 });
 */
 
+use App\Archivo;
+use App\Galeria;
+
 Route::get('/', [
     'uses' => 'HomeController@index',
     'as' => 'home'
@@ -95,10 +98,30 @@ Route::get('papelucho-blumell', 'BlumellController@index');
 */
 
 
- Route::get('archivos?galeria={galeria}', [
-     'uses' => 'BlumellController@archivosGaleria',
-     'as' => 'galeria-blumell'
- ]);
+Route::get('archivos?galeria={galeria}', [
+    'uses' => 'BlumellController@archivosGaleria',
+    'as' => 'galeria-blumell'
+]);
+
+Route::group(['prefix' => 'papelucho-blumell'], function () {
+    Route::get('', [
+        'uses' => 'BlumellController@archivosGaleria',
+        'as' => 'galerias-blumell'
+    ]);
+
+    Route::get('archivos/galeria/{galeria_id}', function ($galeria_id) {
+        return Archivo::with('pivot')->where('id', $galeria_id)
+            ->select('id as value', 'fileName as text')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+        
+        
+    });
+
+
+
+
+});
 /*-------------------------------------------------------------------*/
 /*                            MIDDLEWARES                            */
 /*-------------------------------------------------------------------*/
@@ -122,20 +145,29 @@ Route::group(['middleware' => 'auth'], function () {
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
 
 
-            Route::get('autocomplete/parvulos', function(){
+            Route::get('autocomplete/parvulos', function () {
                 $search = Request::get('search');
                 return App\Parvulo::where('full_name', 'LIKE', "%$search%")
                     ->orWhere('rut', 'LIKE', "%$search%")
                     ->get();
             });
 
-            Route::post('archivos/files',[
+            Route::post('archivos/files', [
                 'uses' => 'Cms\Admin\ArchivoController@files',
                 'as' => 'archivos-files'
             ]);
 
             Route::resource('archivos', 'Cms\Admin\ArchivoController');
             Route::resource('galerias', 'Cms\Admin\GaleriaController');
+
+
+            Route::get('galerias/jardin/{jardin_id}', function ($jardin_id) {
+                return Galeria::where('jardin_id', $jardin_id)
+                    ->select('id as value', 'name as text')
+                    ->orderBy('name', 'ASC')
+                    ->get();
+            });
+
             Route::resource('noticias', 'Cms\Admin\NoticiaController');
 
         });

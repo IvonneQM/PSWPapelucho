@@ -26,13 +26,12 @@
 @stop
 @section('general-content-1')
 
-    <div class="container" >
+    <div class="container">
         <div class="row-fluid">
             <div class="col-lg-12">
                 <div class="panel-heading"><h1 class="title">Contenido</h1></div>
                 <div class="col-lg-12 div-btn">
                     <div class="panel-primary">
-
 
 
                         <div class="panel-heading" id="panel-content-heading">
@@ -44,32 +43,31 @@
 
 
 
-                                {!! $archivos->render() !!}
-                            </div>
-
                         </div>
+
+                    </div>
+                    <div>
                         <div>
-                            <div>
-                                <div class="panel-primary">
-                                    <div class="panel-heading">
+                            <div class="panel-primary">
+                                <div class="panel-heading">
                                         Carga de contenido
                                     </div>
-                                    {!! Form::open([
-                                      'files' => 'true',
-                                      'class' => 'dropzone',
-                                      'id'    => 'dropzone',
-                                      'method'=> 'POST',
-                                      'route' => 'administrador.archivos.store']) !!}
+                                {!! Form::open([
+                                  'files' => 'true',
+                                  'class' => 'dropzone',
+                                  'id'    => 'dropzone',
+                                  'method'=> 'POST',
+                                  'route' => 'administrador.archivos.store']) !!}
 
 
-                                    <div class="panel-body">
-                                        <div class="container" style="width: 100%">
-                                            @include('cms.admin.archivos.partials.form')
-                                        </div>
-                                        {!! csrf_field() !!}
-                                        @include('cms.admin.archivos.create')
-                                        {!! Form::close() !!}
+
+                                <div class="panel-body">
+                                    <div class="container" style="width: 100%">
+                                        @include('cms.admin.archivos.partials.form')
                                     </div>
+                                    {!! csrf_field() !!}
+                                    @include('cms.admin.archivos.create')
+                                    {!! Form::close() !!}
                                 </div>
                             </div>
                         </div>
@@ -77,6 +75,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection
 
@@ -90,11 +89,41 @@
 
 
     <script type="text/javascript">
-        $(document).ready(function(){
-        $('select').select2();
-            $('#form select').change(function () {
-                ('#form').submit();
+        $(document).ready(function () {
+            $('select').select2({
+                allowClear: true,
+                placeholder:{
+                    id : "",
+                    text: "Seleccione una opción"
+
+                }
+
+            });
+
+            $.fn.populateSelect = function (values) {
+                var options = '';
+                $.each(values, function (key, row) {
+                    options += '<option value="' + row.value + '">' + row.text + ' </option>';
+                });
+                $(this).html(options);
+            }
+
+            $('#jardin_id').change(function () {
+
+                var jardin_id = $(this).val();
+
+                if (jardin_id == '') {
+                    $('#galeria_id').empty();
+                }
+                else {
+
+                    $.getJSON('galerias/jardin/' + jardin_id, null, function (values) {
+                        $('#galeria_id').populateSelect(values);
+                    });
+                }
             })
+
+
         });
     </script>
 @endsection

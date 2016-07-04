@@ -24,7 +24,7 @@ class ArchivoController extends Controller
      */
     public function index()
     {
-        $archivos = Archivo::orderBy('id', 'DESC')->paginate(12);
+        $archivos = null;
         $galerias=Galeria::with('archivos')->get();
         $jardines=Jardin::with('archivos')->get();
         $niveles=Nivel::with('archivos')->get();
@@ -37,7 +37,6 @@ class ArchivoController extends Controller
     public function files(Request $request)
     {
         $method = $request->get('type');
-
         if(
             ! empty($method)
         )

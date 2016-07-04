@@ -23,8 +23,7 @@ class GaleriaController extends Controller
         $jardines = Jardin::get();
         return view('cms.admin.galerias.lista', compact('galerias','jardines'));
     }
-
-
+    
     /**
      * Show the form for creating a new resource.
      *

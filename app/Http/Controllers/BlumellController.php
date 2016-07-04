@@ -11,14 +11,24 @@ class BlumellController extends Controller {
 
 	public function index()
 	{
-		$galerias = Galeria::orderBy('id', 'DESC')->get();
-		return view('papelucho-blumell', compact('galerias', 'archivos'));
+		$galerias = null; //Galeria::orderBy('id', 'DESC')->get();
+		return view('papelucho-blumell', compact('galerias'));
+	}
+
+	public function galeriasBlummel()
+	{
 	}
 
 	public function archivosGaleria(Request $request)
 	{
-		$busquedaGaleria = Galeria::find($request->get('galeria'));
+		$galerias = Galeria::with('jardin')->with('archivos')
+            ->where('jardin_id',2)
+            ->orderBy('updated_at', 'DESC')
+            ->get();
 
-		return view('galeria-blumell', compact('busquedaGaleria'));
+		return view('papelucho-blumell', compact('galerias'));
+
 	}
+
+
 }

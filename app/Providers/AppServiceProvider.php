@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\ViewComposer\MakeModelForm;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->make('view')->composer(
+            ['cms/admin/archivos/list'],
+            MakeModelForm::class
+
+
+        );
     }
 
     /**

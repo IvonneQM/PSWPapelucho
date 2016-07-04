@@ -115,7 +115,10 @@ return [
         'name' => 'nombre',
         'full name' => 'nombre completo',
         'email' => 'correo electrónico',
-        'type,galerias-jardines' => ''
+        'type,galerias-jardines' => '',
+        'galeria_id' => 'Galería',
+        'jardin_id' => 'Jardín'
+
 
     ],
 

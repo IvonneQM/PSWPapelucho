@@ -1,4 +1,27 @@
 
+$(window).load(function(){
+
+
+    accept = "image/*";
+        hiddenInputContainer = false;
+    $('#archivosTabs').data('type','galerias-jardines');
+
+    Dropzone.forElement(document.getElementById('dropzone')).hiddenFileInput.setAttribute('accept', accept);
+    $.ajax({
+        url     : $('#row-thumbnails').data('url'),
+        type    : 'POST',
+        data    : {
+            type: $('#archivosTabs').data('type')
+        },
+        dataType: 'html'
+    }).done(function (d) {
+        $('#row-thumbnails').html(d);
+    });
+    console.log($('#archivosTabs').data('type'));
+
+
+});
+
 
 $(function(){
     Dropzone.options.dropzone = {
@@ -14,11 +37,10 @@ $(function(){
         maxFiles        : 20,
         addRemoveLinks  : true,
         dictRemoveFile  : 'Eliminar',
-        hiddenInputContainer: true,
 
 
         init: function () {
-            var submitButton = document.querySelector("#guardar-archivos")
+            var submitButton = document.querySelector("#guardar-archivos"),
 
             dropzoneImagenes = this;
 
@@ -61,31 +83,33 @@ $(function(){
     }
 
         $('body').on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
-            e.preventDefault();
             console.log($(this).data('type'));
-            if ( dropzoneImagenes.files.length > 0)
-            {
-                swal({
-                        title             : "¿Està seguro de abandonar el item actual?",
-                        text              : "Perderá los cambios",
-                        type              : "warning",
-                        showCancelButton  : true,
-                        confirmButtonClass: "btn-danger",
-                        confirmButtonText : "Si",
-                        cancelButtonText  : "No",
-                        closeOnConfirm    : false,
-                        closeOnCancel     : true
-                    },
-                    function (isConfirm) {
-                        if (isConfirm) {
-                            dropzoneImagenes.removeAllFiles();
-                            swal.close();
-                        } else {
-                            swal.close();
-                            $(this).data('type').active;
-                        }
-                    });
-            }
+
+            /*  e.preventDefault();
+              if ( dropzoneImagenes.files.length > 0)
+              {
+                  swal({
+                          title             : "¿Està seguro de abandonar el item actual?",
+                          text              : "Perderá los cambios",
+                          type              : "warning",
+                          showCancelButton  : true,
+                          confirmButtonClass: "btn-danger",
+                          confirmButtonText : "Si",
+                          cancelButtonText  : "No",
+                          closeOnConfirm    : false,
+                          closeOnCancel     : true
+                      },
+                      function (isConfirm) {
+                          if (isConfirm) {
+                              dropzoneImagenes.removeAllFiles();
+                              swal.close();
+                          } else {
+                              swal.close();
+                             // $(this).data('type').active;
+                          }
+                      });
+              }
+              */
 
             var accept = '';
             switch($(this).data('type')){

@@ -21,30 +21,11 @@
 
             <div class="col-lg-8 conteiner-option">
 
-                {!! Form::open (['id' => 'form'])!!}
-                <div class="form-group">
+               {!! Form::open($makeForm, ['method'=>'get','id' => 'searchform', 'class' => 'form'])!!}
 
-                    <label for="sel1">Galería:</label>
-                    <select name="galerias" class="form-control" id="sel1">
-                        @foreach($galerias as $galeria)
+                {!! Field::select('jardin_id',$jardines,['name' => 'jardines' ])!!}
+                {!! Field::select('galeria_id',$galerias,['name' => 'galerias' ]) !!}
 
-                            <option value="{{$galeria->getKey()}}">{{$galeria->name}} </option>
-
-                        @endforeach
-                    </select>
-
-
-                    {!!Form::label('name','Jardin: ')!!}
-                    <select name="jardines" class="form-control" id="sel2">
-                        @foreach($jardines as $jardin)
-
-                            <option value="{{$jardin->getKey()}}">{{$jardin->name}}</option>
-
-                        @endforeach
-
-                    </select>
-
-                </div>
                 {!! Form::close()!!}
 
                 {{--button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>--}}
