@@ -107,18 +107,24 @@ Route::get('papelucho-blumell', 'BlumellController@index');
 
 Route::group(['prefix' => 'papelucho-blumell'], function () {
 
-    Route::get('archivos/galeria/{galeria_id}', function ($galeria_id) {
-        return Archivo::with('pivot')->where('id', $galeria_id)
-            ->select('id as value', 'url as text')
-            ->orderBy('created_at', 'DESC')
-            ->get();
-        
-        
-    });
 
 
 
 
+
+});
+
+Route::get('archivos/galeria/{galeria_id}', function ($galeria_id) {
+    return DB::table('archivos')
+        ->join('archivables','archivable_id', 'ar')
+
+
+    ('galerias', function($q){
+        $q->where('id', $this->getKey());
+    })
+        ->select('id as value', 'url as text')
+        ->orderBy('created_at', 'DESC')
+        ->get();
 });
 /*-------------------------------------------------------------------*/
 /*                            MIDDLEWARES                            */

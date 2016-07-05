@@ -28,14 +28,14 @@
 
 {!!Form::close()!!}
 
-@section('meta-footer')
+
 
     <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-    {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
+    {!! Html::style('css/select2.min.css') !!}
     {!! Html::script('js/select2.min.js') !!}
+    {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
 
-
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
         $('select').select2({
             allowClear : true,
@@ -71,4 +71,5 @@
         })
     });
 </script>
-@endsection
+
+
