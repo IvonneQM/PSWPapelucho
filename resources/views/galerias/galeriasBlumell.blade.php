@@ -35,7 +35,6 @@
     {!! Html::style('css/select2.min.css') !!}
     {!! Html::script('js/select2.min.js') !!}
     {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
-
 <script type="text/javascript">
     $(document).ready(function () {
         $('select').select2({
@@ -55,7 +54,7 @@
 
             });
 
-                $('#archivos').append(options);
+            $('#archivos').append(options);
             console.log(options);
             //$(this).html(options);
         }
@@ -67,7 +66,7 @@
             }
             else {
                 $.getJSON('archivos/galeria/' + galeria_id, null, function (values) {
-                    $('#galeria_id').populateSelect(values);
+                    $('#archivos').populateSelect(values);
                 });
             }
         })

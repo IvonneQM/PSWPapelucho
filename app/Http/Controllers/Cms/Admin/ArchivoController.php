@@ -64,6 +64,7 @@ class ArchivoController extends Controller
             $archivo = new Archivo();
 
             $fileName = $file->getClientOriginalName();
+            $fileName = $request->sanitize_cadena($fileName);
             $fileSize = $file->getClientSize();
             $fileType = $file->guessExtension();
 
