@@ -58,25 +58,50 @@ class CreateArchivoRequest extends Request
     }
 
 
-    function sanitize_cadena($s)
+    function sanitize_cadena($string)
     {
-        $s = mb_convert_encoding($s, 'UTF-8','');
-        $s = preg_replace("/á|à|â|ã|ª/","a",$s);
-        $s = preg_replace("/Á|À|Â|Ã/","A",$s);
-        $s = preg_replace("/é|è|ê/","e",$s);
-        $s = preg_replace("/É|È|Ê/","E",$s);
-        $s = preg_replace("/í|ì|î/","i",$s);
-        $s = preg_replace("/Í|Ì|Î/","I",$s);
-        $s = preg_replace("/ó|ò|ô|õ|º/","o",$s);
-        $s = preg_replace("/Ó|Ò|Ô|Õ/","O",$s);
-        $s = preg_replace("/ú|ù|û/","u",$s);
-        $s = preg_replace("/Ú|Ù|Û/","U",$s);
-        $s = str_replace(" ","_",$s);
-        $s = str_replace("ñ","n",$s);
-        $s = str_replace("Ñ","N",$s);
+        $string = trim($string);
 
-        $s = preg_replace('/[^a-zA-Z0-9_.-]/', '', $s);
-        return $s;
+        $string = str_replace(
+            array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),
+            array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),
+            $string
+        );
+
+        $string = str_replace(
+            array('é', 'è', 'ë', 'ê', 'É', 'È', 'Ê', 'Ë'),
+            array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E'),
+            $string
+        );
+
+        $string = str_replace(
+            array('í', 'ì', 'ï', 'î', 'Í', 'Ì', 'Ï', 'Î'),
+            array('i', 'i', 'i', 'i', 'I', 'I', 'I', 'I'),
+            $string
+        );
+
+        $string = str_replace(
+            array('ó', 'ò', 'ö', 'ô', 'Ó', 'Ò', 'Ö', 'Ô'),
+            array('o', 'o', 'o', 'o', 'O', 'O', 'O', 'O'),
+            $string
+        );
+
+        $string = str_replace(
+            array('ú', 'ù', 'ü', 'û', 'Ú', 'Ù', 'Û', 'Ü'),
+            array('u', 'u', 'u', 'u', 'U', 'U', 'U', 'U'),
+            $string
+        );
+
+        $string = str_replace(
+            array('ñ', 'Ñ', 'ç', 'Ç'),
+            array('n', 'N', 'c', 'C',),
+            $string
+        );
+
+
+
+
+    return $string;
     }
 
 }
