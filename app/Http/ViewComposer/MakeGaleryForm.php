@@ -14,7 +14,7 @@ class MakeGaleryForm
         $makeGaleryForm = Request::only('archivo_id', 'galeria_id');
 
         $galerias = Galeria::whereHas('archivos', function ($q) {
-            $q->where('jardin_id',1);
+            $q->where('jardin_id',2);
             $q->where('publish','Si');
         })
             ->orderBy('updated_at', 'DESC')

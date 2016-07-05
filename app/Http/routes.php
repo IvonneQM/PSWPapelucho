@@ -114,13 +114,10 @@ Route::group(['prefix' => 'papelucho-blumell'], function () {
 
 });
 
+
 Route::get('archivos/galeria/{galeria_id}', function ($galeria_id) {
-    return DB::table('archivos')
-        ->join('archivables','archivable_id', 'ar')
-
-
-    ('galerias', function($q){
-        $q->where('id', $this->getKey());
+    return Archivo::whereHas('galerias', function($q) use ($galeria_id){
+        $q->where('id', $galeria_id);
     })
         ->select('id as value', 'url as text')
         ->orderBy('created_at', 'DESC')
