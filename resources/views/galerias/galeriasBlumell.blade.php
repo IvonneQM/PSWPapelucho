@@ -17,6 +17,7 @@
 {!! Field::select('galeria_id',$galerias,['name' => 'galerias' ])!!}
 
 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6" id="#archivos">
+
 </div>
  {{--@foreach($galerias as $galeria)
    <h1> {{$galeria -> name}}</h1>
@@ -53,7 +54,7 @@
                         '</a>'
 
             });
-            $("#archivos").append(options);
+            $('body').append(options);
             console.log(options);
             //$(this).html(options);
         }
