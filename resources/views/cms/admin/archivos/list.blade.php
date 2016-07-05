@@ -70,11 +70,6 @@
     <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
     {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
     {!! Html::script('js/select2.min.js') !!}
-
-
-    <script type="text/javascript">
-
-    </script>
 @endsection
 
 

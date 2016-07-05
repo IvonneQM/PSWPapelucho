@@ -15,15 +15,25 @@
 
 {!! Form::open( $makeGaleryForm, ['method'=>'get','id' => 'searchform', 'class' => 'form'])!!}
 {!! Field::select('galeria_id',$galerias,['name' => 'galerias' ])!!}
-@foreach($galerias as $galeria)
 
-
-    <h1> {{$galeria -> name}}</h1>
+<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6" id="#archivos">
+</div>
+ {{--@foreach($galerias as $galeria)
+   <h1> {{$galeria -> name}}</h1>
     @foreach($galeria->archivos as $archivo)
         <h5> {{$archivo -> fileName}}</h5>
     @endforeach
-@endforeach
+@endforeach--}}
+
+
 {!!Form::close()!!}
+
+@section('meta-footer')
+
+    <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
+    {!! Html::script('js/select2.min.js') !!}
+
 
 <script>
     $(document).ready(function () {
@@ -38,21 +48,27 @@
         $.fn.populateSelect = function (values) {
             var options = '';
             $.each(values, function (key, row) {
-                options += '<option value="' + row.value + '">' + row.text + ' </option>';
-            });
-            $(this).html(options);
-        }
-        $('#jardin_id').change(function () {
-            var jardin_id = $(this).val();
+                options += '<a href="../'+ row.text +'" class="thumbnail" data-gallery>' +
+                        '<img src="' + row.text +'">' +
+                        '</a>'
 
-            if (jardin_id == '') {
-                $('#galeria_id').empty();
+            });
+            $("#archivos").append(options);
+            console.log(options);
+            //$(this).html(options);
+        }
+        $('#galeria_id').change(function () {
+            var galeria_id = $(this).val();
+
+            if (galeria_id == '') {
+                $('#archivos').empty();
             }
             else {
-                $.getJSON('galerias/jardin/' + jardin_id, null, function (values) {
+                $.getJSON('archivos/galeria/' + galeria_id, null, function (values) {
                     $('#galeria_id').populateSelect(values);
                 });
             }
         })
     });
 </script>
+@endsection

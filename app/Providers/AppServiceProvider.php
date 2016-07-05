@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use app\Http\ViewComposer\MakeGaleryForm;
+use App\Http\ViewComposer\MakeGaleryForm;
 use App\Http\ViewComposer\MakeModelForm;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;

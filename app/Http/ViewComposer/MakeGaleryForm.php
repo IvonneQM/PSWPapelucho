@@ -13,7 +13,11 @@ class MakeGaleryForm
     {
         $makeGaleryForm = Request::only('archivo_id', 'galeria_id');
 
-        $galerias = Galeria::orderBy('updated_at', 'DESC')
+        $galerias = Galeria::whereHas('archivos', function ($q) {
+            $q->where('jardin_id',2);
+            $q->where('publish','Si');
+        })
+            ->orderBy('updated_at', 'DESC')
             ->lists('name', 'id')
             ->toArray();
 
@@ -23,8 +27,9 @@ class MakeGaleryForm
 
             $archivos = Archivo::where('archivo_id', $makeGaleryForm['archivo_id'])
                 ->orderBy('created_at', 'DESC')
-                ->lists('fileName', 'url', 'id')
+                ->lists('url', 'id')
                 ->toArray();
+
         }
         $view->with(compact('makeGaleryForm', 'archivos', 'galerias'));
     }

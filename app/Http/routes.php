@@ -90,7 +90,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::get('mi-jardin', 'MiJardinController@index');
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
 Route::post('send', ['as' => 'send', 'uses' => 'LasColoniasController@send']);
-Route::get('papelucho-blumell', 'BlumellController@index');
+
 
 /*Route::get('galerias', function () {
     return view('cms/admin/galerias');
@@ -103,16 +103,13 @@ Route::get('archivos?galeria={galeria}', [
     'as' => 'galeria-blumell'
 ]);
 
-Route::group(['prefix' => 'papelucho-blumell'], function () {
-    Route::get('/', [
-        'uses' => 'BlumellController@archivosGaleria',
-        'as' => 'galerias-blumell'
-    ]);
+Route::get('papelucho-blumell', 'BlumellController@index');
 
+Route::group(['prefix' => 'papelucho-blumell'], function () {
 
     Route::get('archivos/galeria/{galeria_id}', function ($galeria_id) {
         return Archivo::with('pivot')->where('id', $galeria_id)
-            ->select('id as value', 'fileName as text')
+            ->select('id as value', 'url as text')
             ->orderBy('created_at', 'DESC')
             ->get();
         
