@@ -23,7 +23,10 @@ class BlumellController extends Controller {
 	public function archivosGaleria(Request $request)
 	{
 
-		$galerias = Galeria::get()->where('jardin_id',1);
+		$galerias = Galeria::whereHas('archivos', function ($q) {
+            $q->where('jardin_id',2);
+            $q->where('publish','Si');
+        })->get();
         return view('papelucho-blumell', compact('galerias'));
 
 	}

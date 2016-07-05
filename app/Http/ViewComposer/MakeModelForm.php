@@ -26,31 +26,13 @@ class MakeModelForm
         if ($makeForm['jardin_id'] != null) {
 
             $galerias = Galeria::where('jardin_id', $makeForm['jardin_id'])
-                ->orderBy('name', 'ASC')
+                ->orderBy('updated_at', 'DESC')
                 ->lists('name', 'id')
                 ->toArray();
         }
-
-
-/*
-        $galerias = Galeria::orderBy('name', 'ASC')
-            ->lists('name', 'id')
-            ->toArray();
-
-        $jardines = array();
-
-        if ($makeForm['galeria_id'] != null) {
-
-            $jardines = Jardin::where('galeria_id', $makeForm['galeria_id'])
-                ->orderBy('name', 'ASC')
-                ->lists('name', 'id')
-                ->toArray();
-        }*/
-
         $view->with(compact('makeForm', 'galerias', 'jardines'));
-
-
-
     }
+
+
 
 }

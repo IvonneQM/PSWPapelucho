@@ -73,35 +73,7 @@
 
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('select').select2({
-                allowClear: true,
-                placeholder:{
-                    id : "",
-                    text: "Seleccione una opción"
-                }
 
-            });
-            $.fn.populateSelect = function (values) {
-                var options = '';
-                $.each(values, function (key, row) {
-                    options += '<option value="' + row.value + '">' + row.text + ' </option>';
-                });
-                $(this).html(options);
-            }
-            $('#jardin_id').change(function () {
-                var jardin_id = $(this).val();
-
-                if (jardin_id == '') {
-                    $('#galeria_id').empty();
-                }
-                else {
-                    $.getJSON('galerias/jardin/' + jardin_id, null, function (values) {
-                        $('#galeria_id').populateSelect(values);
-                    });
-                }
-            })
-        });
     </script>
 @endsection
 
