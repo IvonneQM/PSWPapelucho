@@ -16,7 +16,7 @@
 {!! Form::open( $makeGaleryForm, ['method'=>'get','id' => 'searchform', 'class' => 'form'])!!}
 {!! Field::select('galeria_id',$galerias,['name' => 'galerias' ])!!}
 
-<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6" id="#archivos">
+<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6" id="archivos">
 
 </div>
  {{--@foreach($galerias as $galeria)
@@ -54,7 +54,8 @@
                         '</a>'
 
             });
-            $('body').append(options);
+
+                $('#archivos').append(options);
             console.log(options);
             //$(this).html(options);
         }
