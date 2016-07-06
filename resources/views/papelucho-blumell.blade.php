@@ -126,3 +126,7 @@
 
     {!! Form::close() !!}
 @stop
+@section('meta-footer')
+
+    {!! Html::script('js/contacto.js') !!}
+    @endsection

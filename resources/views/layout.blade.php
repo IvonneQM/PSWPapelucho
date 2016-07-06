@@ -8,6 +8,7 @@
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/normalize.css')!!}
     {!!Html::style('css/style.css')!!}
+    {!!Html::style('css/sweetalert.css')!!}
 
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
@@ -15,6 +16,7 @@
     {!!Html::style('css/font-awesome.min.css')!!}
     {!!Html::script('js/jquery-2.2.0.js')!!}
     {!!Html::script('js/jquery.cycle2.min.js')!!}
+    {!!Html::script('js/sweetalert.js')!!}
     {!!Html::script('js/menu.js')!!}
     {!!Html::script('js/login.js')!!}
 
@@ -103,7 +105,7 @@
         &copy;2016 <a href="https://www.jardinpapelucho.cl">Jardín Papelucho</a>, Todos los derechos reservados.
         <span id="computec-logo"><a href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a></span>
     </p>
-
+@yield('meta-footer')
 </footer>
 
 </body>
