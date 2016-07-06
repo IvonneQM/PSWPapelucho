@@ -7,8 +7,6 @@
 @stop
 
 @section('article')
-
-
     <h1 class= "title" id="title-blumell">Papelucho Blumell</h1>
     <div class="accordion" id="accordion">
         <div>
@@ -87,14 +85,14 @@
                 <p>Adquirir gradualmente una autonomía que le permita un desarrollo integral en los ámbitos de: formación personal y social, comunicación, relación con el medio natural, social y cultural, propiciando un clima de confianza seguridad y afectividad.</p>
             </div>
         </div>
-        <div>
-            @include(('galerias.galeriasBlumell'))
-        </div>
+
     </div>
+    <div>
+        <h1 class= "title" id="title-blumell">Galerías</h1>
 
-
+        @include(('galerias.galeriasBlumell'))
+    </div>
 @stop
-
 @section('aside')
     <div id="cuerdas">
         {!!Html::image('images/cuerdas.png')!!}

@@ -14,7 +14,8 @@
         "barryvdh/laravel-debugbar": "^2.2",
         "intervention/image": "^2.3",
         "illuminate/html": "~5.0",
-        "styde/html": "~1.0"
+        "styde/html": "~1.0",
+        "uxweb/sweet-alert": "~1.1"
 
 
     },

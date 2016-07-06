@@ -158,6 +158,7 @@ return [
         GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
        // \App\Providers\ViewServiceProvider::class,
 
@@ -209,7 +210,7 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'Alert'     => Styde\Html\Facades\Alert::class,
+       // 'Alert'     => Styde\Html\Facades\Alert::class,
         'Field'     => Styde\Html\Facades\Field::class,
         'Menu'      => Styde\Html\Facades\Menu::class,
         'Form' 		=> Collective\Html\FormFacade::class,
@@ -219,6 +220,7 @@ return [
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Image'     => Intervention\Image\Facades\Image::class,
         'Google'    => App\Helpers\Google::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class
     ],
 
 ];

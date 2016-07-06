@@ -12,7 +12,7 @@
 
 
 {!! Form::open( $makeGaleryForm, ['method'=>'get','id' => 'searchform', 'class' => 'form'])!!}
-{!! Field::select('galeria_id',$galerias,['name' => 'galerias' ])!!}
+{!! Field::select('galeria_id',$galerias,['name' => 'galerias', 'class' =>'form' ])!!}
 <div class="row row-thumbnails">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6" id="links">
 

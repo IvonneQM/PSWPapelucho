@@ -89,7 +89,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('mi-jardin', 'MiJardinController@index');
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
-Route::post('send', ['as' => 'send', 'uses' => 'LasColoniasController@send']);
+
 
 
 /*Route::get('galerias', function () {
@@ -105,13 +105,13 @@ Route::get('archivos?galeria={galeria}', [
 
 Route::get('papelucho-blumell', 'BlumellController@index');
 
-Route::group(['prefix' => 'papelucho-blumell'], function () {
+Route::group(['prefix' => 'papelucho-las-colonias'], function () {
+    Route::resource('', 'LasColoniasController');
 
-
-
-
-
-
+    Route::post('send', [
+        'as' => 'send',
+        'uses' => 'LasColoniasController@send'
+    ]);
 });
 
 
