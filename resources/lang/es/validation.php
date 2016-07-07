@@ -117,7 +117,9 @@ return [
         'email' => 'correo electrónico',
         'type,galerias-jardines' => '',
         'galeria_id' => 'Galería',
-        'jardin_id' => 'Jardín'
+        'jardin_id' => 'Jardín',
+        'msj' => 'mensaje',
+        'phone' => 'teléfono'
 
 
     ],

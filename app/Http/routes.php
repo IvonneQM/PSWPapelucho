@@ -103,15 +103,24 @@ Route::get('archivos?galeria={galeria}', [
     'as' => 'galeria-blumell'
 ]);
 
-Route::get('papelucho-blumell', 'BlumellController@index');
+Route::group(['prefix' => 'papelucho-blumell'], function () {
+    Route::resource('', 'BlumellController');
+    Route::post('send', [
+        'as' => 'blumell-send',
+        'uses' => 'BlumellController@send'
+    ]);
+
+});
 
 Route::group(['prefix' => 'papelucho-las-colonias'], function () {
     Route::resource('', 'LasColoniasController');
 
     Route::post('send', [
-        'as' => 'send',
+        'as' => 'las-colonias-send',
         'uses' => 'LasColoniasController@send'
     ]);
+
+
 });
 
 

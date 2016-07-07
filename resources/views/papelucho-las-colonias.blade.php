@@ -130,11 +130,11 @@
     </div>
     <h3 class="side-section-title">Contáctenos</h3>
 
-    {!! Form::open(['route' => 'send', 'method' => 'POST','class'=>'contact-form','id'=>'formContact','role' => 'action','send']) !!}
+    {!! Form::open(['route' => 'las-colonias-send', 'method' => 'POST','class'=>'contact-form','id'=>'formContact','role' => 'action','send']) !!}
     {!! csrf_field() !!}
     <div class="form-group col-md-4">
         {{--{!! Form::label('name', 'Nombre:') !!}--}}
-        {!! Form::text('name', null , ['placeholder' => 'Nombre', 'class' => 'form-control']) !!}
+        {!! Form::text('name', null , ['placeholder' => 'Nombre', 'class' => 'form-control','id' => 'textName']) !!}
     </div>
 
     <div class="form-group col-md-4">
@@ -149,15 +149,12 @@
 
     <div class="form-group col-md-4">
         {{-- {!! Form::label('message', 'Mensaje:') !!}--}}
-        {!! Form::textarea('subject', null, ['placeholder' => 'Mensaje', 'class' => 'form-control']) !!}
-        {!! Alert::render() !!}
-    </div>
+        {!! Form::textarea('msj', null, ['placeholder' => 'Mensaje', 'class' => 'form-control']) !!}
 
+    </div>
     <div class="form-group col-md-4">
         {!! Form::submit('Enviar', ['class' => 'button', 'id'=>'contact-button'])!!}
-
     </div>
-
     {!! Form::close() !!}
 @stop
 

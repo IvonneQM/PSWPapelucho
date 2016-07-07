@@ -27,7 +27,7 @@ class SendMailRequest extends Request
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
-            'subject' => 'required'
+            'msj' => 'required'
         ];
     }
 }

@@ -1,5 +1,6 @@
 @extends('layout')
 @section('meta')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {!!Html::script('js/collapse.js')!!}
 @stop
 @section('page-title')
@@ -132,34 +133,34 @@
     </div>
     <h3 class="side-section-title">Contáctenos</h3>
 
-    {!! Form::open(array('url' => url('foo/bar'), 'class'=>'contact-form')) !!}
+    {!! Form::open(['route' => 'blumell-send', 'method' => 'POST','class'=>'contact-form','id'=>'formContact','role' => 'action','send']) !!}
+    {!! csrf_field() !!}
     <div class="form-group col-md-4">
         {{--{!! Form::label('name', 'Nombre:') !!}--}}
-        {!! Form::text('name', null , array('placeholder' => 'Nombre', 'class' => 'form-control')) !!}
+        {!! Form::text('name', null , ['placeholder' => 'Nombre', 'class' => 'form-control','id' => 'textName']) !!}
     </div>
 
     <div class="form-group col-md-4">
         {{--{!! Form::label('email', 'Email:') !!}--}}
-        {!! Form::text('email', null, array('placeholder' => 'Email', 'class' => 'form-control')) !!}
+        {!! Form::text('email', null, ['placeholder' => 'Email', 'class' => 'form-control']) !!}
     </div>
 
     <div class="form-group col-md-4">
         {{--}{!! Form::label('phone', 'Teléfono:') !!}--}}
-        {!! Form::text('phone', null, array('placeholder' => 'Teléfono', 'class' => 'form-control')) !!}
+        {!! Form::text('phone', null, ['placeholder' => 'Teléfono', 'class' => 'form-control']) !!}
     </div>
 
     <div class="form-group col-md-4">
         {{-- {!! Form::label('message', 'Mensaje:') !!}--}}
-        {!! Form::textarea('message', null, array('placeholder' => 'Mensaje', 'class' => 'form-control')) !!}
-    </div>
+        {!! Form::textarea('msj', null, ['placeholder' => 'Mensaje', 'class' => 'form-control']) !!}
 
+    </div>
     <div class="form-group col-md-4">
         {!! Form::submit('Enviar', ['class' => 'button', 'id'=>'contact-button'])!!}
     </div>
-
     {!! Form::close() !!}
 @stop
-@section('meta-footer')
 
+@section('meta-footer')
     {!! Html::script('js/contacto.js') !!}
 @endsection

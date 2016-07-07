@@ -1,7 +1,7 @@
 /**
  * Created by Inger on 05-07-2016.
  */
-$(document).ready(function (e) {
+$(document).ready(function () {
 
     $.ajaxSetup({
         headers: {
@@ -11,7 +11,6 @@ $(document).ready(function (e) {
     $(document).on('submit', '#formContact', function (e) {
         e.preventDefault();
         $.ajax({
-
             method  : $(this).attr('method'),
             type    : "POST",
             token   : $('input[name="_token"]').val(),
@@ -21,26 +20,22 @@ $(document).ready(function (e) {
             dataType: "json",
 
             success : function (data) {
-
+                $('#formContact').trigger('reset');
+                $('#textName').focus();
+                swal("Mensaje enviado!",
+                    "Su mensaje ha sido enviado con éxito",
+                    "success");
             },
             error  : function (msj) {
                 var name    = msj.responseJSON.name;
                 var email   = msj.responseJSON.email;
                 var phone   = msj.responseJSON.phone;
-                var subject = msj.responseJSON.subject;
+                var subject = msj.responseJSON.msj;
 
-                if (name == null) {
-                    name = ''
-                }
-                if (email == null) {
-                    email = ''
-                }
-                if (phone == null) {
-                    phone = ''
-                }
-                if (subject == null) {
-                    subject = ''
-                }
+                if (name == null) {name = ''}
+                if (email == null) {email = ''}
+                if (phone == null) {phone = ''}
+                if (subject == null) {subject = ''}
 
                 var concatenado = name + '\n' + email + '\n' + phone + '\n' + subject;
                 if (concatenado == '') {
