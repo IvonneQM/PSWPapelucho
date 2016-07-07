@@ -55,10 +55,16 @@ h3{
     margin: 5px 0 0 0;
 }
 
+h4 span.cursive-title {
+    font-size: 35px !important;
+}
+
 header{
     background: #60BB46;
     height: 165px;
 }
+
+label{  font-weight: 100;}
 
 li{ list-style:none; }
 
@@ -161,12 +167,16 @@ ul{
     text-align:left;
 }
 
-.accordion-item-title, .accordion-item-content {
-    border: 1px solid #cccccc;
+.accordion-item-title, .accordion-item-content , .galery-container{
     margin: 0 auto;
     padding: 10px;
     width:90%;
 }
+
+.accordion-item-title, .accordion-item-content {
+    border: 1px solid #cccccc;
+}
+
 
 .accordion-item-title a{
     color: #2F2E7E;
@@ -184,6 +194,7 @@ ul{
 }
 .accordion-item-content{
     display: none;
+    padding: 25px 0;
     text-align: justify;
 }
 
@@ -284,6 +295,7 @@ ul{
 
 .cycle-slideshow{
     display:block;
+    height:435px;
     max-width:100%;
     max-height:435px;
     overflow: hidden;
@@ -317,9 +329,14 @@ ul{
 }
 
 
-.img-slide{
-    width:100%;
-}
+.img-slide{ width:100%; }
+
+
+.img-slide-middle { top: -150px !important; }
+
+.img-slide-middle-top{ top: -300px !important; }
+
+.img-slide-middle-bottom { top: -80px !important;}
 
 .items{
     color:black;
@@ -392,6 +409,13 @@ ul{
     float:left;
 }
 
+.principal-title {
+    font-size: 48px;
+    margin: 60px 25px 25px!important;
+    text-align: left;
+    width: 300px;
+}
+
 .span-ico-footer img{
     display: inline-block;
     margin:0 10px;
@@ -436,6 +460,13 @@ ul{
     margin: -15px auto;
     text-align: center;
     width: 150px;
+}
+
+div.two-borders-box{
+    border-top: 2px solid #00A04A;
+    border-bottom: 2px solid #00A04A;
+    margin: 80px 20px 20px 50px;
+    padding: 5px 0;
 }
 
 .two-borders-box li{
@@ -615,6 +646,10 @@ ul{
 /*BOOTSTRAP*/
 .form-group{
  width:100%;
+}
+
+@media screen and (max-width:1120px ) {
+/*VER LOS TAMAÑOS DE IMAGENES EN SLIDER*/
 }
 
 @media screen and (max-width:960px ) {

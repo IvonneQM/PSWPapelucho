@@ -58,10 +58,11 @@
         <span class="cycle-next">&#9002;</span>
         <span class="cycle-pager"></span>
 
-        {!!Html::image('images/img1.jpg','img1' ,array('class' => 'img-slide'))!!}
-        {!!Html::image('images/img2.jpg','img2', array('class' => 'img-slide'))!!}
-        {!!Html::image('images/img3.jpg','img3', array('class' => 'img-slide'))!!}
-        {!!Html::image('images/img4.jpg','img4', array('class' => 'img-slide'))!!}
+        {!!Html::image('images/carrusel/Papelucho26.JPG','img1', array('class' => 'img-slide img-slide-middle'))!!}
+        {!!Html::image('images/carrusel/Papelucho5.JPG','img2', array('class' => 'img-slide img-slide-middle-top'))!!}
+        {!!Html::image('images/carrusel/17.JPG','img3' ,array('class' => 'img-slide img-slide-middle-top'))!!}
+        {!!Html::image('images/carrusel/Papelucho8.JPG','img4', array('class' => 'img-slide img-slide-middle'))!!}
+        {!!Html::image('images/carrusel/Papelucho201.JPG','img5', array('class' => 'img-slide img-slide-middle-bottom'))!!}
     </div>
 
 </header>
