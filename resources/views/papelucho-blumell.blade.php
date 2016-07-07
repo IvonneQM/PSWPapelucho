@@ -13,6 +13,9 @@
         <div>
             <div class="accordion-item-title"><a>Síntesis metodológica</a><i class="fa fa-chevron-down"></i></div>
             <div class="accordion-item-content">
+                <div class="accordion-container-img">
+                {!!Html::image('images/estaticas/4untitled.png','jardin blumell')!!}
+                </div>
                 <p class="content">El trabajo pedagógico, tanto en la Escuela de Párvulos como en la Sala Cuna, se
                     desarrolla de acuerdo
                     a las nuevas bases curriculares de la Educación Parvularia, complementadas con la utilización de los
@@ -60,10 +63,11 @@
             </div>
         </div>
         <div>
-            <div class="accordion-item-title">
-                <a>Sala cuna lactante menor</a><i class="fa fa-chevron-down"></i>
-            </div>
+            <div class="accordion-item-title"><a>Sala cuna lactante menor</a><i class="fa fa-chevron-down"></i></div>
             <div class="accordion-item-content">
+                <div class="accordion-container-img">
+                    {!!Html::image('images/estaticas/Papelucho3.JPG','lactante menor blumell',array('id'=>'lactante-menor'))!!}
+                </div>
                 <h4>Descripción</h4>
 
                 <p>Este nivel atiende a lactantes desde 84 días a 12 meses, los cuales son atendidos por una Educadora y
@@ -77,10 +81,11 @@
             </div>
         </div>
         <div>
-            <div class="accordion-item-title">
-                <a>Sala cuna lactante mayor</a><i class="fa fa-chevron-down"></i>
-            </div>
+            <div class="accordion-item-title"><a>Sala cuna lactante mayor</a><i class="fa fa-chevron-down"></i></div>
             <div class="accordion-item-content">
+                <div class="accordion-container-img">
+                    {!!Html::image('images/estaticas/19.JPG','lactante mayor blumell', (array('id'=>'lactante-mayor')))!!}
+                </div>
                 <h4>Descripción</h4>
                 <p>Este nivel se compone por lactantes de 12 a 24 meses de edad y es atendido por una Educadora y dos
                     Asistentes de Párvulos. Este grupo se caracteriza por adquirir progresivamente mayor seguridad y
@@ -91,10 +96,11 @@
             </div>
         </div>
         <div>
-            <div class="accordion-item-title">
-                <a>Medio menor</a><i class="fa fa-chevron-down"></i>
-            </div>
+            <div class="accordion-item-title"><a>Medio menor</a><i class="fa fa-chevron-down"></i></div>
             <div class="accordion-item-content">
+                <div class="accordion-container-img">
+                    {!!Html::image('images/estaticas/14.JPG','medio menor blumell', (array('id'=>'medio-mayor')))!!}
+                </div>
                 <h4>Descripción</h4>
                 <p>Este Nivel se compone de dos grupos que funcionan en ambas jornadas y atiende a párvulos entre los 2
                     y 2 años 11 meses, los cuales son atendidos por una Educadora y dos Asistentes de Párvulos en cada
@@ -106,10 +112,11 @@
             </div>
         </div>
         <div>
-            <div class="accordion-item-title">
-                <a>Medio mayor</a><i class="fa fa-chevron-down"></i>
-            </div>
+            <div class="accordion-item-title"><a>Medio mayor</a><i class="fa fa-chevron-down"></i></div>
             <div class="accordion-item-content">
+                <div class="accordion-container-img">
+                    {!!Html::image('images/estaticas/8.JPG','medio superior blumell')!!}
+                </div>
                 <h4>Descripción</h4>
                 <p>El nivel atiende a niños(as), cuyas edades fluctúan entre los 3 y 3 años 11 meses. Está a cargo de
                     una Educadora y una Asistente de Párvulos. </p>

@@ -160,6 +160,19 @@ ul{
     transition: all 0.4s ease;
 }
 
+.accordion-container-img {
+    max-height: 250px;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin: 0 25px;
+}
+
+.accordion-container-img img{
+    width: 100%;
+    top: -200px;
+    position: relative;
+}
+
 .accordion-item-title{
     border-top: 3px solid #F7EC3F !important;
     display: block;
@@ -341,6 +354,10 @@ ul{
 .items{
     color:black;
 }
+
+img#lactante-menor{ top:-65px ;}
+img#lactante-mayor{ top:-125px ; }
+img#medio-mayor{ top:-95px ; }
 
 .li-two-lines { line-height: 1.3em;}
 
