@@ -3,12 +3,14 @@
 <head>
     <title>@yield('title', 'Jardin infantil Papelucho')</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/normalize.css')!!}
     {!!Html::style('css/style.css')!!}
     {!!Html::style('css/sweetalert.css')!!}
+
 
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
@@ -27,8 +29,8 @@
 <header>
 
     <div class="logo">
-        <a href="#" >{!!Html::image('images/isologo.png', 'Isologo', array('id' => 'img-isologo'))!!}</a>
-        <a href="#" >{!!Html::image('images/logotipo.png', 'Logotipo', array('id' => 'img-logotipo'))!!}</a>
+        <a href="#">{!!Html::image('images/isologo.png', 'Isologo', array('id' => 'img-isologo'))!!}</a>
+        <a href="#">{!!Html::image('images/logotipo.png', 'Logotipo', array('id' => 'img-logotipo'))!!}</a>
         <div id="sidebar-btn">
             <a href="#">{!!Html::image('images/menu-icon.png', 'Icono Menu', array('id' => 'img-menu'))!!}</a>
         </div>
@@ -37,20 +39,20 @@
     {!!Html::image('images/fondo-arco-verde.png', 'Arco Verde', array('id' => 'img-arco-verde'))!!}
 
 
-   @include('auth.login')
+    @include('auth.login')
 
 
-<nav id="sidebar">
-    <ul>
-        <li>{!!HTML::linkAction('HomeController@index', 'Inicio',array(), array('class' => 'url-menu'))!!}</li>
-        <li>{!!HTML::linkAction('MiJardinController@index', 'Mi jardín',array(), array('class' => 'url-menu'))!!}</li>
+    <nav id="sidebar">
+        <ul>
+            <li>{!!HTML::linkAction('HomeController@index', 'Inicio',array(), array('class' => 'url-menu'))!!}</li>
+            <li>{!!HTML::linkAction('MiJardinController@index', 'Mi jardín',array(), array('class' => 'url-menu'))!!}</li>
 
 
-        <li class="li-two-lines">{!!HTML::linkAction('LasColoniasController@index', 'Papelucho Las Colonias',array(), array('class' => 'url-menu'))!!}</li>
+            <li class="li-two-lines">{!!HTML::linkAction('LasColoniasController@index', 'Papelucho Las Colonias',array(), array('class' => 'url-menu'))!!}</li>
 
-        <li class="li-two-lines">{!!HTML::linkAction('BlumellController@index', 'Papelucho Blumell',array(), array('class' => 'url-menu'))!!}</li>
-    </ul>
-</nav>
+            <li class="li-two-lines">{!!HTML::linkAction('BlumellController@index', 'Papelucho Blumell',array(), array('class' => 'url-menu'))!!}</li>
+        </ul>
+    </nav>
 
     <div class="cycle-slideshow">
 
@@ -82,32 +84,42 @@
 {!!Html::image('images/fondo-arco-azul.png', 'Arco Azul', array('id' => 'img-arco-azul'))!!}
 <footer>
     <div id="bottom-footer-box">
-    <div class="footer-box col-lg-2">
-    <h3>Blumell</h3>
-    <p>
-        <span class="span-ico-footer">{!!Html::image('images/ico-mapa.png', 'ico-mapa', array('class' => 'span-ico-footer'))!!} Blumell 049 Playa Blanca</span><br>
-        <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!} 55 245 4645</span><br>
-        <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!} infoblumell@jardinpapelucho.cl</span>
-    </p>
-      {{-- {!! App\Helpers\Google::maps(1) !!} --}}
-    </div>
-    <div class="footer-box col-lg-2">
-    <h3>Las Colonias</h3>
-    <p>
-        <span class="span-ico-footer"> {!!Html::image('images/ico-mapa.png', 'ico-mapa', array('class' => 'span-ico-footer'))!!} Las Colonias 557</span><br>
-        <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!} 55 245 4647 -  55 245 4648</span><br>
-        <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!} info@jardinpapelucho.cl</span>
-    </p>
-       {{-- {!! App\Helpers\Google::maps(2) !!} --}}
-    </div>
+        <div class="footer-box col-lg-2">
+            <h3>Blumell</h3>
+            <p>
+                <span class="span-ico-footer">{!!Html::image('images/ico-mapa.png', 'ico-mapa', array('class' => 'span-ico-footer'))!!}
+                    Blumell 049 Playa Blanca</span><br>
+                <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!}
+                    55 245 4645</span><br>
+                <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!}
+                    infoblumell@jardinpapelucho.cl</span>
+            </p>
+            {!! Google::maps(1) !!}
+        </div>
+        <div class="footer-box col-lg-2">
+            <h3>Las Colonias</h3>
+            <p>
+                <span class="span-ico-footer"> {!!Html::image('images/ico-mapa.png', 'ico-mapa', array('class' => 'span-ico-footer'))!!}
+                    Las Colonias 557</span><br>
+                <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!}
+                    55 245 4647 -  55 245 4648</span><br>
+                <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!}
+                    info@jardinpapelucho.cl</span>
+            </p>
+            {!! Google::maps(2) !!}
+        </div>
     </div>
 
     <p id="copyright">
         &copy;2016 <a href="https://www.jardinpapelucho.cl">Jardín Papelucho</a>, Todos los derechos reservados.
-        <span id="computec-logo"><a href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a></span>
+        <span id="computec-logo"><a
+                    href="http://www.computecsos.com">{!!Html::image('images/logo-blanco.png', 'isologo-computecsos', array('id' => 'img-isologo-computecsos')) !!}</a></span>
     </p>
-@yield('meta-footer')
+    @yield('meta-footer')
 </footer>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdUySAYtjrmCJruK4agAZxEIGAFoueApE&callback=initMap">
+</script>
 
 </body>
 </html>
