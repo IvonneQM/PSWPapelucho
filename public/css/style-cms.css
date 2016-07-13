@@ -127,6 +127,10 @@ a.dz-remove {
     color: #F7EC3F;
 }
 
+.btn-galery {
+    margin-top: 92px;
+}
+
 .btn-nuevo-parvulo {
     margin-bottom: 15px;
 }
@@ -356,6 +360,25 @@ a.dz-remove {
 #t-header-content-principal {
     background: #F7EC3F;
     color: #3952A3;
+}
+
+
+.easy-autocomplete{
+    width: 100% !important;
+}
+
+.dropzone .dz-message {
+    margin: 1em 0 !important;
+    border-top: dashed 1px #dddddd !important;
+    padding: 60px !important;
+}
+
+.form-control {
+    font-size: 16px !important;
+}
+
+.select2-container {
+    width: 100% !important;
 }
 
 @media screen and (max-width: 991px ) {
