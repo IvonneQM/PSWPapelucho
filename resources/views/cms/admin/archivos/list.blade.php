@@ -6,7 +6,7 @@
     {!! Html::script('js/dropzone/dropzone.js') !!}
     {!! Html::script('js/dropzone/archivos.js') !!}
 
-    <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    {!!Html::style('css/blueimp-gallery.min.css')!!}
     {!!Html::style('css/bootstrap-image-gallery.min.css')!!}
 
 @stop
@@ -67,7 +67,7 @@
 @section('meta-footer')
     {!! Html::script('js/easy-autocomplete/jquery.easy-autocomplete.js') !!}
     {!! Html::script('js/easy-autocomplete/autocomplete.js') !!}
-    <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    {!! Html::script('js/jquery.blueimp-gallery.min.js') !!}
     {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
     {!! Html::script('js/select2.min.js') !!}
 @endsection
