@@ -14,7 +14,7 @@
             <div class="accordion-item-title"><a>Síntesis metodológica</a><i class="fa fa-chevron-down"></i></div>
             <div class="accordion-item-content">
                 <div class="accordion-container-img">
-                {!!Html::image('images/estaticas/4untitled.png','jardin blumell')!!}
+                    {!!Html::image('images/estaticas/4untitled.png','jardin blumell')!!}
                 </div>
                 <p class="content">El trabajo pedagógico, tanto en la Escuela de Párvulos como en la Sala Cuna, se
                     desarrolla de acuerdo
@@ -22,7 +22,7 @@
                     Mapas de Progresos sugeridos por MINEDUC. El trabajo pedagógico, tanto en la Escuela de Párvulos
                     como en la Sala Cuna, se desarrolla de acuerdo a las nuevas bases curriculares de la Educación
                     Parvularia, complementadas con la utilización de los Mapas de Progresos sugeridos por MINEDUC. </p>
-                <p class="content">
+
                 <p class="content">Con el fin de favorecer una educación integral de los niños(as) se realizan
                     actividades como:</p>
 
@@ -68,14 +68,16 @@
                 <div class="accordion-container-img">
                     {!!Html::image('images/estaticas/Papelucho3.JPG','lactante menor blumell',array('id'=>'lactante-menor'))!!}
                 </div>
-                <h4>Descripción</h4>
+                <h4 class="cursive-title">Descripción</h4>
 
-                <p>Este nivel atiende a lactantes desde 84 días a 12 meses, los cuales son atendidos por una Educadora y
+                <p class="content">Este nivel atiende a lactantes desde 84 días a 12 meses, los cuales son atendidos por
+                    una Educadora y
                     dos Asistentes de Párvulos quienes velan por el bienestar de los pequeños y propician su desarrollo
                     integral a través de variadas situaciones de aprendizaje. </p>
-                <h4>Objetivos</h4>
+                <h4 class="cursive-title">Objetivos</h4>
 
-                <p>Generar un ambiente cálido, adecuado y de entrega pedagógica, para lograr en los lactantes un
+                <p class="content">Generar un ambiente cálido, adecuado y de entrega pedagógica, para lograr en los
+                    lactantes un
                     desarrollo óptimo en todos los ámbitos de aprendizajes, siendo a la vez un aporte a las madres que
                     trabajan.</p>
             </div>
@@ -86,12 +88,13 @@
                 <div class="accordion-container-img">
                     {!!Html::image('images/estaticas/19.JPG','lactante mayor blumell', (array('id'=>'lactante-mayor')))!!}
                 </div>
-                <h4>Descripción</h4>
-                <p>Este nivel se compone por lactantes de 12 a 24 meses de edad y es atendido por una Educadora y dos
+                <h4 class="cursive-title">Descripción</h4>
+                <p class="content">Este nivel se compone por lactantes de 12 a 24 meses de edad y es atendido por una
+                    Educadora y dos
                     Asistentes de Párvulos. Este grupo se caracteriza por adquirir progresivamente mayor seguridad y
                     autonomía en lo que realizan, mostrándose más sociables y con confianza en sí mismos. </p>
-                <h4>Objetivos</h4>
-                <p>Potenciar y desarrollar en el niño(a) progresiva y gradualmente todos los ámbitos del
+                <h4 class="cursive-title">Objetivos</h4>
+                <p class="content">Potenciar y desarrollar en el niño(a) progresiva y gradualmente todos los ámbitos del
                     aprendizaje.</p>
             </div>
         </div>
@@ -101,12 +104,14 @@
                 <div class="accordion-container-img">
                     {!!Html::image('images/estaticas/14.JPG','medio menor blumell', (array('id'=>'medio-mayor')))!!}
                 </div>
-                <h4>Descripción</h4>
-                <p>Este Nivel se compone de dos grupos que funcionan en ambas jornadas y atiende a párvulos entre los 2
+                <h4 class="cursive-title">Descripción</h4>
+                <p class="content">Este Nivel se compone de dos grupos que funcionan en ambas jornadas y atiende a
+                    párvulos entre los 2
                     y 2 años 11 meses, los cuales son atendidos por una Educadora y dos Asistentes de Párvulos en cada
                     Nivel. </p>
-                <h4>Objetivos</h4>
-                <p>Propicia un desarrollo integral a través de diversos aprendizajes significativos que se plantean en
+                <h4 class="cursive-title">Objetivos</h4>
+                <p class="content">Propicia un desarrollo integral a través de diversos aprendizajes significativos que
+                    se plantean en
                     forma equilibrada según intereses y necesidades de los párvulos, dando especial énfasis a los
                     ámbitos de comunicación y formación personal y social.</p>
             </div>
@@ -117,18 +122,20 @@
                 <div class="accordion-container-img">
                     {!!Html::image('images/estaticas/8.JPG','medio superior blumell')!!}
                 </div>
-                <h4>Descripción</h4>
-                <p>El nivel atiende a niños(as), cuyas edades fluctúan entre los 3 y 3 años 11 meses. Está a cargo de
+                <h4 class="cursive-title">Descripción</h4>
+                <p class="content">El nivel atiende a niños(as), cuyas edades fluctúan entre los 3 y 3 años 11 meses.
+                    Está a cargo de
                     una Educadora y una Asistente de Párvulos. </p>
-                <h4>Objetivos</h4>
-                <p>Adquirir gradualmente una autonomía que le permita un desarrollo integral en los ámbitos de:
+                <h4 class="cursive-title">Objetivos</h4>
+                <p class="content">Adquirir gradualmente una autonomía que le permita un desarrollo integral en los
+                    ámbitos de:
                     formación personal y social, comunicación, relación con el medio natural, social y cultural,
                     propiciando un clima de confianza seguridad y afectividad.</p>
             </div>
         </div>
 
     </div>
-    <div class="galery-container li-completa two-borders-box">
+    <div class="galery-container li-completa two-borders-box-green">
         <h1 class="cursive-title">Galerías</h1>
 
         @include(('galerias.galeriasBlumell'))
