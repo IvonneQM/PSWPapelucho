@@ -11,7 +11,7 @@
     <!-- The modal dialog, which will be used to wrap the lightbox content -->
 </div>
 
-<div id="row-thumbnails">
+<div id="row-thumbnails" data-url="{!! route('archivos-files')>
     {!! Form::open( $makeGaleryForm, ['method'=>'get','id' => 'searchform', 'class' => 'form'])!!}
     {!! Field::select('galeria_id',$galerias,['name' => 'galerias', 'class' =>'form' ])!!}
     {!! Form::close()!!}
