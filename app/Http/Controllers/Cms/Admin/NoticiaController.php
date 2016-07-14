@@ -78,12 +78,11 @@ class NoticiaController extends Controller
         }
     }
 
+
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param CreateNoticiaRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(CreateNoticiaRequest $request, $id)
     {
@@ -98,7 +97,8 @@ class NoticiaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function destroy($id, Request $request)

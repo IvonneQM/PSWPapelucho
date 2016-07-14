@@ -15,10 +15,12 @@
     @if($archivos != null)
         @foreach($archivos as $archivo)
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6" id="links">
-                @if ( $archivo->getImageExtension() == true)
+                <a href="{{url('administrador/archivos/destroy',array($archivo->id))}}"><span aria-hidden="true">×</span></a>
+            @if ( $archivo->getImageExtension() == true)
                     <a href="../{{$archivo->url}}" class="thumbnail" data-gallery>
                         <img src="{!! $archivo->getThumbnail() !!}">
                     </a>
+
                 @else
                     <a href="../{{$archivo->url}}" class="thumbnail" target="_blank">
                         <img src="{!! $archivo->getThumbnail() !!}">
@@ -28,6 +30,6 @@
             </div>
 
         @endforeach
-            {!! $archivos->render() !!}
+        {!! $archivos->render() !!}
     @endif
 </div>

@@ -100,10 +100,15 @@ class GaleriaController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, Request $request)
+    public function destroy(Request $request, $id)
     {
         $galeria = Galeria::find($id);
+        $jardin = $galeria->jardin;
         $galeria->delete();
+        $galeria->archivos()->delete();
+        $jardin->archivos()->delete();
+        $galeria->archivos()->detach();
+
         if($request->ajax()){
             return response()->json([
                 'id' => Galeria::find($id),

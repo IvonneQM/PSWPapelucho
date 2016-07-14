@@ -167,6 +167,11 @@ Route::group(['middleware' => 'auth'], function () {
                 'as' => 'archivos-files'
             ]);
 
+            Route::get('archivos/destroy/{id}', [
+                'uses' => 'Cms\Admin\ArchivoController@destroy',
+                'as' => 'archivos-destroy'
+            ]);
+
             Route::resource('archivos', 'Cms\Admin\ArchivoController');
             Route::resource('galerias', 'Cms\Admin\GaleriaController');
 

@@ -59,8 +59,9 @@ $(document).ready(function () {
                 autoProcessQueue: false,
                 uploadMultiple  : true,
                 parallelUploads : 10,
-                maxFilesize     : 10,
+                maxFilesize     : 256,
                 maxFiles        : 20,
+                filesizeBase: 90000,
                 addRemoveLinks  : true,
                 dictRemoveFile  : 'Eliminar',
 
