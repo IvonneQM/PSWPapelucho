@@ -13,4 +13,4 @@
         </tbody>
     </table>
 </div>
-{!! $auditorias->render() !!}}
+{!! $auditorias->render() !!}

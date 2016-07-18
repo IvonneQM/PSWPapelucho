@@ -82,19 +82,19 @@ a.dz-remove {
     color: #3952A3;
 }
 
-
 .archivo {
     text-align: left !important;
 }
 
-.auditoria_name{
+.auditoria_name {
     font-size: 14px;
 }
 
-.auditoria{
+.auditoria {
     font-size: 10px;
 
 }
+
 .btn-buscar {
     background: #F7EC3F;
     border: none;
@@ -131,9 +131,10 @@ a.dz-remove {
     margin-bottom: 15px;
 }
 
-.container{
-    width:100%;
+.container {
+    width: 100%;
 }
+
 .conteiner-option {
     padding: 0;
 }
@@ -142,15 +143,72 @@ a.dz-remove {
     margin-top: 132.5px;
 }
 
-.delete-file{
+.count-container {
+    padding: 10px;
+}
+
+.count-inside{
+    color:white;
+    border-radius:1em;
+    -webkit-border-radius:1em;
+    -moz-border-radius:1em;height:150px;
+    padding: 10px;
+    text-align: left;
+}
+
+.count-inside i.fa.fa-child:hover, .count-container i.fa.fa-male:hover, .count-container i.fa.fa-newspaper-o ,  .count-container i.fa.fa-camera-retro{
+    background: none !important;
+    box-shadow: none !important;
+    color: white !important;
+}
+.count-inside i.fa.fa-child, .count-container i.fa.fa-male, .count-container i.fa.fa-newspaper-o ,  .count-container i.fa.fa-camera-retro{
+    background: none;
+    font-size: 100px;
+}
+
+.count-container i.fa.fa-newspaper-o , .count-container i.fa.fa-camera-retro{
+    font-size: 50px;
+    margin-top: 45px;
+    margin-bottom: -5px;
+    text-align: left;
+    width: auto !important;
+}
+
+.count-container i.fa.fa-camera-retro {
+    margin-bottom: 5px;
+}
+
+
+span.count-number {
+    float: right;
+    font-size: 60px;
+    position: relative;
+    top: 30px;
+}
+
+.count-subtitle{
+    display: block;
+    font-size: 14px;
+    text-align: center;
+}
+
+.delete-file {
     background: rgba(128, 128, 128, 0.15);
-    border-radius: 1em;
+    -webkit-border-radius:1em;
+    -moz-border-radius:1em;
+    border-radius:1em;
     color: rgba(68, 60, 60, 0.92) !important;
-    display: block;padding: 0.1em 0.5em;
+    display: block;
+    padding: 0.1em 0.5em;
     font-size: 25px;
     position: absolute;
     margin-left: -15px;
     margin-top: 85px;
+}
+
+a.delete-file:hover {
+    background: rgba(66, 64, 64, 0.71);
+    color: white !important;
 }
 
 .div-btn {
@@ -213,7 +271,7 @@ a.dz-remove {
     box-shadow: inset 0 0 0 3px #C32026;
 }
 
-.file-title{
+.file-title {
     color: #65686b !important;
     font-size: 13px;
     text-align: justify;
@@ -222,7 +280,7 @@ a.dz-remove {
     margin-bottom: 25px;
 }
 
-.file-title:hover{
+.file-title:hover {
     color: #1056a7 !important;
 }
 
@@ -234,7 +292,7 @@ a.dz-remove {
     display: inline-block;
 }
 
-.general-files-container{
+.general-files-container {
     padding: 0 10px !important;
 }
 
@@ -300,6 +358,22 @@ a.dz-remove {
 #aside2 {
     padding-top: 20px;
     width: 14%;
+}
+
+#count-container-1 {
+    background: #3952A3;
+}
+
+#count-container-2 {
+    background: #F7EC3F;
+}
+
+#count-container-3 {
+    background: #00A04A;
+}
+
+#count-container-4 {
+    background: #C32026;
 }
 
 #header-bar {
@@ -394,7 +468,7 @@ a.dz-remove {
     padding: 60px !important;
 }
 
-.easy-autocomplete{
+.easy-autocomplete {
     width: 100% !important;
 }
 
@@ -406,12 +480,11 @@ a.dz-remove {
     width: 100% !important;
 }
 
-.table{
+.table {
     margin-bottom: 30px;
 }
 
 @media screen and (max-width: 991px ) {
-
 
     .div-btn {
         padding-bottom: 45px;
@@ -422,7 +495,7 @@ a.dz-remove {
         border-right: none;
     }
 
-    #aside2{
+    #aside2 {
         width: 100%;
         height: auto;
         min-height: 0;
@@ -459,7 +532,7 @@ a.dz-remove {
 
     section {
         width: 100%;
-        border:none;
+        border: none;
     }
 
     #aside1, #btn-logout, #img-logotipo, #icon-font, #sidebar-desktop {
@@ -494,22 +567,19 @@ a.dz-remove {
         transition: right 0.3s linear;
     }
 
-
 }
 
 @media screen and (max-width: 465px) {
-
-
 
     .button-title {
         display: none;
     }
 
-    .btn-crear-nuevo, .fa-user-plus, .fa-newspaper-o, .fa-picture-o{
-        width:60px !important;
+    .btn-crear-nuevo, .fa-user-plus, .fa-newspaper-o, .fa-picture-o {
+        width: 60px !important;
     }
 
-    .form-group-buscar{
+    .form-group-buscar {
         max-width: 70% !important;
     }
 
@@ -517,22 +587,20 @@ a.dz-remove {
         width: 60%;
     }
 
-
-
-
 }
 
 @media screen and (max-width: 365px) {
 
-    .title{
+    .title {
         font-size: 30px;
     }
 
-    .fa{
+    .fa {
         display: block !important;
         margin: auto !important;
     }
-    .t-actions{
+
+    .t-actions {
         min-width: 0 !important;
     }
 

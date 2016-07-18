@@ -138,7 +138,10 @@ Route::get('archivos/galeria/{galeria_id}', function ($galeria_id) {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'role:admin'], function () {
-        Route::get('administrador', 'Cms\Admin\AdminController@index');
+        Route::get('administrador', [
+            'uses' => 'Cms\Admin\AdminController@index',
+            'as' => 'administrador'
+        ]);
 
         Route::group(['prefix' => 'administrador'], function () {
 
