@@ -14,8 +14,8 @@
 <div class="row row-thumbnails">
     @if($archivos != null)
         @foreach($archivos as $archivo)
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6" id="links">
-                <a href="{{url('administrador/archivos/destroy',array($archivo->id))}}"><span aria-hidden="true">×</span></a>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a class="delete-file" href="{{url('administrador/archivos/destroy',array($archivo->id))}}"><span aria-hidden="true">×</span></a>
             @if ( $archivo->getImageExtension() == true)
                     <a href="../{{$archivo->url}}" class="thumbnail" data-gallery>
                         <img src="{!! $archivo->getThumbnail() !!}">
@@ -27,6 +27,7 @@
                     </a>
                 @endif
                 {{-- <img src="../{{$archivo->url}}">--}}
+                <a class="file-title" href="{{$archivo->url}}"> {{$archivo->fileName}} </a>
             </div>
 
         @endforeach

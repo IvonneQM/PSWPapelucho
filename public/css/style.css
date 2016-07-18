@@ -17,14 +17,16 @@ a, a:hover, a:active, a:link, a:visited {
 
 article {
     width: 100%;
+    padding: 20px 30px;
 }
 
 aside {
     background: #F7EC3F;
     border: 1px solid #00A04A;
     float: right;
-    margin-right: 40px;
     width: 20%;
+    margin-right: 25px;
+    padding: 15px;
 }
 
 aside, section {
@@ -48,7 +50,6 @@ footer, header {
 
 h2 {
     font-weight: lighter;
-    margin-left: 20px;
 }
 
 h3 {
@@ -58,7 +59,7 @@ h3 {
 }
 
 h4 span.cursive-title {
-    font-size: 35px !important;
+    font-size: 42px !important;
 }
 
 header {
@@ -135,7 +136,9 @@ nav li, #li-zona-apoderados, #login-form {
 }
 
 p {
-    margin: 0;
+    margin: 25px 0;
+    text-align: justify;
+
 }
 
 section {
@@ -153,7 +156,7 @@ ul {
     padding: 0;
 }
 
-.accordion {
+.accordion, .galery-container {
     margin: 25px 0;
 }
 
@@ -172,16 +175,24 @@ ul {
 .accordion-container-img {
     background: rgba(55, 100, 191, 0.08);
     border-radius: 0.5em;
+    height: 250px;
+    line-height: 250px;
     overflow: hidden;
     margin: 0 25px;
-    max-height: 250px;
+    position: relative;
     text-align: center;
 }
 
 .accordion-container-img img {
-    width: 100%;
-    top: -200px;
-    position: relative;
+    left: 50%;
+    min-height: 250px;
+    max-height: 500px;
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    vertical-align: middle;
+    width: auto;
 }
 
 .accordion-item-title {
@@ -194,7 +205,7 @@ ul {
 .accordion-item-title, .accordion-item-content, .galery-container {
     margin: 0 auto;
     padding: 10px;
-    width: 90%;
+    width: 100%;
 }
 
 .accordion-item-title, .accordion-item-content {
@@ -218,7 +229,7 @@ ul {
 
 .accordion-item-content {
     display: none;
-    padding: 25px 0;
+    padding: 25px;
     text-align: justify;
 }
 
@@ -269,13 +280,18 @@ ul {
     transform: scale(0.93);
 }
 
+.contact-container {
+    height: 440px;
+    margin-top: -15px;
+}
+
 .contact-form {
     margin-top: 30px;
 }
 
-.content, .news-box {
-    margin: 25px;
-    text-align: justify;
+.contact-container ul {
+    margin-right: 25px;
+    margin-left: 25px;
 }
 
 .cycle-prev, .cycle-next {
@@ -324,8 +340,9 @@ ul {
 }
 
 .cycle-slideshow {
-    display: block;
+    display: table;
     height: 435px;
+    margin: 0px auto;
     max-width: 100%;
     max-height: 435px;
     overflow: hidden;
@@ -339,7 +356,7 @@ ul {
     display: block;
     font-family: 'LinotypeZapfino One', serif;
     text-align: center;
-    font-size: 42px;
+    font-size: 40px;
 }
 
 .footer-box {
@@ -361,36 +378,29 @@ ul {
     margin-left: 0;
 }
 
+.galery-container {
+    border-top: 2px solid #00A04A;
+    border-bottom: 2px solid #00A04A;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    /*padding: 5px 0;*/
+}
+
 .img-slide {
-    width: 100%;
+    max-width: 100% !important;
+    top: -50% !important;
+    min-height: 435px !important;
+    position: absolute !important;
+    display: block !important;
 }
 
-.img-slide-middle {
-    top: -150px !important;
-}
-
-.img-slide-middle-top {
-    top: -300px !important;
-}
-
-.img-slide-middle-bottom {
-    top: -80px !important;
+.horario, .directora {
+    font-size: 13px;
+    padding-left: 10px;
 }
 
 .items {
     color: black;
-}
-
-img#lactante-menor {
-    top: -65px;
-}
-
-img#lactante-mayor {
-    top: -125px;
-}
-
-img#medio-mayor {
-    top: -95px;
 }
 
 .li-two-lines {
@@ -475,7 +485,6 @@ img#medio-mayor {
 
 .principal-title {
     font-size: 48px;
-    margin: 60px 25px 25px !important;
     text-align: left;
     width: 300px;
 }
@@ -514,7 +523,7 @@ img#medio-mayor {
     font-size: 40px;
     font-weight: inherit;
     font-family: 'Love Ya Like A Sister', cursive;
-    margin: -35px 0 0 -1px;
+    margin: -45px 0 0 -31px;
     max-width: 220px;
 }
 
@@ -530,15 +539,10 @@ img#medio-mayor {
     font-family: 'Fredericka the Great', sans-serif;
     font-weight: lighter;
     margin: -15px auto;
+    max-width: 180px;
+    padding: 5px;
     text-align: center;
-    width: 150px;
-}
-
-.two-borders-box-green {
-    border-top: 2px solid #00A04A;
-    border-bottom: 2px solid #00A04A;
-    margin: 80px 20px 20px 50px;
-    padding: 5px 0;
+    width: auto;
 }
 
 .two-borders-box li {
@@ -566,6 +570,11 @@ img#medio-mayor {
     margin: 0 0 20px 0;
 }
 
+.two-borders-box-accordion li {
+    border-top: 1px solid #F7EC3F;
+    border-bottom: 1px solid #F7EC3F;
+}
+
 #bottom-footer-box {
     width: 100%;
     height: 120px;
@@ -586,24 +595,21 @@ img#medio-mayor {
 }
 
 #cuerdas {
-    background: green;
     display: block;
-    position: absolute;
-    width: 20%;
+    width: 80%;
     z-index: 1;
+    height: 170px;
+    margin: 0 auto;
 }
 
 #cuerdas img {
     display: block;
-    margin: -176px auto;
-    height: 170px;
-    width: 150px;
+    margin: -190px auto;
+    height: 175px;
 }
 
 #fachada-colonias {
-    top: -45px;
-    width: 70%;
-    margin-righ: auto;
+    width: auto;
 }
 
 #forgot-pass, .alert {
@@ -727,13 +733,34 @@ img#medio-mayor {
     height: 140px;
 }
 
-/* CSS Externos (Bootstrap , blueimg-gallery*/
-.form-group {
-    width: 100%;
+/* CSS Externos (Bootstrap )*/
+.form-group, .select2-container {
+    width: 100% !important;
 }
 
-@media screen and (max-width: 1120px ) {
-    /*VER LOS TAMAÑOS DE IMAGENES EN SLIDER*/
+@media screen and (max-width: 1130px ) {
+
+    .accordion-item-content {
+        padding: 25px 0 0;
+    }
+
+    .img-slide {
+        top: -30% !important;
+    }
+
+    .two-borders-box-accordion li:first-child {
+        margin-left: 25px !important;
+    }
+
+    .two-borders-box-accordion li:nth-child(2) {
+        margin-right: 25px !important;
+    }
+
+    .two-borders-box-accordion li {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 43% !important;
+    }
 }
 
 @media screen and (max-width: 960px ) {
@@ -743,11 +770,14 @@ img#medio-mayor {
     }
 
     aside {
-        background: #F7EC3F;
-        border: 1px solid #00A04A;
         border-radius: 0 2em 2em 2em;
+        margin-top: 50px;
+        padding: 30px;
+    }
+
+    aside, section {
         float: none;
-        margin: 50px auto;
+        margin-left: 5%;
         width: 90%;
     }
 
@@ -755,10 +785,6 @@ img#medio-mayor {
         background: white;
         border: 1px solid #EC2224;
         border-radius: 0 2em 2em 2em;
-        float: none;
-        margin-left: 5%;
-        width: 90%;
-
     }
 
     .contact-form {
@@ -766,7 +792,7 @@ img#medio-mayor {
     }
 
     .content, .news-box {
-        margin: 25px;
+        /*margin: 25px;*/
         text-align: justify;
     }
 
@@ -774,6 +800,10 @@ img#medio-mayor {
         display: block;
         font-family: 'LinotypeZapfino One', sans-serif;
         text-align: center;
+    }
+
+    .img-slide {
+        top: -10% !important;
     }
 
     .news-box li {
@@ -806,7 +836,8 @@ img#medio-mayor {
         font-size: 19px;
         font-family: 'Fredericka the Great', sans-serif;
         font-weight: lighter;
-        margin-top: -20px !important;
+        margin-top: -50px !important;
+        margin-left: -31px !important;
         padding-bottom: 10px;
         text-align: left;
         width: 115px;
@@ -816,8 +847,7 @@ img#medio-mayor {
         border-top: 1px solid #F7EC3F;
         border-bottom: 1px solid #F7EC3F;
         display: inline-block;
-        margin: 80px 20px 20px 50px;
-        padding: 5px 0 20px;
+        margin: 20px 20px 20px 50px;
         text-align: left;
         width: 40%;
     }
@@ -846,7 +876,6 @@ img#medio-mayor {
         background: #00A04A;
         border-radius: 0.3em 0.3em 0.3em 0;
         color: white;
-        margin-left: -1px;
         padding-left: 5px;
     }
 
@@ -901,6 +930,11 @@ img#medio-mayor {
         margin-top: 200px;
     }
 
+    .contact-form {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
     .cycle-slideshow {
         display: none;
     }
@@ -925,7 +959,7 @@ img#medio-mayor {
         font-size: 19px;
         font-family: 'Fredericka the Great', sans-serif;
         font-weight: lighter;
-        margin-top: -20px !important;
+        /*margin-top: -20px !important;*/
     }
 
     .two-borders-box li {
@@ -941,13 +975,28 @@ img#medio-mayor {
         margin: 0 auto 20px;
     }
 
+    .two-borders-box-accordion {
+        padding: 25px !important;
+    }
+
+    .two-borders-box-accordion li {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 10px !important;
+    }
+
+    .two-borders-box-accordion li:first-child {
+        margin-left: 0 !important;
+        margin-bottom: 20px !important;
+    }
+
     #bottom-footer-box {
         padding-top: 10px;
         height: auto;
     }
 
     #img-arco-azul {
-        margin-bottom: 0;
+        margin-bottom: -1px;
     }
 
     #img-isologo {
@@ -1001,12 +1050,71 @@ img#medio-mayor {
         transition: left 0.3s linear;
     }
 
-    #title, .side-section-title {
-        margin: -25px 0 0 -1px;
-    }
-
     #zona-apoderados ul li a:hover:before {
         height: 100px;
     }
 
+}
+
+@media screen and (max-width: 660px) {
+    .accordion-container-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .accordion-item-title, .accordion-item-content, .galery-container {
+        width: 100%;
+        border-right: none !important;
+        border-left: none !important;
+    }
+
+    .title {
+        margin: -45px 0 0 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    article {
+        padding: 20px 0px;
+    }
+
+    aside {
+        background: none;
+        border-radius: 0;
+        margin-bottom: 40px;
+    }
+
+    section, aside {
+        margin-left: 0;
+        width: 100%;
+        border: none;
+    }
+
+    section, aside {
+        padding: 10px;
+    }
+
+    .contact-container, .news-box {
+        border: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        background: #F7EC3F;
+    }
+
+    .contact-form {
+        margin-top: 10px;
+    }
+
+    .news-box {
+        padding: 0 20px 10px 20px;
+    }
+
+    .side-section-title {
+        position: relative;
+        top: -15px !important;
+        margin-left: 0 !important;
+    }
 }

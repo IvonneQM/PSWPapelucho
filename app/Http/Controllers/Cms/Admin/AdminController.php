@@ -12,7 +12,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $auditorias = Auditoria::get();
+        $auditorias = Auditoria::paginate(10);
         return view('cms.admin.administrador', compact('auditorias'));
     }
 }

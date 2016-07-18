@@ -19,64 +19,127 @@
     <div class="container" style="width: 100%">
         <div class="row-fluid">
             <div class="col-lg-12">
-                <div class="panel-heading"><h1 class="title">{!! $par->full_name !!}</h1></div>
-                <div class="col-lg-12 div-btn">
+                <div class="panel-heading"><h1 class="title">{!! $parvulo->full_name !!}</h1></div>
+                <div class="col-lg-12">
+                    <div class="panel-heading" id="panel-content-heading">Información Personal</div>
                     <table class="table table-striped">
                         <tr>
                             <td>Rut:</td>
-                            <td>{!! $par->rut !!}</td>
+                            <td>{!! $parvulo->rut !!}</td>
                         </tr>
                         <tr>
                             <td>Jardin:</td>
-                            <td>{!! $par->jardines->name !!}</td>
+                            <td>{!! $parvulo->jardines->name !!}</td>
                         </tr>
                         <tr>
                             <td>Nivel:</td>
-                            <td>{!! $par->niveles->name !!}</td>
+                            <td>{!! $parvulo->niveles->name !!}</td>
                         </tr>
                         <tr>
                             <td>Jornada:</td>
-                            <td>{!! $par->jornadas->name !!}</td>
+                            <td>{!! $parvulo->jornadas->name !!}</td>
                         </tr>
                     </table>
 
+                    <div class="panel-primary">
+                        <div class="panel-heading">Últimas Fotografías de {!! $parvulo->jardines->name !!}</div>
+                        <div class="panel-body">
+                            <div class="row row-thumbnails">
+                                @foreach($fotografias as $fotografia)
+                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 links">
+                                        @if ( $fotografia->getImageExtension() == true)
+                                            <a href="{{$fotografia->url}}" class="thumbnail" data-gallery>
+                                                <img src="{!! $fotografia->getThumbnail() !!}">
+                                            </a>
 
-                    <div>
-                    <H2> ESTOS SON LOS DOCUMETOS DEL NIÑO (INFORME AL HOGAR</H2>
-                    @foreach($par->archivos as $ar)
-                        <div class="col-xs-3 text-center">
-                            <a class="archivosParvulos" href="{{$ar->url}}">  {{$ar->fileName}} </a>
+                                        @else
+                                            <a href="{{$fotografia->url}}" class="thumbnail" target="_blank">
+                                                <img src="{!! $fotografia->getThumbnail() !!}">
+                                            </a>
+                                        @endif
+                                        {{-- <img src="../{{$archivo->url}}">--}}
+                                        <a class="file-title"
+                                           href="{{$fotografia->url}}"> {{$fotografia->fileName}} </a>
+                                    </div>
+
+                                @endforeach
+                            </div>
                         </div>
-
-                    @endforeach
                     </div>
-                    <div>
-                        <H2> ESTOS SON LOS DOCUMETOS POR NIVEL (BOLETIN SEMANAL) FUNCIONA</H2>
-                        @foreach($par->niveles->archivos as $arch)
-                            <div class="col-xs-3 text-center">
-                             <a class="archivosParvulos" href="{{$arch->url}}">  {{$arch->fileName}} </a>
+                    <div class="panel-primary">
+                        <div class="panel-heading">Informes al Hogar</div>
+                        <div class="panel-body">
+                            <div class="row row-thumbnails">
+                                @foreach($parvulo->archivos as $informe)
+                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 links">
+                                        @if ( $informe->getImageExtension() == true)
+                                            <a href="{{$informe->url}}" class="thumbnail" data-gallery>
+                                                <img src="{!! $informe->getThumbnail() !!}">
+                                            </a>
+                                        @else
+                                            <a href="{{$informe->url}}" class="thumbnail" target="_blank">
+                                                <img src="{!! $informe->getThumbnail() !!}">
+                                            </a>
+                                        @endif
+                                        {{-- <img src="../{{$archivo->url}}">--}}
+                                        <a class="file-title" href="{{$informe->url}}"> {{$informe->fileName}} </a>
+
+                                    </div>
+                                @endforeach
                             </div>
-                         @endforeach
+                        </div>
                     </div>
-                        </br>
+                    <div class="panel-primary">
+                        <div class="panel-heading">Boletines Semanales</div>
+                        <div class="panel-body">
+                            <div class="row row-thumbnails">
+                                @foreach($parvulo->niveles->archivos as $boletin)
+                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 links">
+                                        @if ( $boletin->getImageExtension() == true)
+                                            <a href="{{$boletin->url}}" class="thumbnail" data-gallery>
+                                                <img src="{!! $boletin->getThumbnail() !!}">
+                                            </a>
+                                        @else
+                                            <a href="{{$boletin->url}}" class="thumbnail" target="_blank">
+                                                <img src="{!! $boletin->getThumbnail() !!}">
+                                            </a>
+                                        @endif
+                                        {{-- <img src="../{{$archivo->url}}">--}}
+                                        <a class="file-title" href="{{$boletin->url}}"> {{$boletin->fileName}} </a>
+                                    </div>
 
-                    <H2> ESTOS SON LOS DOCUMENTOS POR JARDIN SI ES QUE HUBIERA FUNCIONA</H2>
-                         @foreach($par->jardines->archivos as $archi)
-                            <div class="col-xs-3 text-center">
-                                <a class="archivosParvulos" href="{{$archi->url}}">  {{$archi->fileName}} </a>
+                                @endforeach
                             </div>
-                    @endforeach
-                    </br>
-                    <H2> ESTOS SON LOS DOCUMENTOS GENERALES</H2>
-                   @foreach($archivosss as $archivoooooo)
-                            <div class="col-xs-3 text-center">
-                                <a class="archivosParvulos" href="{{$archivoooooo->url}}">  {{$archivoooooo->fileName}} </a>
-                            </div>
-                    @endforeach
-
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 @stop
 
+@section('aside2')
+
+    <div class="panel-primary">
+        <div class="panel-heading">Documentos Generales</div>
+        <div class="general-files-container">
+            <div class="row row-thumbnails">
+                @foreach($archivos as $archivo)
+                    <div class="links">
+                        @if ( $archivo->getImageExtension() == true)
+                            <a href="{{$archivo->url}}" class="thumbnail" data-gallery>
+                                <img src="{!! $archivo->getThumbnail() !!}">
+                            </a>
+                        @else
+                            <a href="{{$archivo->url}}" class="thumbnail" target="_blank">
+                                <img src="{!! $archivo->getThumbnail() !!}">
+                            </a>
+                        @endif
+                        {{-- <img src="../{{$archivo->url}}">--}}
+                        <a class="file-title" href="{{$archivo->url}}"> {{$archivo->fileName}} </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+@stop

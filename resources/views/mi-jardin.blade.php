@@ -4,9 +4,9 @@
 
      <h1 class= "title" id="title-mi-jardin">Mi jardín</h1>
      <h2 class="principal-title cursive-title">Reseña histórica del jardín</h2>
-     <p class="content">
+     <p>
          La Sala Cuna y Escuela de Párvulos “Papelucho”, se gestó el año 1988 basado en el interés de dos profesionales Educadoras de Párvulos que formaron sociedad y se instalaron en forma independiente, con la especial motivación de otorgar una educación integral a lactantes y párvulos, y proporcionar además un servicio a madres trabajadoras.     </p>
-     <p class="content">
+     <p>
          Esta Institución cuenta con más de dos décadas de experiencia en la educación de párvulos la que es reconocida por el Ministerio de Educación como Colaboradora de la Función Educacional del Estado y con la Autorización Normativa otorgada por la Junta Nacional de Jardines Infantiles. A partir del año 2009 se expande y cuenta con 2 establecimientos educacionales, para lactantes y párvulos  los que están distribuidos en ambas sedes, en dos jornadas y en los niveles: Sala Cuna, Medio Menor y Medio Mayor.
      </p>
 
@@ -14,11 +14,11 @@
      <ul class="two-borders-box">
          <li>
              <h2><span class="cursive-title">Misión</span></h2>
-             <p class="content">
+             <p>
                  La misión de Sala Cuna y Escuela de Párvulos “Papelucho”, es ser una institución particular pagada de la ciudad de Antofagasta, que imparte educación parvularia de calidad a niños y niñas desde los 3 meses a los 4 años 11 meses de edad, en un ambiente cálido, familiar, participativo y de respeto, con una base sólida de valores universales, que los prepara para enfrentar con éxito los desafíos que el futuro les depare bajo nuestro lema “Educar para ser feliz”.
 
              </p>
-             <p class="content">
+             <p>
                  La misión de la Sala Cuna y Escuela de Párvulos “Papelucho”, es ser una Institución particular pagada de la ciudad de Antofagasta, que imparte educación parvularia de calidad a niños y niñas desde los 3 meses a los 3 años 11 meses de edad, en un ambiente lúdico, significativo, integrador, cálido, familiar, participativo y de respeto, con una base sólida de valores universales, que los prepara para enfrentar con éxito los desafíos que el futuro les depare bajo nuestro lema “Educar para ser Feliz”
              </p>
              <p>
@@ -27,7 +27,7 @@
          </li>
          <li>
              <h2><span class="cursive-title">Visión</span></h2>
-             <p class="content">
+             <p>
                  Ser la Sala Cuna y Escuela de Párvulos de Antofagasta, que desarrolle en sus niños(as) aprendizajes significativos e integradores a través de experiencias lúdicas, en un ambiente afectivo, que incorpore a la familia en el proceso educativo.
 
              </p>
@@ -35,7 +35,7 @@
 
          <li class="li-completa">
              <h2><span class="cursive-title">Que ofrecemos</span></h2>
-             <p class="content">
+             <p>
              <ul>
                  <li>Educación Integral, en un ambiente de afecto, confianza, atención y cuidado.</li>
                  <li>Personal idóneo formado por educadoras de párvulos, asistentes de párvulos, profesora de inglés, nutricionista, manipuladora de alimentos, auxiliares de servicio, personal administrativo. Con años de experiencias para guiar a sus hijos en el complejo mundo infantil.</li>

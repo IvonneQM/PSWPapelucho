@@ -106,7 +106,7 @@ class GaleriaController extends Controller
         $jardin = $galeria->jardin;
         $galeria->delete();
         $galeria->archivos()->delete();
-        $jardin->archivos()->delete();
+        $jardin->archivos()->detach();
         $galeria->archivos()->detach();
 
         if($request->ajax()){

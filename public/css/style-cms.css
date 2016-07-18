@@ -10,19 +10,6 @@
    Plomo: 939597
 **/
 
-.archivosParvulos{
-    color: blue !important;
-}
-
-.auditoria_name{
-    font-size: 14px;
-}
-
-.auditoria{
-    font-size: 10px;
-
-}
-
 a, a:hover, a:active, a:link, a:visited {
     color: white;
     text-decoration: none;
@@ -95,10 +82,19 @@ a.dz-remove {
     color: #3952A3;
 }
 
+
 .archivo {
     text-align: left !important;
 }
 
+.auditoria_name{
+    font-size: 14px;
+}
+
+.auditoria{
+    font-size: 10px;
+
+}
 .btn-buscar {
     background: #F7EC3F;
     border: none;
@@ -144,6 +140,17 @@ a.dz-remove {
 
 .contenedor-parvulos {
     margin-top: 132.5px;
+}
+
+.delete-file{
+    background: rgba(128, 128, 128, 0.15);
+    border-radius: 1em;
+    color: rgba(68, 60, 60, 0.92) !important;
+    display: block;padding: 0.1em 0.5em;
+    font-size: 25px;
+    position: absolute;
+    margin-left: -15px;
+    margin-top: 85px;
 }
 
 .div-btn {
@@ -206,12 +213,29 @@ a.dz-remove {
     box-shadow: inset 0 0 0 3px #C32026;
 }
 
+.file-title{
+    color: #65686b !important;
+    font-size: 13px;
+    text-align: justify;
+    display: block;
+    margin-top: -15px;
+    margin-bottom: 25px;
+}
+
+.file-title:hover{
+    color: #1056a7 !important;
+}
+
 .form-group .radio-inline {
     margin-left: 15px !important;
 }
 
 .form-group-buscar {
     display: inline-block;
+}
+
+.general-files-container{
+    padding: 0 10px !important;
 }
 
 .panel-primary > .panel-heading {
@@ -274,6 +298,7 @@ a.dz-remove {
 }
 
 #aside2 {
+    padding-top: 20px;
     width: 14%;
 }
 
@@ -362,15 +387,15 @@ a.dz-remove {
     color: #3952A3;
 }
 
-
-.easy-autocomplete{
-    width: 100% !important;
-}
-
+/*  BOOTSTRAP  */
 .dropzone .dz-message {
     margin: 1em 0 !important;
     border-top: dashed 1px #dddddd !important;
     padding: 60px !important;
+}
+
+.easy-autocomplete{
+    width: 100% !important;
 }
 
 .form-control {
@@ -379,6 +404,10 @@ a.dz-remove {
 
 .select2-container {
     width: 100% !important;
+}
+
+.table{
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 991px ) {

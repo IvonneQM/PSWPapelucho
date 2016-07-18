@@ -36,9 +36,12 @@ class ParvuloController extends Controller
 
     public function indexApoderado(Request $request, $id)
     {
-        $par = Parvulo::findOrFail($id);
-        $archivosss = Archivo::doesntHave('galerias')->doesntHave('jardines')->doesntHave('niveles')->doesntHave('parvulos')->get();
-        return view('cms.apoderados.parvulos', compact('par','archivosss'));
+        $parvulo = Parvulo::findOrFail($id);
+        $archivos = Archivo::doesntHave('galerias')->doesntHave('jardines')->doesntHave('niveles')->doesntHave('parvulos')->get();
+        //$fotografias = Parvulo::findOrFail($id)->jardines->archivos->orderBy('DESC','created_at')->get(5);
+        $fotografias = Parvulo::findOrFail($id)->jardines()->archivos()->paginate();
+        //App\User::find(1)->roles()->orderBy('name')->get();
+        return view('cms.apoderados.parvulos', compact('parvulo','archivos','fotografias'));
     }
 
     public
