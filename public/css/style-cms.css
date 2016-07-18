@@ -147,28 +147,30 @@ a.dz-remove {
     padding: 10px;
 }
 
-.count-inside{
-    color:white;
-    border-radius:1em;
-    -webkit-border-radius:1em;
-    -moz-border-radius:1em;height:150px;
+.count-inside {
+    color: white;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    height: 130px;
     padding: 10px;
     text-align: left;
 }
 
-.count-inside i.fa.fa-child:hover, .count-container i.fa.fa-male:hover, .count-container i.fa.fa-newspaper-o ,  .count-container i.fa.fa-camera-retro{
+.count-inside i.fa.fa-child:hover, .count-container i.fa.fa-male:hover, .count-container i.fa.fa-newspaper-o, .count-container i.fa.fa-camera-retro {
     background: none !important;
     box-shadow: none !important;
     color: white !important;
 }
-.count-inside i.fa.fa-child, .count-container i.fa.fa-male, .count-container i.fa.fa-newspaper-o ,  .count-container i.fa.fa-camera-retro{
+
+.count-inside i.fa.fa-child, .count-container i.fa.fa-male, .count-container i.fa.fa-newspaper-o, .count-container i.fa.fa-camera-retro {
     background: none;
-    font-size: 100px;
+    font-size: 70px;
 }
 
-.count-container i.fa.fa-newspaper-o , .count-container i.fa.fa-camera-retro{
-    font-size: 50px;
-    margin-top: 45px;
+.count-container i.fa.fa-newspaper-o, .count-container i.fa.fa-camera-retro {
+    font-size: 31px;
+    margin-top: 35px;
     margin-bottom: -5px;
     text-align: left;
     width: auto !important;
@@ -181,12 +183,12 @@ a.dz-remove {
 
 span.count-number {
     float: right;
-    font-size: 60px;
+    font-size: 50px;
     position: relative;
-    top: 30px;
+    top: 20px;
 }
 
-.count-subtitle{
+.count-subtitle {
     display: block;
     font-size: 14px;
     text-align: center;
@@ -194,9 +196,9 @@ span.count-number {
 
 .delete-file {
     background: rgba(128, 128, 128, 0.15);
-    -webkit-border-radius:1em;
-    -moz-border-radius:1em;
-    border-radius:1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
     color: rgba(68, 60, 60, 0.92) !important;
     display: block;
     padding: 0.1em 0.5em;
