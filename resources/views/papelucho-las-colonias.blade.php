@@ -143,7 +143,7 @@
     <div class="galery-container">
         <h1 class="cursive-title">Galerías</h1>
 
-        @include(('galerias.galeriasBlumell'))
+        @include(('galerias.galeriasLasColonias'))
     </div>
 
     {{--  <div>

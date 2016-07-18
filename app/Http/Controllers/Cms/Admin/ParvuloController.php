@@ -39,7 +39,7 @@ class ParvuloController extends Controller
         $parvulo = Parvulo::findOrFail($id);
         $archivos = Archivo::doesntHave('galerias')->doesntHave('jardines')->doesntHave('niveles')->doesntHave('parvulos')->get();
         //$fotografias = Parvulo::findOrFail($id)->jardines->archivos->orderBy('DESC','created_at')->get(5);
-        $fotografias = Parvulo::findOrFail($id)->jardines()->archivos()->paginate();
+        $fotografias = Parvulo::findOrFail($id)->jardines()->archivos()->get('archivos');
         //App\User::find(1)->roles()->orderBy('name')->get();
         return view('cms.apoderados.parvulos', compact('parvulo','archivos','fotografias'));
     }

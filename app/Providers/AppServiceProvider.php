@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\ViewComposer\MakeGaleryColoniasForm;
 use App\Http\ViewComposer\MakeGaleryForm;
 use App\Http\ViewComposer\MakeModelForm;
 use Illuminate\Support\Facades\App;
@@ -24,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->make('view')->composer(
             ['galerias/galeriasBlumell'],
             MakeGaleryForm::class
+        );
+
+        $this->app->make('view')->composer(
+            ['galerias/galeriasLasColonias'],
+            MakeGaleryColoniasForm::class
         );
     }
 
