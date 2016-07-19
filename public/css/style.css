@@ -9,6 +9,14 @@
    Amarillo: F7EC3F
    Plomo: 939597
 **/
+.accordion-toggle:after {
+    font-family: 'FontAwesome';
+    content: "\f078";
+    float: right;
+}
+.accordion-opened .accordion-toggle:after {
+    content: "\f054";
+}
 
 a, a:hover, a:active, a:link, a:visited {
     color: white;

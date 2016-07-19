@@ -9,6 +9,22 @@
 
 @section('article')
     <h1 class="title" id="title-blumell">Papelucho Blumell</h1>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                    Collapsible Group Item #1
+                </a>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    Anim pariatur cliche...
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="accordion" id="accordion">
         <div>
             <div class="accordion-item-title"><a>Síntesis metodológica</a><i class="fa fa-chevron-down"></i></div>
@@ -70,7 +86,7 @@
                 </div>
                 <h4 class="cursive-title">Descripción</h4>
 
-                <p >Este nivel atiende a lactantes desde 84 días a 12 meses, los cuales son atendidos por
+                <p>Este nivel atiende a lactantes desde 84 días a 12 meses, los cuales son atendidos por
                     una Educadora y
                     dos Asistentes de Párvulos quienes velan por el bienestar de los pequeños y propician su desarrollo
                     integral a través de variadas situaciones de aprendizaje. </p>
@@ -105,7 +121,7 @@
                     {!!Html::image('images/estaticas/14.JPG','medio menor blumell', (array('id'=>'medio-mayor')))!!}
                 </div>
                 <h4 class="cursive-title">Descripción</h4>
-                <p >Este Nivel se compone de dos grupos que funcionan en ambas jornadas y atiende a
+                <p>Este Nivel se compone de dos grupos que funcionan en ambas jornadas y atiende a
                     párvulos entre los 2
                     y 2 años 11 meses, los cuales son atendidos por una Educadora y dos Asistentes de Párvulos en cada
                     Nivel. </p>
@@ -123,7 +139,7 @@
                     {!!Html::image('images/estaticas/8.JPG','medio superior blumell')!!}
                 </div>
                 <h4 class="cursive-title">Descripción</h4>
-                <p >El nivel atiende a niños(as), cuyas edades fluctúan entre los 3 y 3 años 11 meses.
+                <p>El nivel atiende a niños(as), cuyas edades fluctúan entre los 3 y 3 años 11 meses.
                     Está a cargo de
                     una Educadora y una Asistente de Párvulos. </p>
                 <h4 class="cursive-title">Objetivos</h4>
@@ -146,37 +162,48 @@
         {!!Html::image('images/cuerdas.png')!!}
     </div>
     <div class="contact-container">
-    <h3 class="side-section-title">Contáctenos</h3>
+        <h3 class="side-section-title">Contáctenos</h3>
 
-    {!! Form::open(['route' => 'blumell-send', 'method' => 'POST','class'=>'contact-form','id'=>'formContact','role' => 'action','send']) !!}
-    {!! csrf_field() !!}
-    <div class="form-group">
-        {{--{!! Form::label('name', 'Nombre:') !!}--}}
-        {!! Form::text('name', null , ['placeholder' => 'Nombre', 'class' => 'form-control','id' => 'textName']) !!}
-    </div>
+        {!! Form::open(['route' => 'blumell-send', 'method' => 'POST','class'=>'contact-form','id'=>'formContact','role' => 'action','send']) !!}
+        {!! csrf_field() !!}
+        <div class="form-group">
+            {{--{!! Form::label('name', 'Nombre:') !!}--}}
+            {!! Form::text('name', null , ['placeholder' => 'Nombre', 'class' => 'form-control','id' => 'textName']) !!}
+        </div>
 
-    <div class="form-group">
-        {{--{!! Form::label('email', 'Email:') !!}--}}
-        {!! Form::text('email', null, ['placeholder' => 'Email', 'class' => 'form-control']) !!}
-    </div>
+        <div class="form-group">
+            {{--{!! Form::label('email', 'Email:') !!}--}}
+            {!! Form::text('email', null, ['placeholder' => 'Email', 'class' => 'form-control']) !!}
+        </div>
 
-    <div class="form-group">
-        {{--}{!! Form::label('phone', 'Teléfono:') !!}--}}
-        {!! Form::text('phone', null, ['placeholder' => 'Teléfono', 'class' => 'form-control']) !!}
-    </div>
+        <div class="form-group">
+            {{--}{!! Form::label('phone', 'Teléfono:') !!}--}}
+            {!! Form::text('phone', null, ['placeholder' => 'Teléfono', 'class' => 'form-control']) !!}
+        </div>
 
-    <div class="form-group">
-        {{-- {!! Form::label('message', 'Mensaje:') !!}--}}
-        {!! Form::textarea('msj', null, ['placeholder' => 'Mensaje', 'class' => 'form-control']) !!}
+        <div class="form-group">
+            {{-- {!! Form::label('message', 'Mensaje:') !!}--}}
+            {!! Form::textarea('msj', null, ['placeholder' => 'Mensaje', 'class' => 'form-control']) !!}
 
-    </div>
-    <div class="form-group">
-        {!! Form::submit('Enviar', ['class' => 'button', 'id'=>'contact-button'])!!}
-    </div>
-    {!! Form::close() !!}
+        </div>
+        <div class="form-group">
+            {!! Form::submit('Enviar', ['class' => 'button', 'id'=>'contact-button'])!!}
+        </div>
+        {!! Form::close() !!}
     </div>
 @stop
 
 @section('meta-footer')
     {!! Html::script('js/contacto.js') !!}
+    <script>
+        $(document).on('show','.accordion', function (e) {
+            //$('.accordion-heading i').toggleClass(' ');
+            $(e.target).prev('.accordion-heading').addClass('accordion-opened');
+        });
+
+        $(document).on('hide','.accordion', function (e) {
+            $(this).find('.accordion-heading').not($(e.target)).removeClass('accordion-opened');
+            //$('.accordion-heading i').toggleClass('fa-chevron-right fa-chevron-down');
+        });
+    </script>
 @endsection
