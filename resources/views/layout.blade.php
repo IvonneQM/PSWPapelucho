@@ -95,7 +95,12 @@
                 <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!}
                     infoblumell@jardinpapelucho.cl</span>
             </p>
-            {!! Google::maps(1) !!}
+            {{-- MAPA 1--}}
+            <div class="large-6 medium-6 ">
+                <div id="map_canvas" class="google-maps">
+                </div>
+            </div>
+
         </div>
         <div class="footer-box col-lg-2">
             <h3>Las Colonias</h3>
@@ -107,7 +112,7 @@
                 <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!}
                     info@jardinpapelucho.cl</span>
             </p>
-            {!! Google::maps(2) !!}
+
         </div>
     </div>
 
@@ -118,9 +123,19 @@
     </p>
     @yield('meta-footer')
 </footer>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdUySAYtjrmCJruK4agAZxEIGAFoueApE&callback=initMap">
+<script>
+    jQuery(function(){
+        setTimeout(initializeGoogleMap,700);
+    });
 </script>
+{!!Html::script('js/foundation.min.js')!!}
+{!!Html::script('js/maps.js')!!}
+<script async defer
+ src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAdUySAYtjrmCJruK4agAZxEIGAFoueApE" type="text/javascript">
+
+</script>
+
+
 
 </body>
 </html>
