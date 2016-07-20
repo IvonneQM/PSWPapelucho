@@ -394,6 +394,10 @@ ul {
     /*padding: 5px 0;*/
 }
 
+.gmaps{
+    height: 140px;
+}
+
 .img-slide {
     max-width: 100% !important;
     top: -50% !important;

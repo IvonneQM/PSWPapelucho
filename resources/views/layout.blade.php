@@ -24,6 +24,11 @@
 
 
     @yield('meta')
+
+    <style type="text/css">
+        html, body { height: 100%; margin: 0; padding: 0; }
+        #map, #maps { height: 100%; }
+    </style>
 </head>
 <body>
 <header>
@@ -86,7 +91,8 @@
 <footer>
     <div id="bottom-footer-box">
         <div class="footer-box col-lg-2">
-            <h3>Blumell</h3>
+            <div class="col-lg-7">
+                <h3>Blumell</h3>
             <p>
                 <span class="span-ico-footer">{!!Html::image('images/ico-mapa.png', 'ico-mapa', array('class' => 'span-ico-footer'))!!}
                     Blumell 049 Playa Blanca</span><br>
@@ -95,14 +101,17 @@
                 <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!}
                     infoblumell@jardinpapelucho.cl</span>
             </p>
+            </div>
             {{-- MAPA 1--}}
-            <div class="large-6 medium-6 ">
-                <div id="map_canvas" class="google-maps">
+            <div class="large-5 medium-6 gmaps">
+                <div id="map" class="google-maps">
+
                 </div>
             </div>
 
         </div>
         <div class="footer-box col-lg-2">
+            <div class="col-lg-7">
             <h3>Las Colonias</h3>
             <p>
                 <span class="span-ico-footer"> {!!Html::image('images/ico-mapa.png', 'ico-mapa', array('class' => 'span-ico-footer'))!!}
@@ -112,6 +121,13 @@
                 <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!}
                     info@jardinpapelucho.cl</span>
             </p>
+</div>
+            {{-- MAPA 1--}}
+            <div class="large-5 medium-6 gmaps">
+                <div id="maps" class="google-maps">
+
+                </div>
+            </div>
 
         </div>
     </div>
@@ -123,17 +139,8 @@
     </p>
     @yield('meta-footer')
 </footer>
-<script>
-    jQuery(function(){
-        setTimeout(initializeGoogleMap,700);
-    });
-</script>
-{!!Html::script('js/foundation.min.js')!!}
 {!!Html::script('js/maps.js')!!}
-<script async defer
- src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAdUySAYtjrmCJruK4agAZxEIGAFoueApE" type="text/javascript">
-
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NOo5rzMO7aWZuZe-9O3IexXJE5vMKVE&callback=initialize"></script>
 
 
 
