@@ -9,6 +9,10 @@
    Amarillo: F7EC3F
    Plomo: 939597
 **/
+
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+
+
 a, a:hover, a:active, a:link, a:visited {
     color: white;
     text-decoration: none;

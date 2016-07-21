@@ -19,61 +19,85 @@
     <div class="container" style="width: 100%">
         <div class="row-fluid">
             <div class="col-lg-12">
-                <div class="panel-heading"><h1 class="title">{!! $parvulo->full_name !!}</h1></div>
-                <div class="col-lg-12">
-                    <div class="panel-heading" id="panel-content-heading">Información Personal</div>
-                    <table class="table table-striped">
-                        <tr>
-                            <td>Rut:</td>
-                            <td>{!! $parvulo->rut !!}</td>
-                        </tr>
-                        <tr>
-                            <td>Jardin:</td>
-                            <td>{!! $parvulo->jardines->name !!}</td>
-                        </tr>
-                        <tr>
-                            <td>Nivel:</td>
-                            <td>{!! $parvulo->niveles->name !!}</td>
-                        </tr>
-                        <tr>
-                            <td>Jornada:</td>
-                            <td>{!! $parvulo->jornadas->name !!}</td>
-                        </tr>
-                    </table>
+
+                    <div class="panel-heading"><h1 class="title">{!! $parvulo->full_name !!}</h1></div>
+                    <div class="col-lg-12">
+                        <div class="panel-primary">
+                        <div class="panel-heading" id="panel-content-heading">Información Personal</div>
+                        <table class="table table-striped">
+                            <tr>
+                                <td>Rut:</td>
+                                <td>{!! $parvulo->rut !!}</td>
+                            </tr>
+                            <tr>
+                                <td>Jardin:</td>
+                                <td>{!! $parvulo->jardines->name !!}</td>
+                            </tr>
+                            <tr>
+                                <td>Nivel:</td>
+                                <td>{!! $parvulo->niveles->name !!}</td>
+                            </tr>
+                            <tr>
+                                <td>Jornada:</td>
+                                <td>{!! $parvulo->jornadas->name !!}</td>
+                            </tr>
+                        </table>
+                    </div>
 
                     <div class="panel-primary">
                         <div class="panel-heading">Últimas Fotografías de {!! $parvulo->jardines->name !!}</div>
-                        <div class="panel-body" style="height:100px;">
-                            <div id="mycarousel" class="carousel slide" data-ride="carousel">
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    @foreach($fotografias as $fot)
-                                        <li data-target="#mycarousel" data-slide-to="{!! $fot->id !!}"></li>
-                                    @endforeach
-                                </ol>
-                            @foreach($fotografias as $foto)
-                                <!-- Wrapper for slides -->
-                                    <div class="carousel-inner" role="listbox">
-                                        <div class="item">
 
-                                            <img src="{!!  $foto->getThumbnail() !!}" data-color="lightblue"
-                                                 alt="{!! $foto->fileName !!}">
-                                            <div class="carousel-caption">
-                                                <h3>{!! $foto->fileName !!}</h3>
+                        <div class="container">
+                            <div class="row carousel-row">
+                                <div class="span12">
+                                    <div class="well">
+                                        <div id="myCarousel" class="carousel slide">
+
+                                            <div class="carousel-inner">
+                                                <div class="item active">
+                                                    <div class="row ">
+                                                        <div class="col-sm-3"><a href="#x"
+                                                                                 class="thumbnail thumbnail-slide"><img
+                                                                        src="http://placehold.it/500x500" alt="Image"
+                                                                        class="img-responsive"></a>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="item">
+                                                    <div class="row">
+                                                        <div class="col-sm-3"><a href="#x"
+                                                                                 class="thumbnail thumbnail-slide"><img
+                                                                        src="http://placehold.it/250x250" alt="Image"
+                                                                        class="img-responsive"></a>
+                                                        </div>
+                                                        <div class="col-sm-3"><a href="#x"
+                                                                                 class="thumbnail thumbnail-slide"><img
+                                                                        src="http://placehold.it/250x250" alt="Image"
+                                                                        class="img-responsive"></a>
+                                                        </div>
+                                                        <div class="col-sm-3"><a href="#x"
+                                                                                 class="thumbnail thumbnail-slide"><img
+                                                                        src="http://placehold.it/250x250" alt="Image"
+                                                                        class="img-responsive"></a>
+                                                        </div>
+                                                        <div class="col-sm-3"><a href="#x"
+                                                                                 class="thumbnail thumbnail-slide"><img
+                                                                        src="http://placehold.it/250x250" alt="Image"
+                                                                        class="img-responsive"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="left carousel-control" href="#myCarousel"
+                                                   data-slide="prev">‹</a>
+
+                                                <a class="right carousel-control" href="#myCarousel"
+                                                   data-slide="next">›</a>
                                             </div>
-
                                         </div>
                                     </div>
-                            @endforeach
-                            <!-- Controls -->
-                                <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -100,10 +124,10 @@
                        href="{{$fotografia->url}}"> {{$fotografia->fileName}} </a>
                 </div>
 
-            @endforeach
-        </div>
-    </div>
-</div>--}}
+                @endforeach
+                </div>
+                </div>
+                </div>--}}
                     <div class="panel-primary">
                         <div class="panel-heading">Informes al Hogar</div>
                         <div class="panel-body">
@@ -120,7 +144,8 @@
                                             </a>
                                         @endif
                                         {{-- <img src="../{{$archivo->url}}">--}}
-                                        <a class="file-title" href="{{$informe->url}}"> {{$informe->fileName}} </a>
+                                        <a class="file-title"
+                                           href="{{$informe->url}}"> {{$informe->fileName}} </a>
 
                                     </div>
                                 @endforeach
@@ -144,7 +169,8 @@
                                             </a>
                                         @endif
                                         {{-- <img src="../{{$archivo->url}}">--}}
-                                        <a class="file-title" href="{{$boletin->url}}"> {{$boletin->fileName}} </a>
+                                        <a class="file-title"
+                                           href="{{$boletin->url}}"> {{$boletin->fileName}} </a>
                                     </div>
 
                                 @endforeach
@@ -182,9 +208,11 @@
         </div>
     </div>
 @stop
-<script>
-    $('.carousel').carousel({
-        interval: 6000,
-        pause   : "false"
-    });
-</script>
+@section('meta-footer')
+    <script>
+        $('.carousel').carousel({
+            interval: 6000,
+            pause   : "false"
+        });
+    </script>
+@stop
