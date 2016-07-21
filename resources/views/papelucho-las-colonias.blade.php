@@ -1,9 +1,6 @@
 @extends('layout')
 @section('meta')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {!!Html::script('js/collapse.js')!!}
-
-
 @stop
 @section('page-title')
     Papelucho Las Colonias
@@ -146,12 +143,6 @@
         @include(('galerias.galeriasLasColonias'))
     </div>
 
-    {{--  <div>
-          @foreach( $jardines->galerias as $jardines)
-              <h1> {{$jardines -> name }}</h1>
-          @endforeach
-      </div>
-      --}}
 @stop
 
 

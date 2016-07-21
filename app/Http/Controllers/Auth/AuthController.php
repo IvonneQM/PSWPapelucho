@@ -82,8 +82,6 @@ class AuthController extends Controller
             return 'apoderado';
         }
 
-
-
     }
 
     /* Tiempo de bloqueo*/
@@ -123,4 +121,6 @@ ULTIMA HORA EN LA QUE SE CONECTO UN USUARIO
     {
         return false;
     }
+
+    
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Support\Facades\Auth;
 
 class PasswordController extends Controller
 {
@@ -32,17 +33,16 @@ class PasswordController extends Controller
 
     public function redirectPath()
     {
-        return route('/home');
-    }
+        if(\Auth::user()->role == 'admin')
+        {
 
-    /**
-     * Get the e-mail subject line to be used for the reset link email.
-     *
-     * @return string
-     */
-    protected function getEmailSubject()
-    {
-        return property_exists($this, 'subject') ? $this->subject : 'Your Password Reset Link';
+            return 'administrador';
+        }
+        else
+        {
+            
+            return 'apoderado';
+        }
     }
 
     /**
@@ -54,8 +54,21 @@ class PasswordController extends Controller
      */
     protected function resetPassword($user, $password)
     {
-        $user->password = bcrypt($password);
+        $user->password = $password;
         $user->save();
         Auth::login($user);
     }
+
+    /**
+     * Get the e-mail subject line to be used for the reset link email.
+     *
+     * @return string
+     */
+    protected function getEmailSubject()
+    {
+        return trans('passwords.email_subject');
+    }
+
+
+
 }

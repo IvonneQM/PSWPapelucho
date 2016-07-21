@@ -1,8 +1,10 @@
 /**
  * Created by YvonneQM on 02-03-16.
  */
-$(function()
-{
+
+
+$(document).ready(function () {
+
     var $form = $('#login-form'),
         $showLogin = $('#show-login');
 
@@ -10,6 +12,19 @@ $(function()
         $form.slideToggle();
         return false;
     }
-
     $showLogin.click(showForm);
-})
+
+    $('.rut').Rut({
+        on_error : function () {
+            swal("Error!",
+                "Rut Inválido",
+                "warning");
+        },
+        format_on: 'keyup'
+    });
+
+});
+
+
+
+

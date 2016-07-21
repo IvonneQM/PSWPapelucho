@@ -1,0 +1,1 @@
+Haz click en el siguiente enlace para cambiar la contraseña {{ url('password/reset/'.$token) }}

@@ -48,7 +48,9 @@ Route::get('/', [
     'as' => 'home'
 ]);
 
-
+Route::get('acordion', function () {
+    return view('acordion');
+});
 /*-------------------------------------------------------------------*/
 /*                       AUTENTICACIÓN LOGIN                         */
 /*-------------------------------------------------------------------*/
@@ -76,6 +78,10 @@ Route::get('confirmation/{token}', [
     'uses' => 'Auth\AuthController@getConfirmation',
     'as' => 'confirmation'
 ]);
+
+/*-------------------------------------------------------------------*/
+/*                  RECUPERAR CONTRASEÑA                             */
+/*-------------------------------------------------------------------*/
 
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
@@ -132,6 +138,11 @@ Route::get('archivos/galeria/{galeria_id}', function ($galeria_id) {
         ->orderBy('created_at', 'DESC')
         ->get();
 });
+
+Route::get('prueba', function () {
+    return view('cms.apoderados.prueba');
+});
+
 /*-------------------------------------------------------------------*/
 /*                            MIDDLEWARES                            */
 /*-------------------------------------------------------------------*/

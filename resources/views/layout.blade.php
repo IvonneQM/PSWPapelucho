@@ -23,6 +23,8 @@
     {!!Html::script('js/login.js')!!}
 
 
+
+
     @yield('meta')
 
     <style type="text/css">
@@ -141,8 +143,6 @@
 </footer>
 {!!Html::script('js/maps.js')!!}
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NOo5rzMO7aWZuZe-9O3IexXJE5vMKVE&callback=initialize"></script>
-
-
 
 </body>
 </html>

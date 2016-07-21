@@ -18,5 +18,8 @@ return [
     'sent' => '¡Recordatorio de contraseña enviado!',
     'token' => 'Este token de reestablecimiento de contraseña es inválido.',
     'user' => 'No se ha encontrado un usuario con esa dirección de correo.',
+    'email_subject' => "Recupera tu contraseña",
+    'password_confirmation' => "confirma contraseña"
+
 
 ];

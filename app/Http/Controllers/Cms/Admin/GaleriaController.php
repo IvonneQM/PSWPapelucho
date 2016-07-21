@@ -40,8 +40,7 @@ class GaleriaController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(CreateGaleriaRequest $request){
-
-
+        
         if($request->ajax()){
             $galerias = Galeria::create($request->sanitize());
             $galerias = Galeria::with('jardin')->find($galerias->id);

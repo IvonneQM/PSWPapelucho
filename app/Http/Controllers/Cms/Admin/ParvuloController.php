@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cms\Admin;
 
+use App\Galeria;
 use App\Http\Requests\CreateParvuloRequest;
 use App\Archivo;
 use App\Nivel;
@@ -36,11 +37,13 @@ class ParvuloController extends Controller
 
     public function indexApoderado(Request $request, $id)
     {
+        $archivos = Archivo::get();
         $parvulo = Parvulo::findOrFail($id);
         $archivos = Archivo::doesntHave('galerias')->doesntHave('jardines')->doesntHave('niveles')->doesntHave('parvulos')->get();
         //$fotografias = Parvulo::findOrFail($id)->jardines->archivos->orderBy('DESC','created_at')->get(5);
-        $fotografias = Parvulo::findOrFail($id)->jardines()->archivos()->get('archivos');
+        //$fotografias = Parvulo::findOrFail($id)->jardines()->archivos()->get('archivos');
         //App\User::find(1)->roles()->orderBy('name')->get();
+        $fotografias = $parvulo->jardines->archivos()->orderBy('id', 'DESC')->take(20)->get();
         return view('cms.apoderados.parvulos', compact('parvulo','archivos','fotografias'));
     }
 
