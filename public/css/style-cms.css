@@ -64,6 +64,10 @@
     background: #333333;
 }
 
+.well.well-carousel{
+    margin-top: -20px;
+}
+
 
 /* termino carrusel*/
 
@@ -562,6 +566,7 @@ a.delete-file:hover {
 }
 
 @media screen and (max-width: 773px) {
+
 
     header nav {
         display: block;

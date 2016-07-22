@@ -20,9 +20,9 @@
         <div class="row-fluid">
             <div class="col-lg-12">
 
-                    <div class="panel-heading"><h1 class="title">{!! $parvulo->full_name !!}</h1></div>
-                    <div class="col-lg-12">
-                        <div class="panel-primary">
+                <div class="panel-heading"><h1 class="title">{!! $parvulo->full_name !!}</h1></div>
+                <div class="col-lg-12">
+                    <div class="panel-primary">
                         <div class="panel-heading" id="panel-content-heading">Información Personal</div>
                         <table class="table table-striped">
                             <tr>
@@ -44,120 +44,72 @@
                         </table>
                     </div>
 
+
                     <div class="panel-primary">
                         <div class="panel-heading">Últimas Fotografías de {!! $parvulo->jardines->name !!}</div>
+                        <div class="panel-body">
+                            <div class="row row-thumbnails">
+                                @if(!$fotografias->isEmpty())
+                                    <div class="container">
+                                        <div class="row carousel-row">
+                                            <div class="span12">
+                                                <div class="well well-carousel">
+                                                    <div id="myCarousel" class="carousel slide">
+                                                        <div class="carousel-inner">
+                                                            @foreach($fotografias->chunk(2) as $row)
 
-                        <div class="container">
-                            <div class="row carousel-row">
-                                <div class="span12">
-                                    <div class="well">
-                                        <div id="myCarousel" class="carousel slide">
+                                                                <div class="item @if($row->first() === $fotografias->first()) {{ 'active' }} @endif">
+                                                                    @foreach($row as $fotografia)
+                                                                        <div class="col-sm-6 col-xs-6"><a
+                                                                                    href="{{$fotografia->url}}"
+                                                                                    class="thumbnail thumbnail-slide"><img
+                                                                                        src="{!! $fotografia->getThumbnail() !!}"
+                                                                                        alt="Image"
+                                                                                        class="img-responsive"></a>
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
+                                                            @endforeach
+                                                            <a class="left carousel-control" href="#myCarousel"
+                                                               data-slide="prev">‹</a>
 
-                                            <div class="carousel-inner">
-                                                @foreach($fotografias->chunk(5) as $row)
-                                              <div class="item active">
-                                                  @foreach($row as $fotografia)
-                                                  <div class="col-sm-3"><a href="{{$fotografia->url}}"
-                                                                           class="thumbnail thumbnail-slide"><img
-                                                                  src="{!! $fotografia->getThumbnail() !!}" alt="Image"
-                                                                  class="img-responsive"></a>
-                                                  </div>
-                                                  @endforeach
-                                       {{--  <div class="row ">
-                                                        <div class="col-sm-3"><a href="#x"
-                                                                                 class="thumbnail thumbnail-slide"><img
-                                                                        src="http://placehold.it/500x500" alt="Image"
-                                                                        class="img-responsive"></a>
+                                                            <a class="right carousel-control" href="#myCarousel"
+                                                               data-slide="next">›</a>
+
                                                         </div>
-
                                                     </div>
                                                 </div>
-
-                                                <div class="item">
-                                                    <div class="row">
-                                                        <div class="col-sm-3"><a href="#x"
-                                                                                 class="thumbnail thumbnail-slide"><img
-                                                                        src="http://placehold.it/250x250" alt="Image"
-                                                                        class="img-responsive"></a>
-                                                        </div>
-                                                        <div class="col-sm-3"><a href="#x"
-                                                                                 class="thumbnail thumbnail-slide"><img
-                                                                        src="http://placehold.it/250x250" alt="Image"
-                                                                        class="img-responsive"></a>
-                                                        </div>
-                                                        <div class="col-sm-3"><a href="#x"
-                                                                                 class="thumbnail thumbnail-slide"><img
-                                                                        src="http://placehold.it/250x250" alt="Image"
-                                                                        class="img-responsive"></a>
-                                                        </div>
-                                                        <div class="col-sm-3"><a href="#x"
-                                                                                 class="thumbnail thumbnail-slide"><img
-                                                                        src="http://placehold.it/250x250" alt="Image"
-                                                                        class="img-responsive"></a>
-                                                        </div>
-                                                    </div>--}}
-                                                </div>
-                                                @endforeach
-                                                <a class="left carousel-control" href="#myCarousel"
-                                                   data-slide="prev">‹</a>
-
-                                                <a class="right carousel-control" href="#myCarousel"
-                                                   data-slide="next">›</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
 
-                    {{--
-                    <div class="panel-primary">
-                        <div class="panel-heading">Últimas Fotografías de {!! $parvulo->jardines->name !!}</div>
-                        <div class="panel-body">
-                            <div class="row row-thumbnails">
-                                @foreach($fotografias as $fotografia)
-                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 links">
-                                        @if ( $fotografia->getImageExtension() == true)
-                                            <a href="{{$fotografia->url}}" class="thumbnail" data-gallery>
-                                                <img src="{!! $fotografia->getThumbnail() !!}">
-                                            </a>
-
-                                        @else
-                                            <a href="{{$fotografia->url}}" class="thumbnail" target="_blank">
-                                                <img src="{!! $fotografia->getThumbnail() !!}">
-                                            </a>
-                                        @endif
-                                        {{-- <img src="../{{$archivo->url}}">--}}
-                    {{--<a class="file-title"
-                       href="{{$fotografia->url}}"> {{$fotografia->fileName}} </a>
-                </div>
-
-                @endforeach
-                </div>
-                </div>
-                </div>--}}
                     <div class="panel-primary">
                         <div class="panel-heading">Informes al Hogar</div>
                         <div class="panel-body">
-                            <div class="row row-thumbnails">
-                                @foreach($parvulo->archivos as $informe)
-                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 links">
-                                        @if ( $informe->getImageExtension() == true)
-                                            <a href="{{$informe->url}}" class="thumbnail" data-gallery>
-                                                <img src="{!! $informe->getThumbnail() !!}">
-                                            </a>
-                                        @else
-                                            <a href="{{$informe->url}}" class="thumbnail" target="_blank">
-                                                <img src="{!! $informe->getThumbnail() !!}">
-                                            </a>
-                                        @endif
-                                        {{-- <img src="../{{$archivo->url}}">--}}
-                                        <a class="file-title"
-                                           href="{{$informe->url}}"> {{$informe->fileName}} </a>
+                            <div class="well">
+                                <div class="row row-thumbnails">
+                                    @foreach($parvulo->archivos as $informe)
+                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 links">
+                                            @if ( $informe->getImageExtension() == true)
+                                                <a href="{{$informe->url}}" class="thumbnail" data-gallery>
+                                                    <img src="{!! $informe->getThumbnail() !!}">
+                                                </a>
+                                            @else
+                                                <a href="{{$informe->url}}" class="thumbnail" target="_blank">
+                                                    <img src="{!! $informe->getThumbnail() !!}">
+                                                </a>
+                                            @endif
+                                            {{-- <img src="../{{$archivo->url}}">--}}
+                                            <a class="file-title"
+                                               href="{{$informe->url}}"> {{$informe->fileName}} </a>
 
-                                    </div>
-                                @endforeach
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -165,24 +117,25 @@
                     <div class="panel-primary">
                         <div class="panel-heading">Boletines Semanales</div>
                         <div class="panel-body">
-                            <div class="row row-thumbnails">
-                                @foreach($parvulo->niveles->archivos as $boletin)
-                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 links">
-                                        @if ( $boletin->getImageExtension() == true)
-                                            <a href="{{$boletin->url}}" class="thumbnail" data-gallery>
-                                                <img src="{!! $boletin->getThumbnail() !!}">
-                                            </a>
-                                        @else
-                                            <a href="{{$boletin->url}}" class="thumbnail" target="_blank">
-                                                <img src="{!! $boletin->getThumbnail() !!}">
-                                            </a>
-                                        @endif
-                                        {{-- <img src="../{{$archivo->url}}">--}}
-                                        <a class="file-title"
-                                           href="{{$boletin->url}}"> {{$boletin->fileName}} </a>
-                                    </div>
-
-                                @endforeach
+                            <div class="well">
+                                <div class="row row-thumbnails">
+                                    @foreach($parvulo->niveles->archivos as $boletin)
+                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 links">
+                                            @if ( $boletin->getImageExtension() == true)
+                                                <a href="{{$boletin->url}}" class="thumbnail" data-gallery>
+                                                    <img src="{!! $boletin->getThumbnail() !!}">
+                                                </a>
+                                            @else
+                                                <a href="{{$boletin->url}}" class="thumbnail" target="_blank">
+                                                    <img src="{!! $boletin->getThumbnail() !!}">
+                                                </a>
+                                            @endif
+                                            {{-- <img src="../{{$archivo->url}}">--}}
+                                            <a class="file-title"
+                                               href="{{$boletin->url}}"> {{$boletin->fileName}} </a>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -193,7 +146,6 @@
 @stop
 
 @section('aside2')
-
     <div class="panel-primary">
         <div class="panel-heading">Documentos Generales</div>
         <div class="general-files-container">
