@@ -54,8 +54,16 @@
                                         <div id="myCarousel" class="carousel slide">
 
                                             <div class="carousel-inner">
-                                                <div class="item active">
-                                                    <div class="row ">
+                                                @foreach($fotografias->chunk(5) as $row)
+                                              <div class="item active">
+                                                  @foreach($row as $fotografia)
+                                                  <div class="col-sm-3"><a href="{{$fotografia->url}}"
+                                                                           class="thumbnail thumbnail-slide"><img
+                                                                  src="{!! $fotografia->getThumbnail() !!}" alt="Image"
+                                                                  class="img-responsive"></a>
+                                                  </div>
+                                                  @endforeach
+                                       {{--  <div class="row ">
                                                         <div class="col-sm-3"><a href="#x"
                                                                                  class="thumbnail thumbnail-slide"><img
                                                                         src="http://placehold.it/500x500" alt="Image"
@@ -87,8 +95,9 @@
                                                                         src="http://placehold.it/250x250" alt="Image"
                                                                         class="img-responsive"></a>
                                                         </div>
-                                                    </div>
+                                                    </div>--}}
                                                 </div>
+                                                @endforeach
                                                 <a class="left carousel-control" href="#myCarousel"
                                                    data-slide="prev">‹</a>
 
