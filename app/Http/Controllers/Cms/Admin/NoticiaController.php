@@ -24,7 +24,7 @@ class NoticiaController extends Controller
 
     public function mostrarNoticias()
     {
-        $noticias = Noticia::orderBy('id','DESC')->paginate(2);
+        $noticias = Noticia::where('publish','si')->orderBy('id','DESC')->paginate(2);
         return view('home',compact('noticias'));
     }
 

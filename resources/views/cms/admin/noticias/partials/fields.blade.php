@@ -10,7 +10,7 @@
 </div>
 <div class="form-group">
     {!!Form::label('publish','Publicar: ') !!}
-    {!! Form::checkbox('pub', 1, null, ['id'=>'publish_galeria', 'class' => 'field']) !!}
+    {!! Form::checkbox('pub', null, ['id'=>'publish_noticia', 'class' => 'field']) !!}
 
 </div>
 

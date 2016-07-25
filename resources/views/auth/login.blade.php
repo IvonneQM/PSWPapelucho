@@ -22,16 +22,17 @@
         {!! Form::text('rut', null , array('placeholder' => 'Rut', 'class' => 'rut text-field-apoderados')) !!}
         {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
 
-        <a href="{{url ('password/email')}}" id="forgot-pass" data-toggle="modal" data-target="#modal-recuperar-pass">¿Olvidaste
-            tu contraseña?</a>
+        <a href="#" role="button" id="forgot-pass">¿Olvidaste tu contraseña?</a>
 
 
     {!! Form::submit('Entrar', ['class' => 'button'])!!}
-    {!! Form::close() !!}
+    </form>
 </div>
 
 {!!Html::script('js/jquery.Rut.js')!!}
 {!!Html::script('js/bootstrap.min.js')!!}
+{!!Html::script('js/modals/mailContrasenia.js')!!}
+
 
 
 

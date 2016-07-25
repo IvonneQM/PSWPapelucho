@@ -1,3 +1,1 @@
-@extends('layout)
-
-ERROR !
+<h1> Página no encontrada </h1>

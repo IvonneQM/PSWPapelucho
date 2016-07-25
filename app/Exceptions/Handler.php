@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -42,12 +44,43 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        if (config('app.debug') && app()->environment() != 'testing') {
+        if($this->isHttpException($e)) {
+            switch ($e->getStatusCode()) {
+
+                // not authorized
+                case 403:
+                    return \Response::view('errors.403',array(),403);
+                    break;
+
+                // not found
+                case 404:
+                    return \Response::view('errors.404',array(),404);
+                    break;
+
+                // internal error
+                case '500':
+                    return \Response::view('errors.500',array(),500);
+                    break;
+
+                default:
+                    return $this->renderHttpException($e);
+                    break;
+            }
+        }
+        else
+        {
+            return parent::render($request, $e);
+        }
+    }
+        /*if (config('app.debug') && app()->environment() != 'testing') {
             return $this->renderExceptionWithWhoops($request, $e);
         }
 
         return parent::render($request, $e);
-    }
+        */
+
+
+
 
     protected function renderExceptionWithWhoops($request, Exception $e)
     {

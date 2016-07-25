@@ -43,7 +43,7 @@
         </ul>
         <nav id="sidebar-mobile">
             <ul>
-                <li><a href="{{ route('logout') }}">Cerrar Sesión</a></li>
+                <li><a class="item-menu" href="{{ route('logout') }}">Cerrar Sesión</a></li>
                 @yield('menu-mobile')
             </ul>
         </nav>

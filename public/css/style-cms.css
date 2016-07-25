@@ -359,6 +359,10 @@ a.delete-file:hover {
     padding: 0 10px !important;
 }
 
+.item-menu{
+    font-family: 'Love Ya Like A Sister', sans-serif;
+}
+
 .panel-primary > .panel-heading {
     color: #fff;
     background-color: #1056A7;

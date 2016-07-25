@@ -1,37 +1,29 @@
 @extends('layout')
 
-@section('general-content-1')
+@section('article')
     <form method="POST" action="/password/reset">
-    {!! csrf_field() !!}
-    <input type="hidden" name="token" value="{{ $token }}">
+        {!! csrf_field() !!}
+        <input type="hidden" name="token" value="{{ $token }}">
 
-    @if (count($errors) > 0)
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+        <div class="form-group">
+            {!! Form::label('email','Correo Electrónico: ') !!}
+            {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>'Ingrese correo electrónico', 'required' => 'true']) !!}
+        </div>
 
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
+        <div class="form-group">
+            {!! Form::label('password','Ingrese nueva contraseña: ') !!}
+            {!! Form::password('password',['class'=>'form-control', 'placeholder'=>'Nueva contraseña','required' => 'true']) !!}
+        </div>
 
-    <div>
-        Nueva contraseña
-        <input type="password" name="password">
-    </div>
+        <div class="form-group">
+            {!! Form::label('password','Confirme contraseña: ') !!}
+            {!! Form::password('password_confirmation',['class'=>'form-control', 'placeholder'=>'Confirme contaseña','required' => 'true']) !!}
+        </div>
 
-    <div>
-        Confirma contraseña
-        <input type="password" name="password_confirmation">
-    </div>
+        <div class="form-group">
+            {!!Form::submit('Aceptar',['class'=>'btn btn-primary', 'id'=>'recuperar-boton'])!!}
+        </div>
 
-    <div>
-        <button type="submit">
-            Cambiar contraseña
-        </button>
-    </div>
-</form>
+
+    </form>
 @stop

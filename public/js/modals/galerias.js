@@ -4,7 +4,7 @@ $(document).ready(function () {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    })
+    });
 
     $('#register-galeria').click(function () {
         $('#modal-crear-galeria').modal();
@@ -22,7 +22,6 @@ $(document).ready(function () {
                 dataType: "json",
                 success : function (data) {
 
-                    console.log(data);
                     addRow(data);
                     $('#form-register-galerias').trigger('reset');
                     $('#name_galeria').focus();

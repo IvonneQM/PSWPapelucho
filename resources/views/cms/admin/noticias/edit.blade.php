@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         {!!Form::label('publish','Publicar: ')!!}
-                        {!! Form::checkbox('pub', null, ['id'=>'publishNoticia', 'class' => 'field']) !!}
+                        {!! Form::checkbox('pub', 1, null, ['id'=>'publishNoticia', 'class' => 'field']) !!}
                     </div>
 
                     {!!Form::submit('Aceptar',['class'=>'btn btn-primary','id' => 'btnActualizarNoticia'])!!}

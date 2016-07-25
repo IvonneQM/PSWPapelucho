@@ -190,9 +190,6 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
     <div class="galery-container">
         <h1 class="cursive-title">Galerías</h1>
 

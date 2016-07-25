@@ -1,4 +1,6 @@
-<h1>Mis Párvulos</h1>
+<li><a class="item-menu" href="#"> Mis Párvulos</a></li>
+<ul>
 @foreach(Auth::user()->parvulos as $parvulo)
-        <li><a href="parvulo={{$parvulo->id}}">{!! $parvulo->full_name !!}</a></li>
+        <li><a class="item-menu" href="parvulo={{$parvulo->id}}">{!! $parvulo->full_name !!}</a></li>
 @endforeach
+</ul>

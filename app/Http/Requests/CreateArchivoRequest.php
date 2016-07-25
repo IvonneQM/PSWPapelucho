@@ -37,6 +37,7 @@ class CreateArchivoRequest extends Request
             'jardines' => 'RequiredIf:type,galerias-jardines',
             'niveles'  => 'RequiredIf:type,niveles',
             'parvulos' => 'RequiredIf:type,parvulos',
+            'fileName' => 'Unique:Archivo',
         ];
 
         foreach($this->file('file') as $i => $file){

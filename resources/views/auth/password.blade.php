@@ -1,3 +1,7 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
+{!!Html::style('css/sweetalert.css')!!}
+{!!Html::script('js/sweetalert.js')!!}
+
 <div id="modal-recuperar-pass" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content ">
@@ -9,31 +13,24 @@
             <div class="modal-body">
 
 
-                <form role="form" method="POST" action="/password/email">
+                <form role="form" method="POST" id="form-recuperar-pass" action="/password/email">
                     {!! csrf_field() !!}
-
-                    @if (count($errors) > 0)
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
 
                     <div>
                         <div class="form-group">
                             {!! Form::label('mail','Correo Electrónico: ') !!}
-                            {!! Form::text('mail', null, ['class'=>'form-control', 'placeholder'=>'Ingrese correo electrónico']) !!}
+                            {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>'Ingrese correo electrónico']) !!}
                         </div>
 
                     </div>
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            {!!Form::submit('Recuperar',['class'=>'btn btn-primary', 'id'=>'recuperar-boton'])!!}
+                        </div>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <div class="form-group">
-                    {!!Form::submit('Recuperar',['class'=>'btn btn-primary'])!!}
-                </div>
-            </div>
+
         </div>
     </div>
 </div>

@@ -14,7 +14,7 @@ class ArchivosTable extends Migration
     {
         Schema::create('archivos', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('fileName',200)->required();
+            $table->string('fileName',200)->required()->unique();
             $table->string('url',200)->required();
             $table->Integer('size')->required();
             $table->string('extension');

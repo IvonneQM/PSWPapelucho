@@ -90,24 +90,30 @@ $(document).ready(function () {
                         swal({
                                 title: "Registro actualizado!",
                                 text : "El registro se ha actualizado con exito",
-                                type : "success",
+                                type : "success"
 
                             },
 
                             function X() {
                                 dropzoneImagenes.processQueue.bind(dropzoneImagenes)
                             });
-                    })
+                    });
 
-                    this.on("error", function () {
+                    this.on("error", function (file) {
+                        var name    = file.name;
+
                         swal({
-                            title: "¡Error!",
-                            text : "Se ha generado un problema de conexión con el servidor",
-                            type : "error",
+                            title             : "¡Error!",
+                            text              : "El archivo" + " " +  name  + " "+ "ya existe",
+                            type              : "warning",
+                            confirmButtonColor: "#C32026",
+                            confirmButtonText : "Ok",
+                            closeOnConfirm    : false
                         })
+
                     })
                 }
-            }
+            };
 
             $('body').on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
                 console.log($(this).data('type'));

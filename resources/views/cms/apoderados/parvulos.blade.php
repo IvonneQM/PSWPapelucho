@@ -1,7 +1,10 @@
 @extends('cms.layout')
 
 @section('meta')
-
+    {!!Html::style('css/blueimp-gallery.min.css')!!}
+    {!!Html::style('css/bootstrap-image-gallery.min.css')!!}
+    {!! Html::script('js/jquery.blueimp-gallery.min.js') !!}
+    {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
 @stop
 
 @section('menu-mobile')
@@ -15,6 +18,21 @@
     </nav>
 @stop
 @section('general-content-1')
+
+
+    <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <ol class="indicator"></ol>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    </div>
+    <!--  END The Bootstrap Image Gallery lightbox -->
 
     <div class="container" style="width: 100%">
         <div class="row-fluid">
@@ -57,15 +75,11 @@
                                                     <div id="myCarousel" class="carousel slide">
                                                         <div class="carousel-inner">
                                                             @foreach($fotografias->chunk(2) as $row)
-
                                                                 <div class="item @if($row->first() === $fotografias->first()) {{ 'active' }} @endif">
                                                                     @foreach($row as $fotografia)
-                                                                        <div class="col-sm-6 col-xs-6"><a
-                                                                                    href="{{$fotografia->url}}"
-                                                                                    class="thumbnail thumbnail-slide"><img
-                                                                                        src="{!! $fotografia->getThumbnail() !!}"
-                                                                                        alt="Image"
-                                                                                        class="img-responsive"></a>
+                                                                        <div class="col-sm-6 col-xs-6">
+                                                                            <a href="{{$fotografia->url}}" class="thumbnail thumbnail-slide" data-gallery>
+                                                                                <img src="{!! $fotografia->getThumbnail() !!}" alt="Image" class="img-responsive"></a>
                                                                         </div>
                                                                     @endforeach
                                                                 </div>
@@ -177,3 +191,4 @@
         });
     </script>
 @stop
+
