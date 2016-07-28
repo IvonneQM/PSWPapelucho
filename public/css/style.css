@@ -709,6 +709,10 @@ ul {
     max-width: 331px;
 }
 
+#title-recover-pass {
+    max-width: 550px;
+}
+
 #zona-apoderados {
     display: block;
     height: 127px;

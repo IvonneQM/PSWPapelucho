@@ -26,8 +26,8 @@ class CreateNoticiaRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required|max:200',
-            'content' => 'required|max:255',
+            'title' => 'required|max:100',
+            'content' => 'required|max:400',
         ];
     }
 

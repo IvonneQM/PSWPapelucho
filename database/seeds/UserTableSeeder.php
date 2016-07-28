@@ -6,10 +6,10 @@ class UserTableSeeder extends Seeder{
     public function run()
     {
         \DB::table('users')->insert(array(
-            'rut' => '12345',
-            'full_name' => 'Inger Garrido',
-            'email' => 'inger.mayelin@gmail.com',
-            'password' => bcrypt('inger'),
+            'rut' => '11.111.111-1',
+            'full_name' => 'Administrador',
+            'email' => '',
+            'password' => bcrypt('admin'),
             'role' => 'admin',
         ));
 

@@ -17,7 +17,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $auditorias = Auditoria::paginate(10);
+        $auditorias = Auditoria::orderBy('created_at','DESC')->paginate(10);
         $apoderados = User::where('role','=','apoderado')->get();
         $noticias = Noticia::where('publish','=','si')->get();
         $parvulos = Parvulo::get();
