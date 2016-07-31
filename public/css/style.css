@@ -10,9 +10,6 @@
    Plomo: 939597
 **/
 
-/* Removes the default 20px margin and creates some padding space for the indicators and controls */
-
-
 a, a:hover, a:active, a:link, a:visited {
     color: white;
     text-decoration: none;
@@ -331,7 +328,7 @@ ul {
 }
 
 .cycle-slideshow {
-    display: table;
+    display: block;
     height: 435px;
     margin: 0px auto;
     max-width: 100%;
@@ -377,7 +374,7 @@ ul {
     /*padding: 5px 0;*/
 }
 
-.gmaps{
+.gmaps {
     height: 140px;
 }
 
@@ -390,6 +387,7 @@ ul {
 }
 
 .horario, .directora {
+    text-align: center;
     font-size: 13px;
     padding-left: 10px;
 }
@@ -403,7 +401,7 @@ ul {
 }
 
 .li-completa ul li {
-    list-style-type: circle !important;
+    list-style-type: disc !important;
     display: block;
     border: none;
     width: 100%;
@@ -413,6 +411,17 @@ ul {
 
 .li-completa ul li:nth-child(2) {
     float: none;
+}
+
+ul li li.li-vineta {
+    display: flex;
+    margin: 0 !important;
+}
+
+ul li li.li-vineta:before {
+    color: #00A04A;
+    content: "• ";
+    margin-right: 10px;
 }
 
 .logo {
@@ -452,6 +461,27 @@ ul {
     font-weight: bold;
 }
 
+
+ol.objetives-box {
+    counter-reset: li;
+    list-style: none;
+    padding-left: 10px;
+}
+
+ol.objetives-box li::before {
+    color: #bc1f3e;
+    content: counter(li) ". ";
+    float: left;
+    font-weight: 500;
+    margin-bottom: -3px;
+    margin-left: 0px;
+    width: 1em;
+}
+
+ol.objetives-box li {
+    counter-increment: li;
+}
+
 .objetives-box li {
     list-style-type: inherit;
     font-size: 25px;
@@ -466,16 +496,24 @@ ul {
     word-spacing: 11px;
 }
 
+span.objetives-item::first-letter {
+    display: block;
+    margin-bottom: -20px;
+    margin-top: -20px;
+    position: absolute;
+}
+
 .objetives-item {
     display: block;
     font-size: 16px;
     font-weight: lighter;
+    margin-top: 10px;
     word-spacing: 0.1em;
 }
 
 .objetives-item:first-of-type::first-letter {
-    font-size: 36px;
     float: left;
+    font-size: 36px;
 }
 
 .principal-title {
@@ -513,6 +551,25 @@ ul {
     max-width: 100px;
 }
 
+.nav-tabs > li.active > a.tab-title {
+    background: #00a04a;
+    color: white !important;
+}
+
+.tab-title {
+    background: white;
+    border-bottom: 1px solid #ddd !important;
+    border-left-color: #00a04a !important;
+    border-right-color: #00a04a !important;
+    border-top-color: #00a04a !important;
+    border-radius: 0.3em 0.3em 0 0 !important;
+    color: #00a04a !important;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 25px;
+    padding: 5px !important;
+
+}
+
 .title {
     border-radius: 0.3em 0.3em 0.3em 0;
     font-size: 40px;
@@ -539,26 +596,36 @@ ul {
     text-align: center;
     width: auto;
 }
-
-.two-borders-box li {
+.two-borders-box{
+    padding: 30px;
+}
+.two-borders-box li, .two-borders-box li ul li.inside-two-borders-box {
     border-top: 2px solid #F7EC3F;
     border-bottom: 2px solid #F7EC3F;
     display: inline-block;
-    margin: 20px 20px 20px 50px;
-    padding: 5px 0;
+    margin-top:15px;
+    margin-bottom:15px;
     text-align: left;
     vertical-align: top;
-    width: 40%;
+    width: 45%;
 }
+
+.two-borders-box li ul{
+    padding: 10px;
+}
+.two-borders-box li ul li.inside-two-borders-box {
+    border: none;
+    background: rgba(57, 82, 163, 0.03);
+    border-radius: 2em;
+}
+
 
 .two-borders-box .li-completa {
-
-    width: 89%;
+    width: 100%;
 }
 
-.two-borders-box li:nth-child(2) {
+.two-borders-box li.float:nth-child(2), .two-borders-box li ul li.inside-two-borders-box:nth-child(2) {
     float: right;
-    margin: 20px 50px 20px 0;
 }
 
 .two-borders-box li p {
@@ -746,20 +813,6 @@ ul {
     .img-slide {
         top: -30% !important;
     }
-
-    .two-borders-box-accordion li:first-child {
-        margin-left: 25px !important;
-    }
-
-    .two-borders-box-accordion li:nth-child(2) {
-        margin-right: 25px !important;
-    }
-
-    .two-borders-box-accordion li {
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 43% !important;
-    }
 }
 
 @media screen and (max-width: 960px ) {
@@ -845,16 +898,9 @@ ul {
     .two-borders-box li {
         border-top: 1px solid #F7EC3F;
         border-bottom: 1px solid #F7EC3F;
-        display: inline-block;
-        margin: 20px 20px 20px 50px;
         text-align: left;
-        width: 40%;
     }
 
-    .two-borders-box li:nth-child(2) {
-        float: right;
-        margin: 20px 50px 20px 0;
-    }
 
     #cuerdas {
         display: none;
@@ -966,10 +1012,10 @@ ul {
         margin: 0 auto 20px;
         padding: 5px 0;
         text-align: center;
-        width: 80%;
+        width: 100%;
     }
 
-    .two-borders-box li:nth-child(2) {
+    .two-borders-box li.float:nth-child(2) {
         float: none;
         margin: 0 auto 20px;
     }
@@ -1059,22 +1105,14 @@ ul {
     .accordion-container-img {
         display: none;
     }
-}
 
-@media screen and (max-width: 500px) {
-
-    .accordion-item-title, .accordion-item-content, .galery-container {
-        width: 100%;
-        border-right: none !important;
-        border-left: none !important;
-    }
-
-    .title {
-        margin: -45px 0 0 0px;
+    .two-borders-box {
+        padding: 30px 0;
     }
 }
 
 @media screen and (max-width: 500px) {
+
     article {
         padding: 20px 0px;
     }
@@ -1093,6 +1131,13 @@ ul {
 
     section, aside {
         padding: 10px;
+    }
+
+
+    .accordion-item-title, .accordion-item-content, .galery-container {
+        width: 100%;
+        border-right: none !important;
+        border-left: none !important;
     }
 
     .contact-container, .news-box {
@@ -1115,5 +1160,9 @@ ul {
         position: relative;
         top: -15px !important;
         margin-left: 0 !important;
+    }
+
+    .title {
+        margin: -45px 0 0 0px;
     }
 }

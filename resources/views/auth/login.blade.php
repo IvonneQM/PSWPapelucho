@@ -29,7 +29,7 @@
     </form>
 </div>
 
-{!!Html::script('js/jquery.Rut.js')!!}
+{!!Html::script('js/jquery.rut.min.js')!!}
 {!!Html::script('js/bootstrap.min.js')!!}
 {!!Html::script('js/modals/mailContrasenia.js')!!}
 

@@ -7,18 +7,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
     {!!Html::style('css/bootstrap.min.css')!!}
-    {!!Html::style('css/normalize.css')!!}
-    {!!Html::style('css/style.css')!!}
-    {!!Html::style('css/sweetalert.css')!!}
+    {!!Html::style('css/normalize.min.css')!!}
+    {!!Html::style('css/style.min.css')!!}
+    {!!Html::style('css/sweetalert.min.css')!!}
 
 
     {!!Html::style('//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister')!!}
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
     {!!Html::style('//allfont.es/allfont.css?fonts=linotypezapfino-one')!!}
     {!!Html::style('css/font-awesome.min.css')!!}
-    {!!Html::script('js/jquery-2.2.0.js')!!}
+    {!!Html::script('js/jquery-2.2.0.min.js')!!}
     {!!Html::script('js/jquery.cycle2.min.js')!!}
-    {!!Html::script('js/sweetalert.js')!!}
+    {!!Html::script('js/sweetalert.min.js')!!}
     {!!Html::script('js/menu.js')!!}
     {!!Html::script('js/login.js')!!}
 
@@ -101,7 +101,7 @@
                 <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!}
                     55 245 4645</span><br>
                 <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!}
-                    infoblumell@jardinpapelucho.cl</span>
+                    infopapelucho@gmail.com</span>
             </p>
             </div>
             {{-- MAPA 1--}}
@@ -121,7 +121,7 @@
                 <span class="span-ico-footer">{!!Html::image('images/ico-fono.png', 'ico-fono', array('class' => 'span-ico-footer'))!!}
                     55 245 4647 -  55 245 4648</span><br>
                 <span class="span-ico-footer">{!!Html::image('images/ico-mail.png', 'ico-mail', array('class' => 'span-ico-footer'))!!}
-                    info@jardinpapelucho.cl</span>
+                    papeluchos@vtr.net</span>
             </p>
 </div>
             {{-- MAPA 1--}}

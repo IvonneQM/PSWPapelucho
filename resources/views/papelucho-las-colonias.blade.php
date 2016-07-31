@@ -14,7 +14,7 @@
             <div class="panel-heading accordion-item-title">
                 <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#sintesis">
-                        Síntesis metodológica
+                        Síntesis Metodológica
                     </a><i class="indicator glyphicon glyphicon-chevron-up  pull-right"></i>
                 </h4>
             </div>
@@ -30,8 +30,8 @@
                     <p>Con el fin de favorecer una educación integral de los niños(as) se realizan
                         actividades como:</p>
 
-                    <p
-                            Juego de Rincones puertas abiertas</br>
+                    <p>
+                    Juego de Rincones puertas abiertas</br>
                     Visitas pedagógicas en la comunidad</br>
                     Iniciación a un segundo idioma (Inglés) Nivel Medio Superior</br>
                     Música en colores. Nivel Medio Superior</br>
@@ -51,20 +51,19 @@
                             <h4><span class="cursive-title">Sala Cuna</span></h4>
                             <p class="horario">
                                 08:00 a 13:00 hrs. Jornada Mañana.<br>
-                                14:30 a 18:45 hrs. Jornada Tarde.<br>
-                                08:00 a 18:45 hrs. Jornada Completa.
+                                14:00 a 18:00 hrs. Jornada Tarde.<br>
+                                08:00 a 18:00 hrs. Jornada Completa.
                             </p>
                         </li>
                         <li>
                             <h4><span class="cursive-title">Escuela de Párvulos</span></h4>
                             <p class="horario">
-                                08:30 a 12:30 Jornada Mañana.<br>
-                                14:30 a 18:30 Jornada Tarde.<br>
-                                08:30 a 18:30 Jornada Completa.
+                                08:00 a 12:30 Jornada Mañana.<br>
+                                14:00 a 18:00 Jornada Tarde.<br>
+                                08:00 a 18:00 Jornada Completa.
                             </p>
                         </li>
                     </ul>
-                    <p>Un día a la semana, la salida es a las 18:00 hrs. (Reunión técnica)</p>
                 </div>
             </div>
         </div>
@@ -74,7 +73,7 @@
                 <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                        href="#lMenor">
-                        Sala cuna lactante menor
+                        Sala Cuna - Lactante Menor
                     </a><i class="indicator glyphicon glyphicon-chevron-up  pull-right"></i>
                 </h4>
             </div>
@@ -108,7 +107,7 @@
                 <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                        href="#lMayor">
-                        Sala cuna lactante mayor
+                        Sala Cuna - Lactante Mayor
                     </a><i class="indicator glyphicon glyphicon-chevron-up  pull-right"></i>
                 </h4>
             </div>
@@ -135,7 +134,7 @@
                 <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                        href="#mMenor">
-                        Medio menor
+                        Medio Menor
                     </a><i class="indicator glyphicon glyphicon-chevron-up  pull-right"></i>
                 </h4>
             </div>
@@ -163,7 +162,7 @@
                 <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                        href="#mMayor">
-                        Medio mayor
+                        Medio Mayor
                     </a><i class="indicator glyphicon glyphicon-chevron-up  pull-right"></i>
                 </h4>
             </div>

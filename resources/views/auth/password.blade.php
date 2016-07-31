@@ -1,6 +1,4 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
-{!!Html::style('css/sweetalert.css')!!}
-{!!Html::script('js/sweetalert.js')!!}
 
 <div id="modal-recuperar-pass" class="modal fade" role="dialog">
     <div class="modal-dialog">

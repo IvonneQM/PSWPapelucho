@@ -26,7 +26,7 @@
             <p class="directora">Educadora de Párvulos</br>
                 Directora Sede Las Colonias</p>
         </li>
-        <li>
+        <li class="float">
             <span class="cursive-title">Carla Aguayo Picón</span>
             <p class="directora">Educadora de Párvulos</br>
                 Directora Sede Blümell</p>

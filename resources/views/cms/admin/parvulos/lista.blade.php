@@ -2,7 +2,7 @@
 
 @section('meta')
     {!!Html::script('js/modals/parvulos.js')!!}
-    {!!Html::script('js/jquery.Rut.js')!!}
+    {!!Html::script('js/jquery.rut.min.js')!!}
 @stop
 @section('menu-mobile')
     @include('cms.admin.menu-lateral')

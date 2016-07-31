@@ -2,7 +2,7 @@
 
 @section('meta')
     {!!Html::script('js/modals/apoderados.js')!!}
-    {!!Html::script('js/jquery.Rut.js')!!}
+    {!!Html::script('js/jquery.rut.min.js')!!}
 
 @stop
 
