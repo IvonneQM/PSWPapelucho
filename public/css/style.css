@@ -648,11 +648,14 @@ span.objetives-item::first-letter {
     color: #fff;
 }
 
+p#copyright {
+    margin: 0 !important;
+}
+
 #copyright {
     word-break: keep-all;
     color: white;
     display: block;
-    margin-top: 5px;
     text-align: center;
 }
 

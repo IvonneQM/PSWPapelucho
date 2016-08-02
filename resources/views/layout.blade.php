@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
+    {!!Html::script('js/jquery-2.2.0.min.js')!!}
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/normalize.min.css')!!}
     {!!Html::style('css/style.min.css')!!}
@@ -16,7 +16,7 @@
     {!!Html::style('//fonts.googleapis.com/css?family=Fredericka+the+Great')!!}
     {!!Html::style('//allfont.es/allfont.css?fonts=linotypezapfino-one')!!}
     {!!Html::style('css/font-awesome.min.css')!!}
-    {!!Html::script('js/jquery-2.2.0.min.js')!!}
+
     {!!Html::script('js/jquery.cycle2.min.js')!!}
     {!!Html::script('js/sweetalert.min.js')!!}
     {!!Html::script('js/menu.js')!!}
