@@ -64,7 +64,8 @@ h4 span.cursive-title {
 
 header {
     background: #60BB46;
-    height: 165px;
+    height: 167px;
+    margin-bottom: 63px;
 }
 
 label {
@@ -81,7 +82,7 @@ nav {
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    top: 479px;
+    top: 545px;
     width: 664px;
     z-index: 2;
 }
@@ -329,9 +330,9 @@ ul {
 
 .cycle-slideshow {
     display: block;
-    height: 435px;
-    margin: 0px auto;
-    max-width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    max-width: 1280px !important;
     max-height: 435px;
     overflow: hidden;
     position: relative;
@@ -384,6 +385,12 @@ ul {
     min-height: 435px !important;
     position: absolute !important;
     display: block !important;
+}
+.img-slide-middle-bottom{
+    top:-25% !important;
+}
+.img-slide-bottom{
+    top:-20% !important;
 }
 
 .horario, .directora {

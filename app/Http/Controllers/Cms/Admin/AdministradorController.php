@@ -50,7 +50,9 @@ class AdministradorController extends Controller
         if($request->ajax()){
             $administrador = User::create($request->all());
             return response()->json($administrador);
+            
         }
+
 
     }
 

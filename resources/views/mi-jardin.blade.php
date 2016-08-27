@@ -16,7 +16,16 @@
         expande y cuenta con 2 establecimientos educacionales, que atienden en dos jornadas y en los niveles: Sala Cuna,
         Medio Menor y Medio Mayor.
     </p>
-
+    <div class="image-container col-lg-6 col-md-6 col-xs-6 ">
+        <div class="accordion-container-img">
+            {!!Html::image('images/estaticas/4untitled.png','jardin blumell', array('id'=>'jardin-blumell'))!!}
+        </div>
+    </div>
+    <div class=" image-container col-lg-6 col-md-6 col-xs-6 ">
+        <div class="accordion-container-img">
+            {!!Html::image('images/estaticas/lascolonias.png','jardin las colonias',array('id'=>'fachada-colonias'))!!}
+        </div>
+    </div>
     <div>
         <ul id="miJardinTabs" class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"
