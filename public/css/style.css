@@ -167,7 +167,6 @@ ul {
     height: 250px;
     line-height: 250px;
     overflow: hidden;
-    margin: 0 25px;
     position: relative;
     text-align: center;
 }
@@ -377,6 +376,10 @@ ul {
 
 .gmaps {
     height: 140px;
+}
+
+.image-container{
+    padding-bottom: 15px;
 }
 
 .img-slide {
@@ -812,6 +815,10 @@ p#copyright {
 /* CSS Externos (Bootstrap )*/
 .form-group, .select2-container {
     width: 100% !important;
+}
+
+.panel-default>.panel-heading {
+    background-color: #fff !important;
 }
 
 @media screen and (max-width: 1130px ) {

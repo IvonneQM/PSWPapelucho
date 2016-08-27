@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
     <title>@yield('title', 'Jardin infantil Papelucho')</title>
     <meta charset="UTF-8">
     <meta name="viewport"
