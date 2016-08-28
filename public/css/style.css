@@ -332,12 +332,18 @@ ul {
     height: 500px;
     margin: 0 auto;
     max-width: 1280px !important;
-    max-height: 435px;
+    max-height: 500px;
     overflow: hidden;
+    width: 100%;
+    z-index: 1;
+}
+
+.slideshow-container {
+    background: #ddd;
+    max-width: 100%;
     position: relative;
     top: -5px;
     width: 100%;
-    z-index: 1;
 }
 
 .cursive-title {
@@ -378,7 +384,7 @@ ul {
     height: 140px;
 }
 
-.image-container{
+.image-container {
     padding-bottom: 15px;
 }
 
@@ -389,11 +395,13 @@ ul {
     position: absolute !important;
     display: block !important;
 }
-.img-slide-middle-bottom{
-    top:-25% !important;
+
+.img-slide-middle-bottom {
+    top: -25% !important;
 }
-.img-slide-bottom{
-    top:-20% !important;
+
+.img-slide-bottom {
+    top: -20% !important;
 }
 
 .horario, .directora {
@@ -470,7 +478,6 @@ ul li li.li-vineta:before {
 .news-title, .objetives-box li {
     font-weight: bold;
 }
-
 
 ol.objetives-box {
     counter-reset: li;
@@ -606,29 +613,31 @@ span.objetives-item::first-letter {
     text-align: center;
     width: auto;
 }
-.two-borders-box{
+
+.two-borders-box {
     padding: 30px;
 }
+
 .two-borders-box li, .two-borders-box li ul li.inside-two-borders-box {
     border-top: 2px solid #F7EC3F;
     border-bottom: 2px solid #F7EC3F;
     display: inline-block;
-    margin-top:15px;
-    margin-bottom:15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     text-align: left;
     vertical-align: top;
     width: 45%;
 }
 
-.two-borders-box li ul{
+.two-borders-box li ul {
     padding: 10px;
 }
+
 .two-borders-box li ul li.inside-two-borders-box {
     border: none;
     background: rgba(57, 82, 163, 0.03);
     border-radius: 2em;
 }
-
 
 .two-borders-box .li-completa {
     width: 100%;
@@ -817,7 +826,7 @@ p#copyright {
     width: 100% !important;
 }
 
-.panel-default>.panel-heading {
+.panel-default > .panel-heading {
     background-color: #fff !important;
 }
 
@@ -917,7 +926,6 @@ p#copyright {
         border-bottom: 1px solid #F7EC3F;
         text-align: left;
     }
-
 
     #cuerdas {
         display: none;
@@ -1149,7 +1157,6 @@ p#copyright {
     section, aside {
         padding: 10px;
     }
-
 
     .accordion-item-title, .accordion-item-content, .galery-container {
         width: 100%;

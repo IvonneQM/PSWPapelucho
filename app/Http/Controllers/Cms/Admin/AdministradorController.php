@@ -22,11 +22,6 @@ class AdministradorController extends Controller
         return view('cms.admin.administradores.lista',compact('administradores'));
     }
 
-    /*public function findApoderado(Route $route)
-    {
-        this->user= User::findOrFail($route>getParameter('users'))
-    }*/
-
     /**
      * Show the form for creating a new resource.
      *

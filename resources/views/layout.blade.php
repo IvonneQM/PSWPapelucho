@@ -61,13 +61,11 @@
             <li class="li-two-lines">{!!HTML::linkAction('BlumellController@index', 'Papelucho Blumell',array(), array('class' => 'url-menu'))!!}</li>
         </ul>
     </nav>
-
+<div class = "slideshow-container">
     <div class="cycle-slideshow">
-
         <span class="cycle-prev">&#9001;</span>
         <span class="cycle-next">&#9002;</span>
         <span class="cycle-pager"></span>
-
         {!!Html::image('images/carrusel/Slider1.JPG','img6', array('class' => 'img-slide'  ))!!}
         {!!Html::image('images/carrusel/Slider3.JPG','img8', array('class' => 'img-slide img-slide-middle-bottom'))!!}
         {!!Html::image('images/carrusel/Papelucho26.JPG','img1', array('class' => 'img-slide img-slide-middle-bottom'))!!}
@@ -76,7 +74,7 @@
         {!!Html::image('images/carrusel/Papelucho8.JPG','img4', array('class' => 'img-slide img-slide-middle-bottom'))!!}
         {!!Html::image('images/carrusel/Papelucho201.JPG','img5', array('class' => 'img-slide img-slide-bottom'))!!}
     </div>
-
+</div>
 </header>
 
 <section>
@@ -145,6 +143,6 @@
 </footer>
 {!!Html::script('js/maps.js')!!}
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdUySAYtjrmCJruK4agAZxEIGAFoueApE&callback=initialize"></script>
-
+{{-- API KEY PRODUCCION AIzaSyD_EYZ5jHzNZ_Jag8E-b83HgGG6z5zknBk--}}
 </body>
 </html>

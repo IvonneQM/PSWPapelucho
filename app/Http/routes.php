@@ -1,40 +1,4 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-/*Route::get('/ramny', function()
-{
-    $archivo = \App\Archivo::find(1);
-
-    if( $archivo->exists )
-    {
-        $archivo->galerias()->attach(2);
-    }
-
-    print_r($archivo);
-
-    die;
-})*/
-
-/*Route::get('/ramny', function()
-{
-    $archivo = \App\Archivo::find(2);
-
-    //$apoderado = \App\User::find(3)->get('user');
-
-    event( (new \App\Events\archivo)SendMail($) );
-});
-*/
-
 use App\Archivo;
 use App\Galeria;
 
@@ -94,15 +58,8 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 /*-------------------------------------------------------------------*/
 
 Route::get('mi-jardin', 'MiJardinController@index');
+
 Route::get('papelucho-las-colonias', 'LasColoniasController@index');
-
-
-
-/*Route::get('galerias', function () {
-    return view('cms/admin/galerias');
-});
-*/
-
 
 Route::get('archivos?galeria={galeria}', [
     'uses' => 'BlumellController@archivosGaleria',
@@ -125,10 +82,7 @@ Route::group(['prefix' => 'papelucho-las-colonias'], function () {
         'as' => 'las-colonias-send',
         'uses' => 'LasColoniasController@send'
     ]);
-
-
 });
-
 
 Route::get('archivos/galeria/{galeria_id}', function ($galeria_id) {
     return Archivo::whereHas('galerias', function($q) use ($galeria_id){
@@ -160,14 +114,12 @@ Route::group(['middleware' => 'auth'], function () {
 
             Route::resource('apoderados', 'Cms\Admin\ApoderadoController');
 
-
             Route::get('parvulos?user={user}', [
                 'uses' => 'Cms\Admin\ParvuloController@index',
                 'as' => 'parvulos_user'
             ]);
 
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
-
 
             Route::get('autocomplete/parvulos', function () {
                 $search = Request::get('search');
@@ -189,7 +141,6 @@ Route::group(['middleware' => 'auth'], function () {
             Route::resource('archivos', 'Cms\Admin\ArchivoController');
             Route::resource('galerias', 'Cms\Admin\GaleriaController');
 
-
             Route::get('galerias/jardin/{jardin_id}', function ($jardin_id) {
                 return Galeria::where('jardin_id', $jardin_id)
                     ->select('id as value', 'name as text')
@@ -198,9 +149,7 @@ Route::group(['middleware' => 'auth'], function () {
             });
 
             Route::resource('noticias', 'Cms\Admin\NoticiaController');
-
         });
-
     });
     Route::group(['middleware' => 'role:apoderado'], function () {
         Route::get('apoderado', function () {
