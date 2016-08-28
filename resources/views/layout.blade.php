@@ -19,12 +19,6 @@
     {!!Html::style('css/font-awesome.min.css')!!}
 
     {!!Html::script('js/jquery.cycle2.min.js')!!}
-    {!!Html::script('js/sweetalert.min.js')!!}
-    {!!Html::script('js/menu.js')!!}
-    {!!Html::script('js/login.js')!!}
-
-
-
 
     @yield('meta')
 
@@ -142,5 +136,8 @@
 {!!Html::script('js/maps.js')!!}
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdUySAYtjrmCJruK4agAZxEIGAFoueApE&callback=initialize"></script>
 {{-- API KEY PRODUCCION AIzaSyD_EYZ5jHzNZ_Jag8E-b83HgGG6z5zknBk--}}
+{!!Html::script('js/sweetalert.min.js', array('async' => 'async'))!!}
+{!!Html::script('js/menu.js', array('async' => 'async'))!!}
+{!!Html::script('js/login.js', array('async' => 'async'))!!}
 </body>
 </html>

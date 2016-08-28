@@ -316,7 +316,7 @@ ul {
 }
 
 .cycle-pager span {
-    border: 1px solid dimgrey;
+    border: 1px solid white;
     display: inline-block;;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -329,7 +329,7 @@ ul {
 }
 
 .cycle-pager .cycle-pager-active {
-    background: dimgrey;
+    background: white;
 }
 
 .cycle-slideshow {
