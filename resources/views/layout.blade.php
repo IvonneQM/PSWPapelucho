@@ -61,7 +61,6 @@
             <li class="li-two-lines">{!!HTML::linkAction('BlumellController@index', 'Papelucho Blumell',array(), array('class' => 'url-menu'))!!}</li>
         </ul>
     </nav>
-<div class = "slideshow-container">
     <div class="cycle-slideshow">
         <span class="cycle-prev">&#9001;</span>
         <span class="cycle-next">&#9002;</span>
@@ -74,7 +73,6 @@
         {!!Html::image('images/carrusel/Papelucho8.JPG','img4', array('class' => 'img-slide img-slide-middle-bottom'))!!}
         {!!Html::image('images/carrusel/Papelucho201.JPG','img5', array('class' => 'img-slide img-slide-bottom'))!!}
     </div>
-</div>
 </header>
 
 <section>
