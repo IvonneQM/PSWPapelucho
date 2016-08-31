@@ -26,6 +26,7 @@ aside {
     float: right;
     width: 20%;
     margin-right: 25px;
+    min-height: 100px;
     padding: 15px;
 }
 
