@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    listAllApo();
     $('.rut').Rut({
         on_error : function () {
             swal("Error!",
@@ -90,7 +90,7 @@ $(document).ready(function () {
         $('#t-header-content-principal').after(row);
     }
 
-    //ACTUALIZAR APODERADOS//
+    //MOSTRAR DATOS APODERADOS//
 
     $('body').on('click','.editar_apo',function (e) {
         e.preventDefault();
@@ -108,6 +108,7 @@ $(document).ready(function () {
         })
     });
 
+    //ACTUALIZAR APODERADO//
     $('#btnSave').on('click', function (e) {
         e.preventDefault();
         var id     = $('#idUser').val();
@@ -120,7 +121,7 @@ $(document).ready(function () {
             type: metodo,
             data: form.serialize(),
             success: function (data) {
-                
+                listAllApo();
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
                     "success");
@@ -176,5 +177,29 @@ $(document).ready(function () {
                 });
             });
     })
+});
+
+/* Listar los apoderados ajax*/
+var listAllApo = function () {
+    $.ajax({
+        type: 'get',
+        url: 'listApo',
+        success: function (data) {
+            $('#list-all-apo').empty().html(data)
+        }
+    });
+};
+
+/* Paginar los apoderados ajax*/
+$(document).on('click','.pagination li a',function (e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    $.ajax({
+        type: 'get',
+        url: url,
+        success: function (data) {
+            $('#list-all-apo').empty().html(data);
+        }
+    });
 });
 

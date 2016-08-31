@@ -28,11 +28,13 @@ class ParvuloController extends Controller
         $jornadas = Jornada::with('parvulos')->get();
         $jardines = Jardin::with('parvulos')->get();
         $apoderado = User::find($request->get('user'));
+        return view('cms.admin.parvulos.lista', compact('apoderado', 'niveles', 'jornadas', 'jardines'));
+    }
+
+    public function listParvulos(Request $request){
+        $apoderado = User::find($request->get('user'));
         $parvulos = Parvulo::apoderado($request->get('user'))->orderBy('id', 'DESC')->paginate();
-
-
-        return view('cms.admin.parvulos.lista', compact('parvulos', 'apoderado', 'niveles', 'jornadas', 'jardines'));
-
+        return view('cms.admin.parvulos.partials.table',compact('apoderado','parvulos'));
     }
 
     public function indexApoderado(Request $request, $id)
@@ -40,22 +42,17 @@ class ParvuloController extends Controller
         $archivos = Archivo::get();
         $parvulo = Parvulo::findOrFail($id);
         $archivos = Archivo::doesntHave('galerias')->doesntHave('jardines')->doesntHave('niveles')->doesntHave('parvulos')->get();
-        //$fotografias = Parvulo::findOrFail($id)->jardines->archivos->orderBy('DESC','created_at')->get(5);
-        //$fotografias = Parvulo::findOrFail($id)->jardines()->archivos()->get('archivos');
-        //App\User::find(1)->roles()->orderBy('name')->get();
         $fotografias = $parvulo->jardines->archivos()->orderBy('id', 'DESC')->take(20)->get();
         return view('cms.apoderados.parvulos', compact('parvulo','archivos','fotografias'));
     }
 
-    public
-    function listJornadas(Request $request)
+    public function listJornadas(Request $request)
     {
         $jornadas = Jornada::jornadas($request->get('jornada'))->paginate();
         return $jornadas;
     }
 
-    public
-    function getJornadas(Request $request, $id)
+    public function getJornadas(Request $request)
     {
         if ($request->ajax()) {
             $jornadas = Jornada::jornadas();

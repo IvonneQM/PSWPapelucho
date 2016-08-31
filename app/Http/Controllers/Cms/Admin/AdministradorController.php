@@ -13,14 +13,19 @@ class AdministradorController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
+
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $administradores = User::fullName($request->get('full_name'))->where('role','=','admin')->orderBy('id', 'DESC')->paginate();
-        return view('cms.admin.administradores.lista',compact('administradores'));
+        return view('cms.admin.administradores.lista');
     }
+
+    public function listAll(Request $request){
+        $administradores = User::fullName($request->get('full_name'))->where('role','=','admin')->orderBy('id', 'DESC')->paginate(20);
+        return view('cms.admin.administradores.partials.table',compact('administradores'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -47,8 +52,6 @@ class AdministradorController extends Controller
             return response()->json($administrador);
             
         }
-
-
     }
 
 

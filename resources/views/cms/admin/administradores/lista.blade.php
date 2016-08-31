@@ -36,7 +36,12 @@
                        role="button"> <i class="fa fa-user-plus"> <span class="button-title">Crear Administrador</span></i>
                     </a>
                 </div>
-                @include('cms.admin.administradores.partials.table')
+
+                <div class="panel-body">
+                    <div id="list-all">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>

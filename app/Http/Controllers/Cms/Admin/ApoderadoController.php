@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Cms\Admin;
 
 use App\Http\Requests\CreateUserRequest;
 use App\User;
-use App\Parvulo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,14 +15,16 @@ class ApoderadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
 
-        $apoderados = User::fullName($request->get('full_name'))->where('role','=','apoderado')->orderBy('id', 'DESC')->paginate();
-        return view('cms.admin.apoderados.lista', compact('apoderados'));
+        return view('cms.admin.apoderados.lista');
     }
 
-
+    public function listAllApo(Request $request){
+        $apoderados = User::fullName($request->get('full_name'))->where('role','=','apoderado')->orderBy('id', 'DESC')->paginate(20);
+        return view('cms.admin.apoderados.partials.table',compact('apoderados'));
+    }
     /**
      * Show the form for creating a new resource.
      *

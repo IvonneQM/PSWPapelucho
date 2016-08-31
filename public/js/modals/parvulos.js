@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    listParvulos();
+
+    /*Formato rut*/
     $('#rut').Rut({
         on_error : function () {
             swal("Error!",
@@ -7,12 +10,14 @@ $(document).ready(function () {
         },
         format_on: 'keyup'
     });
+    /*Fin Formato rut*/
 
+    /*Registrar parvulos*/
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    })
+    });
 
     $('#register-parvulo').click(function () {
         $('#modal-crear-parvulos').modal();
@@ -64,6 +69,7 @@ $(document).ready(function () {
             });
         })
     });
+    /*Fin Registrar parvulos*/
 
     //AGREGAR ROW //
     function addRow(data) {
@@ -81,7 +87,7 @@ $(document).ready(function () {
     }
 
 
-    //ACTUALIZAR APODERADOS//
+    //ACTUALIZAR PARVULOS//
 
     $('body').on('click', '.editar_parvulo', function (e) {
         e.preventDefault();
@@ -102,6 +108,8 @@ $(document).ready(function () {
         })
     });
 
+    /*Actulizar parvulos*/
+
     $('#btn_save_parvulo').on('click', function (e) {
         e.preventDefault();
         var id     = $('#idParvulo').val();
@@ -114,6 +122,7 @@ $(document).ready(function () {
             type   : metodo,
             data   : form.serialize(),
             success: function (data) {
+                listParvulos();
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
                     "success");
@@ -166,4 +175,29 @@ $(document).ready(function () {
                 });
             });
     })
+});
+
+/* Listar parvulos ajax*/
+var listParvulos = function () {
+        $.ajax({
+        type: 'get',
+        url: 'listParvulos?user={user}',
+        success: function (data) {
+            console.log(data);
+            $('#list-parvulos').empty().html(data)
+        }
+    });
+};
+
+/* Paginar parvulos ajax*/
+$(document).on('click','.pagination li a',function (e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    $.ajax({
+        type: 'get',
+        url: url,
+        success: function (data) {
+            $('#list-parvulos').empty().html(data);
+        }
+    });
 });

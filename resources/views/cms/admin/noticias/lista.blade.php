@@ -26,7 +26,9 @@
             <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-noticia" href="#" role="button"> <i class="fa fa-newspaper-o"> <span class="button-title">Crear Noticia</span></i></a>
         </div>
         <div class="panel-body">
-            @include('cms.admin.noticias.partials.table')
+            <div id="list-noticia">
+
+            </div>
         </div>
 
     </div>

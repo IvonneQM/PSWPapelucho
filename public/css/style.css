@@ -959,12 +959,11 @@ p#copyright {
 }
 
 @media screen and (max-width: 773px) {
-
     header nav {
         background: #00A04A;
         height: 100%;
         left: -70%;
-        margin: -479px 0 0;
+        margin: -545px 0 0;
         position: fixed;
         width: 65%;
         z-index: 9999999;

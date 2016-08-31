@@ -44,8 +44,9 @@
                     <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-galeria" href="#" role="button"> <i class="fa fa-picture-o"> <span class="button-title">Crear Galeria</span></i></a>
                 </div>
                 <div class="panel-body">
+                    <div id="list-galerias">
 
-                    @include('cms.admin.galerias.partials.table')
+                    </div>
 
                 </div>
             </div>

@@ -18,10 +18,16 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = Noticia::orderBy('id','DESC')->paginate();
-        return view('cms.admin.noticias.lista',compact('noticias'));
+        return view('cms.admin.noticias.lista');
     }
 
+
+    public function listNoticia(Request $request){
+        $noticias = Noticia::orderBy('id','DESC')->paginate(10);
+        return view('cms.admin.noticias.partials.table',compact('noticias'));
+    }
+
+    /* MOSTRAR NOTICIA EN HOME*/
     public function mostrarNoticias()
     {
         $noticias = Noticia::where('publish','si')->orderBy('id','DESC')->paginate(2);

@@ -27,15 +27,13 @@
                 @include('partials.errors')
                 <div class="panel-heading"><h1 class="title">Parvulos de {{$apoderado->full_name}}</h1></div>
                 <div class="col-lg-12 div-btn">
-
-
-
-
                     <a class="btn btn-primary pull-right btn-crear-nuevo" id="register-parvulo" href="#" role="button"> <i class="fa fa-user-plus"><span class="button-title">Crear Párvulo</span></i></a>
                 </div>
 
                 <div class="panel-body">
-                    @include('cms.admin.parvulos.partials.table')
+                    <div id="list-parvulos">
+
+                    </div>
 
                 </div>
             </div>

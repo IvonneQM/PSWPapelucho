@@ -14,16 +14,22 @@ class GaleriaController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
+
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $galerias = Galeria::orderBy('id', 'DESC')->paginate();
         $jardines = Jardin::get();
-        return view('cms.admin.galerias.lista', compact('galerias','jardines'));
+        return view('cms.admin.galerias.lista', compact('jardines'));
     }
-    
+
+    public function listGalerias(Request $request)
+    {
+        $galerias = Galeria::orderBy('id', 'DESC')->paginate(20);
+        return view('cms.admin.galerias.partials.table', compact('galerias'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

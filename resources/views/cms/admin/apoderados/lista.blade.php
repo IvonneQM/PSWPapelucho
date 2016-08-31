@@ -37,7 +37,11 @@
                        role="button"><i class="fa fa-user-plus"><span class="button-title">Crear Apoderado</span></i>
                     </a>
                 </div>
-                @include('cms.admin.apoderados.partials.table')
+                <div class="panel-body">
+                    <div id="list-all-apo">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>

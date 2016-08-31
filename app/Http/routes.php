@@ -110,14 +110,15 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::group(['prefix' => 'administrador'], function () {
 
+            Route::get('listAll{page?}', 'Cms\Admin\AdministradorController@listAll');
             Route::resource('administradores', 'Cms\Admin\AdministradorController');
 
+            Route::get('listApo{page?}', 'Cms\Admin\ApoderadoController@listAllApo');
             Route::resource('apoderados', 'Cms\Admin\ApoderadoController');
 
-            Route::get('parvulos?user={user}', [
-                'uses' => 'Cms\Admin\ParvuloController@index',
-                'as' => 'parvulos_user'
-            ]);
+
+            /*Pendiente*/
+            Route::get('listParvulos', 'Cms\Admin\ParvuloController@listParvulos');
 
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
 
@@ -139,6 +140,8 @@ Route::group(['middleware' => 'auth'], function () {
             ]);
 
             Route::resource('archivos', 'Cms\Admin\ArchivoController');
+
+            Route::get('listGalerias{page?}', 'Cms\Admin\GaleriaController@listGalerias');
             Route::resource('galerias', 'Cms\Admin\GaleriaController');
 
             Route::get('galerias/jardin/{jardin_id}', function ($jardin_id) {
@@ -148,6 +151,7 @@ Route::group(['middleware' => 'auth'], function () {
                     ->get();
             });
 
+            Route::get('listNoticias{page?}', 'Cms\Admin\NoticiaController@listNoticia');
             Route::resource('noticias', 'Cms\Admin\NoticiaController');
         });
     });

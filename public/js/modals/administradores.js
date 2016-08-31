@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    listAll();
 
     $('.rut').Rut({
         on_error : function () {
@@ -122,17 +123,7 @@ $(document).ready(function () {
             data: form.serialize(),
 
             success: function (data) {
-
-                var row = '<tr data-id=' + data.id + '>' +
-                    '<td>' + data.rut + '</td>' +
-                    '<td>' + data.full_name + '</td>' +
-                    '<td>' +
-                    '<div class="t-actions">' +
-                    '<a class="editar_admin" href="#" data-toggle="modal" data-target="#modal-editar-administrador" role="button" ><i class="fa fa-pencil"></i></a>' + ' ' +
-                    '<a href="#" type="submit" class="btn-delete-administrador"><i class="fa fa-trash-o"></i></a>' + ' ' +
-                    '</div>' +
-                    '</td>' +
-                    '</tr>';
+                listAll();
 
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
@@ -189,4 +180,28 @@ $(document).ready(function () {
                 });
             });
     })
-})
+});
+
+/* Listar los administradores ajax*/
+var listAll = function () {
+    $.ajax({
+        type: 'get',
+        url: 'listAll',
+        success: function (data) {
+            $('#list-all').empty().html(data)
+        }
+    });
+};
+
+/* Paginar los administradores ajax*/
+$(document).on('click','.pagination li a',function (e) {
+    e.preventDefault();
+   var url = $(this).attr('href');
+    $.ajax({
+        type: 'get',
+        url: url,
+        success: function (data) {
+            $('#list-all').empty().html(data);
+        }
+    });
+});

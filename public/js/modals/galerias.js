@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    listaGalerias();
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -120,6 +120,7 @@ $(document).ready(function () {
             data: form.serialize(),
 
             success: function (data) {
+                listaGalerias();
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
                     "success");
@@ -172,4 +173,28 @@ $(document).ready(function () {
                 });
             });
     })
+});
+
+/* Listar los galerias ajax*/
+var listaGalerias = function () {
+    $.ajax({
+        type: 'get',
+        url: 'listGalerias',
+        success: function (data) {
+            $('#list-galerias').empty().html(data)
+        }
+    });
+};
+
+/* Paginar los galerias ajax*/
+$(document).on('click','.pagination li a',function (e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    $.ajax({
+        type: 'get',
+        url: url,
+        success: function (data) {
+            $('#list-galerias').empty().html(data);
+        }
+    });
 });

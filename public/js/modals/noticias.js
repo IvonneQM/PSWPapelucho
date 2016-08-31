@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    listNoticia();
     //INGRESAR NOTICIAS//
     $.ajaxSetup({
         headers: {
@@ -108,6 +109,8 @@ $(document).ready(function () {
             data: form.serialize(),
 
             success: function (data) {
+                listNoticia();
+
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
                     "success");
@@ -160,4 +163,28 @@ $(document).ready(function () {
                 });
             });
     })
+});
+
+/* Listar noticias ajax*/
+var listNoticia = function () {
+    $.ajax({
+        type: 'get',
+        url: 'listNoticias',
+        success: function (data) {
+            $('#list-noticia').empty().html(data)
+        }
+    });
+};
+
+/* Paginar noticias ajax*/
+$(document).on('click','.pagination li a',function (e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    $.ajax({
+        type: 'get',
+        url: url,
+        success: function (data) {
+            $('#list-noticia').empty().html(data);
+        }
+    });
 });
