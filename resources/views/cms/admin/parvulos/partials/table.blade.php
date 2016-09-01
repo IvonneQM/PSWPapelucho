@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped table-cargar">
     <tbody>
     <tr id="t-header-content-principal">
         <th>Rut</th>

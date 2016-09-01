@@ -32,7 +32,7 @@
 
                 <div class="panel-body">
                     <div id="list-parvulos">
-
+                        @include('cms.admin.parvulos.partials.table')
                     </div>
 
                 </div>

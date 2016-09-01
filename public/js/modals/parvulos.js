@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    listParvulos();
 
     /*Formato rut*/
     $('#rut').Rut({
@@ -33,10 +32,8 @@ $(document).ready(function () {
                 data    : $(this).serialize(),
                 dataType: "json",
                 success : function (data) {
-                    addRow(data);
                     $('#form-register-parvulo').trigger('reset');
                     $('#rut').focus();
-
                     swal("Registro creado!",
                         "El registro se ha generado con exito",
                         "success");
@@ -87,7 +84,7 @@ $(document).ready(function () {
     }
 
 
-    //ACTUALIZAR PARVULOS//
+    //MOSTRAR PARVULOS//
 
     $('body').on('click', '.editar_parvulo', function (e) {
         e.preventDefault();
@@ -108,10 +105,12 @@ $(document).ready(function () {
         })
     });
 
-    /*Actulizar parvulos*/
+    /*Actualizar parvulos*/
 
     $('#btn_save_parvulo').on('click', function (e) {
         e.preventDefault();
+
+
         var id     = $('#idParvulo').val();
         var form   = $('#form_update_parvulo');
         var link   = $('#id_update_parvulo').attr('href');
@@ -122,7 +121,15 @@ $(document).ready(function () {
             type   : metodo,
             data   : form.serialize(),
             success: function (data) {
-                listParvulos();
+            $('#idsss').html('<td>' + data.rut + '</td>' +
+                '<td>' + data.full_name + '</td>' +
+                '<td>' +
+                '<div class="t-actions">' +
+                '<a class="editar_parvulo" href="#" data-toggle="modal" data-target="#modal-editar-parvulo" role="button" ><i class="fa fa-pencil"></i></a>' + ' ' +
+                '<a href="#" type="submit" class="btn-delete-parvulo"><i class="fa fa-trash-o"></i></a>' + ' ' +
+                '</div>' +
+                '</td>' +
+                '</tr>');
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
                     "success");
@@ -177,27 +184,5 @@ $(document).ready(function () {
     })
 });
 
-/* Listar parvulos ajax*/
-var listParvulos = function () {
-        $.ajax({
-        type: 'get',
-        url: 'listParvulos?user={user}',
-        success: function (data) {
-            console.log(data);
-            $('#list-parvulos').empty().html(data)
-        }
-    });
-};
 
-/* Paginar parvulos ajax*/
-$(document).on('click','.pagination li a',function (e) {
-    e.preventDefault();
-    var url = $(this).attr('href');
-    $.ajax({
-        type: 'get',
-        url: url,
-        success: function (data) {
-            $('#list-parvulos').empty().html(data);
-        }
-    });
-});
+

@@ -20,6 +20,5 @@ class AuditoriaController extends Controller
     {
         $auditoria = request()->all();
         Auditoria::create($auditoria);
-
     }
 }

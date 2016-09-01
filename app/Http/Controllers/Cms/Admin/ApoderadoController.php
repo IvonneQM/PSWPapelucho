@@ -17,7 +17,6 @@ class ApoderadoController extends Controller
      */
     public function index()
     {
-
         return view('cms.admin.apoderados.lista');
     }
 

@@ -5,7 +5,7 @@ $(document).ready(function () {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    })
+    });
 
     $('#register-noticia').click(function () {
         $('#modal-noticias').modal();

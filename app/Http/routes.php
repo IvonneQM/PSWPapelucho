@@ -1,6 +1,9 @@
 <?php
 use App\Archivo;
 use App\Galeria;
+Route::get('2012', function () {
+    return Redirect::route('home');
+});
 
 Route::get('/', [
     'uses' => 'HomeController@index',
@@ -103,6 +106,8 @@ Route::get('prueba', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'role:admin'], function () {
+
+        Route::get('listAuditorias{page?}', 'Cms\Admin\AdminController@listAuditoria');
         Route::get('administrador', [
             'uses' => 'Cms\Admin\AdminController@index',
             'as' => 'administrador'
@@ -118,8 +123,13 @@ Route::group(['middleware' => 'auth'], function () {
 
 
             /*Pendiente*/
-            Route::get('listParvulos', 'Cms\Admin\ParvuloController@listParvulos');
+            Route::get('parvulos?user={user}', [
+                'uses' => 'Cms\Admin\ParvuloController@index',
+                'as' => 'parvulos_user'
+            ]);
 
+
+//            Route::get('parvulosList?user={user}', 'Cms\Admin\ParvuloController@listAllParvulo');
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
 
             Route::get('autocomplete/parvulos', function () {

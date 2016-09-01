@@ -28,13 +28,9 @@ class ParvuloController extends Controller
         $jornadas = Jornada::with('parvulos')->get();
         $jardines = Jardin::with('parvulos')->get();
         $apoderado = User::find($request->get('user'));
-        return view('cms.admin.parvulos.lista', compact('apoderado', 'niveles', 'jornadas', 'jardines'));
-    }
-
-    public function listParvulos(Request $request){
-        $apoderado = User::find($request->get('user'));
         $parvulos = Parvulo::apoderado($request->get('user'))->orderBy('id', 'DESC')->paginate();
-        return view('cms.admin.parvulos.partials.table',compact('apoderado','parvulos'));
+
+        return view('cms.admin.parvulos.lista',compact('apoderado', 'niveles', 'jornadas', 'jardines','parvulos'));
     }
 
     public function indexApoderado(Request $request, $id)

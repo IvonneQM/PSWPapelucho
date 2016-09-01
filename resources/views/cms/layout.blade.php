@@ -23,8 +23,6 @@
     {!!Html::script('js/sweetalert.min.js')!!}
     {!!Html::script('js/menu.js')!!}
 
-
-
     @yield('meta')
     @include('Alerts::alerts')
 </head>

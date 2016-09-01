@@ -3,6 +3,11 @@
 @section('menu-mobile')
     @include('cms.admin.menu-lateral')
 @stop
+@section('meta')
+    {!!Html::script('js/auditoria.js')!!}
+@stop
+
+
 @section('aside1')
 
     <nav id="sidebar-desktop">
@@ -53,5 +58,14 @@
     </div>
 @stop
 @section('aside2')
-    @include('cms.admin.right-side')
+    <div class="panel-primary">
+        <div class="panel-heading">Control de Ingreso</div>
+    </div>
+    <div class="panel-body">
+        <div id="list-auditoria">
+
+        </div>
+    </div>
+
+
 @endsection
