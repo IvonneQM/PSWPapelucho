@@ -26,7 +26,7 @@ aside {
     float: right;
     width: 20%;
     margin-right: 25px;
-    min-height: 100px;
+    min-height: 150px;
     padding: 15px;
 }
 
@@ -544,7 +544,7 @@ span.objetives-item::first-letter {
 .principal-title {
     font-size: 48px;
     text-align: left;
-    width: 300px;
+   /* width: 300px;*/
 }
 
 .span-ico-footer img {
@@ -601,7 +601,7 @@ span.objetives-item::first-letter {
     font-weight: inherit;
     font-family: 'Love Ya Like A Sister', cursive;
     margin: -45px 0 0 -31px;
-    max-width: 220px;
+    /*max-width: 220px;*/
 }
 
 .title, .side-section-title {

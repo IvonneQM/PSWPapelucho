@@ -293,6 +293,13 @@ a.delete-file:hover {
     width: 30px;
 }
 
+.fa-arrow-right {
+    color: #3952a3;
+    font-size: 25px;
+    padding: 0 10px 5px 15px;
+    vertical-align: middle;
+}
+
 .fa-child {
     background: #60BB46;
 }
@@ -361,6 +368,14 @@ a.delete-file:hover {
 
 .item-menu{
     font-family: 'Love Ya Like A Sister', sans-serif;
+}
+
+.manual-usuario {
+    padding: 100px 50px;
+}
+
+img.manual{
+    vertical-align: middle;
 }
 
 .panel-primary > .panel-heading {

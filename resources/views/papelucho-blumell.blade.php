@@ -4,7 +4,7 @@
 
 @stop
 @section('page-title')
-    Mi Jardin
+    Papelucho Blumell
 @stop
 
 @section('article')
@@ -137,9 +137,7 @@
     </div>
 @stop
 @section('aside')
-    <div id="cuerdas">
-        {!!Html::image('images/cuerdas.png')!!}
-    </div>
+
     <div class="contact-container">
         <h3 class="side-section-title">Contáctenos</h3>
 

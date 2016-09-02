@@ -19,6 +19,7 @@ class ApoderadoController extends Controller
     {
         return view('cms.admin.apoderados.lista');
     }
+    
 
     public function listAllApo(Request $request){
         $apoderados = User::fullName($request->get('full_name'))->where('role','=','apoderado')->orderBy('id', 'DESC')->paginate(20);

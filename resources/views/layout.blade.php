@@ -79,6 +79,7 @@
 </section>
 
 <aside>
+    <div id="cuerdas">{!!Html::image('images/cuerdas.png')!!}</div>
     @yield('aside')
 </aside>
 {!!Html::image('images/fondo-arco-azul.png', 'Arco Azul', array('id' => 'img-arco-azul'))!!}

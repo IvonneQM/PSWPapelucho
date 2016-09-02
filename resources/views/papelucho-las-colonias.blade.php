@@ -130,9 +130,7 @@
 @stop
 
 @section('aside')
-    <div id="cuerdas">
-        {!!Html::image('images/cuerdas.png')!!}
-    </div>
+
     <div class="contact-container">
         <h3 class="side-section-title">Contáctenos</h3>
 

@@ -1,47 +1,20 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Be right back.</title>
+@extends('layout')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('page-title')
+    Error 404
+@stop
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('article')
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+    <h1 class="title">Error 403</h1>
+    <h2 class="principal-title cursive-title">Acceso Denegado</h2>
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+    <p>No tiene los suficientes permisos de acceso para visualizar la página web.</p>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+    <p>De lo contrario intente volver a la página anterior.</p>
 
-            .title {
-                font-size: 72px;
-                margin-bottom: 40px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Be right back.</div>
-            </div>
-        </div>
-    </body>
-</html>
+@endsection
+
+@section(('aside'))
+    <h3 class="side-section-title">...</h3>
+@stop

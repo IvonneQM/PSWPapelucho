@@ -1,4 +1,7 @@
 @extends('layout')
+@section('page-title')
+    Mi Jardin
+@stop
 @section('article')
 
 
@@ -155,7 +158,6 @@
 @stop
 
 @section('aside')
-    <div id="cuerdas">{!!Html::image('images/cuerdas.png')!!}</div>
     <h3 class="side-section-title">Objetivos Papelucho</h3>
 
     <ol class="objetives-box">

@@ -36,24 +36,20 @@
 @stop
 
 @section('aside')
-    <div id="cuerdas">
-        {!!Html::image('images/cuerdas.png')!!}
-    </div>
-
-        <h3 id="news-section-title" class="side-section-title">Noticias</h3>
-        <ul class="news-box">
-            @foreach($noticias as $noticia)
-                <li>
-                    <p class="news-first-line">
-                        <span class="news-title">{!! $noticia->title !!}</span>
-                        <span class="news-date">{!! $noticia->created_at !!}</span>
-                    </p>
-                    <p class="news-second-line">
-                        {!! $noticia->content !!}
-                    </p>
-                </li>
-            @endforeach
-        </ul>
+    <h3 id="news-section-title" class="side-section-title">Noticias</h3>
+    <ul class="news-box">
+        @foreach($noticias as $noticia)
+            <li>
+                <p class="news-first-line">
+                    <span class="news-title">{!! $noticia->title !!}</span>
+                    <span class="news-date">{!! $noticia->created_at !!}</span>
+                </p>
+                <p class="news-second-line">
+                    {!! $noticia->content !!}
+                </p>
+            </li>
+        @endforeach
+    </ul>
 
 
 
