@@ -31,7 +31,7 @@ $(document).ready(function () {
                 url     : $(this).attr('action'),
                 data    : $(this).serialize(),
                 dataType: "json",
-                success : function (data) {
+                success : function () {
                     $('#form-register-parvulo').trigger('reset');
                     $('#rut').focus();
                     swal("Registro creado!",
@@ -109,8 +109,6 @@ $(document).ready(function () {
 
     $('#btn_save_parvulo').on('click', function (e) {
         e.preventDefault();
-
-
         var id     = $('#idParvulo').val();
         var form   = $('#form_update_parvulo');
         var link   = $('#id_update_parvulo').attr('href');
@@ -121,15 +119,7 @@ $(document).ready(function () {
             type   : metodo,
             data   : form.serialize(),
             success: function (data) {
-            $('#idsss').html('<td>' + data.rut + '</td>' +
-                '<td>' + data.full_name + '</td>' +
-                '<td>' +
-                '<div class="t-actions">' +
-                '<a class="editar_parvulo" href="#" data-toggle="modal" data-target="#modal-editar-parvulo" role="button" ><i class="fa fa-pencil"></i></a>' + ' ' +
-                '<a href="#" type="submit" class="btn-delete-parvulo"><i class="fa fa-trash-o"></i></a>' + ' ' +
-                '</div>' +
-                '</td>' +
-                '</tr>');
+
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
                     "success");

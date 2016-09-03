@@ -1,4 +1,4 @@
-<table class="table table-striped table-cargar">
+<table class="table table-striped">
     <tbody>
     <tr id="t-header-content-principal">
         <th>Rut</th>
@@ -10,7 +10,6 @@
         <tr data-id="{{ $parvulo->id }}">
             <td>{!! $parvulo->rut !!}</td>
             <td>{!! $parvulo->full_name !!}</td>
-            <td>{!! $parvulo->user_id !!}</td>
             <td>
 
                 <div class="t-actions">

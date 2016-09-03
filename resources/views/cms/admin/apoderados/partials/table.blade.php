@@ -6,7 +6,7 @@
         <th>Acciones</th>
     </tr>
     @foreach($apoderados as $apoderado)
-        <tr data-id="{{ $apoderado->id }}" id="idsss">
+        <tr data-id="{{ $apoderado->id }}" ">
             <td>{!! $apoderado->rut !!}</td>
             <td>{!! $apoderado->full_name !!}</td>
             <td>

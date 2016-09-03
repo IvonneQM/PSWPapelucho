@@ -48,6 +48,7 @@
                         </select>
                     </div>
 
+
                     {!!Form::submit('Guardar',['class'=>'btn btn-primary', 'id' => 'btn_save_parvulo'])!!}
                 </form>
 

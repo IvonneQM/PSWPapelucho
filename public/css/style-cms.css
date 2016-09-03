@@ -249,6 +249,12 @@ span.count-number {
     top: 20px;
 }
 
+.container-manual{
+    border-top: 1px solid gainsboro;
+    margin-top: 50px;
+}
+
+
 .count-subtitle {
     display: block;
     font-size: 14px;
@@ -296,9 +302,9 @@ a.delete-file:hover {
 .fa-arrow-right {
     color: #3952a3;
     font-size: 25px;
-    padding: 0 10px 5px 15px;
     vertical-align: middle;
 }
+
 
 .fa-child {
     background: #60BB46;
@@ -369,15 +375,26 @@ a.delete-file:hover {
 .item-menu{
     font-family: 'Love Ya Like A Sister', sans-serif;
 }
+.row{
+    height: 110px;
+    text-align: right;
+    padding-top: 50px;
+}
 
-.manual-usuario {
+
+.manual{
+    top: 70%;
+    margin-left: 20px;
+}
+
+/*.manual-usuario {
     padding: 100px 50px;
 }
 
 img.manual{
     vertical-align: middle;
 }
-
+*/
 .panel-primary > .panel-heading {
     color: #fff;
     background-color: #1056A7;

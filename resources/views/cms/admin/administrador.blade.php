@@ -57,7 +57,19 @@
         </div>
     </div>
 
-    <div class="manual-usuario">
+    <div class="container container-manual">
+        <div class="row">
+            <div class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-6 col-xs-offset-1 manual">
+                <p>Manual de Usuario <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pdf">
+                <a href="../" class="thumbnail" target="_blank">
+                    <img src="thumbnails/pdf.png">
+                </a>
+            </div>
+        </div>
+    </div>
+   {{-- <div class="manual-usuario">
         <div class="col-lg-4">
             <span>Manual de Usuario</span><i class="fa fa-arrow-right" aria-hidden="true"></i>
         </div>
@@ -68,6 +80,7 @@
         </div>
 
     </div>
+    --}}
 
 @stop
 @section('aside2')
