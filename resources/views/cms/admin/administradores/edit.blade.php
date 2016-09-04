@@ -35,9 +35,7 @@
                         {!!Form::label('password','Contraseña: ')!!}
                         {!!Form::password('password',['class'=>'form-control', 'id'=>'passAdmin', 'placeholder'=>'Password de usuario', 'autocomplete' => 'off'])!!}
                     </div>
-
                     {!!Form::submit('Guardar',['class'=>'btn btn-primary', 'id' => 'btnSaveAdmin'])!!}
-
                 </form>
             </div>
         </div>

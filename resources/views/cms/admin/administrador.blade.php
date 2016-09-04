@@ -1,28 +1,22 @@
 @extends('cms.layout')
-
 @section('menu-mobile')
     @include('cms.admin.menu-lateral')
 @stop
 @section('meta')
     {!!Html::script('js/auditoria.js')!!}
 @stop
-
-
 @section('aside1')
-
     <nav id="sidebar-desktop">
         <ul>
-
             @include('cms.admin.menu-lateral')
         </ul>
     </nav>
 @stop
 @section('general-content-1')
-
     <div class="container">
         <div class="row-fluid">
             <div class="col-lg-12">
-                <div class="panel-heading"><h1 class="title">Panel de Control</h1></div>
+                <div class="panel-heading container-title"><h1 class="title">Panel de Control</h1></div>
                 <div class="col-lg-12 div-btn">
                     <div class="col-lg-3 count-container">
                         <div class="count-inside" id="count-container-1">
@@ -56,7 +50,6 @@
             </div>
         </div>
     </div>
-
     <div class="container container-manual">
         <div class="row">
             <div class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-6 col-xs-offset-1 manual">
@@ -69,19 +62,6 @@
             </div>
         </div>
     </div>
-   {{-- <div class="manual-usuario">
-        <div class="col-lg-4">
-            <span>Manual de Usuario</span><i class="fa fa-arrow-right" aria-hidden="true"></i>
-        </div>
-        <div class="col-lg-3">
-            <a href="../" class="thumbnail" target="_blank">
-                <img src="thumbnails/pdf.png">
-            </a>
-        </div>
-
-    </div>
-    --}}
-
 @stop
 @section('aside2')
     <div class="panel-primary">
@@ -89,9 +69,7 @@
     </div>
     <div class="panel-body">
         <div id="list-auditoria">
-
+            {{--Tabla lista auditoria right-side--}}
         </div>
     </div>
-
-
 @endsection

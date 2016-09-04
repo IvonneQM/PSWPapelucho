@@ -10,7 +10,6 @@
     <ol class="indicator"></ol>
     <!-- The modal dialog, which will be used to wrap the lightbox content -->
 </div>
-
 <div id="row-thumbnails" data-url="{!! route('archivos-files') !!}">
     {!! Form::open( $makeGaleryForm, ['method'=>'get','class' => 'form'])!!}
     {!! Field::select('galeria_id',$galerias,['name' => 'galerias', 'class' =>'form' ])!!}
@@ -18,15 +17,10 @@
     <div class="row row-thumbnails" id="row">
     </div>
 </div>
-
 {!!Html::style('css/blueimp-gallery.min.css')!!}
 {!!Html::style('css/bootstrap-image-gallery.min.css')!!}
-
 {!! Html::script('js/jquery.blueimp-gallery.min.js') !!}
 {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
 {!! Html::style('css/select2.min.css') !!}
 {!! Html::script('js/select2.min.js') !!}
 {!! Html::script('js/busquedaSelect.js') !!}
-
-
-

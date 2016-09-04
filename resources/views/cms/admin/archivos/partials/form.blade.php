@@ -13,7 +13,6 @@
                                    data-type="general">Información
                 General</a></li>
     </ul>
-
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active panel-option" id="imagen">
             <div class="col-lg-8 container-option">
@@ -21,8 +20,6 @@
                 {!! Field::select('jardin_id',$jardines,['name' => 'jardines' ])!!}
                 {!! Field::select('galeria_id',$galerias,['name' => 'galerias' ]) !!}
                 {!! Form::close()!!}
-                {{--button type="submit" class="btn-buscar"><i class="fa fa-search"></i></button>--}}
-
             </div>
             <div class="col-lg-4 btn-galery">
                 <a class="btn btn-primary pull-right btn-crear-nuevo"
@@ -39,7 +36,6 @@
                 {!! Form::close()!!}
             </div>
         </div>
-
         <div role="tabpanel" class="tab-pane panel-option" id="boletin">
             <div class="col-lg-8 container-option">
                 {!! Form::open(['class' => 'form']) !!}

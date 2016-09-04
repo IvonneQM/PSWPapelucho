@@ -1,12 +1,10 @@
 @extends('cms.layout')
-
 @section('meta')
     {!!Html::style('css/blueimp-gallery.min.css')!!}
     {!!Html::style('css/bootstrap-image-gallery.min.css')!!}
     {!! Html::script('js/jquery.blueimp-gallery.min.js') !!}
     {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
 @stop
-
 @section('menu-mobile')
     @include('cms.apoderados.menu-lateral')
 @stop
@@ -18,8 +16,6 @@
     </nav>
 @stop
 @section('general-content-1')
-
-
     <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
     <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
         <!-- The container for the modal slides -->
@@ -33,11 +29,9 @@
         <!-- The modal dialog, which will be used to wrap the lightbox content -->
     </div>
     <!--  END The Bootstrap Image Gallery lightbox -->
-
     <div class="container" style="width: 100%">
         <div class="row-fluid">
             <div class="col-lg-12">
-
                 <div class="panel-heading"><h1 class="title">{!! $parvulo->full_name !!}</h1></div>
                 <div class="col-lg-12">
                     <div class="panel-primary">
@@ -61,8 +55,6 @@
                             </tr>
                         </table>
                     </div>
-
-
                     <div class="panel-primary">
                         <div class="panel-heading">Últimas Fotografías de {!! $parvulo->jardines->name !!}</div>
                         <div class="panel-body">
@@ -78,18 +70,19 @@
                                                                 <div class="item @if($row->first() === $fotografias->first()) {{ 'active' }} @endif">
                                                                     @foreach($row as $fotografia)
                                                                         <div class="col-sm-6 col-xs-6">
-                                                                            <a href="{{$fotografia->url}}" class="thumbnail thumbnail-slide" data-gallery>
-                                                                                <img src="{!! $fotografia->getThumbnail() !!}" alt="Image" class="img-responsive"></a>
+                                                                            <a href="{{$fotografia->url}}"
+                                                                               class="thumbnail thumbnail-slide"
+                                                                               data-gallery>
+                                                                                <img src="{!! $fotografia->getThumbnail() !!}"
+                                                                                     alt="Image" class="img-responsive"></a>
                                                                         </div>
                                                                     @endforeach
                                                                 </div>
                                                             @endforeach
                                                             <a class="left carousel-control" href="#myCarousel"
                                                                data-slide="prev">‹</a>
-
                                                             <a class="right carousel-control" href="#myCarousel"
                                                                data-slide="next">›</a>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -100,7 +93,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="panel-primary">
                         <div class="panel-heading">Informes al Hogar</div>
                         <div class="panel-body">
@@ -120,14 +112,12 @@
                                             {{-- <img src="../{{$archivo->url}}">--}}
                                             <a class="file-title"
                                                href="{{$informe->url}}"> {{$informe->fileName}} </a>
-
                                         </div>
                                     @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="panel-primary">
                         <div class="panel-heading">Boletines Semanales</div>
                         <div class="panel-body">
@@ -158,7 +148,6 @@
         </div>
     </div>
 @stop
-
 @section('aside2')
     <div class="panel-primary">
         <div class="panel-heading">Documentos Generales</div>
@@ -175,7 +164,6 @@
                                 <img src="{!! $archivo->getThumbnail() !!}">
                             </a>
                         @endif
-                        {{-- <img src="../{{$archivo->url}}">--}}
                         <a class="file-title" href="{{$archivo->url}}"> {{$archivo->fileName}} </a>
                     </div>
                 @endforeach
@@ -191,4 +179,3 @@
         });
     </script>
 @stop
-

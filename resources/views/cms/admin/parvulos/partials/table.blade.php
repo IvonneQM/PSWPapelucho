@@ -5,13 +5,11 @@
         <th>Nombre</th>
         <th>Acciones</th>
     </tr>
-
     @foreach($parvulos as $parvulo)
-        <tr data-id="{{ $parvulo->id }}">
+        <tr data-id="{{ $parvulo->id }}" id="row{{$parvulo->id}}">
             <td>{!! $parvulo->rut !!}</td>
             <td>{!! $parvulo->full_name !!}</td>
             <td>
-
                 <div class="t-actions">
                     <a class="editar_parvulo" href="#" data-toggle="modal" data-target="#modal-editar-parvulo"
                        role="button"><i class="fa fa-pencil"></i></a>

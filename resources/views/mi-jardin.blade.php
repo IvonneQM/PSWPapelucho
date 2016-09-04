@@ -3,8 +3,6 @@
     Mi Jardin
 @stop
 @section('article')
-
-
     <h1 class="title" id="title-mi-jardin">Mi jardín</h1>
     <h2 class="principal-title cursive-title">Reseña histórica</h2>
     <p>
@@ -37,7 +35,6 @@
             <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab" class="tab-title">Síntesis
                     Metodológica</a></li>
         </ul>
-
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane panel-option active" id="tab1">
                 <ul class="two-borders-box">
@@ -63,13 +60,10 @@
                             Ser la Sala Cuna y Escuela de Párvulos de Antofagasta, que desarrolle en sus niños(as)
                             aprendizajes significativos e integradores a través de experiencias lúdicas, en un ambiente
                             afectivo, que incorpore a la familia en el proceso educativo.
-
                         </p>
                     </li>
-
                     <li class="li-completa">
                         <h2><span class="cursive-title">Que ofrecemos</span></h2>
-                        <p>
                         <ul>
                             <li class="li-vineta">Educación Integral, en un ambiente de afecto, confianza, atención y
                                 cuidado.
@@ -94,7 +88,6 @@
                             </li>
                             <li class="li-vineta">Atención Sala Cuna durante todo el año. (según calendarización)</li>
                         </ul>
-                        </p>
                     </li>
                 </ul>
             </div>
@@ -106,11 +99,8 @@
                             se desarrolla de acuerdo a las nuevas bases curriculares de la Educación Parvularia,
                             complementadas
                             con la utilización de los Mapas de Progresos sugeridos por MINEDUC. </p>
-
                         <p>Con el fin de favorecer una educación integral de los niños(as) se realizan
                             actividades como:</p>
-
-                        <p>
                         <ul>
                             <li class="li-vineta"> Juego de Rincones puertas abiertas</li>
                             <li class="li-vineta">Visitas pedagógicas en la comunidad</li>
@@ -118,8 +108,6 @@
                             <li class="li-vineta">Música en colores. Nivel Medio Superior</li>
                             <li class="li-vineta">Talleres pedagógicos. Niveles Medios (Jornada Tarde)</li>
                         </ul>
-
-                        </p>
                     </li>
                     <li class="li-completa">
                         <h2><span class="cursive-title">Horario de Funcionamiento</span></h2>
@@ -154,12 +142,9 @@
             </div>
         </div>
     </div>
-
 @stop
-
 @section('aside')
     <h3 class="side-section-title">Objetivos Papelucho</h3>
-
     <ol class="objetives-box">
         <li><span class="objetives-item">Impartir una enseñanza de calidad basada en la idoneidad de los profesionales, fundamentándose en los Principios de la Educación Parvularia desde los Niveles Sala Cuna hasta Medio Superior, desarrollando una labor pedagógica en constante innovación, promoviendo aprendizajes significativos a través de experiencias lúdicas y acorde con lo que acontece en el mundo actual.</span>
         </li>
@@ -171,7 +156,6 @@
         </li>
     </ol>
 @stop
-
 @section('meta-footer')
     {!!Html::script('js/bootstrap.min.js')!!}
     {!!Html::script('js/miJardinTabs.js')!!}

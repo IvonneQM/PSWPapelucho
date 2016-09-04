@@ -196,6 +196,9 @@ a.dz-remove {
     width: 100%;
 }
 
+.container-title{
+    display: inline-block;
+}
 .conteiner-option {
     padding: 0;
 }
@@ -438,7 +441,6 @@ img.manual{
     color: #00A04A;
     font-size: 40px;
     margin-top: 30px;
-    max-width: 230px;
     padding: 5px;
 }
 

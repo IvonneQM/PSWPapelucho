@@ -1,17 +1,13 @@
 @extends('layout')
 @section('meta')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
 @stop
 @section('page-title')
     Papelucho Blumell
 @stop
-
 @section('article')
     <h1 class="title" id="title-blumell">Papelucho Blumell</h1>
     <div class="panel-group accordion" id="accordion">
-
-
         <div class="panel panel-default">
             <div class="panel-heading accordion-item-title">
                 <h4 class="panel-title">
@@ -27,13 +23,12 @@
                         {!!Html::image('images/estaticas/Papelucho3.JPG','lactante menor blumell',array('id'=>'lactante-menor'))!!}
                     </div>
                     <h4 class="cursive-title">Descripción</h4>
-
-                    <p>Este nivel atiende a lactantes desde 84 días a 12 meses, , los cuales están a cargo de Educadora y Asistente de
+                    <p>Este nivel atiende a lactantes desde 84 días a 12 meses, , los cuales están a cargo de Educadora
+                        y Asistente de
                         Párvulos, quienes velan por el bienestar de los pequeños y
                         propician su desarrollo
                         integral a través de variadas situaciones de aprendizaje. </p>
                     <h4 class="cursive-title">Objetivos</h4>
-
                     <p>Generar un ambiente cálido, adecuado y de entrega pedagógica, para lograr en los
                         lactantes un
                         desarrollo óptimo en todos los ámbitos de aprendizajes, siendo a la vez un aporte a
@@ -42,8 +37,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="panel panel-default">
             <div class="panel-heading accordion-item-title">
                 <h4 class="panel-title">
@@ -59,7 +52,8 @@
                         {!!Html::image('images/estaticas/19.JPG','lactante mayor blumell', (array('id'=>'lactante-mayor')))!!}
                     </div>
                     <h4 class="cursive-title">Descripción</h4>
-                    <p>Este nivel se compone por lactantes de 12 a 24 meses de edad, los cuales están a cargo de Educadora y Asistente de
+                    <p>Este nivel se compone por lactantes de 12 a 24 meses de edad, los cuales están a cargo de
+                        Educadora y Asistente de
                         Párvulos. Este grupo se caracteriza por adquirir progresivamente mayor
                         seguridad y
                         autonomía en lo que realizan, mostrándose más sociables y con confianza en sí
@@ -70,8 +64,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="panel panel-default">
             <div class="panel-heading accordion-item-title">
                 <h4 class="panel-title">
@@ -100,8 +92,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="panel panel-default">
             <div class="panel-heading accordion-item-title">
                 <h4 class="panel-title">
@@ -132,36 +122,29 @@
     </div>
     <div class="galery-container">
         <h1 class="cursive-title">Galerías</h1>
-
         @include('galerias.galeriasBlumell')
     </div>
 @stop
 @section('aside')
-
     <div class="contact-container">
         <h3 class="side-section-title">Contáctenos</h3>
-
         {!! Form::open(['route' => 'blumell-send', 'method' => 'POST','class'=>'contact-form','id'=>'formContact','role' => 'action','send']) !!}
         {!! csrf_field() !!}
         <div class="form-group">
             {{--{!! Form::label('name', 'Nombre:') !!}--}}
             {!! Form::text('name', null , ['placeholder' => 'Nombre', 'class' => 'form-control','id' => 'textName']) !!}
         </div>
-
         <div class="form-group">
             {{--{!! Form::label('email', 'Email:') !!}--}}
             {!! Form::text('email', null, ['placeholder' => 'Email', 'class' => 'form-control']) !!}
         </div>
-
         <div class="form-group">
             {{--}{!! Form::label('phone', 'Teléfono:') !!}--}}
             {!! Form::text('phone', null, ['placeholder' => 'Teléfono', 'class' => 'form-control']) !!}
         </div>
-
         <div class="form-group">
             {{-- {!! Form::label('message', 'Mensaje:') !!}--}}
             {!! Form::textarea('msj', null, ['placeholder' => 'Mensaje', 'class' => 'form-control']) !!}
-
         </div>
         <div class="form-group">
             {!! Form::submit('Enviar', ['class' => 'button', 'id'=>'contact-button'])!!}
@@ -169,7 +152,6 @@
         {!! Form::close() !!}
     </div>
 @stop
-
 @section('meta-footer')
     {!! Html::script('js/contacto.js') !!}
     {!!Html::script('js/acordion.js')!!}

@@ -4,7 +4,6 @@
         <p>
             <strong>{{ $msg['message'] }}</strong>
         </p>
-        
         @if (!empty ($msg['details']))
             <p>{{ $msg['details'] }}</p>
         @endif

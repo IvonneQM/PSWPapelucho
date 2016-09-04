@@ -1,19 +1,16 @@
 {{-- Modal --}}
-
 <div class="modal fade" id="modal-editar-parvulo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
                 <h4 class="modal-title" id="parv"></h4>
             </div>
             <div class="modal-body">
-
                 <a hidden="hidden" id="id_href_parvulo" href="{{route('administrador.parvulos.edit')}}"></a>
-                <a hidden="hidden"  id="id_update_parvulo" href="{{route('administrador.parvulos.update')}}"></a>
-
+                <a hidden="hidden" id="id_update_parvulo" href="{{route('administrador.parvulos.update')}}"></a>
                 <form id="form_update_parvulo" method="PUT" action="{{route('administrador.parvulos.update')}}">
-
                     {!!Form::hidden('id',null,['id'=>'idParvulo'])!!}
                     <div class="form-group">
                         {!!Form::label('rut','Rut: ')!!}
@@ -47,14 +44,9 @@
                             @endforeach
                         </select>
                     </div>
-
-
                     {!!Form::submit('Guardar',['class'=>'btn btn-primary', 'id' => 'btn_save_parvulo'])!!}
                 </form>
-
-
             </div>
         </div>
-
     </div>
 </div>

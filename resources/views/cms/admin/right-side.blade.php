@@ -8,5 +8,4 @@
     @endforeach
     </tbody>
 </table>
-
 {!! $auditorias->render() !!}

@@ -1,4 +1,3 @@
-
 <div class="dz-message" style="height:200px;">
     Arrastra tus archivos aquí.
 </div>

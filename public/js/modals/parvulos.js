@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     /*Formato rut*/
     $('#rut').Rut({
         on_error : function () {
@@ -31,7 +30,8 @@ $(document).ready(function () {
                 url     : $(this).attr('action'),
                 data    : $(this).serialize(),
                 dataType: "json",
-                success : function () {
+                success : function (data) {
+                    addRow(data);
                     $('#form-register-parvulo').trigger('reset');
                     $('#rut').focus();
                     swal("Registro creado!",
@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     //AGREGAR ROW //
     function addRow(data) {
-        var row = '<tr data-id=' + data.id + '>' +
+        var row = '<tr data-id=' + data.id + ' id="row'+ data.id +'">' +
             '<td>' + data.rut + '</td>' +
             '<td>' + data.full_name + '</td>' +
             '<td>' +
@@ -82,7 +82,6 @@ $(document).ready(function () {
             '</tr>';
         $('#t-header-content-principal').after(row);
     }
-
 
     //MOSTRAR PARVULOS//
 
@@ -119,12 +118,21 @@ $(document).ready(function () {
             type   : metodo,
             data   : form.serialize(),
             success: function (data) {
-
+                $("#row"+id).html(
+                    '<td>' + data.rut + '</td>' +
+                    '<td>' + data.full_name + '</td>' +
+                    '<td>' +
+                    '<div class="t-actions">' +
+                    '<a class="editar_parvulo" href="#" data-toggle="modal" data-target="#modal-editar-parvulo" role="button" ><i class="fa fa-pencil"></i></a>' + ' ' +
+                    '<a href="#" type="submit" class="btn-delete-parvulo"><i class="fa fa-trash-o"></i></a>' + ' ' +
+                    '</div>' +
+                    '</td>' +
+                    '</tr>');
                 swal("Registro actualizado!",
                     "El registro se ha actualizado con exito",
                     "success");
             },
-            error  : function (data) {
+            error  : function () {
                 swal("¡Error!",
                     "Se ha generado un problema de conexión con el servidor",
                     "error");
@@ -159,7 +167,7 @@ $(document).ready(function () {
                     form    : form,
                     data    : data,
                     dataType: "json",
-                    success : function (data) {
+                    success : function () {
                         swal("Registro eliminado!",
                             "El registro ha sido eliminada",
                             "success");

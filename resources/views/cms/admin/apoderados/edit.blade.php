@@ -17,7 +17,6 @@
                     autocompleta solo el primer campo de cada tipo--}}
                     <input style="display:none">
                     <input type="password" style="display:none">
-
                     <div class="form-group">
                         {!!Form::label('rut','Rut: ')!!}
                         {!!Form::text('rut',null,['class'=>'form-control rut' , 'id'=>'rutApo', 'placeholder'=>'Rut usuario'])!!}
@@ -35,9 +34,7 @@
                         {!!Form::label('password','Contraseña: ')!!}
                         {!!Form::password('password',['class'=>'form-control', 'id'=>'passApo', 'placeholder'=>'Password de usuario', 'autocomplete' => 'off'])!!}
                     </div>
-
                     {!!Form::submit('Guardar',['class'=>'btn btn-primary', 'id' => 'btnSave'])!!}
-
                 </form>
             </div>
         </div>

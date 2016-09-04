@@ -5,10 +5,8 @@
     {!! Html::style('css/select2.min.css') !!}
     {!! Html::script('js/dropzone/dropzone.js') !!}
     {!! Html::script('js/dropzone/archivos.js') !!}
-
     {!!Html::style('css/blueimp-gallery.min.css')!!}
     {!!Html::style('css/bootstrap-image-gallery.min.css')!!}
-
 @stop
 @section('menu-mobile')
     @include('cms.admin.menu-lateral')
@@ -21,11 +19,10 @@
     </nav>
 @stop
 @section('general-content-1')
-
     <div class="container">
         <div class="row-fluid">
             <div class="col-lg-12">
-                <div class="panel-heading"><h1 class="title">Contenido</h1></div>
+                <div class="panel-heading container-title"><h1 class="title">Contenido</h1></div>
                 <div class="col-lg-12 div-btn">
                     <div class="panel-primary">
                         <div class="panel-heading" id="panel-content-heading">
@@ -63,7 +60,6 @@
         </div>
     </div>
 @endsection
-
 @section('meta-footer')
     {!! Html::script('js/easy-autocomplete/jquery.easy-autocomplete.js') !!}
     {!! Html::script('js/easy-autocomplete/autocomplete.js') !!}
@@ -71,5 +67,3 @@
     {!! Html::script('js/bootstrap-gallery/bootstrap-image-gallery.min.js')!!}
     {!! Html::script('js/select2.min.js') !!}
 @endsection
-
-

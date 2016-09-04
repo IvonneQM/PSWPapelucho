@@ -129,7 +129,7 @@ Route::group(['middleware' => 'auth'], function () {
             ]);
 
 
-//            Route::get('parvulosList?user={user}', 'Cms\Admin\ParvuloController@listAllParvulo');
+           // Route::get('', 'Cms\Admin\ParvuloController@listAllParvulo');
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
 
             Route::get('autocomplete/parvulos', function () {

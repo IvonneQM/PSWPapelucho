@@ -13,7 +13,8 @@
             <td>{!! $noticia->publish !!}</td>
             <td>
                 <div class="t-actions">
-                    <a class="editar_noticia" href="#" data-toggle="modal" data-target="#modal-editar-noticia" role="button"><i class="fa fa-pencil"></i></a>
+                    <a class="editar_noticia" href="#" data-toggle="modal" data-target="#modal-editar-noticia"
+                       role="button"><i class="fa fa-pencil"></i></a>
                     <a href="#" type="submit" class="btn-delete-noticia"><i class="fa fa-trash-o"></i></a>
                 </div>
             </td>
