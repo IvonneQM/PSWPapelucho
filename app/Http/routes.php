@@ -5,6 +5,10 @@ Route::get('2012', function () {
     return Redirect::route('home');
 });
 
+Route::get('contact', function () {
+    return view('mails.prueba');
+});
+
 Route::get('/', [
     'uses' => 'HomeController@index',
     'as' => 'home'
