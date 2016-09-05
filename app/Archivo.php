@@ -131,12 +131,16 @@ class Archivo extends Model implements SendmailInterface
 
     public function getSubject()
     {
-        return 'contenido modificado.';
+        return 'Contenido modificado';
     }
 
     public function getAttachments()
     {
-        return false;
+        $archivo = array();
+        $archivo = Archivo::where($this->getKeyName(), $this->getKey())->get();
+        if (!empty($archivo)) $archivo = $archivo->lists('url')->toArray();
+
+        return array_unique((array)$archivo);
     }
 
     public function getData()
