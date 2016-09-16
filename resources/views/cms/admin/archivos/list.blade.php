@@ -3,8 +3,8 @@
     {!! Html::style('css/dropzone.css') !!}
     {!! Html::style('css/jquery.easy-autocomplete.css') !!}
     {!! Html::style('css/select2.min.css') !!}
-    {!! Html::script('js/dropzone/dropzone.js') !!}
     {!! Html::script('js/dropzone/archivos.js') !!}
+    {!! Html::script('js/dropzone/dropzone.js') !!}
     {!!Html::style('css/blueimp-gallery.min.css')!!}
     {!!Html::style('css/bootstrap-image-gallery.min.css')!!}
 @stop

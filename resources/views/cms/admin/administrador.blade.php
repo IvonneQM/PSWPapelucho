@@ -51,7 +51,7 @@
         </div>
     </div>
     <div class="container container-manual">
-        <div class="row">
+        <div class="row manual-row">
             <div class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-6 col-xs-offset-1 manual">
                 <p>Manual de Usuario <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
             </div>

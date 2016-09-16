@@ -113,7 +113,7 @@ return [
         'content' => 'contenido',
         'publish' => 'publicar',
         'name' => 'nombre',
-        'full name' => 'nombre completo',
+        'full_name' => 'nombre',
         'email' => 'correo electrónico',
         'type,galerias-jardines' => '',
         'galeria_id' => 'Galería',

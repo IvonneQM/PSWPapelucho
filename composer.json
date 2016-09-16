@@ -15,7 +15,8 @@
         "intervention/image": "^2.3",
         "illuminate/html": "~5.0",
         "styde/html": "~1.0",
-        "uxweb/sweet-alert": "~1.1"
+        "uxweb/sweet-alert": "~1.1",
+        "tinify/tinify": "^1.3"
 
 
     },

@@ -220,7 +220,7 @@ return [
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Image'     => Intervention\Image\Facades\Image::class,
         'Google'    => App\Helpers\Google::class,
-        'Alert' => UxWeb\SweetAlert\SweetAlert::class
+        'Alert'     => UxWeb\SweetAlert\SweetAlert::class
     ],
 
 ];

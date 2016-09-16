@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
-
 class CreateArchivoRequest extends Request
 {
     /**
@@ -26,7 +24,7 @@ class CreateArchivoRequest extends Request
         $this->sanitize();
 
         $mimes = [
-            'galerias-jardines' => 'mimes:jpeg,png,bmp,png',
+            'galerias-jardines' => 'mimes:jpeg,png,bmp,png ',
             'niveles'  => 'mimes:application/doc,application/docx,application/pdf',
             'parvulos' => '',
             'general' => ''
@@ -37,7 +35,7 @@ class CreateArchivoRequest extends Request
             'jardines' => 'RequiredIf:type,galerias-jardines',
             'niveles'  => 'RequiredIf:type,niveles',
             'parvulos' => 'RequiredIf:type,parvulos',
-            'fileName' => 'Unique:Archivo',
+            'fileName' => 'Unique:Archivo|max:300',
         ];
 
         foreach($this->file('file') as $i => $file){
@@ -98,11 +96,7 @@ class CreateArchivoRequest extends Request
             array('n', 'N', 'c', 'C',),
             $string
         );
-
-
-
-
-    return $string;
+        return $string;
     }
 
 }

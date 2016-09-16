@@ -27,9 +27,9 @@
 
 (function() {
   var Dropzone, Emitter, camelize, contentLoaded, detectVerticalSquash, drawImageIOSFix, noop, without,
-    __slice = [].slice,
-    __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+      __slice = [].slice,
+      __hasProp = {}.hasOwnProperty,
+      __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   noop = function() {};
 
@@ -104,11 +104,11 @@
 
 
     /*
-    This is a list of all available events you can register on a dropzone object.
-    
-    You can register an event handler like this:
-    
-        dropzone.on("dragEnter", function() { });
+     This is a list of all available events you can register on a dropzone object.
+
+     You can register an event handler like this:
+
+     dropzone.on("dragEnter", function() { });
      */
 
     Dropzone.prototype.events = ["drop", "dragstart", "dragend", "dragenter", "dragover", "dragleave", "addedfile", "addedfiles", "removedfile", "thumbnail", "error", "errormultiple", "processing", "processingmultiple", "uploadprogress", "totaluploadprogress", "sending", "sendingmultiple", "success", "successmultiple", "canceled", "canceledmultiple", "complete", "completemultiple", "reset", "maxfilesexceeded", "maxfilesreached", "queuecomplete"];
@@ -125,7 +125,7 @@
       maxThumbnailFilesize: 10,
       thumbnailWidth: 120,
       thumbnailHeight: 120,
-      filesizeBase: 90000,
+      filesizeBase: 1000,
       maxFiles: null,
       params: {},
       clickable: true,
@@ -139,17 +139,17 @@
       hiddenInputContainer: "body",
       capture: null,
       renameFilename: null,
-      dictDefaultMessage: "Arrastra tus archivos aquí para cargarlos.",
-      dictFallbackMessage: "Tu navegador no soporta la funcionalidad de arrastrar y soltar para cargar archivos. Prueba haciendo click.",
+      dictDefaultMessage: "Drop files here to upload",
+      dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
       dictFallbackText: "Please use the fallback form below to upload your files like in the olden days.",
-      dictFileTooBig: "El archivo es demasiafo grande ({{filesize}}MiB). Tamaño máximo por archivo: {{maxFilesize}}MiB.",
-      dictInvalidFileType: "No puede subir archivos de este tipo.",
-      dictResponseError: "El servidor ha respondido con el siguiente codigo {{statusCode}}.",
-      dictCancelUpload: "Cancelar",
-      dictCancelUploadConfirmation: "¿Esta seguro de cancelar la carga de archivos?",
-      dictRemoveFile: "Eliminar",
+      dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+      dictInvalidFileType: "You can't upload files of this type.",
+      dictResponseError: "Server responded with {{statusCode}} code.",
+      dictCancelUpload: "Cancel upload",
+      dictCancelUploadConfirmation: "Are you sure you want to cancel this upload?",
+      dictRemoveFile: "Remove file",
       dictRemoveFileConfirmation: null,
-      dictMaxFilesExceeded: "No puedes subir más archivos. El máximo es {{maxFiles}}:",
+      dictMaxFilesExceeded: "You can not upload any more files.",
       accept: function(file, done) {
         return done();
       },
@@ -221,12 +221,12 @@
       },
 
       /*
-      Those functions register themselves to the events on init and handle all
-      the user interface specific stuff. Overwriting them won't break the upload
-      but can break the way it's displayed.
-      You can overwrite them if you don't like the default behavior. If you just
-      want to add an additional event handler, register it on the dropzone object
-      and don't overwrite those options.
+       Those functions register themselves to the events on init and handle all
+       the user interface specific stuff. Overwriting them won't break the upload
+       but can break the way it's displayed.
+       You can overwrite them if you don't like the default behavior. If you just
+       want to add an additional event handler, register it on the dropzone object
+       and don't overwrite those options.
        */
       drop: function(e) {
         return this.element.classList.remove("dz-drag-hover");
@@ -1655,10 +1655,10 @@
 
 
   /*
-  
-  Bugfix for iOS 6 and 7
-  Source: http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
-  based on the work of https://github.com/stomita/ios-imagefile-megapixel
+
+   Bugfix for iOS 6 and 7
+   Source: http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
+   based on the work of https://github.com/stomita/ios-imagefile-megapixel
    */
 
   detectVerticalSquash = function(img) {

@@ -2,7 +2,6 @@ $(window).load(function () {
     accept               = "image/*";
     hiddenInputContainer = false;
     $('#archivosTabs').data('type', 'galerias-jardines');
-
     Dropzone.forElement(document.getElementById('dropzone')).hiddenFileInput.setAttribute('accept', accept);
     $.ajax({
         url     : $('#row-thumbnails').data('url'),
@@ -15,10 +14,9 @@ $(window).load(function () {
         $('#row-thumbnails').html(d);
     });
     console.log($('#archivosTabs').data('type'));
-
-
 });
 
+// SELECT2//
 $(document).ready(function () {
     $('select').select2({
         allowClear : true,
@@ -26,7 +24,6 @@ $(document).ready(function () {
             id  : "",
             text: "Seleccione una opción"
         }
-
     });
     $.fn.populateSelect = function (values) {
         var options = '';
@@ -47,11 +44,10 @@ $(document).ready(function () {
             });
         }
     })
-
+// FIN SELECT2//
 
     $(function () {
             Dropzone.options.dropzone = {
-
                 headers         : {
                     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
                 },
@@ -59,49 +55,60 @@ $(document).ready(function () {
                 autoProcessQueue: false,
                 uploadMultiple  : true,
                 parallelUploads : 10,
-                maxFilesize     : 256,
-                maxFiles        : 20,
-                filesizeBase: 90000,
+                maxFilesize: 3,
+                filesizeBase: 1000,
+                maxFiles        : 10,
                 addRemoveLinks  : true,
                 dictRemoveFile  : 'Eliminar',
 
-
+                maxfilesexceeded: function(file)
+                {
+                    alert('Estas intentando subir mas de 10 archivos. Sólo se subiran los 10 primeros');
+                },
                 init: function () {
-                    var submitButton     = document.querySelector("#guardar-archivos"),
+                        var submitButton     = document.querySelector("#guardar-archivos"),
+                            dropzoneImagenes = this;
+                        submitButton.addEventListener("click", function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            dropzoneImagenes.processQueue();
+                        });
 
-                        dropzoneImagenes = this;
-
-                    submitButton.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        dropzoneImagenes.processQueue();
-                    });
 
 
                     this.on("addedfile", function (file) {
-
+                        /*var fileName = file.name;
+                        if (file.size > 9000000) {
+                            this.removeFile(file);
+                            alert(fileName + " is larger than 2MiB.");
+                        }*/
+                        if (this.files[10]!=null){
+                            this.removeFile(this.files[0]);
+                        }
                     });
-
                     this.on("complete", function (file) {
                         dropzoneImagenes.removeFile(file);
                     });
-
                     this.on("success", function (file) {
                         swal({
                                 title: "Registro actualizado!",
                                 text : "El registro se ha actualizado con exito",
                                 type : "success"
-
                             },
-
                             function X() {
                                 dropzoneImagenes.processQueue.bind(dropzoneImagenes)
                             });
                     });
-
                     this.on("error", function (file) {
-                        var name    = file.name;
-
+                        swal({
+                            title             : "¡Error!",
+                            text              : "Se ha generado un problema de conexión con el servidor",
+                            type              : "warning",
+                            confirmButtonColor: "#C32026",
+                            confirmButtonText : "Ok",
+                            closeOnConfirm    : false
+                        })
+                        /* var name    = file.name;
                         swal({
                             title             : "¡Error!",
                             text              : "El archivo" + " " +  name  + " "+ "ya existe",
@@ -110,6 +117,31 @@ $(document).ready(function () {
                             confirmButtonText : "Ok",
                             closeOnConfirm    : false
                         })
+                        // Pendiente validacion campos vacios//
+
+                        var jardines = $('#jardin_id').val();
+                        var galerias  = msj.responseJSON.galerias;
+                        console.log(jardines);
+                        if(jardines == null){
+                            jardines = ''
+                        }
+                        if(galerias == null){
+                            galerias = ''
+                        }
+                        var concatenado = jardines + '\n' + galerias;
+                        if (concatenado == '') {
+                            concatenado = "Se ha generado un problema de conexión con el servidor"
+                        }
+                        swal({
+                            title             : "¡Error!",
+                            text              : concatenado,
+                            type              : "warning",
+                            confirmButtonColor: "#C32026",
+                            confirmButtonText : "Ok",
+                            closeOnConfirm    : false
+                        })
+                        */
+
 
                     })
                 }

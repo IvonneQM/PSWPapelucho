@@ -8,13 +8,9 @@ use App\Jardin;
 use App\Nivel;
 use App\Parvulo;
 use Illuminate\Http\Request;
-
 use App\Archivo;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Symfony\Component\HttpFoundation\File\File;
-use Illuminate\Pagination\LengthAwarePaginator;
-
+use Image;
 class ArchivoController extends Controller
 {
     /**
@@ -29,9 +25,7 @@ class ArchivoController extends Controller
         $jardines = Jardin::with('archivos')->get();
         $niveles = Nivel::with('archivos')->get();
         $parvulos = Parvulo::with('archivos')->get();
-
         return view('cms.admin.archivos.list', compact('archivos', 'galerias', 'jardines', 'niveles', 'parvulos'));
-
     }
 
     public function files(Request $request)
@@ -57,38 +51,49 @@ class ArchivoController extends Controller
         $dir = public_path() . '/uploads/';
         $files = $request->file('file');
         $methods = explode('-', $request->input('type'));
+        $file = \Input::file($files);
+        $img = \Image::make($file);
 
-        foreach ($files as $file) {
+/*        foreach ($files as $file) {
             $archivo = new Archivo();
+            //$file = Image::make($file);
+*/
+/*
+                //$file->resize(300, 200);
+                //$file->insert('public/images/close.png');
+                $fileName = $file->getClientOriginalName();
+                $fileName = $request->sanitize_cadena($fileName);
+                $fileSize = $file->getClientSize();
+                $fileType = $file->getClientOriginalExtension();
 
-            $fileName = $file->getClientOriginalName();
-            $fileName = $request->sanitize_cadena($fileName);
-            $fileSize = $file->getClientSize();
-            $fileType = $file->guessExtension();
 
-            $archivo->fileName = $fileName;
-            $archivo->url = 'uploads/' . $fileName;
-            $archivo->size = $fileSize;
-            $archivo->extension = $fileType;
+                $archivo->fileName = $fileName;
+                $archivo->url = 'uploads/' . $fileName;
+                $archivo->size = $fileSize;
+                $archivo->extension = $fileType;
 
-            if ($file->move($dir, $fileName)) {
-                $archivo->save();
 
-                $archivo->type = $request->input('type');
+                if ($file->move($dir, $fileName)) {
+                    $file->save();
 
-                foreach ((array)$methods as $model) {
-                    if (empty($request->input($model))) continue;
-                    if (
-                        $archivo->exists &&
-                        !in_array($model, ['general'])
-                    ) {
-                        $archivo->{$model}()->attach($request->input($model));
+                    $archivo->type = $request->input('type');
+
+                    foreach ((array)$methods as $model) {
+                        if (empty($request->input($model))) continue;
+                        if (
+                            $archivo->exists &&
+                            !in_array($model, ['general'])
+                        ) {
+                            $archivo->{$model}()->attach($request->input($model));
+                        }
                     }
                 }
-            }
-        }
+            }*/
 
-        event((new \App\Events\SendMail($archivo)));
+
+
+       // event((new \App\Events\SendMail($archivo)));
+
     }
 
     /**
@@ -102,8 +107,10 @@ class ArchivoController extends Controller
         $file = Archivo::FindOrFail($id);
         if (unlink($file->url)) {
             $file->delete();
+            $file->galerias()->detach();
+            $file->jardines()->detach();
+            $file->niveles()->detach();
             return back();
         }
-
     }
 }

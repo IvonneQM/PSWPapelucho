@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
-
 class CreateParvuloRequest extends Request
 {
     /**
@@ -23,9 +21,29 @@ class CreateParvuloRequest extends Request
      */
     public function rules()
     {
-        return [
-            'rut' => 'required|max:12',
-            'full_name' => 'required|max:255',
-        ];
+
+        switch ($this->method()) {
+            case 'POST': {
+                return [
+                    'rut' => 'required|max:12',
+                    'full_name' => 'required|max:100',
+                ];
+            }
+            case 'PUT': {
+                return [
+                    'rut' => 'Required|Max:50',
+                    'full_name' => 'Required|Max:100',
+                ];
+            }
+            default:
+                break;
+        }
+
+
+
+
+
+
+
     }
 }

@@ -23,12 +23,25 @@ class CreateUserRequest extends Request
      */
     public function rules()
     {
-        return [
-            'rut' => 'Required|Unique:users,Rut|Max:12',
-            'full_name' => 'Required|Max:50',
-            'email' => 'Required|email|Max:100',
-            'password' => 'Required|Max:30',
-            'role' => 'Required|Between:5,9',
-        ];
+        switch ($this->method()) {
+            case 'POST': {
+                return [
+                    'rut' => 'Required|Unique:users,Rut|Max:12',
+                    'full_name' => 'Required|Max:50',
+                    'email' => 'Required|email|Max:100',
+                    'password' => 'Required|Max:30',
+                    'role' => 'Required|Between:5,9',
+
+                ];
+            }
+            case 'PUT': {
+                return [
+                    'full_name' => 'Required|Max:50',
+                    'email' => 'Required|email|Max:100',
+                ];
+            }
+            default:
+                break;
+        }
     }
 }

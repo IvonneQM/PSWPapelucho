@@ -114,13 +114,12 @@ class ParvuloController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param CreateParvuloRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public
-    function update(Request $request, $id)
+    function update(CreateParvuloRequest $request, $id)
     {
         $parvulo = Parvulo::find($id);
         $parvulo->update($request->all());

@@ -129,12 +129,31 @@ $(document).ready(function () {
                     "El registro se ha actualizado con exito",
                     "success");
             },
-            error  : function (data) {
-                swal("¡Error!",
-                    "Se ha generado un problema de conexión con el servidor",
-                    "error");
+            error  : function (msj) {
+                var nombre = msj.responseJSON.full_name;
+                var email  = msj.responseJSON.email;
+
+                if (nombre == null) {
+                    nombre = ''
+                }
+                if (email == null) {
+                    email = ''
+                }
+                var concatenado = nombre + '\n' + email;
+                if (concatenado == '') {
+                    concatenado = "Se ha generado un problema de conexión con el servidor"
+                }
+
+                swal({
+                    title             : "¡Error!",
+                    text              : concatenado,
+                    type              : "warning",
+                    confirmButtonColor: "#C32026",
+                    confirmButtonText : "Ok",
+                    closeOnConfirm    : false
+                })
             }
-        })
+        });
     });
 
 //ELIMINAR ADMINISTRADOR//

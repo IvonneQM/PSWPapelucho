@@ -10,7 +10,7 @@ $(document).ready(function () {
     });
     /*Fin Formato rut*/
 
-    /*Registrar parvulos*/
+    //REGISTRAR PARVULOS//
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -38,7 +38,7 @@ $(document).ready(function () {
                         "El registro se ha generado con exito",
                         "success");
                 },
-                error: function (msj) {
+                error   : function (msj) {
                     var rut    = msj.responseJSON.rut;
                     var nombre = msj.responseJSON.full_name;
 
@@ -61,7 +61,6 @@ $(document).ready(function () {
                         confirmButtonText : "Ok",
                         closeOnConfirm    : false
                     })
-
                 }
             });
         })
@@ -70,7 +69,7 @@ $(document).ready(function () {
 
     //AGREGAR ROW //
     function addRow(data) {
-        var row = '<tr data-id=' + data.id + ' id="row'+ data.id +'">' +
+        var row = '<tr data-id=' + data.id + ' id="row' + data.id + '">' +
             '<td>' + data.rut + '</td>' +
             '<td>' + data.full_name + '</td>' +
             '<td>' +
@@ -104,7 +103,7 @@ $(document).ready(function () {
         })
     });
 
-    /*Actualizar parvulos*/
+    //ACTUALIZAR PARVULOS//
 
     $('#btn_save_parvulo').on('click', function (e) {
         e.preventDefault();
@@ -118,7 +117,7 @@ $(document).ready(function () {
             type   : metodo,
             data   : form.serialize(),
             success: function (data) {
-                $("#row"+id).html(
+                $("#row" + id).html(
                     '<td>' + data.rut + '</td>' +
                     '<td>' + data.full_name + '</td>' +
                     '<td>' +
@@ -132,10 +131,29 @@ $(document).ready(function () {
                     "El registro se ha actualizado con exito",
                     "success");
             },
-            error  : function () {
-                swal("¡Error!",
-                    "Se ha generado un problema de conexión con el servidor",
-                    "error");
+            error  : function (msj) {
+                var rut    = msj.responseJSON.rut;
+                var nombre = msj.responseJSON.full_name;
+
+                if (rut == null) {
+                    rut = ''
+                }
+                if (nombre == null) {
+                    nombre = ''
+                }
+                var concatenado = rut + '\n' + nombre;
+                if (concatenado == '') {
+                    concatenado = "Se ha generado un problema de conexión con el servidor"
+                }
+
+                swal({
+                    title             : "¡Error!",
+                    text              : concatenado,
+                    type              : "warning",
+                    confirmButtonColor: "#C32026",
+                    confirmButtonText : "Ok",
+                    closeOnConfirm    : false
+                })
             }
         })
     });
