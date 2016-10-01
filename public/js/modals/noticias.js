@@ -1,5 +1,16 @@
 $(document).ready(function () {
     listNoticia();
+
+    var total_letras = 400;
+    $('#content').keyup(function() {
+        var longitud = $(this).val().length;
+        var resto = total_letras - longitud;
+        $('#counter').html(resto);
+        if(resto <= 0){
+            $('#content').attr("maxlength", 400);
+        }
+    });
+
     //INGRESAR NOTICIAS//
     $.ajaxSetup({
         headers: {
@@ -188,3 +199,6 @@ $(document).on('click','.pagination li a',function (e) {
         }
     });
 });
+
+
+

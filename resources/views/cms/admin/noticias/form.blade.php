@@ -9,7 +9,8 @@
                 <h4 class="modal-title" id="myModalLabel">Crear Noticia</h4>
             </div>
             <div class="modal-body">
-                {!!Form::open(['id'=>'form-register-noticia'],['class'=>'form-horizontal'],['route'=>'registroNoticia', 'method' => 'POST', 'role' => 'form', 'action' => 'registroNoticia'])!!}
+                {!!Form::open(['id'=>'form-register-noticia'],
+                ['route'=>'registroNoticia', 'method' => 'POST', 'role' => 'form', 'action' => 'registroNoticia'])!!}
                 @include('cms.admin.noticias.partials.fields')
                 {!!Form::close()!!}
             </div>

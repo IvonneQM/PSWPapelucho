@@ -10,9 +10,6 @@ use App\Parvulo;
 use Illuminate\Http\Request;
 use App\Archivo;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\File;
-use Illuminate\Pagination\Paginator;
-
 class ArchivoController extends Controller
 {
     /**
@@ -32,14 +29,13 @@ class ArchivoController extends Controller
 
     public function files(Request $request)
     {
-        $method = $request->get('type');
-        if (
-        !empty($method)
-        ) {
-            $archivos = Archivo::types($method)->orderBy('id', 'DESC')->paginate(12);
-            return view('cms.admin.archivos.partials.thumbnails', compact('archivos'));
+        $type = $request->get('type');
+        if (!empty($type))
+        {
+            $archivos = Archivo::types($type)->orderBy('id', 'DESC')->paginate(5);
+            $archivos->setPath('archivos/files');
+            return view('cms.admin.archivos.partials.thumbnails', compact('archivos','type'));
         }
-
     }
 
 
@@ -51,60 +47,52 @@ class ArchivoController extends Controller
      */
     public function store(CreateArchivoRequest $request)
     {
+        $files = $request->file('file'); //
         $dir = public_path() . '/uploads/';
-        $files = $request->file('file');
         $methods = explode('-', $request->input('type'));
-        //$file = \Input::file($files);
-        //$img = \Image::make($file);
-
         foreach ($files as $file) {
             $archivo = new Archivo();
-            //$file = Image::make($file);
-
-
-            //$file->resize(300, 200);
-            //$file->insert('public/images/close.png');
             $fileOriginalName = $file->getClientOriginalName();
             $fileOriginalName = $request->sanitize_cadena($fileOriginalName);
             $fileSize = $file->getClientSize();
-            $fileType = $file->getClientOriginalExtension();
-            $fileOnlyName = basename($fileOriginalName, '.'.$fileType);
+            $fileType = strtolower($file->getClientOriginalExtension());
+            $fileOnlyName = basename($fileOriginalName, '.' . $fileType);
 
-           $i = 1;
+            //agregarle un numero cuando imagen se llame igual//
+            $i = 1;
             $fileFullName = $fileOriginalName;
-            while (\File::exists($dir.$fileOriginalName)) {
-                $fileOriginalName = $fileOnlyName.'_'.$i;
-                $fileOriginalName = $fileOriginalName.'.'.$fileType;
+            while (\File::exists($dir . $fileOriginalName)) {
+                $fileOriginalName = $fileOnlyName . '_' . $i;
+                $fileOriginalName = $fileOriginalName . '.' . $fileType;
                 $fileFullName = $fileOriginalName;
                 $i++;
             }
-
+            //
             $archivo->fileName = $fileFullName;
             $archivo->url = 'uploads/' . $fileFullName;
             $archivo->size = $fileSize;
             $archivo->extension = $fileType;
-
-
-            if ($file->move($dir, $fileFullName)) {
-                $archivo->save();
-
-                $archivo->type = $request->input('type');
-
-                foreach ((array)$methods as $model) {
-                    if (empty($request->input($model))) continue;
-                    if (
-                        $archivo->exists &&
-                        !in_array($model, ['general'])
-                    ) {
-                        $archivo->{$model}()->attach($request->input($model));
-                    }
+            $file = \Image::make($file->getRealPath());
+            $file->orientate();
+            $file->resize(1280, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            $file->save($archivo->url);
+            $archivo->save();
+            $archivo->type = $request->input('type');
+            foreach ((array)$methods as $model) {
+                if (empty($request->input($model))) continue;
+                if (
+                    $archivo->exists &&
+                    !in_array($model, ['general'])
+                ) {
+                    $archivo->{$model}()->attach($request->input($model));
                 }
             }
+            //}
         }
-
-
-        // event((new \App\Events\SendMail($archivo)));
-
+        event((new \App\Events\SendMail($archivo)));
     }
 
 

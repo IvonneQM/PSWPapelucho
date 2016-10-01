@@ -42,6 +42,7 @@
                 @yield('menu-mobile')
             </ul>
         </nav>
+        @yield('after-nav')
     </div>
 </header>
 <main>

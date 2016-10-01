@@ -5,6 +5,15 @@
 @section('meta')
     {!!Html::script('js/auditoria.js')!!}
 @stop
+@section('after-nav')
+    <nav id="bottom-nav">
+        <ul>
+            <li>
+                <a href="{{url('administrador/informaciones')}}">i</a>
+            </li>
+        </ul>
+    </nav>
+    @endsection
 @section('aside1')
     <nav id="sidebar-desktop">
         <ul>
@@ -56,7 +65,7 @@
                 <p>Manual de Usuario <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pdf">
-                <a href="../" class="thumbnail" target="_blank">
+                <a href={{asset('')}} class="thumbnail" target="_blank">
                     <img src="thumbnails/pdf.png">
                 </a>
             </div>

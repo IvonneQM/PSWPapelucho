@@ -5,13 +5,27 @@ $(window).load(function () {
     Dropzone.forElement(document.getElementById('dropzone')).hiddenFileInput.setAttribute('accept', accept);
     $.ajax({
         url     : $('#row-thumbnails').data('url'),
-        type    : 'POST',
+        type    : 'get',
         data    : {
             type: $('#archivosTabs').data('type')
         },
         dataType: 'html'
     }).done(function (d) {
-        $('#row-thumbnails').html(d);
+        $('#row-thumbnails').empty().html(d);
+    });
+
+    $(document).on('click', '.pagination li a', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type    : 'get',
+            url:     $(this).attr('href'),
+            data    : {
+                type: $(this).data('type')
+            },
+            dataType: 'html'
+        }).done(function (d) {
+            $('#row-thumbnails').empty().html(d);
+        });
     });
     console.log($('#archivosTabs').data('type'));
 });
@@ -100,6 +114,11 @@ $(document).ready(function () {
                             });
                     });
                     this.on("error", function (file) {
+
+                            console.log(file);
+
+
+
                         swal({
                             title             : "¡Error!",
                             text              : "Se ha generado un problema de conexión con el servidor",
@@ -194,16 +213,37 @@ $(document).ready(function () {
                 $('#type').attr('value', $(this).data('type'));
                 $.ajax({
                     url     : $('#row-thumbnails').data('url'),
-                    type    : 'POST',
+                    type    : 'get',
                     data    : {
                         type: $(this).data('type')
                     },
                     dataType: 'html'
                 }).done(function (d) {
-                    $('#row-thumbnails').html(d);
+                    $('#row-thumbnails').empty().html(d);
                 });
+
+
+
+                $(document).on('click', '.pagination li a', function (e) {
+                    e.preventDefault();
+                    $.ajax({
+                        type    : 'get',
+                        url:     $(this).attr('href'),
+                        data    : {
+                            type: $(this).data('type')
+                        },
+                        dataType: 'html'
+                    }).done(function (d) {
+                        $('#row-thumbnails').empty().html(d);
+                    });
+                });
+
+
             })
         }
     );
+
 });
+
+
 

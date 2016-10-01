@@ -132,8 +132,6 @@ Route::group(['middleware' => 'auth'], function () {
                 'as' => 'parvulos_user'
             ]);
 
-
-           // Route::get('', 'Cms\Admin\ParvuloController@listAllParvulo');
             Route::resource('parvulos', 'Cms\Admin\ParvuloController');
 
             Route::get('autocomplete/parvulos', function () {
@@ -143,10 +141,11 @@ Route::group(['middleware' => 'auth'], function () {
                     ->get();
             });
 
-            Route::post('archivos/files', [
+            Route::get('archivos/files', [
                 'uses' => 'Cms\Admin\ArchivoController@files',
                 'as' => 'archivos-files'
             ]);
+
 
             Route::get('archivos/destroy/{id}', [
                 'uses' => 'Cms\Admin\ArchivoController@destroy',
@@ -167,6 +166,8 @@ Route::group(['middleware' => 'auth'], function () {
 
             Route::get('listNoticias{page?}', 'Cms\Admin\NoticiaController@listNoticia');
             Route::resource('noticias', 'Cms\Admin\NoticiaController');
+
+            Route::resource('informaciones', 'Cms\Admin\informacionController');
         });
     });
     Route::group(['middleware' => 'role:apoderado'], function () {

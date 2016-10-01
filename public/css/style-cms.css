@@ -139,6 +139,17 @@ th:last-child {
     text-align: center;
 }
 
+ul li.li-vineta {
+    display: flex;
+    margin: 0 !important;
+}
+
+ul li.li-vineta:before {
+    color: #00A04A;
+    content: "• ";
+    margin-right: 10px;
+}
+
 a.dz-remove {
     color: #3952A3;
 }
@@ -207,6 +218,13 @@ a.dz-remove {
     margin-top: 132.5px;
 }
 
+.content {
+    margin: 0 auto;
+    padding: 10px;
+    text-align: justify;
+    width: 100%;
+}
+
 .count-container {
     padding: 10px;
 }
@@ -262,6 +280,11 @@ span.count-number {
     display: block;
     font-size: 14px;
     text-align: center;
+}
+
+.custom-panel-title a{
+    color: #3952A3;
+    font-weight: bold;
 }
 
 .delete-file {
@@ -452,6 +475,10 @@ img.manual{
     max-width: 100%;
 }
 
+span.update-date {
+    float: right;
+}
+
 #aside1 {
     width: 20%;
 }
@@ -459,6 +486,25 @@ img.manual{
 #aside2 {
     padding-top: 20px;
     width: 14%;
+}
+
+nav#bottom-nav ul li {
+    border-radius: 50%;
+    border: 2px solid #1056a7;
+    width: 25px;
+    text-align: center;
+    background: #fff;
+}
+
+nav#bottom-nav ul li a {
+    color: #1056a7;
+}
+
+nav#bottom-nav {
+    float: right;
+    position: relative;
+    top: 60px;
+    right: 15%;
 }
 
 #count-container-1 {
@@ -515,7 +561,7 @@ img.manual{
     display: none;
 }
 
-#panel-content-heading {
+#panel-content-heading, .panel-content-heading {
     background: #F7EC3F !important;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
