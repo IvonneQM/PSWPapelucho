@@ -66,8 +66,6 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('mi-jardin', 'MiJardinController@index');
 
-Route::get('papelucho-las-colonias', 'LasColoniasController@index');
-
 Route::get('archivos?galeria={galeria}', [
     'uses' => 'BlumellController@archivosGaleria',
     'as' => 'galeria-blumell'

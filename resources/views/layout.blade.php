@@ -4,7 +4,8 @@
     <link rel="icon" type="image/png" href="/images/favicon.png"/>
     <title>@yield('title', 'Jardin infantil Papelucho')</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     {!!Html::script('js/jquery-2.2.0.min.js')!!}
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/normalize.min.css')!!}
@@ -22,6 +23,7 @@
             margin: 0;
             padding: 0;
         }
+
         #map, #maps {
             height: 100%;
         }
@@ -42,8 +44,10 @@
         <ul>
             <li>{!!HTML::linkAction('HomeController@index', 'Inicio',array(), array('class' => 'url-menu'))!!}</li>
             <li>{!!HTML::linkAction('MiJardinController@index', 'Mi jardín',array(), array('class' => 'url-menu'))!!}</li>
-            <li class="li-two-lines">{!!HTML::linkAction('LasColoniasController@index', 'Papelucho Las Colonias',array(), array('class' => 'url-menu'))!!}</li>
-            <li class="li-two-lines">{!!HTML::linkAction('BlumellController@index', 'Papelucho Blumell',array(), array('class' => 'url-menu'))!!}</li>
+            <li class="li-two-lines"><a href="{{url('papelucho-las-colonias')}}" class="url-menu">Papelucho <br> Las
+                    Colonias</a></li>
+            <li class="li-two-lines"><a href="{{url('papelucho-blumell')}}" class="url-menu">Papelucho <br> Blumell</a>
+            </li>
         </ul>
     </nav>
     <div class="cycle-slideshow">
@@ -58,8 +62,27 @@
         {!!Html::image('images/carrusel/Papelucho8.JPG','img4', array('class' => 'img-slide img-slide-middle-bottom'))!!}
         {!!Html::image('images/carrusel/Papelucho201.JPG','img5', array('class' => 'img-slide img-slide-bottom'))!!}
     </div>
+    <div id="banner">{!!Html::image('images/matriculas-abiertas2.png')!!}</div>
+    <div id="jardines-banner">
+        <ul>
+            <li>
+                <a href="{{url('papelucho-blumell')}}">
+                    {!!Html::image('images/carrusel/Slider1.jpg','img6', array('class'=>'img-circle'))!!}
+                    <span class="hover-image-text"><span>Papelucho Blumell</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="{{url('papelucho-las-colonias')}}">
+                    {!!Html::image('images/carrusel/Slider3.jpg','img8', array('class'=>'img-circle'))!!}
+                    <span class="hover-image-text"><span>Papelucho <br>Las Colonias</span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </header>
 <section>
+
+
     <div id="puzzle">
         {!!Html::image('images/puzzle.png', 'Puzzle')!!}
     </div>
@@ -87,7 +110,7 @@
                 </p>
             </div>
             {{-- MAPA 1--}}
-            <div class="large-5 medium-6 gmaps">
+            <div class="col-lg-5 col-md-12 gmaps">
                 <div id="map" class="google-maps">
                 </div>
             </div>
@@ -106,7 +129,7 @@
                 </p>
             </div>
             {{-- MAPA 2--}}
-            <div class="large-5 medium-6 gmaps">
+            <div class="col-lg-5 col-md-12 gmaps">
                 <div id="maps" class="google-maps">
                 </div>
             </div>

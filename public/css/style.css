@@ -94,8 +94,9 @@ nav li {
 
 nav li a {
     display: block;
-    width: 120px;
+    width: 160px;
     margin: auto;
+
 }
 
 nav li a:before {
@@ -109,32 +110,46 @@ nav li a:before, #zona-apoderados ul li a:before {
     content: '';
     display: block;
     height: 0;
+    margin-left: -2px;
     position: absolute;
     top: 0;
     transition: all 0.8s ease;
+    width: 156px;
 }
 
 nav li a:hover:before {
     height: 50px;
 }
 
+nav li a.url-menu:active{
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
 nav li:first-child {
     margin-left: 0;
 }
 
-nav li, #li-zona-apoderados, #login-form {
-    background: #C32026;
+#li-zona-apoderados, #login-form{
+    width: 170px;
+}
+nav li a, #li-zona-apoderados, #login-form {
     border: 3px solid #B72025;
-    border-radius: 0 0 1em 1em;
     color: #fff;
-    display: inline-block;
     font-family: 'Love Ya Like A Sister', cursive;
     font-size: 20px;
     height: 50px;
+
+}
+nav li a, nav li, #li-zona-apoderados, #login-form {
+    background: #C32026;
+    border-radius: 0 0 1em 1em;
+}
+nav li, #li-zona-apoderados, #login-form {
+    display: inline-block;
     line-height: 2.5em;
     text-align: center;
     vertical-align: middle;
-    width: 170px;
+    /*width: 170px;*/
 }
 
 p {
@@ -297,7 +312,6 @@ ul {
     z-index: 999;
 }
 
-
 .cycle-next {
     right: 5%;
     text-align: right;
@@ -344,6 +358,10 @@ ul {
     z-index: 1;
     position: relative;
     top: -5px;
+}
+
+.cycle-slideshow img {
+    min-height: 550px !important;
 }
 
 .slideshow-container {
@@ -423,7 +441,7 @@ ul {
 }
 
 .li-two-lines {
-    line-height: 1.3em;
+    line-height: 1.3em !important;
 }
 
 .li-completa ul li {
@@ -544,7 +562,7 @@ span.objetives-item::first-letter {
 .principal-title {
     font-size: 48px;
     text-align: left;
-   /* width: 300px;*/
+    /* width: 300px;*/
 }
 
 .span-ico-footer img {
@@ -664,6 +682,16 @@ span.objetives-item::first-letter {
     border-bottom: 1px solid #F7EC3F;
 }
 
+#banner img {
+    top: 220px;
+    left: -25px;
+    min-width: 500px;
+    position: absolute;
+    transform: rotate(-12deg);
+    width: 20%;
+    z-index: 3;
+}
+
 #bottom-footer-box {
     width: 100%;
     height: 120px;
@@ -758,6 +786,56 @@ p#copyright {
 
 #img-menu {
     display: none;
+}
+
+div#jardines-banner ul li span.hover-image-text {
+    background: rgba(53, 52, 52, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    display: table;
+    height: 120px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 120px;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms ;
+    -ms-transition: opacity 500ms ;
+    -o-transition: opacity 500ms ;
+    transition: opacity 500ms ;
+}
+
+div#jardines-banner ul li:hover span.hover-image-text {
+    opacity: 1;
+}
+
+div#jardines-banner ul li span.hover-image-text span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div#jardines-banner ul li {
+    top: 420px;
+    display: block;
+    position: absolute;
+    z-index: 6;
+}
+
+div#jardines-banner ul li:nth-child(2) {
+    top: 540px;
+}
+
+div#jardines-banner ul li a img {
+    width: 120px;
+    height: 120px;
+    border: 4px solid rgba(255, 241, 7, 0.71);
+    -webkit-transition: easy-in;
+    -moz-transition: easy-in;
+    -ms-transition: easy-in;
+    -o-transition: easy-in;
+    transition: easy-in;
 }
 
 #li-zona-apoderados {
@@ -995,6 +1073,8 @@ p#copyright {
     }
 
     nav li a {
+        background: none;
+        border: none;
         width: 180px;
         margin: 0;
     }
@@ -1004,7 +1084,7 @@ p#copyright {
     }
 
     section {
-        margin-top: 200px;
+        margin-top: 400px;
     }
 
     .contact-form {
@@ -1065,6 +1145,25 @@ p#copyright {
     .two-borders-box-accordion li:first-child {
         margin-left: 0 !important;
         margin-bottom: 20px !important;
+    }
+
+
+    #banner img {
+        min-width: 320px;
+        width: 65%;
+        top: 290px;
+        z-index: 2;
+    }
+
+    div#jardines-banner ul li {
+        position: static;
+        display: inline-block;
+        margin-top: 300px;
+    }
+
+    div#jardines-banner ul li span.hover-image-text {
+        left: auto ;
+        top: 420px;
     }
 
     #bottom-footer-box {
@@ -1165,7 +1264,7 @@ p#copyright {
         padding: 10px;
     }
 
-    .accordion-item-title, .accordion-item-content, .galery-container {
+    .accordion-item-title, .accordion-item-content, .gallery-container {
         width: 100%;
         border-right: none !important;
         border-left: none !important;
