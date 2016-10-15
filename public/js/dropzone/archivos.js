@@ -45,7 +45,7 @@ $(document).ready(function () {
             options += '<option value="' + row.value + '">' + row.text + ' </option>';
         });
         $(this).html(options);
-    }
+    };
     $('#jardin_id').change(function () {
         var jardin_id = $(this).val();
 
@@ -57,7 +57,7 @@ $(document).ready(function () {
                 $('#galeria_id').populateSelect(values);
             });
         }
-    })
+    });
 // FIN SELECT2//
 
     $(function () {
@@ -68,7 +68,7 @@ $(document).ready(function () {
                 paramName       : "file",
                 autoProcessQueue: false,
                 uploadMultiple  : true,
-                parallelUploads : 10,
+                parallelUploads : 1,
                 maxFilesize: 3,
                 filesizeBase: 1000,
                 maxFiles        : 10,
@@ -84,9 +84,15 @@ $(document).ready(function () {
                             dropzoneImagenes = this;
                         submitButton.addEventListener("click", function (e) {
                             e.preventDefault();
-                            e.stopPropagation();
+                            //e.stopPropagation();
                             dropzoneImagenes.processQueue();
+                            //dropzoneImagenes.processingmultiple();
                         });
+
+
+                    this.on("queuecomplete", function () {
+                        this.options.autoProcessQueue = false;
+                    });
 
 
 
@@ -100,25 +106,22 @@ $(document).ready(function () {
                             this.removeFile(this.files[0]);
                         }
                     });
-                    this.on("complete", function (file) {
-                        dropzoneImagenes.removeFile(file);
-                    });
-                    this.on("success", function (file) {
+
+                    this.on("completemultiple", function (files) {
                         swal({
                                 title: "Registro actualizado!",
                                 text : "El registro se ha actualizado con exito",
                                 type : "success"
                             },
                             function X() {
-                                dropzoneImagenes.processQueue.bind(dropzoneImagenes)
+                                dropzoneImagenes.processQueue(dropzoneImagenes)
                             });
                     });
+                    this.on("complete", function (file) {
+                        dropzoneImagenes.removeFile(file);
+                    });
                     this.on("error", function (file) {
-
                             console.log(file);
-
-
-
                         swal({
                             title             : "¡Error!",
                             text              : "Se ha generado un problema de conexión con el servidor",

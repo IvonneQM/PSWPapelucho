@@ -497,6 +497,7 @@ nav#bottom-nav ul li {
 }
 
 nav#bottom-nav ul li a {
+    display: block;
     color: #1056a7;
 }
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MapasTable extends Migration
+class CreateProyectosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,10 @@ class MapasTable extends Migration
      */
     public function up()
     {
-        Schema::create('mapas', function (Blueprint $table) {
-            $table->increments('id')->unique();
-            $table->integer('zoom')->required();
-            $table->double('latitud')->required();
-            $table->double('longitud')->required();
+        Schema::create('proyectos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
             $table->timestamps();
-
         });
     }
 
@@ -29,6 +26,6 @@ class MapasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('mapas');
+        Schema::drop('proyectos');
     }
 }

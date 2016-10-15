@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Cms\Admin;
+namespace App\Http\Controllers\Cms\Support;
 
+use App\Proyecto;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class informacionController extends Controller
+class ProyectoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,7 @@ class informacionController extends Controller
      */
     public function index()
     {
-        return view('cms.admin.informacion');
-
+        //
     }
 
     /**
@@ -38,7 +38,10 @@ class informacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->ajax()){
+            $proyecto = Proyecto::create($request->all());
+            return response()->json($proyecto);
+        }
     }
 
     /**

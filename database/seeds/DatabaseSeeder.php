@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NivelTableSeeder::class);
         $this->call(JardinTableSeeder::class);
         $this->call(NoticiaTableSeeder::class);
-        $this->call(MapaTableSeeder::class);
 
         Model::reguard();
     }

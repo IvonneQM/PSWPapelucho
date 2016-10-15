@@ -24,7 +24,7 @@ class CreateArchivoRequest extends Request
         $this->sanitize();
 
         $mimes = [
-            'galerias-jardines' => 'mimes:jpeg,png,bmp,png ',
+            'galerias-jardines' => 'mimes:jpeg,png,bmp',
             'niveles'  => 'mimes:application/doc,application/docx,application/pdf',
             'parvulos' => '',
             'general' => ''

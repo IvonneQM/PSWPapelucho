@@ -22,6 +22,7 @@ Route::get('/', [
 Route::get('acordion', function () {
     return view('acordion');
 });
+
 /*-------------------------------------------------------------------*/
 /*                       AUTENTICACIÓN LOGIN                         */
 /*-------------------------------------------------------------------*/
@@ -102,6 +103,7 @@ Route::get('prueba', function () {
     return view('cms.apoderados.prueba');
 });
 
+
 /*-------------------------------------------------------------------*/
 /*                            MIDDLEWARES                            */
 /*-------------------------------------------------------------------*/
@@ -165,9 +167,21 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('listNoticias{page?}', 'Cms\Admin\NoticiaController@listNoticia');
             Route::resource('noticias', 'Cms\Admin\NoticiaController');
 
-            Route::resource('informaciones', 'Cms\Admin\informacionController');
+            Route::get('informaciones', function () {
+                return view('cms.admin.informacion');
+            });
+
+
+
+            // Support //
+            Route::resource('actualizaciones', 'Cms\Support\ActualizacionController');
+            Route::resource('proyectos', 'Cms\Support\ProyectoController');
+            Route::resource('categoriasActualizaciones', 'Cms\Support\CategoriaActualizacionController');
+
+
         });
     });
+
     Route::group(['middleware' => 'role:apoderado'], function () {
         Route::get('apoderado', function () {
             return view('cms/apoderados/apoderado');

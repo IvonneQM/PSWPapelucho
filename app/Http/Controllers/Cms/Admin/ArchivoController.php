@@ -32,7 +32,7 @@ class ArchivoController extends Controller
         $type = $request->get('type');
         if (!empty($type))
         {
-            $archivos = Archivo::types($type)->orderBy('id', 'DESC')->paginate(5);
+            $archivos = Archivo::types($type)->orderBy('id', 'DESC')->paginate(8);
             $archivos->setPath('archivos/files');
             return view('cms.admin.archivos.partials.thumbnails', compact('archivos','type'));
         }
@@ -72,13 +72,20 @@ class ArchivoController extends Controller
             $archivo->url = 'uploads/' . $fileFullName;
             $archivo->size = $fileSize;
             $archivo->extension = $fileType;
+
+            if( $fileType === 'jpeg' || $fileType === 'png' || $fileType === 'bmp' ){
             $file = \Image::make($file->getRealPath());
-            $file->orientate();
             $file->resize(1280, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             });
-            $file->save($archivo->url);
+                $file->orientate();
+                $file->save($archivo->url);
+            }
+            else{
+               $file->move($dir, $fileFullName);
+            }
+
             $archivo->save();
             $archivo->type = $request->input('type');
             foreach ((array)$methods as $model) {

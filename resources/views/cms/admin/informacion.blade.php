@@ -26,8 +26,8 @@
                                         <h4 class="panel-title custom-panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                data-parent="#accordion"
-                                               href="#collapseThree" aria-expanded="false"
-                                               aria-controls="collapseThree">
+                                               href="#collapseOne" aria-expanded="false"
+                                               aria-controls="collapseOne">
                                                 CMS Papelucho V1.0.2
                                             </a>
                                         </h4>
@@ -44,27 +44,17 @@
                                     <p class="content">Mejora de funcionalidad:</p>
                                     <ul>
                                         <li class="li-vineta">Implementación de conteo de caracteres en campos TextArea
-                                            por
-                                            medio de
-                                            AJAX.
+                                            por medio de AJAX.
                                         </li>
                                         <li class="li-vineta">Redimensión automática de imágenes al momento de
-                                            guardarlas, el
-                                            reajuste
-                                            se genera
-                                            actualizando su ncho máximo a 1280px y calculando la altura de manera
-                                            automática con
-                                            el
-                                            fin
-                                            de mantener las proporciones de la imágen.
+                                            guardarlas, el reajuste se genera actualizando su ancho máximo a 1280px y
+                                            calculando la altura de manera automática con el fin de mantener las proporciones de la
+                                            imágen.
                                         </li>
-                                        <li class="li-vineta">Cambio de tamaño máximo por archivo subido al servidor a
-                                            5MB.
+                                        <li class="li-vineta">Cambio de tamaño máximo por archivo subido al servidor a 5MB.
                                         </li>
                                         <li class="li-vineta">Generación de vínculo para la visualización del documento
-                                            Manual
-                                            de
-                                            Usuario
+                                            Manual de Usuario.
                                         </li>
                                     </ul>
                                     <p class="content">Corrección de problemática:</p>
@@ -73,10 +63,7 @@
                                             orientación.
                                         </li>
                                         <li class="li-vineta">Solución a problema presentado al momento de generar los
-                                            vínculos
-                                            de
-                                            paginación vía
-                                            AJAX.
+                                            vínculos de paginación vía AJAX.
                                         </li>
                                     </ul>
                                 </div>
@@ -106,18 +93,14 @@
                                     <p class="content">Mejora de funcionalidad:</p>
                                     <ul>
                                         <li class="li-vineta">Incorporación de funcionalidad de Actualización de items
-                                            por medio
-                                            de
-                                            AJAX.
+                                            por medio de AJAX.
                                         </li>
                                     </ul>
                                     <p class="content">Corrección de problemática:</p>
                                     <ul>
                                         <li class="li-vineta">Permisividad al momento de guardar archivos repetidos
-                                            (imágenes
-                                            y/o
-                                            documentos). Control por
-                                            medio de numeración añadida como sufijo al nombre del archivo en cuestión.
+                                            (imágenes y/o documentos). Control por medio de numeración añadida como
+                                            sufijo al nombre del archivo en cuestión.
                                         </li>
                                     </ul>
                                 </div>
@@ -129,8 +112,8 @@
                                     <div class="col-lg-10">
                                         <h4 class="panel-title custom-panel-title">
                                             <a role="button" data-toggle="collapse" data-parent="#accordion"
-                                               href="#collapseOne"
-                                               aria-expanded="true" aria-controls="collapseOne">
+                                               href="#collapseThree"
+                                               aria-expanded="true" aria-controls="collapseThree">
                                                 CMS Papelucho V1.0.0
                                             </a>
                                         </h4>

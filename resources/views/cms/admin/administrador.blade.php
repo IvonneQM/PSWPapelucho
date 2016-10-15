@@ -13,7 +13,7 @@
             </li>
         </ul>
     </nav>
-    @endsection
+@endsection
 @section('aside1')
     <nav id="sidebar-desktop">
         <ul>
