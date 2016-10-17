@@ -69,7 +69,7 @@ $(document).ready(function () {
                 autoProcessQueue: false,
                 uploadMultiple  : true,
                 parallelUploads : 10,
-                maxFilesize: 3,
+                maxFilesize: 5,
                 filesizeBase: 1000,
                 maxFiles        : 10,
                 addRemoveLinks  : true,
@@ -105,13 +105,14 @@ $(document).ready(function () {
 
                     this.on("successmultiple", function (files) {
                         swal({
-                                title: "Registro actualizado!",
-                                text : "El registro se ha actualizado con exito",
-                                type : "success"
-                            });
-                           /* function X() {
-                                dropzoneImagenes.processQueue(dropzoneImagenes)
-                            });*/
+                            title: "Registro actualizado!",
+                            text : "El registro se ha actualizado con exito",
+                            type : "success"
+                        });
+                        /* function X() {
+                         dropzoneImagenes.processQueue(dropzoneImagenes)
+                         });*/
+
                     });
 
                     /*this.on("queuecomplete", function (files) {
@@ -128,7 +129,6 @@ $(document).ready(function () {
 
 
                     this.on("complete", function (file) {
-                        dropzoneImagenes.processQueue(dropzoneImagenes)
                         dropzoneImagenes.removeFile(file);
                     });
                     this.on("error", function (file) {
