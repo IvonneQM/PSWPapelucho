@@ -99,7 +99,7 @@ class ArchivoController extends Controller
             }
             //}
         }
-        event((new \App\Events\SendMail($archivo)));
+        //event((new \App\Events\SendMail($archivo)));
     }
 
 

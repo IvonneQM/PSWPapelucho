@@ -68,7 +68,7 @@ $(document).ready(function () {
                 paramName       : "file",
                 autoProcessQueue: false,
                 uploadMultiple  : true,
-                parallelUploads : 1,
+                parallelUploads : 10,
                 maxFilesize: 3,
                 filesizeBase: 1000,
                 maxFiles        : 10,
@@ -90,10 +90,6 @@ $(document).ready(function () {
                         });
 
 
-                    this.on("queuecomplete", function () {
-                        this.options.autoProcessQueue = false;
-                    });
-
 
 
                     this.on("addedfile", function (file) {
@@ -107,17 +103,32 @@ $(document).ready(function () {
                         }
                     });
 
-                    this.on("completemultiple", function (files) {
+                    this.on("successmultiple", function (files) {
                         swal({
                                 title: "Registro actualizado!",
                                 text : "El registro se ha actualizado con exito",
                                 type : "success"
-                            },
-                            function X() {
-                                dropzoneImagenes.processQueue(dropzoneImagenes)
                             });
+                           /* function X() {
+                                dropzoneImagenes.processQueue(dropzoneImagenes)
+                            });*/
                     });
+
+                    /*this.on("queuecomplete", function (files) {
+                     swal({
+                     title: "Registro actualizado!",
+                     text : "El registro se ha actualizado con exito",
+                     type : "success"
+                     },
+                     function X() {
+                     dropzoneImagenes.processQueue(dropzoneImagenes)
+                     });
+                     });*/
+
+
+
                     this.on("complete", function (file) {
+                        dropzoneImagenes.processQueue(dropzoneImagenes)
                         dropzoneImagenes.removeFile(file);
                     });
                     this.on("error", function (file) {
