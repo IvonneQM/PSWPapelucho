@@ -82,8 +82,8 @@ $(document).ready(function () {
             '<td>'+
             '<div class="t-actions">'+
             '<a class="parvulos-del-apoderado" href="parvulos?user='+data.id+'"><i class="fa fa-child"></i></a>'+ ' ' +
-            '<a class="editar_apo" href="#" data-toggle="modal" data-target="#modal-editar-apoderado" role="button" ><i class="fa fa-pencil"></i></a>'+ ' ' +
-            '<a href="#" type="submit" class="btn-delete-apoderado"><i class="fa fa-trash-o"></i></a>'+ ' ' +
+            '<a class="editar_apo" href="#" data-toggle="modal" data-target="#modal-editar-apoderado" role="button" ><span class="span-actions span-editar">Editar</span></a>'+ ' ' +
+            '<a href="#" type="submit" class="btn-delete-apoderado"><span class="span-actions span-eliminar">Eliminar</span></a>'+ ' ' +
             '</div>'+
             '</td>'+
             '</tr>';
@@ -193,6 +193,19 @@ $(document).ready(function () {
                     }
                 });
             });
+    });
+
+    /* Buscar los apoderados ajax*/
+    $('#search-form-apo').on('submit',function (e) {
+        e.preventDefault();
+        $.ajax({
+            type : 'get',
+            url : $(this).attr('action'),
+            data    : $(this).serialize(),
+            success: function (data) {
+                $('#list-all-apo').empty().html(data)
+            }
+        })
     })
 });
 
@@ -219,4 +232,6 @@ $(document).on('click','.pagination li a',function (e) {
         }
     });
 });
+
+
 

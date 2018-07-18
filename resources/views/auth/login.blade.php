@@ -1,14 +1,18 @@
-@include('auth.password')
+{{-- @include('auth.password') --}}
 <div id="zona-apoderados">
     <ul>
         @if(Auth::check())
             @if(Auth::user()->role == 'admin')
                 <li id="li-zona-apoderados"><a href="{{url('administrador')}}">Administración</a></li>
-            @else(Auth::user()->role == 'apoderado')
-                <li id="li-zona-apoderados"><a href="{{url('apoderado')}}">Zona Apoderados</a></li>
+            @elseif(Auth::user()->role == 'directiva')
+                <li id="li-zona-apoderados"><a href="{{url('chofer')}}">Zona Directiva</a></li>
+            @elseif(Auth::user()->role == 'chofer')
+            <li id="li-zona-apoderados"><a href="{{url('chofer')}}">Zona Chofer</a></li>
+            @else
+            <li id="li-zona-apoderados"><a href="{{url('dueno')}}">Zona Dueño</a></li>
             @endif
-        @else
-            <li id="li-zona-apoderados"><a href="#" id="show-login">Zona Apoderados</a></li>
+        {{-- @else
+            <li id="li-zona-apoderados"><a href="#" id="show-login">Zona Admin</a></li> --}}
         @endif
     </ul>
 </div>
@@ -18,7 +22,7 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         {!! Form::text('rut', null , array('placeholder' => 'Rut', 'class' => 'rut text-field-apoderados')) !!}
         {!! Form::password('password',array('placeholder' => 'Contraseña', 'class' => 'text-field-apoderados')) !!}
-        <a href="#" role="button" id="forgot-pass">¿Olvidaste tu contraseña?</a>
+        {{-- <a href="#" role="button" id="forgot-pass">¿Olvidaste tu contraseña?</a> --}}
         {!! Form::submit('Entrar', ['class' => 'button'])!!}
     </form>
 </div>

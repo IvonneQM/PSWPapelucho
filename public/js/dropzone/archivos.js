@@ -82,7 +82,7 @@ $(document).ready(function () {
                 init: function () {
                         var submitButton     = document.querySelector("#guardar-archivos"),
                             dropzoneImagenes = this;
-                        submitButton.addEventListener("click", function (e) {
+                            submitButton.addEventListener("click", function (e) {
                             e.preventDefault();
                             //e.stopPropagation();
                             dropzoneImagenes.processQueue();
@@ -90,7 +90,13 @@ $(document).ready(function () {
                         });
 
 
-
+                    this.on("queuecomplete", function (file) {
+                        swal({
+                            title: "Registro actualizado!",
+                            text : "El registro se ha actualizado con exito",
+                            type : "success"
+                        });
+                    });
 
                     this.on("addedfile", function (file) {
                         /*var fileName = file.name;
@@ -103,12 +109,8 @@ $(document).ready(function () {
                         }
                     });
 
-                    this.on("successmultiple", function (files) {
-                        swal({
-                            title: "Registro actualizado!",
-                            text : "El registro se ha actualizado con exito",
-                            type : "success"
-                        });
+                    this.on("totaluploadprogress", function (files) {
+
                         /* function X() {
                          dropzoneImagenes.processQueue(dropzoneImagenes)
                          });*/
@@ -132,24 +134,25 @@ $(document).ready(function () {
                         dropzoneImagenes.removeFile(file);
                     });
                     this.on("error", function (file) {
-                            console.log(file);
-                        swal({
-                            title             : "¡Error!",
-                            text              : "Se ha generado un problema de conexión con el servidor",
-                            type              : "warning",
-                            confirmButtonColor: "#C32026",
-                            confirmButtonText : "Ok",
-                            closeOnConfirm    : false
-                        })
-                        /* var name    = file.name;
-                        swal({
-                            title             : "¡Error!",
-                            text              : "El archivo" + " " +  name  + " "+ "ya existe",
-                            type              : "warning",
-                            confirmButtonColor: "#C32026",
-                            confirmButtonText : "Ok",
-                            closeOnConfirm    : false
-                        })
+                        var errors = JSON.parse(file.xhr.responseText);
+                        var msgs = [];
+                        $.each(errors,function(k,a){
+                            if(a.length > 0){
+                                $.each(a,function(){
+                                    msgs.push(this);
+                                    swal({
+                                        title             : "¡Error!",
+                                        text              : msgs.join("\n"),
+                                        type              : "warning",
+                                        confirmButtonColor: "#C32026",
+                                        confirmButtonText : "Ok",
+                                        closeOnConfirm    : false
+                                    });
+                                });
+                            }
+                        });
+                        /*
+
                         // Pendiente validacion campos vacios//
 
                         var jardines = $('#jardin_id').val();
@@ -212,14 +215,14 @@ $(document).ready(function () {
                 var accept = '';
                 switch ($(this).data('type')) {
                     case "galerias-jardines":
-                        accept = "image/*",
-                            hiddenInputContainer = false
+                        accept = "image/*";
+                            hiddenInputContainer = false;
                         break;
                     case "parvulos":
-                        accept = "application/pdf"
+                        accept = "application/pdf";
                         break;
                     case "niveles":
-                        accept = "application/pdf"
+                        accept = "application/pdf";
                         break;
                 }
 

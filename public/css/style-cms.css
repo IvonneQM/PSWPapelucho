@@ -1,5 +1,5 @@
-/**Verde claro: 60BB46
-   Verde oscuro: 00A04A
+/**Rojo claro: 60BB46
+   Rojo oscuro: 00A04A
    Rojo Claro: EC2224
    Rojo medio: C32026
    Rojo oscuro: B72025
@@ -245,7 +245,7 @@ a.dz-remove {
     color: white !important;
 }
 
-.count-inside i.fa.fa-child, .count-container i.fa.fa-male, .count-container i.fa.fa-newspaper-o, .count-container i.fa.fa-camera-retro {
+.count-inside i.fa.fa-child, .count-container i.fa.fa-car, i.fa.fa-male, .count-container i.fa.fa-newspaper-o, .count-container i.fa.fa-camera-retro {
     background: none;
     font-size: 70px;
 }
@@ -332,11 +332,11 @@ a.delete-file:hover {
 }
 
 
-.fa-child {
+.fa-car {
     background: #60BB46;
 }
 
-.fa-child:hover {
+.fa-child:car {
     background: rgba(0, 0, 0, 0);
     color: #60BB46;
     box-shadow: inset 0 0 0 3px #60BB46;
@@ -359,6 +359,11 @@ a.delete-file:hover {
 
 .fa-search {
     background: #F7EC3F;
+    font-weight: bolder;
+}
+
+.fa-user-o{
+    background: rgb(6, 102, 27);
     font-weight: bolder;
 }
 
@@ -524,9 +529,13 @@ nav#bottom-nav {
     background: #C32026;
 }
 
+#count-container-5 {
+    background: orange;
+}
+
 #header-bar {
-    background: rgba(96, 187, 70, 0.8);
-    color: #3952A3;
+    background: #3952A3;
+    color: white;
     position: fixed;
     width: 100%;
     z-index: 2;

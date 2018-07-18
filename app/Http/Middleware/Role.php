@@ -7,8 +7,10 @@ use Closure;
 class Role
 {
     protected $hierarchy = [
-        'admin' => 2,
-        'apoderado' => 1
+        'admin' => 4,
+        'directiva' => 3,
+        'dueno' => 2,
+        'chofer' => 1
     ];
 
     /**

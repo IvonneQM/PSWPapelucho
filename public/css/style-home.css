@@ -1,0 +1,84 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Lato, 'opens-sans';
+    color: #585858;
+}
+
+.menu,
+.tours {
+    background-color: #3952A3;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+#forgot-pass{
+    color: #fff;
+}
+
+.tours{
+    padding: 100px 0;
+    background-color: #eeeeee;
+}
+
+.img-logotipo {
+    margin-bottom: 18px;
+    margin-left: 20px;
+}
+
+.hero{
+    min-height: 100vh;
+    display: grid;
+    --color    : rgba(0, 0, 0, 0.3);
+    background : linear-gradient(var(--color),var(--color)),
+                 url(../images/hero.png) center / cover; 
+}
+
+.hero_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    position: absolute;
+}
+
+.hero_title{
+    margin   : auto;
+    color    : #fff;
+}
+
+.welcome{
+    padding: 100px 300px;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.welcome_description_title{
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.welcome_author{
+    margin-top: 20px
+}
+
+.tours_title{
+    color: #585858;
+}
+
+#map,
+#maps {
+    height: 300px;
+    width: 300px;
+    background-color: rebeccapurple;
+}

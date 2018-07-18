@@ -23,8 +23,11 @@ class AdministradorController extends Controller
 
     public function listAll(Request $request){
         $administradores = User::fullName($request->get('full_name'))->where('role','=','admin')->orderBy('id', 'DESC')->paginate(20);
-        return view('cms.admin.administradores.partials.table',compact('administradores'));
+        return view ('cms.admin.administradores.partials.table',compact('administradores'));
     }
+
+
+
 
 
     /**
@@ -115,4 +118,5 @@ class AdministradorController extends Controller
             ]);
         }
     }
+
 }

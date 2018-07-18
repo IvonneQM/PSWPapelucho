@@ -79,8 +79,8 @@ $(document).ready(function () {
             '<td>' + data.full_name + '</td>' +
             '<td>' +
             '<div class="t-actions">' +
-            '<a class="editar_admin" href="#" data-toggle="modal" data-target="#modal-editar-administrador" role="button" ><i class="fa fa-pencil"></i></a>' + ' ' +
-            '<a href="#" type="submit" class="btn-delete-administrador"><i class="fa fa-trash-o"></i></a>' + ' ' +
+            '<a class="editar_admin" href="#" data-toggle="modal" data-target="#modal-editar-administrador" role="button" ><span class="span-actions span-editar">Editar</span></a>' + ' ' +
+            '<a href="#" type="submit" class="btn-delete-administrador"><span class="span-actions span-eliminar">Eliminar</span></a>' + ' ' +
             '</div>' +
             '</td>' +
             '</tr>';
@@ -196,6 +196,21 @@ $(document).ready(function () {
 
                 });
             });
+
+
+    });
+
+    /* Buscar los administradores ajax*/
+    $('#search-form-admin').on('submit',function (e) {
+        e.preventDefault();
+        $.ajax({
+            type : 'get',
+            url : $(this).attr('action'),
+            data    : $(this).serialize(),
+            success: function (data) {
+                $('#list-all').empty().html(data)
+            }
+        })
     })
 });
 
@@ -222,3 +237,4 @@ $(document).on('click','.pagination li a',function (e) {
         }
     });
 });
+

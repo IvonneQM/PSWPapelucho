@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Cms\Admin;
 
 use App\Auditoria;
-use App\Galeria;
-use App\Noticia;
-use App\Parvulo;
+use App\Vehiculo;
 use App\User;
 
 use App\Http\Controllers\Controller;
@@ -14,11 +12,12 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $apoderados = User::where('role','=','apoderado')->get();
-        $noticias = Noticia::where('publish','=','si')->get();
-        $parvulos = Parvulo::get();
-        $galerias = Galeria::where('publish','=','si')->get();
-        return view('cms.admin.administrador',compact('galerias','apoderados','noticias','parvulos'));
+		$duenos = User::where('role','=','dueno')->get();
+        $choferes = User::where('role','=','chofer')->get();
+        $directivas = User::where('role','=','directiva')->get();
+
+        $vehiculos = Vehiculo::get();
+        return view('cms.admin.administrador',compact('duenos','noticias','vehiculos','choferes','directivas'));
     }
 
     public function listAuditoria(){

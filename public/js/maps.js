@@ -1,6 +1,6 @@
 function initialize() {
- var blu = new google.maps.LatLng(-23.6744358,-70.4094682);
-    var col = new google.maps.LatLng(-23.6700109,-70.4064002);
+ var blu = new google.maps.LatLng(-23.5814581,-70.380034);
+    var col = new google.maps.LatLng(-23.5814581,-70.380034);
 
     var blumell = {
         zoom     : 14,
@@ -31,8 +31,10 @@ function initialize() {
         map: map1,
         title: 'Las colonias'
     });
-
-
 }
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
 
 

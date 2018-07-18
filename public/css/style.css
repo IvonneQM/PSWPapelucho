@@ -1,5 +1,5 @@
-/**Verde claro: 60BB46
-   Verde oscuro: 00A04A
+/**Rojo claro: 60BB46
+   Rojo oscuro: 00A04A
    Rojo Claro: EC2224
    Rojo medio: C32026
    Rojo oscuro: B72025
@@ -64,7 +64,7 @@ h4 span.cursive-title {
 }
 
 header {
-    background: #60BB46;
+    background: #3952A3;
     height: 167px;
     margin-bottom: 63px;
 }
@@ -133,15 +133,15 @@ nav li:first-child {
     width: 170px;
 }
 nav li a, #li-zona-apoderados, #login-form {
-    border: 3px solid #B72025;
+    border: 3px solid black;
     color: #fff;
-    font-family: 'Love Ya Like A Sister', cursive;
+    font-family: 'arial', cursive;
     font-size: 20px;
     height: 50px;
 
 }
 nav li a, nav li, #li-zona-apoderados, #login-form {
-    background: #C32026;
+    background: #3952A3;
     border-radius: 0 0 1em 1em;
 }
 nav li, #li-zona-apoderados, #login-form {
@@ -202,7 +202,7 @@ ul {
 .accordion-item-title {
     border-top: 3px solid #F7EC3F !important;
     display: block;
-    font-family: 'Love Ya Like A Sister', sans-serif;
+    font-family: 'arial', sans-serif;
     text-align: left;
 }
 
@@ -255,7 +255,7 @@ ul {
     background: #F7EC3F;
     border-radius: 0.5em;
     color: #3952A3;
-    font-family: 'Love Ya Like A Sister', sans-serif;
+    font-family: 'arial', sans-serif;
     font-size: 16px !important;
     width: 70px;
     -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
@@ -384,9 +384,7 @@ ul {
     border: 3px solid #00A04A;
     border-radius: 1em;
     display: block;
-    margin: 10px 5%;
     padding: 5px;
-    width: 42%;
 }
 
 .footer-box:first-of-type {
@@ -595,19 +593,19 @@ span.objetives-item::first-letter {
 }
 
 .nav-tabs > li.active > a.tab-title {
-    background: #00a04a;
+    background: #3952A3;
     color: white !important;
 }
 
 .tab-title {
     background: white;
     border-bottom: 1px solid #ddd !important;
-    border-left-color: #00a04a !important;
-    border-right-color: #00a04a !important;
-    border-top-color: #00a04a !important;
+    border-left-color: black !important;
+    border-right-color: black !important;
+    border-top-color: black !important;
     border-radius: 0.3em 0.3em 0 0 !important;
-    color: #00a04a !important;
-    font-family: 'Love Ya Like A Sister', cursive;
+    color: #3952A3 !important;
+    font-family: 'arial', cursive;
     font-size: 25px;
     padding: 5px !important;
 
@@ -617,13 +615,13 @@ span.objetives-item::first-letter {
     border-radius: 0.3em 0.3em 0.3em 0;
     font-size: 40px;
     font-weight: inherit;
-    font-family: 'Love Ya Like A Sister', cursive;
+    font-family: 'arial', cursive;
     margin: -45px 0 0 -31px;
     /*max-width: 220px;*/
 }
 
 .title, .side-section-title {
-    background: #00A04A;
+    background: #3952A3;
     color: white;
     padding-left: 5px;
 }
@@ -739,14 +737,14 @@ p#copyright {
     padding: 0px;
 }
 
-#img-arco-verde {
+#img-fondo-rojo {
     display: block;
     margin-top: 44px;
     position: absolute;
     z-index: 4;
 }
 
-#img-arco-azul, #img-arco-verde {
+#img-arco-azul, #img-fondo-rojo {
     max-height: 125px;
     width: 100%;
 }
@@ -1024,7 +1022,7 @@ div#jardines-banner ul li a img {
     #title {
         font-size: 40px;
         font-weight: inherit;
-        font-family: 'Love Ya Like A Sister', cursive;
+        font-family: 'arial', cursive;
         width: 220px;
     }
 

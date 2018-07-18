@@ -12,7 +12,5 @@ class UserTableSeeder extends Seeder{
             'password' => bcrypt('admin'),
             'role' => 'admin',
         ));
-
-        factory(App\User::class,10)->create();
     }
 }

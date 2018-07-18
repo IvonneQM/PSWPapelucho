@@ -76,11 +76,21 @@ class AuthController extends Controller
             $this->registerLogin();
             return 'administrador';
         }
-        else
+        elseif(\Auth::user()->role == 'directiva')
         {
             $this->registerLogin();
-            return 'apoderado';
+            return 'directiva';
         }
+        elseif(\Auth::user()->role == 'dueño')
+        {
+            $this->registerLogin();
+            return 'dueño';
+        }
+        else{
+            $this->registerLogin();
+            return 'chofer';
+        }
+       
 
     }
 

@@ -35,13 +35,22 @@ class PasswordController extends Controller
     {
         if(\Auth::user()->role == 'admin')
         {
-
+            $this->registerLogin();
             return 'administrador';
         }
-        else
+        elseif(\Auth::user()->role == 'directiva')
         {
-            
-            return 'apoderado';
+            $this->registerLogin();
+            return 'directiva';
+        }
+        elseif(\Auth::user()->role == 'dueño')
+        {
+            $this->registerLogin();
+            return 'dueño';
+        }
+        else{
+            $this->registerLogin();
+            return 'chofer';
         }
     }
 

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     /*Formato rut*/
-    $('#rut').Rut({
+    $('.rut').Rut({
         on_error : function () {
             swal("Error!",
                 "Rut Inválido",

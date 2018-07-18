@@ -2,29 +2,47 @@
 @section('page-title')
     Inicio
 @stop
-@section('article')
-    <h1 class="title" id="title">Bienvenidos</h1>
-    <p>Estimados Padres y Apoderados:</p>
-    <p>
-        Les damos la más cordial bienvenida a cada uno de ustedes, invitándoles a conocer el proyecto educativo de la
-        Sala Cuna y Escuela de Párvulos “PAPELUCHO”, e instándoles a participar en la labor pedagógica que desarrollamos
-        con mucho cariño y vocación con sus hijos(as). </p>
-    <p>
-        Agradecemos en forma especial la confianza de aquellos apoderados que nos han acompañado estos últimos años,
-        como también aquellos Padres que actualmente se han integrado a esta gran familia educativa. </p>
-    <p>Con especial afecto, les saludan.</p>
-    <ul class="two-borders-box">
-        <li>
-            <span class="cursive-title">Claudia Concha Gamboa</span>
-            <p class="directora">Educadora de Párvulos</br>Directora Sede Las Colonias</p>
-        </li>
-        <li class="float">
-            <span class="cursive-title">Carla Aguayo Picón</span>
-            <p class="directora">Educadora de Párvulos</br>Directora Sede Blümell</p>
-        </li>
-    </ul>
-@stop
-@section('aside')
+@section('welcome')
+<div class="welcome">
+    <div class="welcome_description">
+        <h2 class="welcome_description_title text_center">Bienvenidos</h2>
+        <p>El sindicato de trabajadores independientes de taxi-colectivo les da la mas cordial bienvenida a todos nuestros usuarios. Agradecemos en forma especial la confianza de aquellos usuarios que nos han acompañado estos últimos años, brindando su confianza, como también aquellos nos prefieren a diario.</p>
+        <div class="welcome_author text_center">
+            <p>Juan Cortez</p>
+            <p>Presidente</p>
+        </div>
+	</div>
+</div>
+@endsection
+
+@section('tours')
+<h2 class="tours_main_title text_center">Recorridos</h2>
+	<div class="tours">
+    	<div class="tours_south_route">
+            <h2 class="tours_title">Recorrido de sur a norte</h2>
+            <div id="map"></div>
+        </div>
+    	<div class="tours_northern_route">
+            <h2 class="tours_title">Recorrido de norte a sur</h2>
+            {{-- <div id="maps"></div> --}}
+        </div>
+    </div>
+@endsection
+
+@section('rates')
+<center><h2 class="rates_main_title text_center">Tarifas</h2>
+<div class="rates">
+    <div class="rates_day">
+        <h2 class="rates_title">Horario Diurno</h2>
+        <h3>Precio de recorrido</h3>
+    </div>
+    <div class="rates_night">
+        <h2 class="rates_title">Horario Vespertino</h2>
+        <h3>Precio de recorrido</h3>
+	</div>
+</div>
+@endsection
+{{-- @section('aside')
     <h3 id="news-section-title" class="side-section-title">Noticias</h3>
     <ul class="news-box">
         @foreach($noticias as $noticia)
@@ -39,4 +57,8 @@
             </li>
         @endforeach
     </ul>
-@stop
+@stop --}}
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8s1ahurS5NL1zcs9WDParKYQnvqkE8XM"></script>
+{!!Html::script('js/maps.js')!!}

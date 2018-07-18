@@ -22,10 +22,10 @@ class User extends Model implements AuthenticatableContract,
      * @var string
      */
     protected $table = 'users';
-    
-    
-    public function parvulos(){
-      return $this->hasMany(Parvulo::class);
+
+
+    public function vehiculos(){
+      return $this->hasMany(Vehiculo::class);
     }
 
     public function auditorias(){
